@@ -1,0 +1,14 @@
+<table class="table">
+        <thead id="tableHeader">
+          <tr>
+            <th style="width:20%;">{{sortColumn "firstName" translationKey="administration.contact.firstName"}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each collection}}
+          <tr>
+            <td>{{display_for "firstName" isNoLabel=true}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+</table>
