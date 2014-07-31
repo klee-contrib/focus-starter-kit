@@ -1,0 +1,48 @@
+{
+  "author": "Klee Group",
+  "name": "nantissement",
+  "description": "front-end-spa",
+  "version": "0.0.1",
+  "homepage": "",
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.3.x"
+  },
+  "scripts": {
+    "start": "brunch watch --server",
+    "test": "brunch test",
+    "api": "node ./example/api/server.js",
+    "doc": "docco app/lib/* app/models/* app/views/* README.md"
+  },
+  "dependencies": {
+    "javascript-brunch": ">= 1.0 < 1.7",
+    "coffee-script-brunch": ">= 1.0 < 1.7",
+    "css-brunch": ">= 1.0 < 1.7",
+    "stylus-brunch": ">= 1.0 < 1.7",
+    "handlebars-brunch": ">= 1.0 < 1.7",
+    "uglify-js-brunch": ">= 1.0 < 1.7",
+    "clean-css-brunch": ">= 1.0 < 1.7",
+    "jade-brunch": "~1.8.0",
+    "chai": "~1.9.0"
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "hapi": "~2.1.2",
+    "backbone": "~1.1.0",
+    "underscore": "~1.6.0",
+    "bluebird": "~1.0.5",
+    "backbone-validation": "~0.9.1",
+    "sinon-chai": "~2.5.0",
+    "sinon": "~1.8.2",
+    "i18next": "~1.7.1"
+  },
+  "private": true
+}
