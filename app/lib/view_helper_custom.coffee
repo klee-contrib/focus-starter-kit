@@ -531,3 +531,52 @@ Handlebars.registerHelper "dashboard_counter", (value, total, i18n_key, options)
     </a>
     </div>"    
   return new Handlebars.SafeString(html)
+
+###
+  Helper pour uniformiser l'utilisation des formulaires.
+  Exemple: {{#form}} {{input_for "firstName"}} {{/form}}
+###
+Handlebars.registerHelper 'form', (options)->
+    return "<form novalidate class='form-horizontal' role='form'>#{options.fn(@)}</form>"
+###
+  Helper pour uniformiser l'utilisation des formulaires.
+  Exemple: {{#form}} {{input_for "firstName"}} {{/form}}
+###
+Handlebars.registerHelper 'display', (options)->
+    return "<form novalidate class='form-horizontal' role='form'>#{options.fn(@)}</form>"
+###
+  Helper pour uniformiser l'utilisation des formulaires.
+  Exemple: {{#button_toolbar}} {{{button_cancel}} {{button_save}} {{/button_toolbar}}
+###
+Handlebars.registerHelper 'btn_toolbar', (options)->
+    return "<div class='btn-toolbar'><div class='btn-group'>#{options.fn(@)}</div></div>"
+###
+  Helper pour uniformiser l'utilisation des panel.
+  Exemple: {{#panel}} {{{#form}} {{/form}} {{/panel}}
+  Exemple: {{#panel "titlekey"}} {{{#form}} {{/form}} {{/panel}}
+###
+Handlebars.registerHelper 'panel', (title, options)->
+    if _.isObject(title)
+      options = title 
+      title = undefined
+    title =  if not title? then "" else i18n.t(title)
+    html = "<div class='panel panel-default'>
+          <div class='panel-heading'>#{title}</div>
+          <div class='panel-body'>#{options.fn(@)}</div>
+        </div>"
+    return html
+###
+  Helper pour uniformiser l'utilisation des formulaires.
+  Exemple: {{#page "page.title" panelTitle="page.panel.title"}} {{input_for "firstName"}} {{/page}}
+###
+Handlebars.registerHelper 'page', (title, options)->
+  options = options or {}
+  opt = options.hash or {}
+  console.error("noTitleInYourTemplate")if not _.isString(title)    
+  html = "
+      <h1>#{i18n.t(title)}</h1>
+      <div class='page-content'>
+        #{options.fn(@)}
+      </div>
+  "
+  return html
