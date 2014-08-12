@@ -1,5 +1,5 @@
-/* name: spa-fmk , version: 0.1.1 description: Simple framework for backbone applications.*/ 
- (function initialization(container) {var fmk = container.Fmk || {};fmk.name = 'spa-fmk';fmk.version = '0.1.1';container.Fmk = fmk;})(typeof module === 'undefined' && typeof window !== 'undefined' ? window : exports);
+/* name: spa-fmk , version: 0.1.2 description: Simple framework for backbone applications.*/ 
+ (function initialization(container) {var fmk = container.Fmk || {};fmk.name = 'spa-fmk';fmk.version = '0.1.2';container.Fmk = fmk;})(typeof module === 'undefined' && typeof window !== 'undefined' ? window : exports);
 /*global window, _*/
 (function initialization(container) {
   var fmk = container.Fmk || {};
@@ -35,32 +35,31 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
 function program1(depth0,data) {
   
-  var buffer = "", stack1, options;
+  var buffer = "", stack1, helper, options;
   buffer += "\r\n             <li id='";
-  if (stack1 = helpers.cssId) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.cssId); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  if (helper = helpers.cssId) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.cssId); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
     + "' class=\"";
-  if (stack1 = helpers.cssClass) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.cssClass); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  if (helper = helpers.cssClass) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.cssClass); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
     + " ";
   stack1 = helpers['if'].call(depth0, (depth0 && depth0.isActive), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\" ";
-  if (stack1 = helpers.dataAttributes) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.dataAttributes); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  if (helper = helpers.dataAttributes) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.dataAttributes); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
     + " >\r\n                <a href=\"";
-  if (stack1 = helpers.route) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.route); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  if (helper = helpers.route) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.route); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "\">";
-  options = {hash:{
+    + "\">"
+    + escapeExpression((helper = helpers.t || (depth0 && depth0.t),options={hash:{
     'prefix': ("header."),
     'suffix': (".title")
-  },data:data};
-  buffer += escapeExpression(((stack1 = helpers['t'] || (depth0 && depth0['t'])),stack1 ? stack1.call(depth0, (depth0 && depth0.name), options) : helperMissing.call(depth0, "t", (depth0 && depth0.name), options)))
+  },data:data},helper ? helper.call(depth0, (depth0 && depth0.name), options) : helperMissing.call(depth0, "t", (depth0 && depth0.name), options)))
     + "</a>\r\n             </li>\r\n          ";
   return buffer;
   }
@@ -81,20 +80,17 @@ this["Fmk"]["templates"] = this["Fmk"]["templates"] || {};
 this["Fmk"]["templates"]["modalSkeleton"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  var buffer = "", helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 
-  buffer += "<!-- Modal -->\r\n<div class=\"modal fade\" data-modal  datatabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\r\n        <h4 class=\"modal-title\" id=\"myModalLabel\">";
-  options = {hash:{
+  buffer += "<!-- Modal -->\r\n<div class=\"modal fade\" data-modal  datatabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">\r\n  <div class=\"modal-dialog\">\r\n    <div class=\"modal-content\">\r\n      <div class=\"modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\">&times;</button>\r\n        <h4 class=\"modal-title\" id=\"myModalLabel\">"
+    + escapeExpression((helper = helpers.t || (depth0 && depth0.t),options={hash:{
     'keyInContext': (true)
-  },data:data};
-  buffer += escapeExpression(((stack1 = helpers['t'] || (depth0 && depth0['t'])),stack1 ? stack1.call(depth0, "title", options) : helperMissing.call(depth0, "t", "title", options)))
-    + "</h4>\r\n      </div>\r\n      <div class=\"modal-body\" data-modal-content>\r\n      \r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">";
-  options = {hash:{},data:data};
-  buffer += escapeExpression(((stack1 = helpers['t'] || (depth0 && depth0['t'])),stack1 ? stack1.call(depth0, "button.modalClose", options) : helperMissing.call(depth0, "t", "button.modalClose", options)))
-    + "</button>\r\n        <button type=\"button\" class=\"btn btn-primary\" data-close=\"modal\">";
-  options = {hash:{},data:data};
-  buffer += escapeExpression(((stack1 = helpers['t'] || (depth0 && depth0['t'])),stack1 ? stack1.call(depth0, "button.modalSave", options) : helperMissing.call(depth0, "t", "button.modalSave", options)))
+  },data:data},helper ? helper.call(depth0, "title", options) : helperMissing.call(depth0, "t", "title", options)))
+    + "</h4>\r\n      </div>\r\n      <div class=\"modal-body\" data-modal-content>\r\n      \r\n      </div>\r\n      <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">"
+    + escapeExpression((helper = helpers.t || (depth0 && depth0.t),options={hash:{},data:data},helper ? helper.call(depth0, "button.modalClose", options) : helperMissing.call(depth0, "t", "button.modalClose", options)))
+    + "</button>\r\n        <button type=\"button\" class=\"btn btn-primary\" data-close=\"modal\">"
+    + escapeExpression((helper = helpers.t || (depth0 && depth0.t),options={hash:{},data:data},helper ? helper.call(depth0, "button.modalSave", options) : helperMissing.call(depth0, "t", "button.modalSave", options)))
     + "</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>";
   return buffer;
   });;
@@ -103,12 +99,12 @@ this["Fmk"]["templates"] = this["Fmk"]["templates"] || {};
 this["Fmk"]["templates"]["noResults"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+  var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression;
 
 
   buffer += "<div class=\"noResults\">";
-  if (stack1 = helpers.message) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.message); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  if (helper = helpers.message) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.message); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
     + "</div>";
   return buffer;
@@ -118,22 +114,22 @@ this["Fmk"]["templates"] = this["Fmk"]["templates"] || {};
 this["Fmk"]["templates"]["notifications"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+  var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression, self=this;
 
 function program1(depth0,data) {
   
-  var buffer = "", stack1;
+  var buffer = "", stack1, helper;
   buffer += "\n    <strong>";
-  if (stack1 = helpers.message) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.message); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  if (helper = helpers.message) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.message); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
     + "</strong><br />\n  ";
   return buffer;
   }
 
   buffer += "<div class='alert alert-";
-  if (stack1 = helpers.cssMessageType) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = (depth0 && depth0.cssMessageType); stack1 = typeof stack1 === functionType ? stack1.call(depth0, {hash:{},data:data}) : stack1; }
+  if (helper = helpers.cssMessageType) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.cssMessageType); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
     + "'>\n  <button type='button' class='close' data-dismiss='alert'>&times;</button>\n  ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.messages), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
@@ -146,12 +142,11 @@ this["Fmk"]["templates"] = this["Fmk"]["templates"] || {};
 this["Fmk"]["templates"]["spinner"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  var buffer = "", helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 
-  buffer += "<div class='spinner-container'>\r\n       <div class='spinner'>\r\n          <div class=\"three-quarters\">\r\n            ";
-  options = {hash:{},data:data};
-  buffer += escapeExpression(((stack1 = helpers['t'] || (depth0 && depth0['t'])),stack1 ? stack1.call(depth0, "application.loading", options) : helperMissing.call(depth0, "t", "application.loading", options)))
+  buffer += "<div class='spinner-container'>\r\n       <div class='spinner'>\r\n          <div class=\"three-quarters\">\r\n            "
+    + escapeExpression((helper = helpers.t || (depth0 && depth0.t),options={hash:{},data:data},helper ? helper.call(depth0, "application.loading", options) : helperMissing.call(depth0, "t", "application.loading", options)))
     + "\r\n          </div>\r\n       </div>\r\n   </div>";
   return buffer;
   });;
@@ -1129,6 +1124,12 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
           }, options));
         }
         return _results;
+      };
+
+      Collection.prototype.unsetErrors = function(options) {
+        return this.forEach(function(mdl) {
+          return mdl.unsetErrors(options);
+        });
       };
 
       Collection.prototype.jsonFromSaveJson = function(saveJSON) {
@@ -2482,6 +2483,49 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     };
 
     /**
+     * List of all the global messages to look after.
+     * @type {Array}
+     */
+    var globalMessages = [{
+        name: "globalErrors",
+        type: "error"
+    }, {
+        name: "globalSuccess",
+        type: "success"
+    }, {
+        name: "globalWarnings",
+        type: "warning"
+    }, {
+        name: "globalInfos",
+        type: "error"
+    }, {
+        name: "globalErrorMessages",
+        type: "error"
+    }, {
+        name: "globalSuccessMessages",
+        type: "success"
+    }, {
+        name: "globalWarningMessages",
+        type: "warning"
+    }, {
+        name: "globalInfoMessages",
+        type: "error"
+    }, {
+        name: "errors",
+        type: "error"
+    }];
+
+    function configure(options) {
+        options = options || {};
+        if (_.isArray(options.globalMessages)) {
+            globalMessages = options.globalMessages;
+        }
+        if (_.isObject(options.errorTypes)) {
+            errorTypes = options.errorTypes;
+        }
+    }
+
+    /**
      * Treat the response json of an error.
      * @param  {object} responseJSON The json response from the server.
      * @param  {object} options The options containing the model. {model: Backbone.Model}
@@ -2489,9 +2533,9 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
      */
     function treatEntityExceptions(responseJSON, options) {
         var errors = responseJSON.errors;
-        if (options.isDisplay || options.model) {
+        /*if (options.isDisplay || options.model) {
             displayErrors(errors, options);
-        }
+        }*/
         if (options.model) {
             setModelErrors(options.model, errors);
         }
@@ -2506,9 +2550,9 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
      */
     function treatCollectionExceptions(responseJSON, options) {
         var errors = responseJSON.errors;
-        if (options.isDisplay || options.model) {
+        /* if (options.isDisplay || options.model) {
             displayErrors(errors, options);
-        }
+        }*/
         if (options.model) {
             setCollectionErrors(options.model, errors);
         }
@@ -2516,9 +2560,54 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
     }
 
+    function treatGlobalMessagesPerType(messages, type) {
+        var messagesGlobal = [];
+        messages.forEach(function convertErrorsIntoNotification(element) {
+            var options = {};
+            if (_.isObject(element)) {
+                options = formatParameters(element.parameters);
+                element = element.message;
+            }
+            messagesGlobal.push({
+                type: type,
+                message: i18n.t(element, options),
+                creationDate: Date.now()
+            });
+
+        });
+        BackboneNotification.addNotification(messagesGlobal);
+    }
+
     /**
-     * @description s.
+     * Treat the global errors.
+     * @param  {object} responseJSON - Treat the global errors.
+     * @param {object} options - Options for error handling.{isDisplay:[true/false], globalMessages: [{type: "error", name: "propertyName"}]}
+     * @return {}
      */
+    function treatGlobalErrors(responseJSON, options) {
+        options = options || {};
+        var isDisplay = options.isDisplay || true;
+        var allMessagesTypes = options.globalMessages || globalMessages;
+        if (responseJSON !== undefined) {
+            var messages = responseJSON;
+            //Looping through all messages types.
+            allMessagesTypes.forEach(function treatAllTypes(globalMessageConf) {
+                //Treat all the gloabe
+                var msgs = messages[globalMessageConf.name];
+                if (msgs !== undefined) {
+                    treatGlobalMessagesPerType(msgs, globalMessageConf.type);
+                }
+            });
+            if (isDisplay) {
+                BackboneNotification.renderNotifications();
+            }
+
+        }
+
+
+
+    }
+
     /**
      * Treat with all the custom exception
      * @param  {object} responseJSON - Response from the server.
@@ -2526,6 +2615,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
      * @return {object}              - The parsed error response.
      */
     function treatBadRequestExceptions(responseJSON, options) {
+
         if (responseJSON.type !== undefined) {
             switch (responseJSON.type) {
                 case errorTypes.entity:
@@ -2553,18 +2643,40 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
         response = response || {};
         var responseErrors = response.responseJSON;
         if (responseErrors === undefined) {
-            responseErrors = response.responseText;
-        } else {
-            switch (responseErrors.statusCode) {
+            if (response.responseText !== undefined) {
+                try {
+                    //The first try is to parse the response in JSON. Maybe the return mime type is not correct.
+                    responseErrors = JSON.parse(response.responseText);
+                } catch (e) {
+                    //Construt an error with the text.
+                    responseErrors = {
+                        statusCode: response.status,
+                        globalErrorMessages: [response.responseText]
+                    };
+                }
+
+            }
+
+        }
+        if (responseErrors.statusCode) {
+            treatGlobalErrors(responseErrors);
+            /*Deal with all the specific exceptions*/
+            switch (responseErrors.statusCode || response.status) {
                 case 400:
                     treatBadRequestExceptions(responseErrors, options);
                     break;
                 case 401:
                     treatBadRequestExceptions(responseErrors, options);
                     break;
+                case 422:
+                    treatBadRequestExceptions(responseErrors, options);
+                    break;
                 default:
                     break;
             }
+
+
+
         }
 
 
@@ -2658,7 +2770,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
      * Set the *model* errors in the fieldErrors.
      * @param {Model} model    - A backbone model.
      * @param {object} errors  - An object which represents the errros. There should be the follwing structure : `{fieldErrors: {property: "Error Message."}}`.
-     * @param {object} options - Options defined when setting the errors to the model. 
+     * @param {object} options - Options defined when setting the errors to the model.
      */
     function setModelErrors(model, errors, options) {
         if (errors !== undefined && errors.fieldErrors !== undefined) {
@@ -2672,7 +2784,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
      * Set the *model* errors in the fieldErrors.
      * @param {Model} model    - A backbone model.
      * @param {object} errors  - An object which represents the errros. There should be the follwing structure : `{fieldErrors: {property: "Error Message."}}`.
-     * @param {object} options - Options defined when setting the errors to the model. 
+     * @param {object} options - Options defined when setting the errors to the model.
      */
     function setCollectionErrors(collection, errors, options) {
         collection.setErrors(errors, options);
@@ -2684,7 +2796,8 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
      * @return {object}            - The formated parameters.
      */
     function formatParameters(parameters) {
-        var options = {}, formatter, value;
+        var options = {},
+            formatter, value;
         for (var prop in parameters) {
             if (parameters.hasOwnProperty(prop)) {
                 if (parameters[prop].domain) {
@@ -2708,7 +2821,9 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
         manageResponseErrors: manageResponseErrors,
         display: displayErrors,
         setModelErrors: setModelErrors,
-        setCollectionErrors: setCollectionErrors
+        setCollectionErrors: setCollectionErrors,
+        configure: configure,
+        treatGlobalErrors: treatGlobalErrors
     };
 
     if (isInBrowser) {
@@ -2796,7 +2911,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     module.exports = referenceHelper;
   }
 })(typeof module === 'undefined' && typeof window !== 'undefined' ? window.Fmk : module.exports);
-/*global window, $, Backbone*/
+/*global window, $, Backbone, _*/
 
 /**
  * @module helpers/form_helper
@@ -2811,11 +2926,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     var isInBrowser = typeof module === 'undefined' && typeof window !== 'undefined';
     NS = NS || {};
     var postRenderingHelper = isInBrowser ? NS.Helpers.postRenderingHelper : require("./post_rendering_helper");
-    
+
     /**
      * Helper to bond collections on list dom.
      * @param  {object} jQuery selector         - A selector which should contains the list of element which dom list element.
-     * @param  {Backbone.Collection} collection - The collection where the reconstructed elements will be injected. 
+     * @param  {Backbone.Collection} collection - The collection where the reconstructed elements will be injected.
      * @param  {object} options                 - {isSilent: boolean}
      * @return {undefined}
      */
@@ -2848,25 +2963,29 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
      * @param  {object} data          - An object withe the structure {inputs: jQuerySelector, options: jQuerySelector} w<here jQuery Selector which contains the dom element of a model. inputs for inputs, options for selects.
      * @param  {Backbone.Model} model - a Backbone.Model where the dom data will be injected to populate the fields.
      * @param  {object} options       - The default options are: {isSilent: true}
-     * @return {undefined}       
+     * @return {undefined}
      */
     var _formModelBinder = function formModelBinder(data, model, options) {
         options = options || {};
         options.isSilent = options.isSilent !== undefined ? options.isSilent : true;
+        var modelContainer = {};
         if (data.inputs !== null && data.inputs !== undefined) {
-            this.formInputModelBinder(data.inputs, model, options);
+            modelContainer = _.extend(modelContainer, this.formInputModelBinder(data.inputs, model, options));
         }
         if (data.options !== null && data.options !== undefined) {
-            this.formOptionModelBinder(data.options, model, options);
+            modelContainer = _.extend(modelContainer, this.formOptionModelBinder(data.options, model, options));
         }
+        model.set(modelContainer, {
+            silent: options.isSilent
+        });
     };
 
     // inputs must be a selector with option:selected inside and model a BackBone model.
     /**
-     * Bind the model. If the model has a decorator (ie) a jQuery plugin, the data-decorator is use in order to     
+     * Bind the model. If the model has a decorator (ie) a jQuery plugin, the data-decorator is use in order to
      * @param  {object} inputs           - Selector containing all the inputs.
-     * @param  {Backbone.Model} model    - The model on which there is . 
-     * @param  {object} options          - The default options are: {isSilent: true}.
+     * @param  {Backbone.Model} model    - The model on which there is .
+     * @param  {object} options          - The default options are: {isSilent: true, isForceModelBinding: false}.
      * @return {[type]}         [description]
      */
     var _formInputModelBinder = function formInputModelBinder(inputs, model, options) {
@@ -2893,7 +3012,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
                     helperName: decorator
                 });
 
-            }else if (input.tagName === "TEXTAREA") {
+            } else if (input.tagName === "TEXTAREA") {
                 currentvalue = input.value;
             } else { //See if an if on currentValue is nececessary.
                 switch (input.getAttribute('type')) {
@@ -2930,9 +3049,12 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
                 modelContainer[this.getAttribute('data-name')] = currentvalue;
             }
         });
-        model.set(modelContainer, {
-            silent: options.isSilent
-        });
+        if (options.isForceModelSet) {
+            model.set(modelContainer, {
+                silent: options.isSilent
+            });
+        }
+        return modelContainer;
     };
 
     var _parseRadioValue = function parseRadioValue(radioValue) {
@@ -2983,10 +3105,13 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
             }
             modelContainer[attributeName] = selectedValue === "undefined" ? undefined : selectedValue;
         });
+        if (options.isForceModelSet) {
+            model.set(modelContainer, {
+                silent: options.isSilent
+            });
+        }
+        return modelContainer;
 
-        model.set(modelContainer, {
-            silent: options.isSilent
-        });
     };
 
     //#Generate a form from a model.
@@ -3873,7 +3998,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   });
 
   Handlebars.registerHelper("t", function(i18n_key, options) {
-    var maxLength, opt, prefix, result, suffix;
+    var maxLength, opt, params, prefix, result, suffix;
     opt = options.hash || {};
     suffix = opt.suffix || "";
     prefix = opt.prefix || "";
@@ -3881,7 +4006,10 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     if (opt.keyInContext === true) {
       i18n_key = this[i18n_key];
     }
-    result = i18n.t("" + prefix + i18n_key + suffix);
+    params = opt.params != null ? opt.params.split(',') : void 0;
+    console.log(opt.params, _.pick.apply(this, params));
+    params = params != null ? _.pick.apply(this, params) : void 0;
+    result = i18n.t("" + prefix + i18n_key + suffix, params);
     if ((maxLength != null) && maxLength < result.length) {
       result = "" + (result.slice(0, +maxLength)) + "...";
     }
@@ -4505,7 +4633,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   };
 
   Handlebars.registerHelper("button", function(text_key, options) {
-    var button, cssClass, cssId, dataAttributes, icon, isLoading, loading, opt, type;
+    var action, button, cssClass, cssId, dataAttributes, icon, isLoading, loading, opt, type;
     opt = options.hash || {};
     if (opt.role !== void 0 && !Fmk.Helpers.userHelper.hasRole(opt.role)) {
       return "";
@@ -4515,6 +4643,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     cssId = opt.id || guid();
     dataAttributes = opt.dataAttributes || "";
     type = opt.type || "button";
+    action = opt.action != null ? "data-action=" + action : "";
     loading = function() {
       if (isLoading || type === 'submit') {
         return "data-loading data-loading-text='" + (opt.loadingText || i18n.t('button.loading')) + "'";
@@ -4528,7 +4657,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
         return "";
       }
     };
-    button = "<button type='" + type + "' " + dataAttributes + " class='btn " + cssClass + "' id='" + cssId + "' " + (loading()) + ">" + (icon()) + " " + (text_key !== '' ? i18n.t(text_key) : '') + "</button>";
+    button = "<button type='" + type + "' " + action + "  " + dataAttributes + " class='btn " + cssClass + "' id='" + cssId + "' " + (loading()) + ">" + (icon()) + " " + (text_key !== '' ? i18n.t(text_key) : '') + "</button>";
     return new Handlebars.SafeString(button);
   });
 
@@ -4824,11 +4953,12 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     var RefHelper = isInBrowser ? NS.Helpers.referenceHelper : require('../helpers/reference_helper');
     var ArgumentNullException = isInBrowser ? NS.Helpers.Exceptions.ArgumentNullException : require("../helpers/custom_exception").ArgumentNullException;
     var Model = isInBrowser ? NS.Models.Model : require("../models/model");
+    var PaginatedCollection = isInBrowser ? NS.Models.PaginatedCollection : require("../models/paginatedCollection");
     var UtilHelper = isInBrowser ? NS.Helpers.utilHelper : require('../helpers/util_helper');
     var sessionHelper = isInBrowser ? NS.Helpers.sessionHelper : require('../helpers/session_helper');
     var templateSpinner = isInBrowser ? NS.templates.spinner : function() {
-            "Template spinner to define..."
-        };
+        return "Template spinner to define...";
+    };
     //View which is the default view for each view.
     //This view is able to deal with errors and to render the default json moodel.
     var CoreView = Backbone.View.extend({
@@ -4878,7 +5008,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
             //Listen to the reference list loading.
             this.listenTo(this.model, "references:loaded", this.render, this);
-            
+
             //Load all the references lists which are defined in referenceNames.
             var currentView = this;
             if (_.isArray(this.referenceNames) && this.referenceNames.length > 0) {
@@ -4893,9 +5023,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
                     }
                     if (UtilHelper.isBackboneCollection(currentView.model)) {
                         _.extend(currentView.model, res); // Add the references as properties of the object without using set which erases the collection.
-                         // Reset the collection to trigger a render.
+                        // Reset the collection to trigger a render.
                     } else {
-                        currentView.model.set(res, {silent: true}); //This trigger a render due to model change.
+                        currentView.model.set(res, {
+                            silent: true
+                        }); //This trigger a render due to model change.
                     }
                     currentView.model.trigger('references:loaded');
                     //Inform the view that we are ready to render well.
@@ -4916,8 +5048,22 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
             if (this.model) {
                 return;
             } else if (this.opts.modelName) {
-                this.model = new Model();
-                this.model.modelName = this.opts.modelName;
+                //Création d'une collection et d'un model
+                var ModelCreated = Model.extend({
+                    modelName: this.opts.modelName
+                });
+                //Case of a collection.
+                if (this.opts.modelType !== undefined && this.opts.modelType === "collection") {
+                    var CollectionCreated = PaginatedCollection.extend({
+                        modelName: this.opts.modelName,
+                        model: ModelCreated
+                    });
+                    this.model = new CollectionCreated();
+                } else {
+                    //Case of a model.
+                    this.model = new ModelCreated();
+
+                }
             } else {
                 throw new ArgumentNullException("The view must have a model or a model name.", this);
             }
@@ -4998,7 +5144,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
             if (this.model.modelName != undefined) {
                 hash += this.model.modelName;
             }
-            if (this.opts.criteriaId!= undefined) {
+            if (this.opts.criteriaId != undefined) {
                 hash += this.opts.criteriaId;
             }
             return hash;
@@ -5094,7 +5240,8 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
             isReadyModelData: true,
             listUrl: undefined,
             isListeningToModelChange: true,
-            formSelector: undefined, //In whitch selector you have to search the form datas (inputs, select,...).
+            formSelector: undefined, //In whitch selector you have to search the form datas (inputs, select,...).,
+            modelType: "model"
         }),
 
         //Initialize function
@@ -5275,9 +5422,10 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
         loadLoadingButton: function loadLoadingButton(event){
           $(event.target).closest('button[data-loading]').button('loading');
         },
-        bindToModel: function () {
+        bindToModel: function bindToModelConsultEdit() {
+            var formSelector = this.opts.formSelector || "";
             if (utilHelper.isBackboneModel(this.model)) {
-                var formSelector = this.opts.formSelector || "";
+                this.model.unsetErrors({ silent: true });
                 var inputSelector = formSelector + " " + "input, " + formSelector + " " + "textarea";
                 var selectSelector = formSelector + " " + "select";
                 form_helper.formModelBinder({
@@ -5285,7 +5433,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
                     options: $(selectSelector, this.$el)
                 }, this.model);
             } else if (utilHelper.isBackboneCollection(this.model)) {
-                var formSelector = this.opts.formSelector || "";
+                this.model.unsetErrors({silent: true});
                 var collectionSelector = formSelector + " " + this.opts.collectionSelector;
                 form_helper.formCollectionBinder(
                     $(collectionSelector, this.$el),
@@ -5294,8 +5442,6 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
                     }
                 );
             }
-
-            
         },
         //Save method in case of a model.
         saveModel: function saveBackboneModel() {
@@ -6277,7 +6423,8 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
         defaultOptions: _.extend({}, ConsultEditView.prototype.defaultOptions, {
             exportUrl: './Export/Index', //Change it if necessary.,
             isReadyModelData: true,
-            isListeningToModelChange: false
+            isListeningToModelChange: false,
+            modelType: "collection"
         }),
         //Dervice to define in order to launch the export.
         exportSvc: undefined,

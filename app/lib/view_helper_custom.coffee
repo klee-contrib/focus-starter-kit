@@ -5,7 +5,9 @@ defaults = {
         ul: "",
         panelDefault: "panel panel-default",
         panelPaginator: "panel-body paginator ",
-        btnBar: "btnBar"
+        btnBar: "btnBar",
+        form: "form-horizontal",
+        list: "list-group"
     }
 }
 
@@ -15,6 +17,10 @@ Handlebars.registerHelper "defaultTableClass", ()->
 # Default css class for tables.
 Handlebars.registerHelper "btnBarClass", ()->
   return defaults.cssClass.btnBar
+
+# Default css class for tables.
+Handlebars.registerHelper "defaultFormClass", ()->
+  return defaults.cssClass.form
 
 # Create the default html that opens a search pattern layout
 Handlebars.registerHelper "open_search", () ->    
@@ -284,8 +290,9 @@ Handlebars.registerHelper "button_edit",(options) ->
 # Example => button_save
 # Example => button_save class="myClass"
 # Example => button_save text_key="myPage.myButtonName"
-Handlebars.registerHelper "button_save",(options) ->  
-  return patternButton("button.save", {class:'btnSave', type:"submit"}, options)
+Handlebars.registerHelper "button_save",(property, options) ->
+  text = if property? and _.isString(property) and property isnt "" then property else "button.save"  
+  return patternButton(text, {class:'btnSave', type:"submit"}, options)
 
 # Cancel button for detail pattern
 # Example => button_cancel
@@ -532,6 +539,75 @@ Handlebars.registerHelper "dashboard_counter", (value, total, i18n_key, options)
     </div>"    
   return new Handlebars.SafeString(html)
 
+  #Handlebars.registerHelper "dashboard_counter", (value, total, i18n_key, options) ->
+
+  ###
+  Helper pour l'avancement des étapes.
+  <span class="label label-primary"><b>1<b> verification</span>
+  <spanspan class="label label-primary"><b>2<b> Validation</span>
+  <span class="label label-default"><b>3<b> Initialisation</span>
+  <span class="label label-default"><b>4<b> Complement</span>
+  <span class="label label-default"><b>5<b> Renforcement</span>
+  @example: steps 1 type="gestionnaireNaturel"
+###
+Handlebars.registerHelper "steps", (activeStep, options) ->
+  opt = (options or {}).hash or {}
+  type = opt.type
+# Definition des steps pour le processus d'activation d'un compte d'un gestionnaire naturel.
+  stepsGestionnaireNaturel = [
+    {step: 1, label: "connexion.step.verification", url: "#connexion/verification/gestionnaireNaturel"}
+    {step: 2, label: "connexion.step.validation", url: "#connexion/validation/gestionnaireNaturel"}
+    {step: 3, label: "connexion.step.initialisation", url: "#connexion/initialisation/gestionnaireNaturel"}
+    {step: 4, label: "connexion.step.complement", url: "#connexion/complement/gestionnaireNaturel"}
+    {step: 5, label: "connexion.step.renforcement", url: "#connexion/renforcement/gestionnaireNaturel"}
+  ]
+
+  # Definition des steps pour le processus d'activation d'un compte d'un partenaire
+  stepsPartenaire = [
+    {step: 1, label: "connexion.step.initialisation"}
+    {step: 2, label: "connexion.step.complement"}
+    {step: 3, label: "connexion.step.activation"}
+  ]
+
+  # Definition des steps pour la creation d'un compte externe.
+  stepsExterne = [
+    {step: 1, label: "connexion.step.collecte"}
+    {step: 2, label: "connexion.step.initialisation"}
+    {step: 3, label: "connexion.step.validation"}
+    {step: 4, label: "connexion.step.activation"}
+  ]
+
+  # Retourne le steps correspondant.
+  getSteps = (stepType) ->
+    switch stepType
+      when "gestionnaireNaturel" then  return  stepsGestionnaireNaturel
+      when "partenaire" then  return  stepsPartenaire
+      else  return  stepsExterne
+
+  # Génère une ligne de label.
+  generateLabel =(data, active, stepsSize) ->
+    status = if data.step is active then "primary" else if data.step < active then "success" else  "default active"
+    tagName = if data.step < active and active < stepsSize then "a" else "button"
+    return "<#{tagName} class='btn btn-#{status} btn-lg' href='#{data.url}'>#{i18n.t(data.label)}</#{tagName}>"
+  genrateLabels =->
+    value = ""
+    stepsData = getSteps(type)
+    stepsDataLength = stepsData.length
+    for data in stepsData
+      value = value + generateLabel(data, +activeStep , stepsDataLength)
+    return value 
+  html = "<div class='steps'>#{genrateLabels()}</div>"
+  return new Handlebars.SafeString(html)
+
+Handlebars.registerHelper 'job_status_icon', (property, options)->
+  opt = (options or {}).hash or {}
+  name = @[property]
+  console.log "Icone",opt.icon, @[opt.icon]
+  icon = switch @[opt.icon]
+    when 'admin' then 'fa-times-circle'
+    else 'fa-tags' 
+  return  new Handlebars.SafeString("<div class='#{Handlebars.helpers.col 12}'>#{Handlebars.helpers.fa_icon icon}#{name}</div>")
+
 ###
   Helper pour uniformiser l'utilisation des formulaires.
   Exemple: {{#form}} {{input_for "firstName"}} {{/form}}
@@ -580,3 +656,54 @@ Handlebars.registerHelper 'page', (title, options)->
       </div>
   "
   return html
+
+###
+  Helper pour uniformiser l'utilisation des formulaires.
+  Exemple: {{#criteria}}{{#form}} {{input_for "firstName"}} {{/form}}{{/criteria}}
+###
+Handlebars.registerHelper 'criteria', (title, options)->
+  options = options or {}
+  if _.isObject(title)
+      options = title 
+      title = undefined
+    title =  if not title? then "" else i18n.t(title)
+  html = "
+      <div class='criteria'>
+        <h2>#{title}</h2>
+        #{options.fn(@)}
+      </div>
+  "
+  return html
+
+# Create the default _opening_ html for table result. Works as a tag.
+# Works with _close_result_table_ helper.
+Handlebars.registerHelper "result", (options)->
+  options = options or {}
+  opt = options.hash or {}
+  isTable = if opt.isTable? then opt.isTable else true
+  resultLabel = if opt.resultLabel then i18n.t(opt.resultLabel) else undefined
+  listTagName = if isTable then "table" else "ul"
+  elementTagName = if isTable then "tr" else "li"
+  striped = if opt.striped? then opt.stripped else true
+  cssClass = if isTable then defaults.cssClass.table else defaults.cssClass.list
+  if striped 
+    cssClass = cssClass + "  table-striped"
+  # Generate the header actions.
+  tableHeaderActions = ()=>
+    showHeaderActions = if opt.showHeaderActions? then opt.showHeaderActions else true
+    return if showHeaderActions then "#{Handlebars.helpers.tableHeaderAction.call(this, {hash:{resultLabel: '', exportUrl: this.exportUrl, resultLabel: resultLabel}})}" else ""
+  # Render the pagination Pagination.
+  paginate = ()=>
+    isPaginate = if opt.isPaginate? then opt.isPaginate else true
+    if isPaginate
+      Handlebars.helpers.paginate.call(this, {hash:{showResultNumber:false}})
+    else ""
+  # Produce the html to render.
+  html = " #{tableHeaderActions()}
+              <#{listTagName} class='#{cssClass}'>
+                #{options.fn(@)}
+              </#{listTagName}>
+            #{paginate()}
+          <div id='lineSelectionContainer'></div>
+  "
+  return new Handlebars.SafeString(html)
