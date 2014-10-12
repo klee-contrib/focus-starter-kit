@@ -1,6 +1,6 @@
 #require 'lib/view_helper'
-config = require 'config'
-
+config = require './config/index'
+require './helper/view_helper/index'
 class Application extends Backbone.Marionette.Application
 
   initialize: =>
@@ -42,39 +42,39 @@ class Application extends Backbone.Marionette.Application
     
     # Initialize all ajax behaviour.
     @addInitializer (options) =>
-      require('./initializer/ajax_initializer').initialize()
+      require('./config/initializer/ajax_initializer').initialize()
     
     # Initialize all fmk needs: domains and metadatas.
     @addInitializer (options) =>
-      require('./initializer/fmk_initializer').initialize()
+      require('./config/initializer/fmk_initializer').initialize()
     
     # Initialize all jQuery plugins.
     @addInitializer (options) =>
-      require('./initializer/jquery_plugin_initializer').initialize()
+      require('./config/initializer/jquery_plugin_initializer').initialize()
     
     # Initialize all backbone plugins.
     @addInitializer (options) =>
-      require('./initializer/backbone_plugin_initializer').initialize()
+      require('./config/initializer/backbone_plugin_initializer').initialize()
     
     # Initialize odata helper behaviour.
     @addInitializer (options) =>
-      require('./initializer/odata_initializer').initialize()
+      require('./config/initializer/odata_initializer').initialize()
     
     # Initialize all translations
     @addInitializer (options) =>
-      require('./initializer/i18n_initializer').initialize()
+      require('./config/initializer/i18n_initializer').initialize()
     
     #Initialize all post rendering plugins.
     @addInitializer (options) =>
-      require('./initializer/rendering_helpers_initializer').initialize()
+      require('./config/initializer/rendering_helpers_initializer').initialize()
     
     #Initialize reference lists services.
     @addInitializer (options) =>
-      require('./initializer/reference_list_initializer').initialize()
+      require('./config/initializer/reference_list_initializer').initialize()
     
     #Initialize autocomplete servicces
     @addInitializer (options) =>
-      require('./initializer/autocomplete_initializer').initialize()       
+      require('./config/initializer/autocomplete_initializer').initialize()       
 
     # Add an initializer to the logger with the config define in the app config.
     @addInitializer (options) =>

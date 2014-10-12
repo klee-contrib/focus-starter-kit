@@ -1,13 +1,13 @@
 module.exports = {
   initialize: function(options, context) {
     //Initialize the languages available in the application.
-    Fmk.Helpers.languageHelper.defineLanguages(require('../i18n/languages_options'));
+    Fmk.Helpers.languageHelper.defineLanguages(require('../../i18n/languages_options'));
 
     //External properties.
-    var config = require('../config');
+    var config = require('../index');
     var culture = Fmk.Helpers.userHelper.getUserInformations().cultureCode || config.lang;
     var langOpts = Fmk.Helpers.languageHelper.getLanguage(culture);
-    var resources = require('../i18n/all');
+    var resources = require('../../i18n/all');
     
 
     
@@ -37,7 +37,7 @@ module.exports = {
     });
     moment.lang(langOpts.momentCulture);
     numeral.language(langOpts.numeralCulture);
-    require('../i18n/select2_locales/select2_language').setLanguage(langOpts.select2Culture);
+    require('../../i18n/select2_locales/select2_language').setLanguage(langOpts.select2Culture);
   
   }
 };

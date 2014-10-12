@@ -1,8 +1,8 @@
 module.exports = {
   initialize: function(options, context) {
     Fmk.initialize({
-      domains: require('../lib/domains'),
-      metadatas: require('../lib/entity-definition')
+      domains: require('../domain/index'),
+      metadatas: require('../entityDefinition/index')
     });
   }
 };
