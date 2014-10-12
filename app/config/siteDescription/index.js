@@ -16,7 +16,7 @@ var site = function(p) {
                 url: '#administration/contact/1',
                 roles: ['DEFAULT_ROLE']
             }]
-        }],
+        }, require('./message')(p)],
         pages: [
             //Test page 
             {
