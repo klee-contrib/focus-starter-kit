@@ -21,7 +21,7 @@ module.exports = Router.extend({
    * Traitement de la route de recherche d'un message.
    * @return {[type]} [description]
    */
-  messageRecherche: function messageRechercheRoute(){
+  messageRecherche: function messageRechercheRoute() {
     alert('NotImplemented: messageRecherche');
   },
   /**
@@ -29,15 +29,22 @@ module.exports = Router.extend({
    * @param  {string} messageId - Identifiant d'un message.
    * @return {undefined}
    */
-  message: function messageRoute(messageId){
-    alert('NotImplemented: messageRecherche');
+  message: function messageRoute(messageId) {
+    var MessageModel = require('../models/message/message/messageModel');
+    var MessageView = require('../views/message/message/messageDetail');
+    application.layout.setActiveMenu('message');
+    application.layout.content.show(new MessageView({
+      model: new MessageModel({
+        id: messageId
+      })
+    }));
   },
   /**
    * Traitement de la route permettant l'affichage des messages d'un utilisateur.
    * @param  {string} userId    - Identifiant de l'utilisateur
    * @return {undefined}
    */
-  userMessage: function userMessageRoute(userId){
+  userMessage: function userMessageRoute(userId) {
     alert('NotImplemented: messageRecherche');
   },
   /**
@@ -46,7 +53,7 @@ module.exports = Router.extend({
    * @param  {string} messageId - Identifiant du message
    * @return {undefined}
    */
-  userMessages: function userMessagesRoute(userId, messageId){
+  userMessages: function userMessagesRoute(userId, messageId) {
     alert('NotImplemented: messageRecherche');
   }
 
