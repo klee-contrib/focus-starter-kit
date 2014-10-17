@@ -14,7 +14,8 @@ module.exports = ConsultEditView.extend({
     isModelToLoad: true,
     isSaveOnServer: true,
     isEdit: false,
-    isEditMode: true
+    isEditMode: true,
+    DEBUG: true
   },
   /**
    * Template de consultation de la vue.
@@ -26,5 +27,9 @@ module.exports = ConsultEditView.extend({
    * @type {function}
    */
   templateEdit: require('./templates/messageEdit'),
+  /**
+   * Service to call in order to load the data from a service.
+   * @type {function}
+   */
   getModelSvc: msgSvc.loadMessageById
 });

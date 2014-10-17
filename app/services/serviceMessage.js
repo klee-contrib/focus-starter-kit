@@ -1,5 +1,6 @@
 var utilHelper = Fmk.Helpers.utilHelper;
 function loadMessageById(msgId){
+ // var url =   url: require('../../../../config/url/message');
   var jsonMessage = {
     id: msgId,
     text: Faker.Lorem.sentence(),

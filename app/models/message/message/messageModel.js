@@ -1,6 +1,12 @@
 var Model = Fmk.Models.Model;
-
+/**
+ * Model for a message.
+ * @type {function}
+ */
 module.exports = Model.extend({
-  modelName: "message.message",
-  url: require('../../../../config/url/message')
+  /**
+   * Metadata property of the model.
+   * @type {String}
+   */
+  modelName: "message.message"
 });
