@@ -1,5 +1,6 @@
 var utilHelper = Fmk.Helpers.utilHelper;
 function loadMessageById(msgId){
+  console.log('message criteria loading', msgId);
  // var url =   url: require('../../../../config/url/message');
   var jsonMessage = {
     id: msgId,
