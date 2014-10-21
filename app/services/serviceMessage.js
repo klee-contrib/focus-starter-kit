@@ -10,7 +10,8 @@ function loadMessageById(msgId){
     text: Faker.Lorem.sentence(),
     date: new Date().toISOString(),
     author: Faker.Name.findName(),
-    authorId: utilHelper.guid()
+    authorId: utilHelper.guid(),
+    type: 1
   };
   return utilHelper.loadLocalData(jsonMessage);
 }

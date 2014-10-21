@@ -13,11 +13,12 @@ module.exports = ConsultEditView.extend({
   customOptions:{
     isModelToLoad: true,
     isSaveOnServer: true,
-    isNavigationOnSave: false,//When the submit is trigger the view changes its mode.
+    isNavigationOnSave: false,
     isEditMode: true,
     isEdit: false,
     DEBUG: true
   },
+  referenceNames:['typeMessages'],
   /**
    * Template de consultation de la vue.
    * @type {function}
