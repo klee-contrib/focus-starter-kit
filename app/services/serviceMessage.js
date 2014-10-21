@@ -8,7 +8,7 @@ function loadMessageById(msgId){
   var jsonMessage = {
     id: msgId,
     text: Faker.Lorem.sentence(),
-    date: new Date(),
+    date: new Date().toISOString(),
     author: Faker.Name.findName(),
     authorId: utilHelper.guid()
   };

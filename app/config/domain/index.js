@@ -6,13 +6,13 @@ module.exports = {
         "type": "text",
         "decorator": "datePicker",
         "style": "date right",
-        "format": Fmk.Helpers.formaters.date
+        "format": {value:Fmk.Helpers.formaters.date}
     },
     "DO_DATE_HEURE": {
         "type": "text",
         "decorator": "datePicker",
         "style": "date right",
-        "format": Fmk.Helpers.formaters.dateTime
+        "format": {value: Fmk.Helpers.formaters.dateTime}
     },
     "DO_MONTANT": {
         "type": "number",
@@ -21,7 +21,7 @@ module.exports = {
             "options":{"min": 0}
         },
         "symbol": "\u20AC", // \u20AC = €
-        "format": Fmk.Helpers.formaters.currency
+        "format": {value: Fmk.Helpers.formaters.currency}
     },
     "DO_EMAIL": {
         "type": "email",
