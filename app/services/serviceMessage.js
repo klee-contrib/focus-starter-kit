@@ -1,7 +1,10 @@
 var utilHelper = Fmk.Helpers.utilHelper;
+/**
+ * Load a message by its identifier.
+ * @param  {string} msgId - The message identifier.
+ * @return {Promise} - The loading promise of the message.
+ */
 function loadMessageById(msgId){
-  console.log('message criteria loading', msgId);
- // var url =   url: require('../../../../config/url/message');
   var jsonMessage = {
     id: msgId,
     text: Faker.Lorem.sentence(),
@@ -11,8 +14,19 @@ function loadMessageById(msgId){
   };
   return utilHelper.loadLocalData(jsonMessage);
 }
-
+/**
+ * Save a json message.
+ * @param  {object} jsonMessage The json message.
+ * @return {Promise}  The save promise.
+ */
+function saveMessage(jsonMessage){
+  if(!jsonMessage.id){
+    jsonMessage.id = utilHelper.guid();
+  }
+  return utilHelper.loadLocalData(jsonMessage);
+}
 
 module.exports ={
-  loadMessageById: loadMessageById
+  loadMessageById: loadMessageById,
+  saveMessage: saveMessage
 };

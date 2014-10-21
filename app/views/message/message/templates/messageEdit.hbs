@@ -1,2 +1,9 @@
-Edition de message.
-{{input_for "id"}}
+<h2>Consultation du message {{id}}</h2>
+{{#form}}
+  {{input_for "id"}}
+  {{input_for "text"}}
+  {{input_for "date"}}
+  {{input_for "author"}}
+  {{input_for "authorId"}}
+  {{button_save}}
+{{/form}}

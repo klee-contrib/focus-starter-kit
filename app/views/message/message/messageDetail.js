@@ -13,8 +13,9 @@ module.exports = ConsultEditView.extend({
   customOptions:{
     isModelToLoad: true,
     isSaveOnServer: true,
-    isEdit: false,
+    isNavigationOnSave: false,//When the submit is trigger the view changes its mode.
     isEditMode: true,
+    isEdit: false,
     DEBUG: true
   },
   /**
@@ -31,5 +32,10 @@ module.exports = ConsultEditView.extend({
    * Service to call in order to load the data from a service.
    * @type {function}
    */
-  getModelSvc: msgSvc.loadMessageById
+  getModelSvc: msgSvc.loadMessageById,
+  /**
+   * Service which is called in order to save the message.
+   * @type {function}
+   */
+  saveModelSvc: msgSvc.saveMessage
 });

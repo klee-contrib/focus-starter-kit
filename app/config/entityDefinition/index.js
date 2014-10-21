@@ -61,5 +61,6 @@ module.exports = {
                 "domain": "DO_LISTE_MULTI"
             }
         }
-    }
+    },
+    "message": require('./message')
 };

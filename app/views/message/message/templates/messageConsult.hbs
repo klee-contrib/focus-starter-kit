@@ -1,2 +1,9 @@
 <h2>Consultation du message {{id}}</h2>
-{{display_for "id"}}
+{{#display}}
+  {{display_for "id"}}
+  {{display_for "text"}}
+  {{display_for "date"}}
+  {{display_for "author"}}
+  {{display_for "authorId"}}
+  {{button_edit}}
+{{/display}}
