@@ -2,12 +2,12 @@
 defaults =
   cssClass:
     table: "table table-condensed table-bordered tableWithBtnBar"
-      ul: ""
-        panelDefault: "panel panel-default",
-        panelPaginator: "panel-body paginator ",
-        btnBar: "btnBar",
-        form: "form-horizontal",
-        list: "list-group"
+    ul: ""
+    panelDefault: "panel panel-default"
+    panelPaginator: "panel-body paginator "
+    btnBar: "btnBar"
+    form: "form-horizontal"
+    list: "list-group"
 
 # Default css class for tables.
 Handlebars.registerHelper "defaultTableClass", ()->

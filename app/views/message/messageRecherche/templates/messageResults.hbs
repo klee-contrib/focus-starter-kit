@@ -1,3 +1,7 @@
-{{#results isTable=false}}
-  <li>{{id}}</li>
-{{/results}}
+<hr />
+<h2>Résultats</h2>
+{{#result isTable=false showHeaderActions=false}}
+  {{#each collection}}
+    <li data-id='{{id}}' class='{{type}} list-group-item'><span class="text">{{text}}</span> from <span>{{author}}</span></li>
+  {{/each}}
+{{/result}}
