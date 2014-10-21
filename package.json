@@ -19,15 +19,16 @@
     "doc": "docco app/lib/* app/models/* app/views/* README.md"
   },
   "dependencies": {
-    "javascript-brunch": ">= 1.0 < 1.7",
+    "chai": "~1.9.0",
+    "clean-css-brunch": ">= 1.0 < 1.7",
     "coffee-script-brunch": ">= 1.0 < 1.7",
     "css-brunch": ">= 1.0 < 1.7",
-    "stylus-brunch": ">= 1.0 < 1.7",
     "handlebars-brunch": ">= 1.0 < 1.7",
-    "uglify-js-brunch": ">= 1.0 < 1.7",
-    "clean-css-brunch": ">= 1.0 < 1.7",
     "jade-brunch": "~1.8.0",
-    "chai": "~1.9.0"
+    "javascript-brunch": ">= 1.0 < 1.7",
+    "less-brunch": "^1.7.2",
+    "stylus-brunch": ">= 1.0 < 1.7",
+    "uglify-js-brunch": ">= 1.0 < 1.7"
   },
   "main": "index.js",
   "directories": {
