@@ -4150,11 +4150,13 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   }
 })(typeof module === 'undefined' && typeof window !== 'undefined' ? window.Fmk : module.exports);
 (function() {
-  var S4, domains_definition, guid, metadaBuilder;
+  var S4, domains_definition, guid, logger, metadaBuilder;
 
   metadaBuilder = Fmk.Helpers.metadataBuilder;
 
   domains_definition = Fmk.Helpers.metadataBuilder.getDomains();
+
+  logger = window.l;
 
   Handlebars.registerHelper('pick', function(val, options) {
     return options.hash[val];
@@ -4196,11 +4198,14 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     var col, container, containerAttribs, containerCss, dataType, domain, html, htmlId, inputSize, label, labelSize, labelSizeValue, linkClose, linkOpen, linkTo, metadata, modelName, noGrid, noHtml, opt, propertyValue, translationKey, translationRoot;
     options = options || {};
     opt = options.hash || {};
-    modelName = this.modelName || opt.modelName || void 0;
+    modelName = this.modelName || opt.modelName || {};
     container = _.extend(this, {
       modelName: modelName
     });
-    metadata = metadaBuilder.getMetadataForAttribute(container, property);
+    metadata = (container.metadatas != null) && (container.metadatas[property] != null) ? container.metadatas[property] : {};
+    if (metadata.domain == null) {
+      logger.warn("There is no domain for your field named : " + property, container);
+    }
     domain = Fmk.Helpers.metadataBuilder.getDomains()[metadata.domain] || {};
     translationRoot = opt.translationRoot || void 0;
     dataType = opt.dataType || domain.type || "text";
@@ -6682,8 +6687,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
     var isInBrowser = typeof module === 'undefined' && typeof window !== 'undefined';
     //Dependencies.
     var _url = isInBrowser ? NS.Helpers.urlHelper : require('../helpers/url_helper');
-    var NotImplementedException = isInBrowser ? NS.Helpers.Exceptions.NotImplementedException : require("../helpers/custom_exception").NotImplementedException;
-    var templatePagination = function () { throw new  NotImplementedException('templatePagination');};
+    var templatePagination = function () { };
     var ConsultEditView = isInBrowser ? NS.Views.ConsultEditView : require('./consult-edit-view');
     var errorHelper = isInBrowser ? NS.Helpers.errorHelper : require('../helpers/error_helper');
     var utilHelper = isInBrowser ? NS.Helpers.utilHelper : require('../helpers/utilHelper');
@@ -7240,7 +7244,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 })(typeof module === 'undefined' && typeof window !== 'undefined' ? window.Fmk : module.exports);
 /*global Backbone, _, $, Promise, window*/
 "use strict";
-(function (NS) {
+(function(NS) {
     // Filename: views/search-view.js
     NS = NS || {};
     var isInBrowser = typeof module === 'undefined' && typeof window !== 'undefined';
@@ -7280,29 +7284,37 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
             });
 
             //init results collection
+            if (!this.Results) {
+                throw new NotImplementedException('Your view should have a Reference to the result collection in the Results property', this);
+            }
+            if (!this.ResultsView) {
+                throw new NotImplementedException('Your view should have a Reference to the ResultsView in order to display the results', this);
+            }
             this.searchResults = new this.Results();
             //initialization of the result view 
             this.searchResultsView = new this.ResultsView({
                 model: this.searchResults,
                 criteria: this.model,
                 searchView: this,
-                isSearchTriggered : false
+                isSearchTriggered: false
             });
             //handle the clear criteria action
             this.listenTo(this.model, 'change', this.render);
-            this.listenTo(this.searchResultsView, 'results:fetchDemand', function () {
+            this.listenTo(this.searchResultsView, 'results:fetchDemand', function() {
                 this.runSearch(null, {
                     isFormBinded: false
                 });
             });
-            this.listenTo(this.searchResultsView, 'listview:lineSelected', function () {
+            this.listenTo(this.searchResultsView, 'listview:lineSelected', function() {
                 $('.collapse', this.$el).collapse('hide');
             });
             var currentView = this;
-            this.getSessionCriteria().then(function (crit) {
+            this.getSessionCriteria().then(function(crit) {
                 //Restore the criteria if save into the session.
                 if (crit !== undefined && crit !== null && crit.pageInfo !== undefined && crit.pageInfo !== null) {
-                    currentView.model.set(crit.criteria, { silent: false });
+                    currentView.model.set(crit.criteria, {
+                        silent: false
+                    });
                     currentView.searchResults.setPageInfo(crit.pageInfo);
                     currentView.isSearchTriggered = true;
                 }
@@ -7312,7 +7324,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
                         isFormBinded: false
                     });
                 }
-            }, function (error) {
+            }, function(error) {
                 errorHelper.manageResponseErrors(error);
             });
 
@@ -7371,7 +7383,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
             });
         },
 
-        getCriteria: function () {
+        getCriteria: function() {
             return _.clone(_.omit(this.model.toJSON(), this.referenceNames));
         },
 
@@ -7396,46 +7408,48 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
             this.searchResultsView.render();
             var currentView = this;
             ModelValidator
-				.validate(this.model)
-				.then(function (model) {
-				    currentView.model.unsetErrors({
-				        silent: false
-				    });
-				    var criteria = currentView.getCriteria();
-				    var pageInfo = currentView.searchResults.pageInfo();
+                .validate(this.model)
+                .then(function(model) {
+                    currentView.model.unsetErrors({
+                        silent: false
+                    });
+                    var criteria = currentView.getCriteria();
+                    var pageInfo = currentView.searchResults.pageInfo();
 
-				    if (isEvent) {
-				        pageInfo.currentPage = 1;
-				    }
-
-				    currentView.search(criteria, pageInfo)
-						.then(function success(jsonResponse) {
-						    //Save the criteria in session.
-						    currentView.searchResultsView.opts.isReadyResultsData = true;
-						    currentView.searchResultsView.isSearchTriggered = true;
-						    currentView.searchResults.setPageInfo(pageInfo);
-						    currentView.saveSessionCriteria({
-						        criteria: criteria,
-						        pageInfo: pageInfo
-						    }).then(function (s) {
-						        //console.log('criteria save in session', s);
-						        backboneNotification.clearNotifications();
-						        return currentView.searchSuccess(jsonResponse);
-						    });
-						}).then(null, function error(errorResponse) {
-						    currentView.searchResultsView.opts.isReadyResultsData = true;
-						    currentView.searchError(errorResponse);
-						}).then(function resetButton() {
-						    if (searchButton) {
-						        searchButton.button('reset');
-						    }
-						});
-				}).then(null, function error(errors) {
-				    currentView.model.setErrors(errors);
-				    if (searchButton) {
-				        searchButton.button('reset');
-				    }
-				});
+                    if (isEvent) {
+                        pageInfo.currentPage = 1;
+                    }
+                    if(!currentView.search){
+                        throw new NotImplementedException('The search property of this view is not defined, the search cannot be launched.', this);
+                    }
+                    currentView.search(criteria, pageInfo)
+                        .then(function success(jsonResponse) {
+                            //Save the criteria in session.
+                            currentView.searchResultsView.opts.isReadyResultsData = true;
+                            currentView.searchResultsView.isSearchTriggered = true;
+                            currentView.searchResults.setPageInfo(pageInfo);
+                            currentView.saveSessionCriteria({
+                                criteria: criteria,
+                                pageInfo: pageInfo
+                            }).then(function(s) {
+                                //console.log('criteria save in session', s);
+                                backboneNotification.clearNotifications();
+                                return currentView.searchSuccess(jsonResponse);
+                            });
+                        }).then(null, function error(errorResponse) {
+                            currentView.searchResultsView.opts.isReadyResultsData = true;
+                            currentView.searchError(errorResponse);
+                        }).then(function resetButton() {
+                            if (searchButton) {
+                                searchButton.button('reset');
+                            }
+                        });
+                }).then(null, function error(errors) {
+                    currentView.model.setErrors(errors);
+                    if (searchButton) {
+                        searchButton.button('reset');
+                    }
+                });
 
             if (this.isReadOnly) {
                 this.model.set({
@@ -7454,13 +7468,17 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
             }
             this.model.clear();
             for (field in unchanged) {
-                this.model.set(field, unchanged[field], { silent: true });
+                this.model.set(field, unchanged[field], {
+                    silent: true
+                });
             }
             this.saveSessionCriteria({}); // clear session criteria.
             this.initialize(); //Call initialize again in order to refresh the view with criteria lists.
         },
 
-        getUnchangedFields: function getUnchangedFields() { return [] },
+        getUnchangedFields: function getUnchangedFields() {
+            return []
+        },
 
         render: function renderSearch(options) {
             options = options || {};

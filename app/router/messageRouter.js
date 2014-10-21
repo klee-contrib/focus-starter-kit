@@ -22,7 +22,12 @@ module.exports = Router.extend({
    * @return {[type]} [description]
    */
   messageRecherche: function messageRechercheRoute() {
-    alert('NotImplemented: messageRecherche');
+    var MessageCriteria = require('../models/message/messageRecherche/messageCriteria');
+    var MessageCriteriaView = require('../views/message/messageRecherche/messageCriteria');
+    application.layout.setActiveMenu('message');
+    application.layout.content.show(new MessageCriteriaView({
+      model: new MessageCriteria()
+    }));
   },
   /**
    * Traitement de la route detail d'un message.

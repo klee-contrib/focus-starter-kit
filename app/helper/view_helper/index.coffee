@@ -1,15 +1,13 @@
 # defaults values
-defaults = {
-    cssClass:{
-        table: "table table-condensed table-bordered tableWithBtnBar",
-        ul: "",
+defaults =
+  cssClass:
+    table: "table table-condensed table-bordered tableWithBtnBar"
+      ul: ""
         panelDefault: "panel panel-default",
         panelPaginator: "panel-body paginator ",
         btnBar: "btnBar",
         form: "form-horizontal",
         list: "list-group"
-    }
-}
 
 # Default css class for tables.
 Handlebars.registerHelper "defaultTableClass", ()->
@@ -23,14 +21,14 @@ Handlebars.registerHelper "defaultFormClass", ()->
   return defaults.cssClass.form
 
 # Create the default html that opens a search pattern layout
-Handlebars.registerHelper "open_search", () ->    
+Handlebars.registerHelper "open_search", () ->
     html = "<div>
                 <div class='panel panel-default'>
                     <div class='panel-body'>
                         <div class='row'>"
     return new Handlebars.SafeString(html)
 # Create the default html that closes a search pattern layout
-Handlebars.registerHelper "close_search", () ->    
+Handlebars.registerHelper "close_search", () ->
     html = "            </div>
                     </div>
                 </div>
@@ -38,13 +36,13 @@ Handlebars.registerHelper "close_search", () ->
     return new Handlebars.SafeString(html)
 
 # Create the default html that opens a search pattern result layout
-Handlebars.registerHelper "open_search_result", () ->    
+Handlebars.registerHelper "open_search_result", () ->
     html = html = "<div>
-                        <div class='#{defaults.cssClass.panelDefault}'>            
+                        <div class='#{defaults.cssClass.panelDefault}'>
                             <div class='panel-body'>"
     return new Handlebars.SafeString(html)
 # Create the default html that closes a search pattern result layout
-Handlebars.registerHelper "close_search_result", () ->    
+Handlebars.registerHelper "close_search_result", () ->
     html = "                </div>
                         </div>
                     </div>
@@ -56,15 +54,15 @@ Handlebars.registerHelper "open_search_criteria", () ->
 
 Handlebars.registerHelper "close_search_criteria", (options) ->
   options = options or {}
-  opt = options.hash or {} 
+  opt = options.hash or {}
   createButtonSearchBar = ()=>
     if not opt.roleCreate
       return ''
-    opt = _.extend(opt, {class: 'btnCreate', role:opt.roleCreate})    
+    opt = _.extend(opt, {class: 'btnCreate', role:opt.roleCreate})
     labelCreate = if  opt.text_keyCreate? then  opt.text_keyCreate else 'button.create';
     buttonCreate = Handlebars.helpers.button.call(this, labelCreate, {hash: opt })
     return "<div class='#{defaults.cssClass.btnBar}'>#{buttonCreate}</div>"
-    
+
   return new Handlebars.SafeString("
   <div class='#{defaults.cssClass.btnBar}'>
       #{Handlebars.helpers.button.call(this, 'button.reset', {hash:{class: 'btnReset'}})}
@@ -81,14 +79,14 @@ Handlebars.registerHelper "close_facet_criteria", () ->
 
 Handlebars.registerHelper "result_container", (i18n_key, options)->
   options = options or {}
-  opt = options.hash or {} 
+  opt = options.hash or {}
   #Default width
   width = opt.width or 9
   html = "<div id='results' class='#{Handlebars.helpers.col.call(this, width)}}'></div>"
   return new Handlebars.SafeString(html)
 Handlebars.registerHelper "open_criteria", (i18n_key, options)->
   options = options or {}
-  opt = options.hash or {} 
+  opt = options.hash or {}
   #Default width
   width = opt.width or 3
   html = "
@@ -105,7 +103,7 @@ Handlebars.registerHelper "close_criteria", (i18n_key, options)->
   html = "</div></form></div>"
   return new Handlebars.SafeString(html)
 
-  
+
 # Create the default _opening_ html for table result. Works as a tag.
 # Works with _close_result_table_ helper.
 Handlebars.registerHelper "open_result_table", (options)->
@@ -113,7 +111,7 @@ Handlebars.registerHelper "open_result_table", (options)->
   opt = options.hash or {}
   striped = if opt.striped? then opt.stripped else true
   cssClass = defaults.cssClass.table
-  if striped 
+  if striped
     cssClass = cssClass + "  table-striped"
   # Generate the header actions.
   tableHeaderActions = ()=>
@@ -176,7 +174,7 @@ Handlebars.registerHelper "close_result_list", (options)->
         </div>
     <div id='lineSelectionContainer'></div>"
     return new Handlebars.SafeString(html)
- 
+
 # Create the default opening html for list item (li). Works as a tag.
 # Works with close_result_list_item helper.
 Handlebars.registerHelper "open_result_list_item", (options)->
@@ -184,7 +182,7 @@ Handlebars.registerHelper "open_result_list_item", (options)->
   opt = options.hash or {}
   html = "<li>"
   return new Handlebars.SafeString(html)
- 
+
 # Create the default closing html for list item (li). Works as a tag.
 # Works with open_result_list_item helper.
 Handlebars.registerHelper "close_result_list_item", (options)->
@@ -192,7 +190,7 @@ Handlebars.registerHelper "close_result_list_item", (options)->
   opt = options.hash or {}
   html = "</li>"
   return new Handlebars.SafeString(html)
- 
+
 # Create the default opening html for list item title. Works as a tag.
 # Works with close_result_list_item_title helper.
 Handlebars.registerHelper "open_result_list_item_title", (options)->
@@ -225,40 +223,40 @@ Handlebars.registerHelper "close_result_list_item_subtext", (options)->
   opt = options.hash or {}
   html = "</span>"
   return new Handlebars.SafeString(html)
- 
+
 # Create the default html that opens a panel and adds a title to it.
 Handlebars.registerHelper "open_panel", (i18n_key, options) ->
     options = options or {}
     opt = options.hash or {}
     disablePicto = opt.disablePicto or false
     # Subtitle in smaller size
-    titleSubHtml = ()=> 
-        if opt.titleSub? 
-            return ", <span>#{opt.titleSub}</span>" 
+    titleSubHtml = ()=>
+        if opt.titleSub?
+            return ", <span>#{opt.titleSub}</span>"
         else return ""
     # Title
-    titleHtml = ()=> 
-        if opt.title? 
+    titleHtml = ()=>
+        if opt.title?
             return "<div class='panel-heading'>
                 <div class='titleSecondary'>
                     <h1>#{opt.title}#{titleSubHtml()}</h1>
                 </div>
-            </div>" 
+            </div>"
         else return ""
     pictoHtml = ()=>
         if disablePicto
             return ""
-        else return "<i class='fa fa-chevron-right'></i>"    
-    
+        else return "<i class='fa fa-chevron-right'></i>"
+
     cssClass = opt.class || ''
     html = "<div class='#{defaults.cssClass.panelDefault} #{cssClass}'>
-            #{titleHtml()}   
+            #{titleHtml()}
             <div class='panel-heading'>
                 <h3 class='panel-title'>#{pictoHtml()}#{i18n.t(i18n_key)}</h3>
             </div>
             <div class='panel-body'>"
     return new Handlebars.SafeString(html)
-    
+
 # Create the default html that closes a panel.
 # Works with open_panel helper.
 Handlebars.registerHelper "close_panel", (property, options) ->
@@ -268,10 +266,10 @@ Handlebars.registerHelper "close_panel", (property, options) ->
 
 # Standard pattern button
 # Exemple => patternButton("button.save", {class:'btnSave', type="submit"}, options)
-patternButton=(pattern_text_key, pattern_options, options) ->  
+patternButton=(pattern_text_key, pattern_options, options) ->
   # Force options with pattern options if not explicit.
   options = options or {}
-  opt = options.hash or {}    
+  opt = options.hash or {}
   opt.class = opt.class or pattern_options.class
   opt.type = opt.type or pattern_options.type
   opt.icon = opt.icon or pattern_options.icon
@@ -291,7 +289,7 @@ Handlebars.registerHelper "button_edit",(options) ->
 # Example => button_save class="myClass"
 # Example => button_save text_key="myPage.myButtonName"
 Handlebars.registerHelper "button_save",(property, options) ->
-  text = if property? and _.isString(property) and property isnt "" then property else "button.save"  
+  text = if property? and _.isString(property) and property isnt "" then property else "button.save"
   return patternButton(text, {class:'btnSave', type:"submit"}, options)
 
 # Cancel button for detail pattern
@@ -323,7 +321,7 @@ Handlebars.registerHelper "button_create",(options) ->
 # Example => button_search text_key="myPage.myButtonName"
 Handlebars.registerHelper "button_search",(options) ->
   return patternButton("button.search", {class:'btnSearch', type:"submit", icon:"search"}, options)
-  
+
 # Reset button for search pattern
 # Example => button_reset
 # Example => button_reset class="myClass"
@@ -333,7 +331,7 @@ Handlebars.registerHelper "button_reset",(options) ->
 
 # Pattern picto button for list
 patternButtonPicto=(text_key, cssClass, picto, options) ->
-  opt = options.hash or {}  
+  opt = options.hash or {}
   cssClass = opt.class or cssClass
   loading = ->
     if opt.isLoading or type is 'submit'
@@ -347,7 +345,7 @@ patternButtonPicto=(text_key, cssClass, picto, options) ->
 # Example => button_picto_delete class="btn-danger" type="submit"
 Handlebars.registerHelper "button_picto_delete",(options) ->
   return patternButtonPicto('button.delete', 'btnDelete', 'fa-trash-o', options)
-  
+
  # Add picto button for list
 # Example => button_picto_Add class="btn-danger"
 Handlebars.registerHelper "button_picto_add",(options) ->
@@ -356,20 +354,20 @@ Handlebars.registerHelper "button_picto_add",(options) ->
 # Publish image folder
 # Example => urlImage "MyPicture.svg"
 Handlebars.registerHelper "urlImage",(fileName, options) ->
-  return "#{require('../models/URL').assets.images}/#{fileName}"  
-  
+  return "#{require('../models/URL').assets.images}/#{fileName}"
+
 # Displays a Back link
 # Example: {{back_link}}
 Handlebars.registerHelper "back_link",(options) ->
   opt = options.hash or {}
-  translationKey = if opt.translationKey? then opt.translationKey else "button.back" 
+  translationKey = if opt.translationKey? then opt.translationKey else "button.back"
   listUrl = if opt.listUrl? then opt.listUrl else "listUrl"
   href = this[listUrl]
   label = i18n.t(translationKey)
   html = "<a href='#{href}'>#{label}</a>"
   return new Handlebars.SafeString(html)
- 
- 
+
+
 #*** Table specific fields helper
 
 # Table specific field edit control : no label and no form specific grid container.
@@ -380,7 +378,7 @@ Handlebars.registerHelper "tab_input_for", (property, options) ->
   opt.isNoLabel = opt.isNoLabel or true
   opt.noGrid = opt.noGrid or true
   return Handlebars.helpers.input_for.call(this, property, {hash:opt})
-  
+
 # Table specific field display control : no label and no form specific grid container.
 # Example: {{tab_display_for myProperty}}
 Handlebars.registerHelper "tab_display_for", (property, options) ->
@@ -389,7 +387,7 @@ Handlebars.registerHelper "tab_display_for", (property, options) ->
   opt.isNoLabel = opt.isNoLabel or true
   opt.noGrid = opt.noGrid or true
   return Handlebars.helpers.display_for.call(this, property, {hash:opt})
-  
+
 # Create the html for a primary title (outside content, above tabs).
 # Handles a mandatory generic i18n title, then a optional business item title, and finally a business item sub title.
 # Exemple : {{title_primary "translation_key" title=sitId.title.title titleSub=sitId.title.subTitle}}
@@ -397,59 +395,59 @@ Handlebars.registerHelper "title_primary", (i18n_key, options) ->
     options = options or {}
     opt = options.hash or {}
     # Title
-    titleHtml = ()=> 
-        if opt.title? 
-            return " #{opt.title}" 
-        else return ""    
-    # Subtitle in smaller size
-    titleSubHtml = ()=> 
-        if opt.titleSub? 
-            return ", <span>#{opt.titleSub}</span>" 
+    titleHtml = ()=>
+        if opt.title?
+            return " #{opt.title}"
         else return ""
-    # Global html    
+    # Subtitle in smaller size
+    titleSubHtml = ()=>
+        if opt.titleSub?
+            return ", <span>#{opt.titleSub}</span>"
+        else return ""
+    # Global html
     html = "<div class='titlePrimary'>
                 <h1>#{i18n.t(i18n_key)}#{titleHtml()}#{titleSubHtml()}</h1>
-            </div>" 
+            </div>"
     return new Handlebars.SafeString(html)
- 
+
 # Language button
 # Example: {{language_btn "en-GB"}}
 # When using this helper with a new country, make sure that the css CLASS of its flag corresponds to flag flag-#{property}. If not, modify the the flag.css file.
 Handlebars.registerHelper "language_btn", (property, options) ->
   options = options or {}
   opt = options.hash or {}
-  
+
   activeClass = ""
   activeClass = "class='active'" if property is opt.currentCultureCode
-  
-  html = 
+
+  html =
   "<div data-lang='#{property}' #{activeClass}>
         <img data-lang='#{property}' class='flag flag-#{property}'/>
     </div>"
   return new Handlebars.SafeString(html)
-  
+
 # Home page dashboard open
 # Example: {{open_dashboard}}
 Handlebars.registerHelper "open_dashboard", (label, options) ->
   options = options or {}
   opt = options.hash or {}
-  
-  html = 
+
+  html =
   "<div class='dashboard'>
     <div class='panel panel-default'>
         <div class='panel-body'>
         <h2>#{label}</h2>"
   return new Handlebars.SafeString(html)
-  
+
   # Home page dashboard close
 # Example: {{close_dashboard}}
-Handlebars.registerHelper "close_dashboard", () ->  
-  html = 
+Handlebars.registerHelper "close_dashboard", () ->
+  html =
   "         </div>
        </div>
   </div>"
   return new Handlebars.SafeString(html)
-  
+
  # Home page dashboard tile
 # Example: {{dashboard_tile count "translation_key" }}
 Handlebars.registerHelper "dashboard_tile", (value, i18n_key, options) ->
@@ -458,12 +456,12 @@ Handlebars.registerHelper "dashboard_tile", (value, i18n_key, options) ->
   cssColor = opt.classColor or ""
   cssPicto = opt.classPicto or ""
   link = opt.link or ""
-  html = 
+  html =
   "<div ondragstart='return false;' >
     <a href='#{link}'>
-        <div class='tile #{cssColor} #{cssPicto}'>        
+        <div class='tile #{cssColor} #{cssPicto}'>
             <span>#{value}</span>
-            <span>#{i18n.t(i18n_key)}</span>        
+            <span>#{i18n.t(i18n_key)}</span>
         </div>
     </a>
     </div>"
@@ -485,8 +483,8 @@ Handlebars.registerHelper "dashboard_paginer", (label, options) ->
   options = options or {}
   opt = options.hash or {}
   cssLeft = opt.classLeft or ""
-  cssRight = opt.classRight or ""  
-  html = 
+  cssRight = opt.classRight or ""
+  html =
   "<div class='dashboard-paginer' >
     <a class='#{cssLeft}' >#{Handlebars.helpers.fa_icon('fa-caret-left')}</a>
     <span>#{label}</span>
@@ -498,45 +496,45 @@ Handlebars.registerHelper "dashboard_paginer", (label, options) ->
 # Example: {{dashboard_link "#/site" }}
 Handlebars.registerHelper "dashboard_link", (link, options) ->
   options = options or {}
-  opt = options.hash or {}    
+  opt = options.hash or {}
   label = i18n.t('accueil.homeComposite.detailLink')
-  html = 
+  html =
   "<div class='dashboard-link' >
     <a href='#{link}' ><span>#{label}</span><span>#{Handlebars.helpers.fa_icon('fa-play-circle')}<span></a>
    </div>"
   return new Handlebars.SafeString(html)
- 
+
  # Home page dashboard counter title
 # Example: {{dashboard_counter_title 10 "ASSIGNED" }}
 Handlebars.registerHelper "dashboard_counter_title", (value, label, options) ->
   options = options or {}
-  opt = options.hash or {}      
-  html = 
+  opt = options.hash or {}
+  html =
   "<div class='dashboard-counter-title'>
     <span>#{value}</span>
     <span>#{label}</span>
    </div>"
   return new Handlebars.SafeString(html)
-  
+
  # Home page dashboard counter
 # Example: {{dashboard_counter count "translation_key" }}
 Handlebars.registerHelper "dashboard_counter", (value, total, i18n_key, options) ->
   options = options or {}
   opt = options.hash or {}
-  cssColor = opt.classColor or ""  
+  cssColor = opt.classColor or ""
   link = opt.link or ""
-  html = 
+  html =
   "<div class='dashboard-counter' ondragstart='return false;'>
     <a href='#{link}'>
         <div>
             <div class='#{cssColor}'>
                 <span>#{value}</span>
-                <span>/#{total}</span>     
+                <span>/#{total}</span>
             </div>
-            <span>#{i18n.t(i18n_key)}</span>        
+            <span>#{i18n.t(i18n_key)}</span>
         </div>
     </a>
-    </div>"    
+    </div>"
   return new Handlebars.SafeString(html)
 
   #Handlebars.registerHelper "dashboard_counter", (value, total, i18n_key, options) ->
@@ -595,7 +593,7 @@ Handlebars.registerHelper "steps", (activeStep, options) ->
     stepsDataLength = stepsData.length
     for data in stepsData
       value = value + generateLabel(data, +activeStep , stepsDataLength)
-    return value 
+    return value
   html = "<div class='steps'>#{genrateLabels()}</div>"
   return new Handlebars.SafeString(html)
 
@@ -605,7 +603,7 @@ Handlebars.registerHelper 'job_status_icon', (property, options)->
   console.log "Icone",opt.icon, @[opt.icon]
   icon = switch @[opt.icon]
     when 'admin' then 'fa-times-circle'
-    else 'fa-tags' 
+    else 'fa-tags'
   return  new Handlebars.SafeString("<div class='#{Handlebars.helpers.col 12}'>#{Handlebars.helpers.fa_icon icon}#{name}</div>")
 
 ###
@@ -633,7 +631,7 @@ Handlebars.registerHelper 'btn_toolbar', (options)->
 ###
 Handlebars.registerHelper 'panel', (title, options)->
     if _.isObject(title)
-      options = title 
+      options = title
       title = undefined
     title =  if not title? then "" else i18n.t(title)
     html = "<div class='panel panel-default'>
@@ -648,7 +646,7 @@ Handlebars.registerHelper 'panel', (title, options)->
 Handlebars.registerHelper 'page', (title, options)->
   options = options or {}
   opt = options.hash or {}
-  console.error("noTitleInYourTemplate")if not _.isString(title)    
+  console.error("noTitleInYourTemplate")if not _.isString(title)
   html = "
       <h1>#{i18n.t(title)}</h1>
       <div class='page-content'>
@@ -657,23 +655,7 @@ Handlebars.registerHelper 'page', (title, options)->
   "
   return html
 
-###
-  Helper pour uniformiser l'utilisation des formulaires.
-  Exemple: {{#criteria}}{{#form}} {{input_for "firstName"}} {{/form}}{{/criteria}}
-###
-Handlebars.registerHelper 'criteria', (title, options)->
-  options = options or {}
-  if _.isObject(title)
-      options = title 
-      title = undefined
-    title =  if not title? then "" else i18n.t(title)
-  html = "
-      <div class='criteria'>
-        <h2>#{title}</h2>
-        #{options.fn(@)}
-      </div>
-  "
-  return html
+require './criteria'
 
 # Create the default _opening_ html for table result. Works as a tag.
 # Works with _close_result_table_ helper.
@@ -686,7 +668,7 @@ Handlebars.registerHelper "result", (options)->
   elementTagName = if isTable then "tr" else "li"
   striped = if opt.striped? then opt.stripped else true
   cssClass = if isTable then defaults.cssClass.table else defaults.cssClass.list
-  if striped 
+  if striped
     cssClass = cssClass + "  table-striped"
   # Generate the header actions.
   tableHeaderActions = ()=>

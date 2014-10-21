@@ -1,2 +1,3 @@
 /**/
-var ResultsView = Fmk.Views.ResultsView;
+var ResultsView = Fmk.Views.SearchResultsView;
+module.exports = ResultsView.extend();
