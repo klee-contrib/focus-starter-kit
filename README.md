@@ -1,5 +1,7 @@
 ## Conventions
 
+Conf files [here](https://gist.github.com/pierr/9c35b3657c053d13d373)
+
 ### JS conventions
 
 - Functions starts with a lower case
@@ -7,7 +9,7 @@
 - Services function names
 - When you have an anonymous function to write: `function(event){ console.log(event.target);}` you have to name them: `function buttonConfirmHandler(event){ console.log(event.target);}`
 
-### Project conventions 
+### Project conventions
 
 #### Global conventions
 
@@ -23,9 +25,8 @@
 #### Models
 
 - The model is created only if there is a need: redefinition of metadatas, specific initialization function, processSum function, ...
-  
+
 
 #### Views
 
 - Composite View, precise in the child view that it is a composite child.
-

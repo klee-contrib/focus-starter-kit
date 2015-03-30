@@ -1,6 +1,6 @@
 {
   "author": "Klee Group",
-  "name": "nantissement",
+  "name": "focus-starter-kit",
   "description": "front-end-spa",
   "version": "0.0.1",
   "homepage": "",
@@ -20,10 +20,8 @@
     "appcache": "0.0.4",
     "clean-css-brunch": "^1.7.1",
     "css-brunch": "^1.7.0",
-    "javascript-brunch": "^1.7.1",
     "less-brunch": "^1.8.1",
     "react": "^0.12.2",
-    "sass-brunch": "^1.8.9",
     "uglify": "^0.1.1"
   },
   "main": "index.js",
