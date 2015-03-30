@@ -1,0 +1,83 @@
+@sidebar-width:100px;
+@background-color: #EEEEEE;
+@border-color: #c3c3c3;
+
+body{
+  background-color: #EEEEEE;
+  font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+}
+#leftMenu {
+  height: 100%;
+  width: @sidebar-width;
+  top:0;
+  left:0;
+  position: fixed;
+  background-color: #1A3481;
+  text-align: center;
+  padding-top: 10px;
+}
+#leftMenu img {
+  width: 40px;
+  height: 40px;
+  margin: 20px 0 20px 10px;
+  cursor: pointer;
+ // border: 1px dashed white;
+}
+#logo, #search {
+  width: @sidebar-width;
+  cursor: pointer;
+}
+#logo:hover, #search:hover {
+  background-color: @background-color;
+}
+#container {
+  margin-left: @sidebar-width;
+  padding:0;
+}
+#header {
+  height: 20px;
+  /*text-align: right;
+  border-bottom: 1px @border-color solid;*/
+}
+
+#page {
+  margin: 0;
+  padding: 10px;
+}
+
+.title-level-1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #824A34;
+}
+
+.title-level-2 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.title-level-3 {
+  font-size: 14px;
+}
+
+
+.movie-details{
+  padding: 10px 0 20px 0;
+}
+.movie-detail-line{
+  width: 100%;
+  display: inline-block;
+}
+.details-label-name {
+  float: left;
+  width:150px;
+  text-align: right;
+  font-weight: bold;
+}
+.details-label-value{
+  float: left;
+  padding-left: 20px;
+}
+.clear{
+  clear: both;
+}
