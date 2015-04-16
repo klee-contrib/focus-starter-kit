@@ -20,21 +20,19 @@
     "appcache": "0.0.4",
     "clean-css-brunch": "^1.7.1",
     "css-brunch": "^1.7.0",
-    "less-brunch": "^1.8.1",
     "react": "^0.12.2",
+    "sass-brunch": "^1.8.10",
     "uglify": "^0.1.1"
-  },
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "license": "MIT",
-  "devDependencies": {
     "brunch": "^1.7.20",
     "eslint": "^0.17.1",
     "javascript-brunch": "^1.7.1",
     "react-brunch": "^1.0.7",
     "sass-brunch": "^1.8.9"
   },
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "license": "MIT",
   "private": true
 }
