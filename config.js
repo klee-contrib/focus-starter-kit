@@ -11,7 +11,7 @@ exports.config = {
       },
       order: {
           before: [
-            'vendor/react.js',
+            'vendor/react.min.js',
             'vendor/jquery-1.11.2.min.js',
             'vendor/showdown.js',
             'vendor/bootstrap.min.js',
