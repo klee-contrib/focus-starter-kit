@@ -1,7 +1,7 @@
 exports.config = {
   sourceMaps: false,
   paths: {
-    //"public": '../api/src/main/webapp/static/' //uncomment this lint to copy to your app server static files.
+      "public": '../GestionAnnuaire/spa'
   },
   files: {
     javascripts: {
@@ -10,7 +10,19 @@ exports.config = {
         'javascripts/vendor.js': /^(bower_components|vendor)/
       },
       order: {
-        before: ['vendor/zepto.js', 'vendor/lodash.js', 'vendor/focus.js', 'vendor/focus-components.js']
+          before: [
+            'vendor/react.js',
+            'vendor/jquery-1.11.2.min.js',
+            'vendor/showdown.js',
+            'vendor/bootstrap.min.js',
+            'vendor/ripples.min.js',
+            'vendor/material.min.js',
+            /*'vendor/zepto.js',*/
+            'vendor/lodash.js',
+            'vendor/focus.js',
+            'vendor/focus-components.js'
+          ],
+          after: ['vendor/picker.js']
       }
     },
     stylesheets: {
@@ -34,7 +46,12 @@ exports.config = {
       removeEmpty: true
     },
     react: {
-      harmony: true
+        transformOptions: {
+            harmony: true,
+            sourceMap: false,
+            stripTypes: false
+        },
+        babel: false
     },
     sass: {
       mode: 'ruby'
