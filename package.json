@@ -14,16 +14,22 @@
   },
   "scripts": {
     "start": "brunch watch --server",
-    "test": "brunch test"
+    "test": "brunch test",
+    "postinstall": "scripts/install.js"
   },
   "dependencies": {
     "appcache": "0.0.4",
     "babel-brunch": "^5.1.1",
+    "backbone": "^1.1.2",
+    "bootstrap": "^3.3.4",
     "brunch": "^1.7.20",
     "clean-css-brunch": "^1.7.1",
     "css-brunch": "^1.7.0",
     "eslint": "^0.17.1",
+    "i18next": "https://github.com/i18next/i18next.git",
     "javascript-brunch": "^1.7.1",
+    "jquery": "^2.1.4",
+    "lodash": "^3.8.0",
     "react": "^0.12.2",
     "react-brunch": "^1.0.9",
     "sass-brunch": "^1.8.9",
