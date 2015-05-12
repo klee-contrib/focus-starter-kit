@@ -6,14 +6,17 @@ var files = [
   'backbone/backbone.js',
   //'lodash/',
   'bootstrap/dist/css/bootstrap.css',
-  'bootstrap/dist/js/bootstrap.js'
-
+  'bootstrap/dist/js/bootstrap.js',
+  'focusjs/dist/focus.js',
+  'focusjs-components/dist/js/focus-components.js',
+  'focusjs-components/dist/css/focus-components.css'
   ];
 
 
 var assets = [
   //Fonts
-  'bootstrap/dist/fonts/glyphicons-halflings-regular.eot'
+  'bootstrap/dist/fonts/glyphicons-halflings-regular.eot'//,
+  //'focusjs-components/dist/'
 ];
 //Copy dependencies (js / css)
 files.map(function(path){

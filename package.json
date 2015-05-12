@@ -26,6 +26,8 @@
     "clean-css-brunch": "^1.7.1",
     "css-brunch": "^1.7.0",
     "eslint": "^0.17.1",
+    "focusjs": "^0.6.0",
+    "focusjs-components": "^0.1.4",
     "i18next": "https://github.com/i18next/i18next.git",
     "javascript-brunch": "^1.7.1",
     "jquery": "^2.1.4",
