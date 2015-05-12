@@ -15,7 +15,7 @@
   "scripts": {
     "start": "brunch watch --server",
     "test": "brunch test",
-    "postinstall": "scripts/install.js"
+    "postinstall": "node scripts/install.js"
   },
   "dependencies": {
     "appcache": "0.0.4",
@@ -28,7 +28,7 @@
     "eslint": "^0.17.1",
     "focusjs": "^0.6.0",
     "focusjs-components": "^0.1.4",
-    "i18next": "https://github.com/i18next/i18next.git",
+    "font-awesome": "^4.3.0",
     "javascript-brunch": "^1.7.1",
     "jquery": "^2.1.4",
     "lodash": "^3.8.0",
