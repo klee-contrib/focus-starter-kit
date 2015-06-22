@@ -1,11 +1,5 @@
-npm install
-cd node_modules/focus
-npm install
-gulp browserify
-cd ../..
-cd node_modules/focus-components
-npm install
-gulp componentify
-gulp build
-cd ../..
-
+npm install --save focusjs focusjs-components
+cp node_modules/focusjs/dist/focus.js vendor/
+cp node_modules/focusjs-components/dist/js/focus-components.js vendor/
+cp node_modules/focusjs-components/dist/css/focus-components.css vendor/
+cp node_modules/focusjs-components/dist/img/*.{svg,png,gif} app/assets/img
