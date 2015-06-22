@@ -1,5 +1,7 @@
 var fs = require('fs');
 var vendor = './vendor/';
+var fontsDir = './app/assets/fonts';
+
 var files = [
   'react/dist/react.js',
   'jquery/dist/jquery.js',
@@ -33,6 +35,10 @@ var files = [
   'font-awesome/css/font-awesome.css'
 ];
 
+
+if (!fs.existsSync(fontsDir)){
+  fs.mkdirSync(fontsDir);
+}
 
 var fonts = [
   //Fonts
