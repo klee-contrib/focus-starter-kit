@@ -15,32 +15,43 @@
   "scripts": {
     "start": "brunch watch --server",
     "test": "brunch test",
+    "watch": "./node_modules/brunch/bin/brunch w",
+    "serve": "./node_modules/brunch/bin/brunch w -s",
     "postinstall": "node scripts/install.js"
   },
   "dependencies": {
-    "appcache": "0.0.4",
-    "babel-brunch": "^5.1.1",
-    "backbone": "^1.1.2",
+    "backbone": "^1.2.0",
     "bootstrap": "^3.3.4",
-    "brunch": "^1.7.20",
-    "clean-css-brunch": "^1.7.1",
-    "css-brunch": "^1.7.0",
-    "eslint": "^0.17.1",
-    "focusjs": "^0.6.0",
-    "focusjs-components": "^0.1.4",
+    "bootstrap-material": "^0.1.5",
+    "daterangepicker": "0.0.3",
+    "focusjs": "^0.6.3",
+    "focusjs-components": "^0.2.0",
     "font-awesome": "^4.3.0",
-    "javascript-brunch": "^1.7.1",
+    "immutable": "^3.7.2",
     "jquery": "^2.1.4",
     "lodash": "^3.8.0",
-    "react": "^0.12.2",
-    "react-brunch": "^1.0.9",
-    "sass-brunch": "^1.8.9",
-    "uglify": "^0.1.1"
+    "moment": "^2.10.3",
+    "native-promise-only": "^0.8.0-a",
+    "numeral": "^1.5.3",
+    "react": "^0.13.1",
+    "showdown": "^1.0.2"
   },
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "license": "MIT",
+  "devDependencies": {
+    "appcache": "0.0.4",
+    "brunch": "^1.8.3",
+    "babel-brunch": "^5.1.2",
+    "clean-css-brunch": "^1.7.1",
+    "css-brunch": "^1.7.0",
+    "eslint": "^0.17.1",
+    "javascript-brunch": "^1.7.1",
+    "less-brunch": "^1.8.1",
+    "react-brunch": "^1.0.9",
+    "sass-brunch": "^1.8.10"
+  },
   "private": true
 }
