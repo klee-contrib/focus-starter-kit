@@ -1,32 +1,45 @@
 exports.config = {
   sourceMaps: false,
+  /*npm: {
+   enabled: true
+   },*/
   paths: {
-      "public": '../GestionAnnuaire/spa'
+    "public": '../api/src/main/webapp/static/'
   },
   files: {
     javascripts: {
       joinTo: {
         'javascripts/app.js': /^app/,
-        'javascripts/vendor.js': /^(bower_components|vendor)/
+        'javascripts/vendor.js': /^(bower_components|vendor|node_modules)/
       },
       order: {
-          before: [
-            'vendor/react.min.js',
-            'vendor/jquery-1.11.2.min.js',
-            'vendor/showdown.js',
-            'vendor/bootstrap.min.js',
-            'vendor/ripples.min.js',
-            'vendor/material.min.js',
-            /*'vendor/zepto.js',*/
-            'vendor/lodash.js',
-            'vendor/focus.js',
-            'vendor/focus-components.js'
-          ],
-          after: ['vendor/picker.js']
+        before: [
+          'vendor/npo.js',
+          'vendor/react.js',
+          'vendor/jquery.js',
+          'vendor/lodash.js',
+          'vendor/backbone.js',
+          'vendor/bootstrap.js',
+          'vendor/material.js',
+          'vendor/ripples.js',
+          'vendor/focus.js',
+          'vendor/focus-components.js',
+          'vendor/moment.min.js',
+          'vendor/daterangepicker.js'
+        ],
+        after: ['vendor/picker.js']
       }
     },
     stylesheets: {
-      joinTo: 'stylesheets/app.css'
+      joinTo: 'stylesheets/app.css',
+      order: {
+        before: [
+          'app/styles/font.scss',
+          'vendor/bootstrap.css',
+          'vendor/material.css',
+          'vendor/ripples.css',
+        ]
+      }
     },
     templates: {
       joinTo: 'javascripts/app.js'
@@ -46,15 +59,10 @@ exports.config = {
       removeEmpty: true
     },
     react: {
-        transformOptions: {
-            harmony: true,
-            sourceMap: false,
-            stripTypes: false
-        },
-        babel: false
-    },
-    sass: {
-      mode: 'ruby'
+      transformOptions: {
+        sourceMap: false
+      },
+      babel: true
     },
     appcache: {
       staticRoot: '/static',
