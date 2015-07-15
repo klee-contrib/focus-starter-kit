@@ -26,6 +26,7 @@ require('./definition-initializer');
 require('./reference-list-initializer').initialize();
 require('./query-store-initializer').initialize();
 require('./i18n-initializer');
+require('./user-initializer');
 
 //Initialisation du layout
 //
