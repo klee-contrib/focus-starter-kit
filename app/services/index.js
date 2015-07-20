@@ -1,3 +1,3 @@
 module.exports= {
-    refernce : require('./reference')
+    reference: require('./reference')
 };

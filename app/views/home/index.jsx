@@ -5,6 +5,7 @@ let SummarySearch = require('../common/summary-search');
 // Composants du cartouche
 
 let ApplicationTitle = React.createClass({
+    displayName: 'application-title',
     render() {
         return (
             <span className="page-title">TRACKIT</span>
@@ -14,7 +15,7 @@ let ApplicationTitle = React.createClass({
 
 let searchAction = require('action/search').search;
 
-let navigateAdvancedSearch = function () {
+let navigateAdvancedSearch = () => {
     let query = Focus.search.builtInStore.queryStore.getQuery();
     let scope = Focus.search.builtInStore.queryStore.getScope();
     let route = `#search/advanced/scope/${scope}${query ? '/query/' + query : ''}`;

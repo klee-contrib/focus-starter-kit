@@ -1,9 +1,9 @@
 module.exports = {
-  'type': 'text',
-  validator: [{
-    type: 'string',
-    options: {
-      maxLength: 100
-    }
-  }]
+    type: 'text',
+    validator: [{
+        type: 'string',
+        options: {
+            maxLength: 100
+        }
+    }]
 };

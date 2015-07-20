@@ -1,5 +1,6 @@
-var root = ".";
-var url = Focus.util.url.builder;
+const root = '.';
+let url = Focus.util.url.builder;
+
 module.exports = {
-    getScopes: url(root+"/scopes", 'GET')
+    getScopes: url(root + '/scopes', 'GET')
 };
