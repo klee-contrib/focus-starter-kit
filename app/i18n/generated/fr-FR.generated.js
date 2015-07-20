@@ -4,7 +4,7 @@
  */
 
 module.exports = {
-    "user": {
-        "userId" : "User id"
+    user: {
+        userId: "User id"
     }
 };

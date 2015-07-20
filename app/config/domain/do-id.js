@@ -1,6 +1,6 @@
 module.exports = {
-  type: 'number',
-  validator: [{
-    'type': 'number'
-  }]
+    type: 'number',
+    validator: [{
+        type: 'number'
+    }]
 };

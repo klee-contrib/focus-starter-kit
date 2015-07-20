@@ -5,5 +5,5 @@ module.exports = {
         save: "Sauvegarder",
         advancedSearch: "Recherche avancée",
         back: "Retour"
-    },
+    }
 };

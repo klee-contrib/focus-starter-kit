@@ -6,9 +6,10 @@ let menuMixin = Focus.components.application.menu.mixin;
 let Popin = Focus.components.application.popin.component;
 
 let Menu = React.createClass({
+    displayName: 'menu',
     mixins: [menuMixin],
     renderContent() {
-        if (this.props.type === 'menuLeft') {
+        if ('menuLeft' === this.props.type) {
             return this.props.links.map(function (link) {
                 if (!link.img) {
                     return <a href={link.url}>link.title</a>;
@@ -23,6 +24,7 @@ let Menu = React.createClass({
 
 
 let Wrapper = React.createClass({
+    displayName: 'menu-wrapper',
     _getItems() {
         return ([
             {
@@ -35,27 +37,7 @@ let Wrapper = React.createClass({
                 icon: 'search',
                 name: 'Search',
                 onClick: this._toggleQuickSearchPopin
-            },/*
-            {
-                icon: 'video-camera',
-                route: '',
-                onClick: this._closeQuickSearchPopin
-            },
-            {
-                icon: 'user',
-                route: '',
-                onClick: this._closeQuickSearchPopin
-            },
-            {
-                icon: 'cog',
-                route: '',
-                onClick: this._closeQuickSearchPopin
-            },
-            {
-                icon: 'info-circle',
-                route: '',
-                onClick: this._closeQuickSearchPopin
-            }*/
+            }
         ]);
     },
     _toggleQuickSearchPopin() {
@@ -68,14 +50,13 @@ let Wrapper = React.createClass({
         return (
             <div>
                 <Menu
+                    direction='vertical'
+                    items={this._getItems()}
                     open={true}
                     position='left'
-                    direction='vertical'
-                    title=''
-                    items={this._getItems()}
                     ref='menu'
-                    >
-                </Menu>
+                    title=''
+                />
             </div>
         );
     }

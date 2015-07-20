@@ -1,7 +1,7 @@
 
 module.exports = {
-  'type': 'text',
-  validator: [{type: 'string', options: {
-    maxLength: 50
-  }}]
+    type: 'text',
+    validator: [{type: 'string', options: {
+        maxLength: 50
+    }}]
 };

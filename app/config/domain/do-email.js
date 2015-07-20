@@ -1,6 +1,6 @@
-module.exports={
-  'type': 'email',
-  validator: [{
-    'type': 'email'
-  }]
+module.exports = {
+    type: 'email',
+    validator: [{
+        type: 'email'
+    }]
 };
