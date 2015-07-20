@@ -49,8 +49,6 @@
     "css-brunch": "^1.7.0",
     "eslint": "^0.17.1",
     "javascript-brunch": "^1.7.1",
-    "less-brunch": "^1.8.1",
-    "react-brunch": "^1.0.9",
     "sass-brunch": "^1.8.10"
   },
   "private": true
