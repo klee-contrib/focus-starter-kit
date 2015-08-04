@@ -6,9 +6,9 @@ exports.config = {
   paths: {
     'public': '../api/src/main/webapp/static/'
   },
-  server: {
+ /* server: {
      path: './scripts/start_tomcat.js'
-  },
+ },*/
   files: {
         javascripts: {
             joinTo: {

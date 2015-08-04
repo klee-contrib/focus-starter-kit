@@ -2,7 +2,7 @@ module.exports = {
     type: 'text',
     decorator: 'datePicker',
     style: 'date right',
-    format: {
+    formatter: {
         value: function getValue(data) {
             return data;
         }

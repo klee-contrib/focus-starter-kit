@@ -24,3 +24,4 @@ Properties/
 *.sln
 public
 .idea
+vendor

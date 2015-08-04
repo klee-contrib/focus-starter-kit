@@ -10,7 +10,5 @@ module.exports = {
     DO_LABEL_SHORT: require('./do-label-short'),
     DO_LAST_NAME: require('./do-last-name'),
     DO_PASSWORD: require('./do-password'),
-    DO_YES_NO: require('./do-yes-no'),
-    DO_AMOUNT: require('./do-amount'),
-    DO_QUANTITY: require('./do-quantity')
+    DO_YES_NO: require('./do-yes-no')
 };
