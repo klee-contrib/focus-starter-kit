@@ -29,7 +29,7 @@ Please don't hesitate to report any bug you'll find on issues's page of each con
 - [Focus](https://github.com/KleeGroup/focus/issues)
 - [Focus-components](https://github.com/KleeGroup/focus-components/issues)
 
-![image](http://cdn.makeagif.com/media/8-06-2015/0auAwS.gif)
+![issue](http://cdn.makeagif.com/media/8-06-2015/G1PLU7.gif)
 
 
 ![http://media.giphy.com/media/a3Ym0AUSAsHfi/giphy.gif](http://media.giphy.com/media/a3Ym0AUSAsHfi/giphy.gif)
