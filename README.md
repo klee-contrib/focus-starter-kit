@@ -6,7 +6,7 @@ Your maybe asking how should I proceed ?
 
 ![https://camo.githubusercontent.com/80cc3a0d1c25c9b535f208489e37ea1cda5ac735/687474703a2f2f63646e32392e656c6974656461696c792e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031342f30382f616e696769665f656e68616e6365642d32353238332d313430363037303831342d312e676966](https://camo.githubusercontent.com/80cc3a0d1c25c9b535f208489e37ea1cda5ac735/687474703a2f2f63646e32392e656c6974656461696c792e636f6d2f77702d636f6e74656e742f75706c6f6164732f323031342f30382f616e696769665f656e68616e6365642d32353238332d313430363037303831342d312e676966)
 
-Starter kit steps to follow:
+Just follow these steps :
 - Initialize your project structure: 
   - An **api** folder which will contain your api (node, .NET, Java, ...)
   - A **ui** folder which will contain the focus application
