@@ -14,6 +14,7 @@ Starter kit steps to follow:
 - Run the local brunch watcher to start coding on your app `npm run watch`, you should see a running watcher in your console.
 
 You should see something like that:
+![image](https://cloud.githubusercontent.com/assets/286966/9111065/6e218124-3c43-11e5-8ff3-ab3943e2bb08.png)
 
 
 
