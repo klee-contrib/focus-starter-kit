@@ -12,6 +12,7 @@ Starter kit steps to follow:
 - Inside the **ui** folder, copy the content of this repository , you can do one of the following options:
   -  `git clone https://github.com/KleeGroup/focus-starter-kit.git`  and `rm -rf .git` to remove the git repositorty information
   -  Click on the download button and copy the directory inside your ui directory
+
 ![image](https://cloud.githubusercontent.com/assets/286966/9111118/eb37a602-3c43-11e5-9aa5-485d7bf23f42.png)
 - Install your node dependencies: `npm install` in the ui directory
 - Check the `brunch.config` file and check the line `paths.public` to see where the focus's application content is copy
