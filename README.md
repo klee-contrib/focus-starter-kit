@@ -29,3 +29,6 @@ You should see something like that:
 
 
 Please don't hesitate to report any bug you'll find on issues's page of each concerned project.
+- [Focus](https://github.com/KleeGroup/focus/issues)
+- [Focus-components](https://github.com/KleeGroup/focus-components/issues)
+
