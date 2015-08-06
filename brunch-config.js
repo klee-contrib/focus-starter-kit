@@ -1,8 +1,5 @@
 exports.config = {
   sourceMaps: false,
-  /*npm: {
-    enabled: true
-  },*/
   paths: {
     'public': '../api/src/main/webapp/static/'
   },
