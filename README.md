@@ -12,7 +12,7 @@ Starter kit steps to follow:
 - Install your node dependencies: `npm install` in the ui directory
 - Check the `brunch.config` file and check the line `paths.public` to see where the focus's application content is copy
 - Run the local brunch watcher to start coding on your app `npm run watch`, you should see a running watcher in your console.
-- That's all
+![http://media.giphy.com/media/a3Ym0AUSAsHfi/giphy.gif](http://media.giphy.com/media/a3Ym0AUSAsHfi/giphy.gif)
 
 
 Please don't hesitate to report any bug you'll find on issues's page of each concerned project.
