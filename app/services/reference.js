@@ -14,7 +14,6 @@ module.exports = {
              });
     },
     getCivility(){
-        console.log('civility loading');
         return new Promise((resolve, reject)=>{
             dbConnexion.child(CIVILITY).on('value', (data)=>{
                 resolve(data.val());
