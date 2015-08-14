@@ -1,7 +1,7 @@
 exports.config = {
   sourceMaps: false,
   paths: {
-    'public': '../api/src/main/webapp/static/'
+    //'public': '../api/src/main/webapp/static/'
   },
  /* server: {
      path: './scripts/start_tomcat.js'
