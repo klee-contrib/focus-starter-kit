@@ -21,6 +21,7 @@ $(document).on('click', 'a:not([data-bypass])', function touchHandler(evt) {
 
 
 //Initialisation des configurations
+require('./locale-initializer');
 require('./db-initializer');
 require('./domain-initializer');
 require('./definition-initializer');
