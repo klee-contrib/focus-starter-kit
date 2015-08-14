@@ -41,5 +41,15 @@ module.exports = {
                 resolve(data.val());
             });
         });
+    },
+    saveContactInformations(json){
+        let {id} = json;
+        let rawData = _.omit(json,'informations')
+        return new Promise((resolve, reject)=>{
+            dbConnexion.child(`${CONTACT}/${id}/informations`).set(rawData, (data)=>{
+                console.info('Save contact', data);
+                resolve(rawData);
+            });
+        });
     }
 };

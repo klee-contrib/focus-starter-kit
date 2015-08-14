@@ -1,12 +1,17 @@
 let actionBuilder = Focus.application.actionBuilder;
-let contactSvc = require('../services/contact');
+let {getContactInformationsById, saveContactInformations} = require('../services/contact');
 module.exports = {
     //All actions for informations.
     informations: {
         load: actionBuilder({
-            service: contactSvc.getContactInformationsById,
+            service: getContactInformationsById,
             node: 'informations',
             status: 'loaded'
+        }),
+        save: actionBuilder({
+            service: saveContactInformations,
+            node: 'informations',
+            status: 'saved'
         })
     }
 };

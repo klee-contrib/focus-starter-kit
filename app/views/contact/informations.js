@@ -12,6 +12,9 @@ let InformationComponent = React.createClass({
         return (
             <Block title='contact.informations.title' actions={this._renderActions}>
                 {this.fieldFor('firstName')}
+                {this.fieldFor('lastName')}
+                {this.fieldFor('bio')}
+                {this.fieldFor('job')}
             </Block>
         );
     }
