@@ -34,5 +34,12 @@ module.exports = {
                 resolve(data.val());
             });
         });
+    },
+    getContactInformationsById(id){
+        return new Promise((resolve, reject)=>{
+            dbConnexion.child(`${CONTACT}/${id}/informations`).on('value', (data)=>{
+                resolve(data.val());
+            });
+        });
     }
 };

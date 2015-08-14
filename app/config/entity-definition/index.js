@@ -3,5 +3,9 @@
  * @type {Object}
  */
 module.exports = {
-
+    contactInformations:{
+        firstName: {
+            domain: 'DO_TEXT'
+        }
+    }
 };
