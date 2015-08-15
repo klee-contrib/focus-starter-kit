@@ -1,7 +1,8 @@
 const NB_CONTACT = 3000;
 let contacts = {};
-let {name, phone, lorem} = faker;
+let {name, phone, lorem, address} = faker;
 let {firstName, lastName, jobTitle} = name;
+let {streetAddress, zipCode, city, country} = address;
 for(let i=0 ; i < NB_CONTACT ; i++ ){
     let id = i;
     contacts[id] = {
@@ -11,12 +12,16 @@ for(let i=0 ; i < NB_CONTACT ; i++ ){
                 lastName: lastName(),
                 bio: lorem.paragraph(),
                 job: jobTitle()
-        }
+            },
+            address: {
+                line1: streetAddress(),
+                zipCode: zipCode(),
+                city: city(),
+                country: country()
+            }
     };
 }
 
-let URL = require('../../config/server');
-let fetch = Focus.network.fetch;
 let dbConnexion = require('../config/db-connexion');
 const CONTACT = 'entity/contact';
 
