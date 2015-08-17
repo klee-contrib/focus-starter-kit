@@ -1,1 +1,0 @@
-faker.locale = 'fr';

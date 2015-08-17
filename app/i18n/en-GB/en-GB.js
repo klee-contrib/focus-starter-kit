@@ -38,30 +38,7 @@ module.exports = {
     quickSearch: {
         title: 'Quick search'
     },
-    contact: {
-        informations: {
-            title: 'Informations'
-        },
-        address: {
-            title: 'Address'
-        }
-    },
-    /**
-     *
-     * @type {Object}
-     */
-    contactInformations: {
-            firstName: 'Nom',
-            lastName: 'Prénom',
-            bio: 'Bio',
-            job: 'Travail'
-    },
-    contactAddress: {
-            line1: 'Line 1',
-            zipCode: 'FirstName',
-            country: 'Bio',
-            phone: 'Travail',
-            latitude: 'Latitude',
-            longitude: 'Longitude'
+    'quick-search': {
+        title: 'Quick search'
     }
 };
