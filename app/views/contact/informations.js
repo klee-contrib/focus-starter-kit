@@ -10,7 +10,7 @@ let InformationComponent = React.createClass({
     stores: [{store: contactStore, properties: ['informations']}],
     renderContent(){
         return (
-            <Block title='contact.informations.title' actions={this._renderActions}>
+            <Block actions={this._renderActions} title='contact.informations.title'>
                 {this.fieldFor('firstName')}
                 {this.fieldFor('lastName')}
                 {this.fieldFor('bio')}

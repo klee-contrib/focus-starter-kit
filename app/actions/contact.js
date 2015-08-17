@@ -1,5 +1,13 @@
-let actionBuilder = Focus.application.actionBuilder;
-let {getContactInformationsById, saveContactInformations} = require('../services/contact');
+//Get focus action's builder.
+const actionBuilder = Focus.application.actionBuilder;
+let {
+    //Informations services.
+    getContactInformationsById, saveContactInformations,
+    //Address services.
+    getContactAddressById, saveContactAddress
+
+} = require('../services/contact');
+//exports all actions.
 module.exports = {
     //All actions for informations.
     informations: {
@@ -11,6 +19,19 @@ module.exports = {
         save: actionBuilder({
             service: saveContactInformations,
             node: 'informations',
+            status: 'saved'
+        })
+    },
+    //All actions for address.
+    address: {
+        load: actionBuilder({
+            service: getContactAddressById,
+            node: 'address',
+            status: 'loaded'
+        }),
+        save: actionBuilder({
+            service: saveContactAddress,
+            node: 'address',
             status: 'saved'
         })
     }

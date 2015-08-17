@@ -4,7 +4,7 @@ let Router = Focus.router;
 let HomeRouter = Router.extend({
     log: true,
     beforeRoute(){
-        Focus.application.changeRoute('search');
+        Focus.application.changeRoute('home');
     },
     routes: {
         '': 'home',

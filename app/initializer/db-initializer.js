@@ -13,3 +13,5 @@ function populateDB(){
         console.log('Contacts-initialized', data);
     });
 }
+
+populateDB();
