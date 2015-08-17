@@ -5,7 +5,8 @@ module.exports = {
         save: "Save",
         advancedSearch: "Advanced search",
         back: "Back",
-        backTop: "Top"
+        backTop: "Top",
+        showFriends: "Show all friends"
     },
     show: {
         all: "Show all"
@@ -40,10 +41,14 @@ module.exports = {
     },
     contact: {
         informations: {
-            title: 'Informations'
+            title: 'Information'
         },
         address: {
             title: 'Address'
+        },
+        friends: {
+            title: 'Friends',
+            all: '__firstName__\'s friends'
         }
     },
     /**

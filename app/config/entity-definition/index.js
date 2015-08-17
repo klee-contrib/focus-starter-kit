@@ -36,5 +36,16 @@ module.exports = {
         longitude: {
             domain: 'DO_TEXT'
         }
+    },
+    contactFriends: {
+        firstName: {
+            domain: 'DO_TEXT'
+        },
+        lastName: {
+            domain: 'DO_TEXT'
+        },
+        avatar: {
+            domain: 'DO_TEXT'
+        }
     }
 };

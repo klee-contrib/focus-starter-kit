@@ -4,7 +4,9 @@ let {
     //Informations services.
     getContactInformationsById, saveContactInformations,
     //Address services.
-    getContactAddressById, saveContactAddress
+    getContactAddressById, saveContactAddress,
+    //Friends services.
+    getContactFriendsById
 
 } = require('../services/contact');
 //exports all actions.
@@ -33,6 +35,14 @@ module.exports = {
             service: saveContactAddress,
             node: 'address',
             status: 'saved'
+        })
+    },
+    //All actions for friends.
+    friends: {
+        load: actionBuilder({
+            service: getContactFriendsById,
+            node: 'friends',
+            status: 'loaded'
         })
     }
 };

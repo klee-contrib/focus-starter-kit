@@ -1,14 +1,24 @@
 const NB_CONTACT = 3000;
+const NB_FRIENDS = 30;
 let contacts = {};
-let {name, phone, lorem, address} = faker;
+let {name, image, phone, lorem, address} = faker;
 let {firstName, lastName, jobTitle} = name;
 let {streetAddress, zipCode, city, country, latitude, longitude} = address;
 let {phoneNumber} = phone;
+let {avatar} = image;
+
 for(let i=0 ; i < NB_CONTACT ; i++ ){
-    let id = i;
-    contacts[id] = {
+    let friends = [];
+    for (let j = 0; j < NB_FRIENDS; j++) {
+        friends.push({
+            firstName: firstName(),
+            lastName: lastName(),
+            avatar: avatar()
+        });
+    }
+    contacts[i] = {
             informations: {
-                id: id,
+                id: i,
                 firstName: firstName(),
                 lastName: lastName(),
                 bio: lorem.paragraph(),
@@ -22,7 +32,8 @@ for(let i=0 ; i < NB_CONTACT ; i++ ){
                 phone: phoneNumber(),
                 latitude: latitude(),
                 longitude: longitude()
-            }
+            },
+            friends
     };
 }
 
@@ -105,5 +116,17 @@ module.exports = {
                 resolve(rawData);
             });
         });
-    }
+    },
+    /**
+     * Get the friends node from a contact.
+     * @param  {string} id - Idnetifier of the contact.
+     * @return {array}    - The fiends of the contact.
+     */
+    getContactFriendsById(id){
+        return new Promise((resolve, reject)=>{
+            dbConnexion.child(`${CONTACT}/${id}/friends`).on('value', (data)=>{
+                resolve(data.val());
+            });
+        });
+    },
 };

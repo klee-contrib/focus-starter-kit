@@ -3,5 +3,6 @@
  */
 module.exports = new Focus.store.CoreStore({definition: {
         informations: 'informations',
-        address: 'address'
+        address: 'address',
+        friends: 'friends'
 }});
