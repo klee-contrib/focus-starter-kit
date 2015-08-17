@@ -2,7 +2,8 @@ const NB_CONTACT = 3000;
 let contacts = {};
 let {name, phone, lorem, address} = faker;
 let {firstName, lastName, jobTitle} = name;
-let {streetAddress, zipCode, city, country} = address;
+let {streetAddress, zipCode, city, country, latitude, longitude} = address;
+let {phoneNumber} = phone;
 for(let i=0 ; i < NB_CONTACT ; i++ ){
     let id = i;
     contacts[id] = {
@@ -17,7 +18,10 @@ for(let i=0 ; i < NB_CONTACT ; i++ ){
                 line1: streetAddress(),
                 zipCode: zipCode(),
                 city: city(),
-                country: country()
+                country: country(),
+                phone: phoneNumber(),
+                latitude: latitude(),
+                longitude: longitude()
             }
     };
 }

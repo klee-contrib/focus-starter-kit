@@ -3,31 +3,37 @@
  * @type {Object}
  */
 module.exports = {
-    contactInformations:{
+    contactInformations: {
         firstName: {
             domain: 'DO_TEXT'
         },
-        lastName:{
+        lastName: {
             domain: 'DO_TEXT'
         },
-        bio:{
+        bio: {
             domain: 'DO_TEXT'
         },
-        job:{
+        job: {
             domain: 'DO_TEXT'
         }
     },
-    contactAddress:{
-        line1:{
+    contactAddress: {
+        line1: {
             domain: 'DO_TEXT'
         },
-        zipCode:{
+        zipCode: {
             domain: 'DO_TEXT'
         },
-        country:{
+        country: {
             domain: 'DO_TEXT'
         },
-        job:{
+        phone: {
+            domain: 'DO_TEXT'
+        },
+        latitude: {
+            domain: 'DO_TEXT'
+        },
+        longitude: {
             domain: 'DO_TEXT'
         }
     }
