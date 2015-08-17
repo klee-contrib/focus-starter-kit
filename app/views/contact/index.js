@@ -2,6 +2,7 @@
 let {types} = Focus.component;
 let Informations = require('./informations');
 let Address = require('./address');
+let Friends = require('./friends-block');
 
 //Page composite.
 let ContactDetail = React.createClass({
@@ -15,6 +16,7 @@ let ContactDetail = React.createClass({
             <div className='page-deatil-contact'>
                 <Informations id={id} />
                 <Address id={id} />
+                <Friends id={id} />
             </div>
       );
     }
