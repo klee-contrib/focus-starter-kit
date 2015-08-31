@@ -1,16 +1,24 @@
+// Dependencies
+
+const {types} = Focus.component;
+
 // Mixins
-let menuMixin = Focus.components.application.menu.mixin;
+
+const menuMixin = Focus.components.application.menu.mixin;
 
 // Components
 
-let Popin = Focus.components.application.popin.component;
-
-let Menu = React.createClass({
+const Menu = React.createClass({
     displayName: 'menu',
     mixins: [menuMixin],
+    propTypes: {
+        links: types('array'),
+        type: types('string')
+    },
     renderContent() {
-        if ('menuLeft' === this.props.type) {
-            return this.props.links.map(function (link) {
+        const {links, type} = this.props;
+        if ('menuLeft' === type) {
+            return links.map((link) => {
                 if (!link.img) {
                     return <a href={link.url}>link.title</a>;
                 } else {
@@ -23,7 +31,7 @@ let Menu = React.createClass({
 });
 
 
-let Wrapper = React.createClass({
+const Wrapper = React.createClass({
     displayName: 'menu-wrapper',
     _getItems() {
         return ([

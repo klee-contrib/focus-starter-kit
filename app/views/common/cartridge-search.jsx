@@ -1,11 +1,13 @@
 // Components
-let QuickSearch = Focus.components.search.searchBar.component;
+
+const QuickSearch = Focus.components.search.searchBar.component;
 
 // Mixins
-let i18nMixin = Focus.components.common.i18n.mixin;
 
-module.exports = React.createClass({
-    displayName: 'cartridge-search',
+const i18nMixin = Focus.components.common.i18n.mixin;
+
+const CartridgeSearch = React.createClass({
+    displayName: 'CartridgeSearch',
     mixins: [i18nMixin],
     render() {
         return (
@@ -16,3 +18,5 @@ module.exports = React.createClass({
         );
     }
 });
+
+module.exports = CartridgeSearch;

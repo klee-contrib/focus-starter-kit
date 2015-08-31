@@ -1,7 +1,7 @@
-/*global Backbone, Focus, Focus.components */
-//Dependencies.
-let Router = Focus.router;
-let HomeRouter = Router.extend({
+// Dependencies.
+
+const Router = Focus.router;
+const HomeRouter = Router.extend({
     log: true,
     beforeRoute(){
         Focus.application.changeRoute('search');
@@ -10,9 +10,9 @@ let HomeRouter = Router.extend({
         '': 'home',
         'home(/scope/:scope)': 'home'
     },
-    home(scope, query) {
+    home(scope) {
         console.log('ROUTE: HOME');
-        let HomeView = require('../views/home');
+        const HomeView = require('../views/home');
         this._pageContent(HomeView, {props: {
             scope: scope || 'ALL', //Scope all by default here?
             position: 'left',

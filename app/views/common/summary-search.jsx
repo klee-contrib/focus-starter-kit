@@ -1,6 +1,8 @@
-let QuickSearch = Focus.components.search.searchBar.component;
+// Components
 
-module.exports = React.createClass({
+const QuickSearch = Focus.components.search.searchBar.component;
+
+const SummarySearch = React.createClass({
     displayName: 'summary-search',
     render() {
         return (
@@ -8,3 +10,5 @@ module.exports = React.createClass({
         );
     }
 });
+
+module.exports = SummarySearch;
