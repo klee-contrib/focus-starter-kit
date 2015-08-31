@@ -1,8 +1,8 @@
-/*global Focus */
-//Dependencies.
-let Router = Focus.router;
+// Dependencies.
 
-let SearchRouter = Router.extend({
+const Router = Focus.router;
+
+const SearchRouter = Router.extend({
     log: true,
     beforeRoute(){
         Focus.application.changeRoute('search');

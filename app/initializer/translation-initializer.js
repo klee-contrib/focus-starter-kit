@@ -1,5 +1,6 @@
-//Initialize translations configuration.
-let i18nConfig = {
+/* globals i18n */
+// Initialize translations configuration.
+const i18nConfig = {
     resStore: require('../i18n'),
     lng: 'en-GB'///langOpts.i18nCulture
 };
@@ -19,6 +20,6 @@ headers: {
 });*/
 
 // Plugin initialization.
-i18n.init(i18nConfig, function init(content) {
+i18n.init(i18nConfig, () => {
     return console.log('Translation correctly initialized.');
 });

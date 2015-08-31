@@ -1,37 +1,31 @@
 // Mixins
 
-let cartridgeBehaviour = Focus.components.page.mixin.cartridgeBehaviour;
+const cartridgeBehaviour = Focus.components.page.mixin.cartridgeBehaviour;
 
-// Service
+// Services
 
-let service = require('../../services/search');
+const service = require('../../services/search');
 
-// Composants du cartouche
+// Components
 
-let ApplicationTitle = React.createClass({
-    render() {
-        return (
-            <span className="page-title">FOCUS</span>
-        );
-    }
-});
+const ApplicationTitle = require('./application-title');
 
 let initializationCallsCount = 4;
 
-let navigateAdvancedSearch = function () {
-    if (initializationCallsCount === 0) {
-        let route = '#search/advanced';
+const navigateAdvancedSearch = () => {
+    if (0 === initializationCallsCount) {
+        const route = '#search/advanced';
         Backbone.history.navigate(route, true);
     } else {
         initializationCallsCount--;
     }
 };
 
-//Creates a View for hehe home page which is
-let HomeView = React.createClass({
+const HomeView = React.createClass({
+    displayName: 'HomeView',
     mixins: [cartridgeBehaviour],
     cartridgeConfiguration() {
-        let buildProps = {
+        const buildProps = {
             service,
             onSearchCriteriaChange: navigateAdvancedSearch
         };
