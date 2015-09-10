@@ -2,7 +2,7 @@
   "author": "Klee Group",
   "name": "focus-starter-kit",
   "description": "front-end-spa",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "homepage": "",
   "repository": {
     "type": "",
@@ -29,7 +29,7 @@
     "eslint-plugin-react": "2.7.1",
     "eslint-plugin-require-jsdoc": "git+https://github.com/Bernardstanislas/eslint-plugin-require-jsdoc.git",
     "focusjs": "0.10.1",
-    "focusjs-components": "^0.5.1-0",
+    "focusjs-components": "0.6.1",
     "font-awesome": "^4.3.0",
     "immutable": "^3.7.2",
     "jquery": "^2.1.4",
