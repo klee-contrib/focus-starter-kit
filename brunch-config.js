@@ -19,12 +19,10 @@ exports.config = {
                     'vendor/jquery.js',
                     'vendor/lodash.js',
                     'vendor/backbone.js',
-                    'vendor/bootstrap.js',
                     'vendor/material.js',
                     'vendor/moment.min.js',
                     'vendor/focus.js',
-                    'vendor/focus-components.js',
-                    'vendor/daterangepicker.js'
+                    'vendor/focus-components.js'
                 ],
                 after: ['vendor/picker.js']
             }
@@ -34,9 +32,7 @@ exports.config = {
             order: {
                 before: [
                     'app/styles/font.scss',
-                    'vendor/bootstrap.css',
-                    'vendor/material.css',
-                    'vendor/ripples.css'
+                    'vendor/material.css'
                 ]
             }
         },
