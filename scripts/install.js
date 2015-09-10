@@ -15,9 +15,6 @@ var files = [
     'moment/min/moment.min.js',
     'numeral/min/languages.min.js',
     'numeral/min/numeral.min.js',
-    //daterangepicker
-    'daterangepicker/daterangepicker.js',
-    'daterangepicker/daterangepicker-bs3.css',
     //showdown
     'showdown/dist/showdown.js',
     //focusjs
