@@ -31,7 +31,7 @@
     "eslint-plugin-filenames": "0.1.1",
     "eslint-plugin-react": "2.7.1",
     "eslint-plugin-require-jsdoc": "git+https://github.com/Bernardstanislas/eslint-plugin-require-jsdoc.git",
-    "focusjs": "^0.9.0",
+    "focusjs": "0.10.0",
     "focusjs-components": "^0.5.1-0",
     "font-awesome": "^4.3.0",
     "immutable": "^3.7.2",
