@@ -21,10 +21,9 @@ exports.config = {
                     'vendor/backbone.js',
                     'vendor/bootstrap.js',
                     'vendor/material.js',
-                    'vendor/ripples.js',
+                    'vendor/moment.min.js',
                     'vendor/focus.js',
                     'vendor/focus-components.js',
-                    'vendor/moment.min.js',
                     'vendor/daterangepicker.js'
                 ],
                 after: ['vendor/picker.js']
