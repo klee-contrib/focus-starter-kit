@@ -10,7 +10,6 @@ var files = [
     //'lodash/',
     //material-design-lite
     'material-design-lite/material.js',
-    'material-design-lite/material.css',
     //moment
     'moment/min/moment.min.js',
     'numeral/min/languages.min.js',
