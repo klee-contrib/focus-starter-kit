@@ -18,7 +18,8 @@
     "watch": "node ./node_modules/brunch/bin/brunch w",
     "serve": "node ./node_modules/brunch/bin/brunch w -s",
     "postinstall": "node scripts/install.js",
-    "update-focus": "npm install --save focusjs@latest focusjs-components@latest & npm run postinstall"
+    "update-focus": "npm install --save focusjs@latest focusjs-components@latest & npm run postinstall",
+    "migration-report": "node ./node_modules/migration-tool/index.js ./app"
   },
   "dependencies": {
     "babel-eslint": "4.0.5",
@@ -31,11 +32,13 @@
     "focusjs": "0.10.1",
     "focusjs-components": "0.6.1",
     "font-awesome": "^4.3.0",
+    "i": "^0.3.3",
     "immutable": "^3.7.2",
     "jquery": "^2.1.4",
     "lodash": "^3.8.0",
     "material-design-icons": "^2.0.0",
     "material-design-lite": "1.0.4-2",
+    "migration-tool": "^0.1.0",
     "moment": "^2.10.3",
     "native-promise-only": "^0.8.0-a",
     "numeral": "^1.5.3",
