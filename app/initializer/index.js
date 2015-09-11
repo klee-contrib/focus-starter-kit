@@ -28,7 +28,3 @@ require('./user-initializer');
 //Initialisation du layout
 //
 require('./layout-initializer');
-
-$(function initMaterial() {
-    $.material.init();
-});
