@@ -18,6 +18,7 @@ exports.config = {
                     'vendor/react.js',
                     'vendor/jquery.js',
                     'vendor/lodash.js',
+                    'vendor/awesomeplete.js',
                     'vendor/backbone.js',
                     'vendor/material.js',
                     'vendor/moment.min.js',

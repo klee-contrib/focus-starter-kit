@@ -43,6 +43,12 @@ var fonts = [
     'font-awesome/fonts/fontawesome-webfont.woff2'
 ];
 
+var images = [
+    // Images
+    'material-design-lite/src/images/buffer.svg',
+    'material-design-lite/src/images/tick-mask.svg',
+    'material-design-lite/src/images/tick.svg'
+];
 
 //Copy dependencies (js / css)
 files.map(function(path){
@@ -64,5 +70,15 @@ fonts.map(function(path){
     fs.createReadStream('./node_modules/' + path)
     .pipe(
         fs.createWriteStream('./app/assets/fonts/' + pth)
+    );
+});
+
+images.map(function(path){
+    var splitedPath = path.split('/');
+    var pth = splitedPath[splitedPath.length - 1];
+    console.log(splitedPath, pth);
+    fs.createReadStream('./node_modules/' + path)
+    .pipe(
+        fs.createWriteStream('./app/assets/img/' + pth)
     );
 });
