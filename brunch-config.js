@@ -24,8 +24,7 @@ exports.config = {
                     'vendor/moment.min.js',
                     'vendor/focus.js',
                     'vendor/focus-components.js'
-                ],
-                after: ['vendor/picker.js']
+                ]
             }
         },
         stylesheets: {
