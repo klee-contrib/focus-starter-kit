@@ -54,7 +54,7 @@
     "clean-css-brunch": "^1.7.1",
     "css-brunch": "^1.7.0",
     "javascript-brunch": "^1.7.1",
-    "sass-brunch": "^1.8.10"
+    "sass-brunch": "^1.9.0"
   },
   "private": true
 }
