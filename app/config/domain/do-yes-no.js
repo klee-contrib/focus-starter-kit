@@ -1,6 +1,6 @@
 module.exports = {
     type: 'boolean',
-    //"FieldComponent": Focus.components.common.input.toggle.component
-    InputComponent: Focus.components.common.input.checkbox.component,
-    DisplayComponent: Focus.components.common.display.checkbox.component
+    //"FieldComponent": FocusComponents.common.input.toggle.component
+    InputComponent: FocusComponents.common.input.checkbox.component,
+    DisplayComponent: FocusComponents.common.display.checkbox.component
 };

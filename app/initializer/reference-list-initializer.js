@@ -1,7 +1,7 @@
 // Path to the reference service.
 
 const referenceService = require('../services/reference');
-const reference = Focus.reference;
+const reference = FocusCore.reference;
 
 module.exports = {
     initialize() {

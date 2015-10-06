@@ -4,6 +4,7 @@ var fontsDir = './app/assets/fonts';
 
 var files = [
     'react/dist/react.js',
+    'react/dist/react-dom.js',
     'jquery/dist/jquery.js',
     'backbone/backbone.js',
     'native-promise-only/npo.js',
@@ -17,10 +18,10 @@ var files = [
     //showdown
     'showdown/dist/showdown.js',
     //focusjs
-    'focusjs/dist/focus.js',
+    'focus-core/dist/focus-core.js',
     //focusjs-components
-    'focusjs-components/dist/js/focus-components.js',
-    'focusjs-components/dist/css/focus-components.css',
+    'focus-components/dist/focus-components.js',
+    'focus-components/dist/focus-components.css',
     //font awesome
     'font-awesome/css/font-awesome.css'
 ];

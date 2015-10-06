@@ -1,4 +1,4 @@
-Focus.definition.entity.container.setEntityConfiguration(require('../config/entity-definition'));
+FocusCore.definition.entity.container.setEntityConfiguration(require('../config/entity-definition'));
 
 //Display domaines utilisés
 const entityDef = require('../config/entity-definition');

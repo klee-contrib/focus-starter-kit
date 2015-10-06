@@ -1,10 +1,10 @@
 // Dependencies.
 
-const Router = Focus.router;
+const Router = FocusCore.router;
 const HomeRouter = Router.extend({
     log: true,
     beforeRoute(){
-        Focus.application.changeRoute('search');
+        FocusCore.application.changeRoute('search');
     },
     routes: {
         '': 'home',

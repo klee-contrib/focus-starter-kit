@@ -1,7 +1,7 @@
 exports.config = {
   sourceMaps: false,
   paths: {
-    'public': '../api/src/main/webapp/static/'
+    public: '../api/src/main/webapp/static/'
   },
  /* server: {
      path: './scripts/start_tomcat.js'
@@ -16,13 +16,16 @@ exports.config = {
                 before: [
                     'vendor/npo.js',
                     'vendor/react.js',
+                    'vendor/react-dom.js',
                     'vendor/jquery.js',
+                    'vendor/i18next.js',
                     'vendor/lodash.js',
+                    'vendor/numeral.min.js',
                     'vendor/awesomeplete.js',
                     'vendor/backbone.js',
                     'vendor/material.js',
                     'vendor/moment.min.js',
-                    'vendor/focus.js',
+                    'vendor/focus-core.js',
                     'vendor/focus-components.js'
                 ]
             }

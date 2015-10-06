@@ -2,7 +2,7 @@
 module.exports = {
     type: 'text',
     style: 'date right',
-    InputComponent: Focus.components.common.input.date.component,
+    InputComponent: FocusComponents.common.input.date.component,
     formatter: function dateFormatter(date){
         return moment(date).format('L');
     },

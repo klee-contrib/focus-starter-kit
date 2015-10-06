@@ -2,9 +2,6 @@
 
 console.log('Application Focus-démo');
 
-//Write focusComponents into Focus.components
-Focus.components = FocusComponents;
-
 //Initialisation des configurations et du layout.
 require('./initializer');
 
