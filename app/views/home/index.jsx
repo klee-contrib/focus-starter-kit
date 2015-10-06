@@ -1,6 +1,6 @@
 // Mixins
 
-const cartridgeBehaviour = Focus.components.page.mixin.cartridgeBehaviour;
+const cartridgeBehaviour = FocusComponents.page.mixin.cartridgeBehaviour;
 
 // Services
 
@@ -32,11 +32,11 @@ const HomeView = React.createClass({
         return {
             barLeft: {component: ApplicationTitle},
             summary: {
-                component: Focus.components.page.search.searchHeader.summary,
+                component: FocusComponents.page.search.searchHeader.summary,
                 props: buildProps
             },
             cartridge: {
-                component: Focus.components.page.search.searchHeader.cartridge,
+                component: FocusComponents.page.search.searchHeader.cartridge,
                 props: buildProps
             },
             actions: {

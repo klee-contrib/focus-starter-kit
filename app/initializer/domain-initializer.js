@@ -1,1 +1,1 @@
-Focus.definition.domain.container.setAll(require('../config/domain'));
+FocusCore.definition.domain.container.setAll(require('../config/domain'));

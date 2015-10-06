@@ -1,6 +1,6 @@
 module.exports = {
     initialize() {
-        Focus.dispatcher.handleServerAction({
+        FocusCore.dispatcher.handleServerAction({
             data: {
                 scope: 'ALL'
             },

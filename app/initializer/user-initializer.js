@@ -1,1 +1,1 @@
-Focus.user.setRoles(['DEFAULT_ROLE']);
+FocusCore.user.setRoles(['DEFAULT_ROLE']);

@@ -1,10 +1,10 @@
 // Dependencies
 
-const {types} = Focus.component;
+const {types} = FocusCore.component;
 
 // Mixins
 
-const menuMixin = Focus.components.application.menu.mixin;
+const menuMixin = FocusComponents.application.menu.mixin;
 
 // Components
 

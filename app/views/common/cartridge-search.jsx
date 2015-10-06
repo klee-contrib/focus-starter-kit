@@ -1,10 +1,10 @@
 // Components
 
-const QuickSearch = Focus.components.search.searchBar.component;
+const QuickSearch = FocusComponents.search.searchBar.component;
 
 // Mixins
 
-const i18nMixin = Focus.components.common.i18n.mixin;
+const i18nMixin = FocusComponents.common.i18n.mixin;
 
 const CartridgeSearch = React.createClass({
     displayName: 'CartridgeSearch',
