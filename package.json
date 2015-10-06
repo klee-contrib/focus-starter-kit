@@ -1,16 +1,16 @@
 {
-  "author": "Klee Group",
+  "author": "focus@kleegroup.com",
   "name": "focus-starter-kit",
   "description": "front-end-spa",
-  "version": "0.3.0",
-  "homepage": "",
+  "version": "0.4.0",
+  "homepage": "https://github.com/KleeGroup/focus-starter-kit",
   "repository": {
-    "type": "",
-    "url": ""
+    "type": "git",
+    "url": "https://github.com/KleeGroup/focus-starter-kit.git"
   },
   "engines": {
-    "node": "0.10.x",
-    "npm": "1.3.x"
+    "node": "0.4.x",
+    "npm": "2.14.x"
   },
   "scripts": {
     "start": "node ./node_modules/brunch/bin/brunch w -s",
@@ -18,29 +18,7 @@
     "watch": "node ./node_modules/brunch/bin/brunch w",
     "serve": "node ./node_modules/brunch/bin/brunch w -s",
     "postinstall": "node scripts/install.js",
-    "update-focus": "npm install --save focusjs@latest focusjs-components@latest & npm run postinstall",
-    "migration-report": "node ./node_modules/migration-tool/index.js ./app"
-  },
-  "dependencies": {
-    "babel-eslint": "4.0.5",
-    "backbone": "^1.2.0",
-    "eslint": "0.24.1",
-    "eslint-config-focus": "0.2.0",
-    "eslint-plugin-filenames": "0.1.1",
-    "eslint-plugin-react": "2.7.1",
-    "eslint-plugin-require-jsdoc": "git+https://github.com/Bernardstanislas/eslint-plugin-require-jsdoc.git",
-    "focusjs": "0.10.1",
-    "focusjs-components": "0.6.1",
-    "font-awesome": "^4.3.0",
-    "immutable": "^3.7.2",
-    "material-design-icons": "^2.0.0",
-    "material-design-lite": "1.0.4-2",
-    "migration-tool": "^0.1.0",
-    "moment": "^2.10.3",
-    "native-promise-only": "^0.8.0-a",
-    "numeral": "^1.5.3",
-    "react": "^0.13.1",
-    "showdown": "^1.0.2"
+    "update-focus": "npm i -D focus-core@latest focus-components@latest & npm run postinstall"
   },
   "main": "index.js",
   "directories": {
@@ -49,12 +27,25 @@
   "license": "MIT",
   "devDependencies": {
     "appcache": "0.0.4",
-    "brunch": "^1.8.3",
     "babel-brunch": "^5.1.2",
+    "backbone": "^1.2.0",
+    "brunch": "^1.8.3",
     "clean-css-brunch": "^1.7.1",
     "css-brunch": "^1.7.0",
+    "eslint-config-focus": "0.3.0",
+    "focus-components": "0.7.0",
+    "focus-core": "0.11.0",
+    "font-awesome": "^4.3.0",
+    "immutable": "^3.7.2",
     "javascript-brunch": "^1.7.1",
-    "sass-brunch": "^1.9.0"
-  },
-  "private": true
+    "material-design-icons": "^2.0.0",
+    "material-design-lite": "1.0.4-2",
+    "migration-tool": "^0.1.0",
+    "moment": "^2.10.3",
+    "native-promise-only": "^0.8.0-a",
+    "numeral": "^1.5.3",
+    "react": "0.14.0-rc1",
+    "sass-brunch": "^1.9.0",
+    "showdown": "^1.0.2"
+  }
 }
