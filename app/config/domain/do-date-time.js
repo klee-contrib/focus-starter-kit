@@ -1,10 +1,5 @@
 module.exports = {
-    type: 'text',
-    decorator: 'datePicker',
-    style: 'date right',
-    formatter: {
-        value: function getValue(data) {
-            return data;
-        }
-    }
+    InputComponent: FocusComponents.components.input.Date,
+    formatter: date => date ? moment(date, moment.ISO_8601).format('DD/MM/YYYY hh:mm a') : '',
+    format: ['DD/MM/YYYY', 'DD-MM-YYYY', 'D MMM YYYY']
 };

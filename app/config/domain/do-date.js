@@ -1,12 +1,6 @@
 /* global moment, Focus */
 module.exports = {
-    type: 'text',
-    style: 'date right',
-    InputComponent: FocusComponents.common.input.date.component,
-    formatter: function dateFormatter(date){
-        return moment(date).format('L');
-    },
-    unformatter: function dateUnformatter(data){
-        return moment(data).toDate();
-    }
+    InputComponent: FocusComponents.components.input.Date,
+    formatter: date => date ? moment(date, moment.ISO_8601).format('DD/MM/YYYY') : '',
+    format: ['DD/MM/YYYY', 'DD-MM-YYYY', 'D MMM YYYY']
 };
