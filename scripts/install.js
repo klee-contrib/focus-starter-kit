@@ -13,6 +13,7 @@ var files = [
     'material-design-lite/material.js',
     //moment
     'moment/min/moment.min.js',
+    'moment/locale/fr.js',
     'numeral/min/languages.min.js',
     'numeral/min/numeral.min.js',
     //showdown
