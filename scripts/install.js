@@ -4,7 +4,7 @@ var fontsDir = './app/assets/fonts';
 
 var files = [
     'react/dist/react.js',
-    'react/dist/react-dom.js',
+    'react-dom/dist/react-dom.js',
     'jquery/dist/jquery.js',
     'backbone/backbone.js',
     'native-promise-only/npo.js',
