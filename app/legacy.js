@@ -1,5 +1,5 @@
-FocusComponents.common.detail.component = FocusComponents.components.ScrollspyContainer;
-FocusComponents.common.block.component = FocusComponents.components.Panel;
+window.FocusComponents.common.detail.component = window.FocusComponents.components.ScrollspyContainer;
+window.FocusComponents.common.block.component = window.FocusComponents.components.Panel;
 console.warning(`
 
 
