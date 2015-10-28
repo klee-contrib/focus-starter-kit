@@ -1,4 +1,5 @@
 module.exports = {
-    searchRouter: require('./search-router'),
-    homeRouter: require('./home-router')
+    homeRouter: require('./home-router'),
+    movieRouter: require('./movie-router'),
+    searchRouter: require('./search-router')
 };

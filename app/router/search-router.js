@@ -2,7 +2,7 @@
 
 const Router = FocusCore.router;
 
-const SearchRouter = Router.extend({
+export default Router.extend({
     log: true,
     beforeRoute() {
         FocusCore.application.changeRoute('search');
@@ -10,5 +10,3 @@ const SearchRouter = Router.extend({
     routes: {
     }
 });
-
-module.exports = new SearchRouter();
