@@ -38,6 +38,7 @@
     "font-awesome": "^4.3.0",
     "immutable": "^3.7.2",
     "javascript-brunch": "^1.7.1",
+    "jquery": "3.0.0-alpha1",
     "material-design-icons": "^2.0.0",
     "material-design-lite": "1.0.4-2",
     "migration-tool": "^0.1.0",
