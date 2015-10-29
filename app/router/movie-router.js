@@ -5,7 +5,7 @@ const Router = FocusCore.router;
 
 const MoviesRouter = Router.extend({
     log: true,
-    beforeRoute(){
+    beforeRoute() {
         FocusCore.application.changeRoute('movies');
     },
     routes: {
@@ -18,4 +18,4 @@ const MoviesRouter = Router.extend({
     }
 });
 
-module.exports = new MoviesRouter();
+export default new MoviesRouter();
