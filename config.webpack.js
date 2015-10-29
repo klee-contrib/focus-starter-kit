@@ -3,25 +3,32 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const WatchIgnorePlugin = webpack.WatchIgnorePlugin;
 
-showcaseConfigBuilder = {
+demoConfig = {
     entry: [
         'webpack-dev-server/client?http://localhost:3000',
         'webpack/hot/only-dev-server',
         './app'
     ],
     output: {
-        path: __dirname + '/public/',
+        path: __dirname + '/public/assets/js',
         filename: 'focus-demo-app.js',
-        publicPath: '/'
+        publicPath: '/assets/js' // as viewed from index.html
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ],
+    // externals: [
+    //     {
+    //         'react': true
+    //     }
+    // ],
     resolve: {
         alias: {
-            'focus-components': path.resolve(__dirname, './node_modules/focus-components/dist/focus-components.js')
+            'focus-core': path.resolve(__dirname, './node_modules/focus-core/lib'),
+            'focus-components': path.resolve(__dirname, './node_modules/focus-components/src'),
+            react: path.resolve(__dirname, './node_modules/react')
         },
-        modulesDirectories: ['node_modules']
+        extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
     },
     module: {
         loaders: [
@@ -71,4 +78,4 @@ showcaseConfigBuilder = {
     }
 };
 
-module.exports = showcaseConfigBuilder;
+module.exports = demoConfig;

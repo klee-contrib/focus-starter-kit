@@ -1,3 +1,5 @@
+import FocusCore from 'focus-core';
+
 // Dependencies.
 
 const Router = FocusCore.router;

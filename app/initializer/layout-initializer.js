@@ -1,3 +1,6 @@
+import FocusCore from 'focus-core';
+import FocusComponents from 'focus-components';
+
 import DemoMenuLeft from '../views/menu/MenuLeft';
 
 const render = FocusCore.application.render;

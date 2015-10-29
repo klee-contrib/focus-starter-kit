@@ -1,3 +1,6 @@
+import 'material-design-lite/material';
+import './styles';
+
 //Initialisation des configurations et du layout.
 import './initializer';
 

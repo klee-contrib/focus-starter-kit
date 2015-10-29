@@ -1,10 +1,10 @@
 const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const args = process.argv;
-const webpackConfig = require('./webpack.config');
+const webpackConfig = require('./config.webpack');
 
 new WebpackDevServer(webpack(webpackConfig), {
-    publicPath: '/',
+    publicPath: '/assets/js',
     hot: true,
     historyApiFallback: true,
     contentBase: './public/'
