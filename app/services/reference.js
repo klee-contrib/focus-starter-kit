@@ -1,4 +1,4 @@
-const URL = require('../../config/server');
+const URL = require('../config/server');
 const fetch = FocusCore.network.fetch;
 
 module.exports = {

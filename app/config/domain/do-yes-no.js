@@ -1,3 +1,5 @@
+import FocusComponents from 'focus-components';
+
 module.exports = {
     SelectComponent: FocusComponents.common.select.radio.component,
     refContainer: {yesNoList: [{code: true, label: 'select.oui'}, {code: false, label: 'select.non'}]},
