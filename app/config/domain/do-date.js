@@ -1,0 +1,6 @@
+/* global moment, Focus */
+module.exports = {
+    InputComponent: FocusComponents.components.input.Date,
+    formatter: date => date ? moment(date, moment.ISO_8601).format('DD/MM/YYYY') : '',
+    format: ['DD/MM/YYYY', 'DD-MM-YYYY', 'D MMM YYYY']
+};

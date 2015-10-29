@@ -1,0 +1,12 @@
+
+[data-focus="application"] {
+    background-color: #FAFAFA;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+
+    [data-focus='layout'] {
+        background-color: transparent;
+        min-height: 100%;
+    }
+}

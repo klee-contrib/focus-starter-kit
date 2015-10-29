@@ -25,3 +25,10 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+vendor
+app/assets/fonts/*.svg
+app/assets/fonts/*.eot
+app/assets/fonts/*.ttf
+app/assets/fonts/*.woff
+ui/.npmrc
+public
