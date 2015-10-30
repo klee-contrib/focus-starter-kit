@@ -13,6 +13,8 @@
     "npm": "2.14.x"
   },
   "scripts": {
+    "start": "node index.js",
+    "build": "node ./node_modules/webpack/bin/webpack.js --config config.webpack.js",
     "update-focus": "npm i -D focus-core@latest focus-components@latest"
   },
   "main": "index.js",
