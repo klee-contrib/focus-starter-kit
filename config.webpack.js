@@ -1,5 +1,4 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const WatchIgnorePlugin = webpack.WatchIgnorePlugin;
 
@@ -10,18 +9,13 @@ demoConfig = {
         './app'
     ],
     output: {
-        path: __dirname + '/public/assets/js',
+        path: __dirname + '/public/',
         filename: 'focus-demo-app.js',
-        publicPath: '/assets/js' // as viewed from index.html
+        publicPath: '/' // as viewed from index.html
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ],
-    // externals: [
-    //     {
-    //         'react': true
-    //     }
-    // ],
     resolve: {
         alias: {
             'focus-core': path.resolve(__dirname, './node_modules/focus-core/lib'),
