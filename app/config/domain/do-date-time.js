@@ -1,3 +1,5 @@
+import FocusComponents from 'focus-components';
+
 module.exports = {
     InputComponent: FocusComponents.components.input.Date,
     formatter: date => date ? moment(date, moment.ISO_8601).format('DD/MM/YYYY hh:mm a') : '',

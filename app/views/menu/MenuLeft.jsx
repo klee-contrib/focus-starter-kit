@@ -1,3 +1,5 @@
+import React from 'react';
+import FocusComponents from 'focus-components';
 const MenuLeft = FocusComponents.components.MenuLeft;
 
 var menuItems = [

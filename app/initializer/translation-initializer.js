@@ -1,4 +1,4 @@
-/* globals i18n */
+import i18n from 'i18next-client';
 
 // Initialize translations configuration.
 const i18nConfig = {
