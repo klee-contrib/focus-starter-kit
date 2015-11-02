@@ -19,4 +19,4 @@ const HomeRouter = Router.extend({
     }
 });
 
-module.exports = new HomeRouter();
+export default new HomeRouter();
