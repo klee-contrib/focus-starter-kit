@@ -1,8 +1,8 @@
 import React from 'react';
 
 //Focus components
+const {ScrollspyContainer} = FocusComponents.components;
 const BackButton = FocusComponents.common.button.back.component;
-const ScrollspyContainer = FocusComponents.components.ScrollspyContainer;
 const cartridgeBehaviour = FocusComponents.page.mixin.cartridgeBehaviour;
 const storeBehaviour = FocusComponents.common.mixin.storeBehaviour;
 

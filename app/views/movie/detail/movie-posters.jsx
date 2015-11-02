@@ -1,4 +1,4 @@
-const Panel = FocusComponents.components.Panel;
+const {Panel} = FocusComponents.components;
 
 export default React.createClass({
     displayName: 'MoviePosters',
