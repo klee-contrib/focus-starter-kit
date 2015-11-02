@@ -3,8 +3,8 @@ import React from 'react';
 //Focus components
 const {ScrollspyContainer} = FocusComponents.components;
 const BackButton = FocusComponents.common.button.back.component;
-const cartridgeBehaviour = FocusComponents.page.mixin.cartridgeBehaviour;
-const storeBehaviour = FocusComponents.common.mixin.storeBehaviour;
+const {cartridgeBehaviour} = FocusComponents.page.mixin;
+const {storeBehaviour} = FocusComponents.common.mixin;
 
 import HeaderExpanded from './movie-header-content-expanded';
 import HeaderSummary from './movie-header-content-summary';
