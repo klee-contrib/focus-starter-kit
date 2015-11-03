@@ -22,7 +22,10 @@ demoConfig = {
             'focus-components': path.resolve(__dirname, './node_modules/focus-components/src'),
             react: path.resolve(__dirname, './node_modules/react')
         },
-        extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
+        extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx'],
+        fallback: [
+            path.resolve(__dirname, './node_modules/focus-components/node_modules')
+        ]
     },
     module: {
         loaders: [
