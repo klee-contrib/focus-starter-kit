@@ -3,8 +3,8 @@
  * DtDefinitionsLabel
  */
 
-module.exports = {
-    user: {
-        userId: "User id"
-    }
+const traduction = {
+
 };
+
+export default traduction;
