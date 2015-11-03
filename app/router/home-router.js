@@ -4,7 +4,6 @@ const {router} = FocusCore;
 const HomeRouter = router.extend({
     log: true,
     beforeRoute() {
-        console.log('Home router');
         FocusCore.application.changeRoute('home');
     },
     routes: {
@@ -18,5 +17,4 @@ const HomeRouter = router.extend({
     }
 });
 
-const homeRouter = new HomeRouter();
-export default homeRouter;
+export default new HomeRouter();
