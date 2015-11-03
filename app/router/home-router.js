@@ -1,16 +1,15 @@
 import FocusCore from 'focus-core';
+const {router} = FocusCore;
 
-// Dependencies.
-const Router = FocusCore.router;
-
-const HomeRouter = Router.extend({
+const HomeRouter = router.extend({
     log: true,
-    beforeRoute(){
-        FocusCore.application.changeRoute('search');
+    beforeRoute() {
+        console.log('Home router');
+        FocusCore.application.changeRoute('home');
     },
     routes: {
         '': 'home',
-        'home()': 'home'
+        home: 'home'
     },
     home() {
         console.log('ROUTE: HOME');
@@ -19,4 +18,5 @@ const HomeRouter = Router.extend({
     }
 });
 
-export default new HomeRouter();
+const homeRouter = new HomeRouter();
+export default homeRouter;
