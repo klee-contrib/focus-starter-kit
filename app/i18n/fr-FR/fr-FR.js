@@ -1,9 +1,15 @@
-module.exports = {
+const traduction = {
     button: {
-        edit: "Modifier",
-        cancel: "Abandonner",
-        save: "Sauvegarder",
-        advancedSearch: "Recherche avancée",
-        back: "Retour"
+        back: 'Retour'
+    },
+    movie: {
+        detail: {
+            actors: 'Acteurs',
+            caracteristics: 'Carastéristiques',
+            posters: 'Affiches',
+            synopsis: 'Synopsis'
+        }
     }
 };
+
+export default traduction;

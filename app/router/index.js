@@ -1,4 +1,7 @@
-module.exports = {
-    homeRouter: require('./home-router'),
-    movieRouter: require('./movie-router')
+import {homeRouter } from './home-router';
+import {movieRouter} from './movie-router';
+
+export default {
+    homeRouter,
+    movieRouter
 };

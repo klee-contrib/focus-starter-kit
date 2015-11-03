@@ -1,13 +1,16 @@
 import React from 'react';
+import Backbone from 'backbone';
 
-export default React.createClass({
+const HomePage =  React.createClass({
     displayName: 'HomeView',
     render() {
         return (
             <div>
                 <h1>Welcome on board !</h1>
-                <a href="#movies/1">Movie 1</a>
+                <h2 onClick={() => Backbone.history.navigate('movies/1', true)}>Movie 1</h2>
             </div>
         );
     }
 });
+
+export default HomePage;

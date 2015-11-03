@@ -1,9 +1,10 @@
 import i18n from 'i18next-client';
+import traductionFiles from '../i18n';
 
 // Initialize translations configuration.
 const i18nConfig = {
-    resStore: require('../i18n'),
-    lng: 'en-GB'///langOpts.i18nCulture
+    resStore: traductionFiles,
+    lng: 'fr-FR'///langOpts.i18nCulture
 };
 
 //In production, fallback is english.
