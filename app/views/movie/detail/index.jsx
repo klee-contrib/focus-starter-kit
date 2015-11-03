@@ -1,4 +1,5 @@
 import React from 'react';
+import FocusComponents from 'focus-components';
 
 //Focus components
 const {ScrollspyContainer} = FocusComponents.components;
