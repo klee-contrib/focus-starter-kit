@@ -37,7 +37,7 @@ export default {
             required: true
         },
         runtime: {
-            domain: 'DO_LABEL_SHORT', //to change to runtime
+            domain: 'DO_RUNTIME', //to change to runtime
             required: true
         },
         movieType: {
