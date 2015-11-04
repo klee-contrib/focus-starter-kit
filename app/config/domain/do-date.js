@@ -1,3 +1,4 @@
+import moment from 'moment';
 import FocusComponents from 'focus-components';
 
 export default {
