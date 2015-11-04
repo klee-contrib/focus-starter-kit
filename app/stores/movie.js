@@ -1,3 +1,5 @@
+import FocusCore from 'focus-core';
+
 /**
 * Store dealing with subjects about movies.
 * @type {focus}
