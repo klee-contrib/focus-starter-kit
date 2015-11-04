@@ -53,10 +53,10 @@ export default React.createClass({
     render() {
         return (
             <ScrollspyContainer gridContentSize={10} gridMenuSize={2}>
-            <MovieSynopsis />
-            <MoviesCaracteristics />
-            <MoviePosters />
-            <MovieActors />
+                <MovieSynopsis hasLoad={false} />
+                <MoviesCaracteristics hasLoad={false} />
+                <MoviePosters />
+                <MovieActors />
             </ScrollspyContainer>
         );
     }

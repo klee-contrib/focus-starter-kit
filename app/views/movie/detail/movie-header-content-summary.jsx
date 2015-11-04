@@ -7,7 +7,9 @@ export default React.createClass({
     /** @inheritDoc */
     render() {
         return (
-            <div>Header summary</div>
+            <div>
+            Header summary
+            </div>
         );
     }
 })

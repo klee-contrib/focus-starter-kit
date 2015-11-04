@@ -12,16 +12,16 @@ const {mixin: formMixin} = FocusComponents.common.form;
 
 export default React.createClass({
     displayName: 'MovieSynopsis',
-    definitionPath: 'movie',
     mixins: [formMixin],
+    definitionPath: 'movie',
     stores: [{store: movieStore, properties: ['movie']}],
-    hasLoad: false,
 
     /** @inheritDoc */
     renderContent() {
         return (
             <Panel title='movie.detail.synopsis'>
                 {this.fieldFor('synopsis')}
+                {this.fieldFor('shortSynopsis')}
             </Panel>
         );
     }
