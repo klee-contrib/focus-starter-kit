@@ -37,10 +37,10 @@ export default React.createClass({
     * @return {[type]} [description]
     */
     cartridgeConfiguration() {
-        const props = {}; //{id: this.props.id};
+        const props = { hasLoad: false }; //{id: this.props.id};
         return {
             barLeft: { component: BackButton },
-            cartridge: { component: HeaderExpanded, props},
+            cartridge: { component: HeaderExpanded, props },
             summary: {component: HeaderSummary, props},
             actions: {
                 primary: [],
