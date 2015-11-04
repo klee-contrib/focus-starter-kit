@@ -16,9 +16,21 @@ export default {
             domain: 'DO_LABEL_LONG',
             required: false
         },
+        poster: {
+            domain: 'DO_URL',
+            required: false
+        },
         synopsis: {
             domain: 'DO_COMMENT',
             required: true
+        },
+        trailerName: {
+            domain: 'DO_LABEL_MEDIUM',
+            required: false
+        },
+        trailerHRef: {
+            domain: 'DO_URL',
+            required: false
         },
         shortSynopsis: {
             domain: 'DO_COMMENT',
@@ -37,5 +49,4 @@ export default {
             required: true
         }
     }
-
 };
