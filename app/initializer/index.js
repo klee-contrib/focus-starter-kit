@@ -14,8 +14,8 @@ $(document).on('click', 'a:not([data-bypass])', function touchHandler(evt) {
 //Initialisation des configurations
 import './domain-initializer';
 import './definition-initializer';
-import referenceList from './reference-list-initializer';
-referenceList.initialize();
+// import referenceList from './reference-list-initializer';
+// referenceList.initialize();
 import queryStoreInitializer from './query-store-initializer';
 queryStoreInitializer.initialize();
 import './translation-initializer';
