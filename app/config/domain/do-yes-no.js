@@ -1,7 +1,7 @@
 import FocusComponents from 'focus-components';
 import i18n from 'i18next-client';
 
-module.exports = {
+export default {
     SelectComponent: FocusComponents.common.select.radio.component,
     refContainer: {yesNoList: [{code: true, label: 'select.oui'}, {code: false, label: 'select.non'}]},
     listName: 'yesNoList',
