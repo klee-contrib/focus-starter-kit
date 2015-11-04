@@ -22,17 +22,17 @@ demoConfig = {
             'focus-components': path.resolve(__dirname, './node_modules/focus-components/src'),
             react: path.resolve(__dirname, './node_modules/react')
         },
-        extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx'],
-        fallback: [
-            path.resolve(__dirname, './node_modules/focus-components/node_modules')
-        ]
+        extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
     },
     module: {
         loaders: [
             {
                 test: /\.jsx?$/,
-                loaders: ['react-hot', 'babel'],
-                exclude: /node_modules/
+                loaders: ['react-hot', 'babel?cacheDirectory'],
+                include: [
+                    path.resolve(__dirname, './app'),
+                    path.resolve(__dirname, './node_modules/focus-components/src')
+                ]
             },
             {
                 test: /\.json$/,
