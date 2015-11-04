@@ -9,13 +9,12 @@ const MoviesRouter = router.extend({
         FocusCore.application.changeRoute('movies');
     },
     routes: {
-        'movies(/:movieId)': 'movies'
+        'movies(/:id)': 'movies'
     },
-    movies(movieId) {
-
-        console.log(`ROUTE: MOVIES ${movieId}`);
+    movies(id) {
+        console.log(`ROUTE: MOVIES ${id}`);
         const MovieDetailView = require('../views/movie/detail');
-        this._pageContent(MovieDetailView);
+        this._pageContent(MovieDetailView, {props: {id}});
     }
 });
 
