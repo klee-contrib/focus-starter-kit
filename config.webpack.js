@@ -14,7 +14,10 @@ demoConfig = {
         publicPath: '/' // as viewed from index.html
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.DefinePlugin({
+            API_ROOT: '"http://localhost:8080"'
+        })
     ],
     resolve: {
         alias: {
