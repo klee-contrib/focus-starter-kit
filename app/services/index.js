@@ -1,3 +1,5 @@
-module.exports = {
-    reference: require('./reference')
+import movie from './movies';
+
+export default {
+    movie
 };

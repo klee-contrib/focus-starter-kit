@@ -1,6 +1,6 @@
 export default {
-    type: 'number',
+    type: 'url',
     validator: [{
-        type: 'number'
+        type: 'url'
     }]
 };

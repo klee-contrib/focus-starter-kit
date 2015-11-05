@@ -1,0 +1,34 @@
+@import "variables";
+
+$header-content-summary-padding-top: 5px;
+
+[data-focus="header-top-row"] {
+    form {
+        height: 100%;
+        fieldset {
+            height: 100%;
+        }
+    }
+    [data-demo="header-content-summary"] {
+        display: flex;
+        height: calc(100% - $header-content-summary-padding-top * 2);
+        padding: $header-content-summary-padding-top 0;
+        h4 {
+            text-transform: uppercase;
+            align-self: flex-end;
+            margin: 0;
+            margin-right: 20px;
+        }
+        h5 {
+            color: $color-secondary;
+            align-self: flex-end;
+            margin: 0;
+            margin-right: 20px;
+        }
+        h6 {
+            color: $color-tertiary;
+            align-self: flex-end;
+            margin: 0;
+        }
+    }
+}
