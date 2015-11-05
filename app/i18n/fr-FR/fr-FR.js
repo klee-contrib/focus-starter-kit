@@ -1,4 +1,4 @@
-const traduction = {
+export default {
     button: {
         back: 'Retour'
     },
@@ -11,5 +11,3 @@ const traduction = {
         }
     }
 };
-
-export default traduction;

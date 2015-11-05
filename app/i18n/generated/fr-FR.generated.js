@@ -3,7 +3,7 @@
  * DtDefinitionsLabel
  */
 
-const traduction = {
+export default {
     movie: {
         code: 'Code',
         title: 'Titre',
@@ -18,5 +18,3 @@ const traduction = {
         productionYear: 'Année de production'
     }
 };
-
-export default traduction;
