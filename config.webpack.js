@@ -16,7 +16,7 @@ demoConfig = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.DefinePlugin({
-            API_ROOT: '"http://localhost:8080"'
+            API_ROOT: '"http://localhost:9999"'
         })
     ],
     resolve: {

@@ -2,6 +2,27 @@
 
 $header-content-summary-padding-top: 5px;
 
+[data-demo="header-content-expanded"] {
+    display: flex;
+    padding: 0 100px;
+    [data-demo="header-content-expanded__infos"] {
+        padding: 0 20px;
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 20px;
+        }
+        h2 {
+            text-transform: uppercase;
+        }
+        h3, h4 {
+            color: $color-secondary;
+        }
+        h5, h6 {
+            color: $color-tertiary;
+        }
+    }
+}
+
+
 [data-focus="header-top-row"] {
     form {
         height: 100%;
@@ -31,4 +52,5 @@ $header-content-summary-padding-top: 5px;
             margin: 0;
         }
     }
+
 }

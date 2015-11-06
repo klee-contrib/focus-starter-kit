@@ -1,0 +1,39 @@
+[data-demo="poster"] {
+    background-color: #F1F1F1;
+    border: 1px solid #C0C0C0;
+    width: 180px;
+    height: 290px;
+    text-align: center;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    position: relative;
+    overflow: hidden;
+    i {
+        color: #C5C5C5;
+        font-size: 54px;
+    }
+    img {
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+    }
+}
+
+[data-demo='header-content-expanded'] {
+    [data-demo="poster"] {
+        width: 180px;
+        height: 290px;
+    }
+}
+[data-demo='header-content-summary'] {
+    [data-demo="poster"] {
+        width: 19px;
+        height: 30px;
+        margin-right: 10px;
+        i {
+            font-size: 12px;
+        }
+    }
+}

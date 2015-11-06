@@ -3,6 +3,9 @@ export default {
         back: 'Retour'
     },
     movie: {
+        keyConcept: {
+            name: 'Film'
+        },
         detail: {
             actors: 'Acteurs',
             caracteristics: 'Carastéristiques',
