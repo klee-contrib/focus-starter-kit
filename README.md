@@ -21,7 +21,8 @@ You don't have your own server API, you can use our mock API by launching this c
 node api
 ```
 
-The mock API serve fake datas at this URL : `http://localhost:9999/`
+The mock API serve fake datas at this URL : `http://localhost:9999/`.
+
 The section below explain how to plug your own API.
 
 To launch webapp server :
