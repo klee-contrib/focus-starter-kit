@@ -33,7 +33,7 @@ Open you browser and access to this URL : `http://localhost:3000/`
 
 Edit `config.webpack.js` file.
 
-Replace `API_ROOT` var by root your root API URL in thi section :
+Replace `API_ROOT` var by root your root API URL in this section :
 
 ```javascript
 plugins: [
