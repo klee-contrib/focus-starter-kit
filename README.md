@@ -31,7 +31,7 @@ npm start
 
 Open you browser and access to this URL : `http://localhost:3000/`
 
-## How to plug my backend API ?
+## How to plug my own backend API ?
 
 Edit `config.webpack.js` file.
 
