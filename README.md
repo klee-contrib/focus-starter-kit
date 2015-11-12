@@ -16,7 +16,7 @@ npm i
 
 ## How to launch it ?
 
-You don't have your API, you can use demo mock API by launching this command:
+You don't have your own server API, you can use demo mock API by launching this command:
 ```shell
 node api
 ```
