@@ -14,7 +14,7 @@ Install package dependencies :
 npm i
 ```
 
-How to launch it ?
+## How to launch it ?
 
 You don't have your API, you can use demo mock API by launching this command:
 ```shell
