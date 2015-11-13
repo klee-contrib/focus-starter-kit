@@ -5,5 +5,5 @@ export default {
     validator: [{
         type: 'number'
     }],
-    formatter: value => moment.duration({seconds: value}).humanize()
+    formatter: value => value ? value === 0 ? '-' : moment.duration({seconds: value}).humanize() : '-'
 };

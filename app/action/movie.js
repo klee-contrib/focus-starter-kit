@@ -5,10 +5,22 @@ const {actionBuilder} = FocusCore.application;
 export default {
     movie: {
         load: actionBuilder({
-            service: movieServices.loadMovie,
             node: 'movie',
-            status: 'loaded',
-            shouldDumpStoreOnActionCall: true
+            service: movieServices.loadMovie,
+            shouldDumpStoreOnActionCall: true,
+            status: 'loaded'
+        }),
+        saveSynopsis: actionBuilder({
+            node: 'movie',
+            service: movieServices.saveMovieSynopsis,
+            shouldDumpStoreOnActionCall: true,
+            status: 'saved'
+        }),
+        saveCaracteristics: actionBuilder({
+            node: 'movie',
+            service: movieServices.saveMovieCaracteristics,
+            shouldDumpStoreOnActionCall: true,
+            status: 'saved'
         })
     }
 };

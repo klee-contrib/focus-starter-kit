@@ -1,7 +1,5 @@
-import FocusCore from 'focus-core';
-
-// Dependencies.
-import {router} from 'focus-core';
+import FocusCore, {router} from 'focus-core';
+import MovieDetailView from '../views/movie/detail';
 
 const MoviesRouter = router.extend({
     log: true,
@@ -13,7 +11,6 @@ const MoviesRouter = router.extend({
     },
     movies(id) {
         console.log(`ROUTE: MOVIES ${id}`);
-        const MovieDetailView = require('../views/movie/detail');
         this._pageContent(MovieDetailView, {props: {id}});
     }
 });

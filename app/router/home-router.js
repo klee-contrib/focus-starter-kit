@@ -1,5 +1,5 @@
-import FocusCore from 'focus-core';
-const {router} = FocusCore;
+import FocusCore, {router} from 'focus-core';
+import HomeView from '../views/home';
 
 const HomeRouter = router.extend({
     log: true,
@@ -12,7 +12,6 @@ const HomeRouter = router.extend({
     },
     home() {
         console.log('ROUTE: HOME');
-        const HomeView = require('../views/home');
         this._pageContent(HomeView);
     }
 });
