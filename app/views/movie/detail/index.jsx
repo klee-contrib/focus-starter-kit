@@ -30,10 +30,10 @@ export default React.createClass({
 
     /** @inheritDoc */
     componentWillMount() {
-        const {id} = this.props;
-
-        //action load
-        movieAction.movie.load(id);
+        // const {id} = this.props;
+        //
+        // //action load
+        // movieAction.movie.load(id);
 
         //this._registerListeners();
         this._registerCartridge();
@@ -76,12 +76,13 @@ export default React.createClass({
 
     /** @inheritDoc */
     render() {
+        const {id} = this.props;
         return (
             <ScrollspyContainer gridContentSize={10} gridMenuSize={2}>
-                <MovieSynopsis hasLoad={false} />
-                <MoviesCaracteristics hasLoad={false} />
-                <MoviePosters />
-                <MovieActors />
+                <MovieSynopsis id={id} />
+                <MoviesCaracteristics id={id} />
+                <MoviePosters id={id} />
+                <MovieActors id={id} />
             </ScrollspyContainer>
         );
     }
