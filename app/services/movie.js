@@ -9,11 +9,11 @@ export default {
         return fetch(URL.movies.loadMovie({urlData: {id}}));
     },
     saveMovieSynopsis(data) {
-        console.console.log(`[MOVIE] call saveMovieSynopsis method. data=${data}`);
-        return fetch(URL.movies.saveMovieSynopsis({data: data}));
+        console.log(`[MOVIE] call saveMovieSynopsis method. id=${data.id} data=${data}`);
+        return fetch(URL.movies.saveMovie({urlData: {id: data.id}, data: {data}}));
     },
     saveMovieCaracteristics(data) {
-        console.console.log(`[MOVIE] call saveMovieCaracteristics method. data=${data}`);
-        return fetch(URL.movies.saveMovieCaracteristics({data: data}));
+        console.log(`[MOVIE] call saveMovieCaracteristics method. id=${data.id} data=${data}`);
+        return fetch(URL.movies.saveMovie({urlData: {id: data.id}, data: {data}}));
     }
 }
