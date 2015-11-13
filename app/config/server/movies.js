@@ -5,7 +5,6 @@ const movieRoot = API_ROOT + '/movies/';
 
 export default {
     loadMovie: builder(movieRoot + '${id}', 'GET'),
-    updateMovie: builder(movieRoot + '${id}', 'PUT'),
     saveMovieSynopsis: builder(movieRoot + '${id}', 'PUT'),
-    saveMoveCaracteristics: builder(movieRoot + '${id}', 'PUT')
+    saveMovieCaracteristics: builder(movieRoot + '${id}', 'PUT')
 };
