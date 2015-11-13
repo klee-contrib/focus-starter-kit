@@ -38,7 +38,7 @@
     "eslint-plugin-react": "3.5.0",
     "extract-text-webpack-plugin": "^0.8.2",
     "focus-core": "0.11.2",
-    "focus-components": "0.7.3-12",
+    "focus-components": "0.7.4",
     "font-awesome": "^4.3.0",
     "i18next-client": "^1.11.0",
     "immutable": "^3.7.2",
