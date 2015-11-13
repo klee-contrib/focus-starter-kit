@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 const allowCrossDomain = (req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type');
-    res.header('Access-Control-Allow-Methods', 'POST,GET,OPTIONS,DELETE');
+    res.header('Access-Control-Allow-Methods', 'POST,PUT,GET,OPTIONS,DELETE');
     res.header('Content-Type', 'application/json');
     next();
 }
@@ -50,10 +50,22 @@ app.get('/movies/:id', (req, res) => {
 });
 
 // PUT MOVIE ID
-app.put('/movie/:id', (req, res) => {
-    const movieId = +req.params.id;
-    const data = req.params.data;
-    console.log('put on movie ' + movieId + ' - data:' + data);
+app.put('/movies/:id', (req, res) => {
+    const data = req.body.data;
+    const id = +data.id;
+    if(id) {
+        const movie = _.find(DB, (movie) => { return movie.code === id });
+        if(movie) {
+            _.assign(movie, data);
+            res.json(movie);
+            return;
+        }
+        console.error('impossible de retrouver le film portant l\id :' + id);
+        res.status(500).sent('Erreur : le film n\'existe pas...');
+    }
+    console.error('impossible de retrouver le film portant l\id :' + id);
+    console.error('Erreur : aucun id de film fourni...');
+    res.status(500).sent('Erreur : aucun id de film fourni...');
 });
 
 // app.get('/notifications', function(req, res) {
