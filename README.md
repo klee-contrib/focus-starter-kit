@@ -44,3 +44,7 @@ plugins: [
     })
 ],
 ```
+
+## API format
+
+API must respect those rules : https://gist.github.com/pierr/86159b709242ea96c71c

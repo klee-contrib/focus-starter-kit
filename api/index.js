@@ -49,6 +49,13 @@ app.get('/movies/:id', (req, res) => {
     }));
 });
 
+// PUT MOVIE ID
+app.put('/movie/:id', (req, res) => {
+    const movieId = +req.params.id;
+    const data = req.params.data;
+    console.log('put on movie ' + movieId + ' - data:' + data);
+});
+
 // app.get('/notifications', function(req, res) {
 //     res.json(notificationsJSON);}
 // );
