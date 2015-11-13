@@ -6,15 +6,16 @@
 export default {
     movie: {
         code: 'Code',
-        title: 'Titre',
+        keywords: 'keywords',
         originalTitle: 'Titre original',
-        poster: 'URL de l\'affiche',
-        synopsis: 'Synopsis',
-        trailerName: 'Nom de la bande annonce',
-        trailerHRef: 'URL de la bande annonce',
+        movieType: 'Type de film',
+        productionYear: 'Année de production',
         shortSynopsis: 'Synopsis court',
         runtime: 'Durée en minutes',
-        movieType: 'Type de film',
-        productionYear: 'Année de production'
+        poster: 'URL de l\'affiche',
+        synopsis: 'Synopsis',
+        title: 'Titre',
+        trailerName: 'Nom de la bande annonce',
+        trailerHRef: 'URL de la bande annonce'
     }
 };
