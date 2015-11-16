@@ -1,4 +1,4 @@
-import {router, application} from 'focus-core';
+import {application, router} from 'focus-core';
 import ErorView from '../views/test/error';
 
 const ErrorRouter = router.extend({

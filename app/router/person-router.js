@@ -1,10 +1,10 @@
-import FocusCore, {router} from 'focus-core';
+import {application, router} from 'focus-core';
 import PersonDetailView from '../views/person/detail';
 
 const PersonsRouter = router.extend({
     log: true,
     beforeRoute() {
-        FocusCore.application.changeRoute('persons');
+        application.changeRoute('persons');
     },
     routes: {
         'persons(/:id)': 'persons'
