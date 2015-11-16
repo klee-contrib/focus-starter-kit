@@ -1,10 +1,10 @@
-import FocusCore, {router} from 'focus-core';
+import {application, router} from 'focus-core';
 import HomeView from '../views/home';
 
 const HomeRouter = router.extend({
     log: true,
     beforeRoute() {
-        FocusCore.application.changeRoute('home');
+        application.changeRoute('home');
     },
     routes: {
         '': 'home',

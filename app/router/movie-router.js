@@ -1,10 +1,10 @@
-import FocusCore, {router} from 'focus-core';
+import {application, router} from 'focus-core';
 import MovieDetailView from '../views/movie/detail';
 
 const MoviesRouter = router.extend({
     log: true,
     beforeRoute() {
-        FocusCore.application.changeRoute('movies');
+        application.changeRoute('movies');
     },
     routes: {
         'movies(/:id)': 'movies'
@@ -15,4 +15,4 @@ const MoviesRouter = router.extend({
     }
 });
 
-export default new MoviesRouter();
+new MoviesRouter();

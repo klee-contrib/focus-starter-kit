@@ -11,7 +11,7 @@ import {storeBehaviour} from 'focus-components/common/mixin';
 //stores
 import movieStore from '../../../stores/movie';
 
-//project views
+//views
 import HeaderExpanded from './movie-header-content-expanded';
 import HeaderSummary from './movie-header-content-summary';
 import MovieActors from './movie-actors';

@@ -12,5 +12,15 @@ export default {
             posters: 'Affiches',
             synopsis: 'Synopsis'
         }
+    },
+    person: {
+        keyConcept: {
+            name: 'Personne'
+        },
+        detail: {
+            biography: 'Biographie',
+            identity: 'Identité',
+            movies: 'Filmographie'
+        }
     }
 };
