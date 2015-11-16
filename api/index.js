@@ -47,6 +47,7 @@ app.get('/movies/:id', (req, res) => {
     res.json(_.find(DB, (movie) => {
         return movie.code === id;
     }));
+
 });
 
 // PUT MOVIE ID
@@ -67,6 +68,15 @@ app.put('/movies/:id', (req, res) => {
     console.error('Erreur : aucun id de film fourni...');
     res.status(500).sent('Erreur : aucun id de film fourni...');
 });
+app.get('/test/error', function error(req, res) {
+    res.status(422).json({
+        fieldErrors: {
+            telephone: [
+                'Le champ telephone est obligatoire.'
+            ]
+        }
+    });
+})
 
 // app.get('/notifications', function(req, res) {
 //     res.json(notificationsJSON);}
