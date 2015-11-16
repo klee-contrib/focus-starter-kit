@@ -6,22 +6,9 @@ const HomePage =  React.createClass({
     render() {
         return (
             <div>
-                <h1>Title h1</h1>
-                <h2>Title h2</h2>
-                <h3>Title h3</h3>
-                <h4>Title h4</h4>
-                <h5>Title h5</h5>
-                <h6>Title h6</h6>
-                <a onClick={() => Backbone.history.navigate('movies/1', true)}>Movie 1</a>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+                <h1>Bienvenue sur l'application de démo FOCUS</h1>
+                <p><a onClick={() => Backbone.history.navigate('movies/10001', true)}>Movie 10001</a></p>
+                <p><a onClick={() => Backbone.history.navigate('persons/10', true)}>Person 10</a></p>
             </div>
         );
     }
