@@ -17,5 +17,17 @@ export default {
         title: 'Titre',
         trailerName: 'Nom de la bande annonce',
         trailerHRef: 'URL de la bande annonce'
+    },
+    person: {
+        code: 'Code',
+        fullName: 'Nom complet',
+        firstName: 'Prénom',
+        biography: 'Biographie',
+        shortBiography: 'Biographie courte',
+        sex: 'Sexe',
+        photoURL: 'URL Photo',
+        birthDate: 'Date de naissance',
+        birthPlace: 'Lieu de naissance',
+        activity: 'Activité'
     }
 };

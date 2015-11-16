@@ -15,4 +15,4 @@ const MoviesRouter = router.extend({
     }
 });
 
-export default new MoviesRouter();
+new MoviesRouter();

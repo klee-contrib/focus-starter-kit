@@ -15,4 +15,4 @@ const ErrorRouter = router.extend({
     }
 });
 
-export default new ErrorRouter();
+new ErrorRouter();

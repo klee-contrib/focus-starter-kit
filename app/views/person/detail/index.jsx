@@ -9,19 +9,17 @@ import {cartridgeBehaviour} from 'focus-components/page/mixin';
 import {storeBehaviour} from 'focus-components/common/mixin';
 
 //stores
-import movieStore from '../../../stores/movie';
+import personStore from '../../../stores/person';
 
 //views
-import HeaderExpanded from './movie-header-content-expanded';
-import HeaderSummary from './movie-header-content-summary';
-import MovieActors from './movie-actors';
-import MoviesCaracteristics from './movie-caracteristics';
-import MoviePosters from './movie-posters';
-import MovieSynopsis from './movie-synospis';
-
+import HeaderExpanded from './person-header-content-expanded';
+import HeaderSummary from './person-header-content-summary';
+import PersonBiography from './person-biography';
+import PersonIdentity from './person-identity';
+import PersonMovies from './person-movies';
 
 export default React.createClass({
-    displayName: 'MovieDetailView',
+    displayName: 'PersonDetailView',
     propTypes: {
         id: PropTypes.number
     },
@@ -32,8 +30,8 @@ export default React.createClass({
         this._registerCartridge();
     },
 
-    definitionPath: 'movie',
-    stores: [{store: movieStore, properties: ['movie']}],
+    definitionPath: 'person',
+    stores: [{store: personStore, properties: ['person']}],
 
     /**
     * Related to the CartridgeBehaviour.
@@ -47,24 +45,10 @@ export default React.createClass({
             cartridge: { component: HeaderExpanded, props },
             summary: { component: HeaderSummary, props },
             actions: {
-                primary: this._getGlobalPrimaryActions() || [],
+                primary: [],
                 secondary: []
             }
         };
-    },
-
-    _getGlobalPrimaryActions() {
-        const {id} = this.props;
-        const url = `http://www.allocine.fr/film/fichefilm_gen_cfilm=${id}.html`;
-
-        // build primary actions tab
-        //const {trailerHRef} = this.state;
-        const actions = [];
-        // if(trailerHRef) {
-        //     this.actions.push({label: 'Jouer la bande annonce', icon: 'play_arrow', action: () => { console.log(trailerHRef); }});
-        // }
-        actions.push({label: 'Allociné', icon: 'launch', action: () => { window.open(url,'_blank'); }});
-        return actions;
     },
 
     /** @inheritDoc */
@@ -72,10 +56,9 @@ export default React.createClass({
         const {id} = this.props;
         return (
             <ScrollspyContainer gridContentSize={10} gridMenuSize={2}>
-                <MovieSynopsis id={id} />
-                <MoviesCaracteristics id={id} />
-                <MoviePosters id={id} />
-                <MovieActors id={id} />
+                <PersonIdentity id={id} />
+                <PersonBiography id={id} />
+                <PersonMovies id={id} />
             </ScrollspyContainer>
         );
     }
