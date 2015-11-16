@@ -1,26 +1,32 @@
-import FocusCore from 'focus-core';
 import movieServices from '../services/movie';
-const {actionBuilder} = FocusCore.application;
+import actionBuilder from 'focus-core/application/action-builder';
 
-export default {
-    movie: {
-        load: actionBuilder({
-            node: 'movie',
-            service: movieServices.loadMovie,
-            shouldDumpStoreOnActionCall: true,
-            status: 'loaded'
-        }),
-        saveSynopsis: actionBuilder({
-            node: 'movie',
-            service: movieServices.saveMovieSynopsis,
-            shouldDumpStoreOnActionCall: true,
-            status: 'saved'
-        }),
-        saveCaracteristics: actionBuilder({
-            node: 'movie',
-            service: movieServices.saveMovieCaracteristics,
-            shouldDumpStoreOnActionCall: true,
-            status: 'saved'
-        })
-    }
-};
+export const synopsisActions = {
+    load: actionBuilder({
+        node: 'movie',
+        service: movieServices.loadMovie,
+        shouldDumpStoreOnActionCall: true,
+        status: 'loaded'
+    }),
+    save: actionBuilder({
+        node: 'movie',
+        service: movieServices.saveMovieSynopsis,
+        shouldDumpStoreOnActionCall: true,
+        status: 'saved'
+    })
+}
+
+export const caracteristicsActions = {
+    load: actionBuilder({
+        node: 'movie',
+        service: movieServices.loadMovie,
+        shouldDumpStoreOnActionCall: true,
+        status: 'loaded'
+    }),
+    save: actionBuilder({
+        node: 'movie',
+        service: movieServices.saveMovieCaracteristics,
+        shouldDumpStoreOnActionCall: true,
+        status: 'saved'
+    })
+}

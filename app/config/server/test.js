@@ -1,3 +1,7 @@
-import {builder} from 'focus-core/util/url';
+import builder from 'focus-core/util/url/builder';
+
 const testRoot = API_ROOT + '/test/error/';
-export const loadError = builder(testRoot, 'GET');
+
+export default {
+    loadError: builder(testRoot, 'GET')
+};

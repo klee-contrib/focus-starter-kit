@@ -1,5 +1,4 @@
-import FocusCore from 'focus-core';
-const {CoreStore} = FocusCore.store;
+import {CoreStore} from 'focus-core/store';
 
 /**
 * Store dealing with subjects about movies.

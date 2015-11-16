@@ -1,10 +1,10 @@
-import FocusCore from 'focus-core';
+import {CoreStore} from 'focus-core/store';
 
 /**
 * Store dealing with subjects about movies.
 * @type {focus}
 */
-const movieStore = new FocusCore.store.CoreStore({
+const movieStore = new CoreStore({
     definition: {
         movie: 'movie'
     }

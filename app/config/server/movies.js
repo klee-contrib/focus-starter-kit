@@ -1,6 +1,5 @@
-import FocusCore from 'focus-core';
+import builder from 'focus-core/util/url/builder';
 
-const {builder} = FocusCore.util.url;
 const movieRoot = API_ROOT + '/movies/';
 
 export default {

@@ -1,4 +1,4 @@
-//imports
+//libraries
 import React, {PropTypes} from 'react';
 
 export default React.createClass({

@@ -1,7 +1,9 @@
+//librairies
 import React, {PropTypes} from 'react';
 import FocusComponents from 'focus-components';
 
-const {Panel} = FocusComponents.components;
+// web components
+import Panel from 'focus-components/components/panel';
 
 export default React.createClass({
     displayName: 'MoviePosters',
