@@ -22,20 +22,11 @@ import movieStore from '../../../stores/movie';
 import movieAction from '../.././../action/movie';
 
 export default React.createClass({
-    displayName: 'MovieDetailView',
-    propTypes: {
-        id: PropTypes.number
-    },
-    mixins: [storeBehaviour, cartridgeBehaviour],
+    displayName: 'MovieView',
+    mixins: [storeBehaviour],
 
     /** @inheritDoc */
     componentWillMount() {
-        // const {id} = this.props;
-        //
-        // //action load
-        // movieAction.movie.load(id);
-
-        //this._registerListeners();
         this._registerCartridge();
     },
 

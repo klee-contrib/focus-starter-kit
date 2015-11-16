@@ -1,7 +1,3 @@
-import {homeRouter} from './home-router';
-import {movieRouter} from './movie-router';
-
-export default {
-    homeRouter,
-    movieRouter
-};
+import './home-router';
+import './movie-router';
+import './test-router';
