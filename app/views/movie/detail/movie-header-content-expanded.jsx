@@ -1,13 +1,13 @@
-//imports
+// libraries
 import React from 'react';
 import FocusComponents from 'focus-components';
 import i18n from 'i18next-client';
 
+//web components
+import {mixin as formMixin} from 'focus-components/common/form';
+
 //stores
 import movieStore from '../../../stores/movie';
-
-//focus-components
-const {mixin: formMixin} = FocusComponents.common.form;
 
 //custom components
 import Poster from '../poster';

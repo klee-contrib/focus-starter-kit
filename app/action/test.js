@@ -1,4 +1,4 @@
-import {actionBuilder} from 'focus-core/application';
+import actionBuilder from 'focus-core/application/action-builder';
 import {loadError} from '../services/test';
 
 export const error = {

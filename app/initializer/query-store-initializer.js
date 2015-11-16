@@ -1,6 +1,6 @@
 import FocusCore from 'focus-core';
 
-module.exports = {
+export default {
     initialize() {
         FocusCore.dispatcher.handleServerAction({
             data: {

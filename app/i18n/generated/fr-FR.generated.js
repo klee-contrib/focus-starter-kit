@@ -6,7 +6,7 @@
 export default {
     movie: {
         code: 'Code',
-        keywords: 'keywords',
+        keywords: 'Mots clés',
         originalTitle: 'Titre original',
         movieType: 'Type de film',
         productionYear: 'Année de production',

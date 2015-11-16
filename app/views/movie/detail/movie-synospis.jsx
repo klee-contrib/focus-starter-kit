@@ -1,15 +1,14 @@
+//libraries
 import React, {PropTypes} from 'react';
 import FocusComponents from 'focus-components';
 
-//stores
+// web components
+import Panel from 'focus-components/components/panel';
+import {mixin as formMixin} from 'focus-components/common/form';
+
+//stores & actions
 import movieStore from '../../../stores/movie';
-
-//actions
-import movieActions from '../../../action/movie';
-
-//focus-components
-const {Panel} = FocusComponents.components;
-const {mixin: formMixin} = FocusComponents.common.form;
+import {synopsisActions} from '../../../action/movie';
 
 export default React.createClass({
     displayName: 'MovieSynopsis',
@@ -19,10 +18,7 @@ export default React.createClass({
     mixins: [formMixin],
     definitionPath: 'movie',
     stores: [{store: movieStore, properties: ['movie']}],
-    action: {
-        load: movieActions.movie.load,
-        save: movieActions.movie.saveSynopsis
-    },
+    action: synopsisActions,
 
     /** @inheritDoc */
     renderContent() {

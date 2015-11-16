@@ -1,7 +1,17 @@
+// libraries
 import React, {PropTypes} from 'react';
 import FocusComponents from 'focus-components';
 
-//Project views
+// web components
+import ScrollspyContainer from 'focus-components/components/scrollspy-container';
+import {component as BackButton} from 'focus-components/common/button/back';
+import {cartridgeBehaviour} from 'focus-components/page/mixin';
+import {storeBehaviour} from 'focus-components/common/mixin';
+
+//stores
+import movieStore from '../../../stores/movie';
+
+//project views
 import HeaderExpanded from './movie-header-content-expanded';
 import HeaderSummary from './movie-header-content-summary';
 import MovieActors from './movie-actors';
@@ -9,21 +19,13 @@ import MoviesCaracteristics from './movie-caracteristics';
 import MoviePosters from './movie-posters';
 import MovieSynopsis from './movie-synospis';
 
-//Focus components
-const {ScrollspyContainer} = FocusComponents.components;
-const BackButton = FocusComponents.common.button.back.component;
-const {cartridgeBehaviour} = FocusComponents.page.mixin;
-const {storeBehaviour} = FocusComponents.common.mixin;
-
-//Stores
-import movieStore from '../../../stores/movie';
-
-//Services
-import movieAction from '../.././../action/movie';
 
 export default React.createClass({
-    displayName: 'MovieView',
-    mixins: [storeBehaviour],
+    displayName: 'MovieDetailView',
+    propTypes: {
+        id: PropTypes.number
+    },
+    mixins: [storeBehaviour, cartridgeBehaviour],
 
     /** @inheritDoc */
     componentWillMount() {
