@@ -15,3 +15,18 @@ export const identityActions = {
         status: 'saved'
     })
 }
+
+export const biographyActions = {
+    load: actionBuilder({
+        node: 'person',
+        service: personSerivces.loadPerson,
+        shouldDumpStoreOnActionCall: true,
+        status: 'loaded'
+    }),
+    save: actionBuilder({
+        node: 'person',
+        service: personSerivces.savePersonBiography,
+        shouldDumpStoreOnActionCall: true,
+        status: 'saved'
+    })
+}

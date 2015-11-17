@@ -13,10 +13,12 @@ export default React.createClass({
         const {title, url} = this.props;
         return (
             <div data-demo='picture'>
-                <i className="material-icons">local_movies</i>
-                {url &&
-                    <img alt={title} src={url} title={title} />
-                }
+                <div>
+                    <i className="material-icons">local_movies</i>
+                    {url &&
+                            <img alt={title} src={url} title={title} />
+                    }
+                </div>
             </div>
         );
     }

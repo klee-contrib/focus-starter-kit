@@ -1,3 +1,36 @@
-[data-demo="poster"] {
-    border:1px solid red;
+$picture-large-width:210px;
+$picture-small-width:30px;
+
+[data-demo="picture"] {
+    position: relative;
+    div {
+        //display: flex;
+        position: relative;
+        width: $picture-large-width;
+        height: $picture-large-width;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 4px solid #e6edf4;
+        background-color: rgba(5,29,49,.5);
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+}
+
+
+[data-focus="header-top-row"] {
+    [data-demo="header-content-summary"] {
+        [data-demo="picture"] {
+            margin-right: 10px;
+            div {
+                width:$picture-small-width;
+                height: $picture-small-width;
+                border-width: 1px;
+            }
+        }
+    }
 }
