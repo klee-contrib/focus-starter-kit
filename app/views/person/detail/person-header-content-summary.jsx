@@ -20,10 +20,12 @@ export default React.createClass({
 
     /** @inheritDoc */
     renderContent() {
-        //const {poster, title} = this.state;
+        const {fullName, photoURL} = this.state;
         return (
             <div data-demo='header-content-summary'>
                 <h4>{i18n.t('person.keyConcept.name')}</h4>
+                <Picture url={photoURL} title={fullName} />
+                <h5>{this.textFor('fullName')}</h5>
             </div>
         );
     }

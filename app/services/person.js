@@ -9,5 +9,9 @@ export default {
     savePersonIdentity(data) {
         console.log(`[PERSON] call savePersonIdentity method. id=${data.id} data=${data}`);
         return fetch(personUrl.savePerson({urlData: {id: data.id}, data: {data}}));
+    },
+    savePersonBiography(data) {
+        console.log(`[PERSON] call savePersonBiography method. id=${data.id} data=${data}`);
+        return fetch(personUrl.savePerson({urlData: {id: data.id}, data: {data}}));
     }
 }
