@@ -1,4 +1,4 @@
-import 'material-design-lite/material.css';
+import 'focus-components/style';
 import './layout.scss';
 import './header.scss';
 import './menu-left.scss';
