@@ -30,8 +30,6 @@ export default React.createClass({
                 {this.fieldFor('runtime')}
                 {this.fieldFor('movieType')}
                 {this.fieldFor('productionYear')}
-                {this.fieldFor('trailerName')}
-                {this.fieldFor('trailerHRef')}
             </Panel>
         );
     }

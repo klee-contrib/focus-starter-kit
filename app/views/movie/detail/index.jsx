@@ -18,6 +18,7 @@ import MovieActors from './movie-actors';
 import MoviesCaracteristics from './movie-caracteristics';
 import MoviePosters from './movie-posters';
 import MovieSynopsis from './movie-synospis';
+import MovieTrailer from './movie-trailer';
 
 
 export default React.createClass({
@@ -72,8 +73,9 @@ export default React.createClass({
         const {id} = this.props;
         return (
             <ScrollspyContainer gridContentSize={10} gridMenuSize={2}>
-                <MovieSynopsis id={id} />
                 <MoviesCaracteristics id={id} />
+                <MovieSynopsis id={id} />
+                <MovieTrailer id={id} />
                 <MoviePosters id={id} />
                 <MovieActors id={id} />
             </ScrollspyContainer>
