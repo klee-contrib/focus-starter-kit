@@ -1,4 +1,7 @@
+//import material js
 import 'material-design-lite/material';
+
+//import app demo styles
 import './styles';
 
 //Initialisation des configurations et du layout.

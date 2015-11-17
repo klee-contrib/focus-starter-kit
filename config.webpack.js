@@ -23,7 +23,8 @@ demoConfig = {
         alias: {
             'focus-core': path.resolve(__dirname, './node_modules/focus-core/lib'),
             'focus-components': path.resolve(__dirname, './node_modules/focus-components/src'),
-            react: path.resolve(__dirname, './node_modules/react')
+            react: path.resolve(__dirname, './node_modules/react'),
+            '_variable.scss': path.resolve(__dirname, './node_modules/focus-components/src/style/_mdl_variables.scss')
         },
         extensions: ['', '.webpack.js', '.web.js', '.js', '.jsx']
     },
