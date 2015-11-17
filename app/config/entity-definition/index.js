@@ -83,7 +83,7 @@ export const person = {
         required: false
     },
     birthPlace: {
-        domain: 'DO_LASTE_NAME',
+        domain: 'DO_LAST_NAME',
         required: false
     },
     activity: {

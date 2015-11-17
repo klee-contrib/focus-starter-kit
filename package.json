@@ -25,7 +25,7 @@
   "dependencies": {
     "backbone": "^1.2.0",
     "focus-core": "0.11.2",
-    "focus-components": "0.7.5-beta1",
+    "focus-components": "0.7.5-beta3",
     "i18next-client": "^1.11.0",
     "immutable": "^3.7.2",
     "jquery": "3.0.0-alpha1",
