@@ -14,7 +14,7 @@ export default React.createClass({
         return (
             <div data-demo='picture'>
                 <div>
-                    <i className="material-icons">local_movies</i>
+                    <i className="material-icons">person</i>
                     {url &&
                             <img alt={title} src={url} title={title} />
                     }

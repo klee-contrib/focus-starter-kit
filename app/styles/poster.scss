@@ -1,8 +1,10 @@
+@import "variables";
+
 [data-demo="poster"] {
     background-color: #F1F1F1;
     border: 1px solid #C0C0C0;
-    width: 180px;
-    height: 290px;
+    width: $poster-large-width;
+    height: $poster-large-height;
     text-align: center;
     display: flex;
     justify-content:center;
@@ -23,14 +25,14 @@
 
 [data-demo='header-content-expanded'] {
     [data-demo="poster"] {
-        width: 180px;
-        height: 290px;
+        width: $poster-large-width;
+        height: $poster-large-height;
     }
 }
 [data-demo='header-content-summary'] {
     [data-demo="poster"] {
-        width: 19px;
-        height: 30px;
+        width: $poster-small-width;
+        height: $poster-small-height;
         margin-right: 10px;
         i {
             font-size: 12px;

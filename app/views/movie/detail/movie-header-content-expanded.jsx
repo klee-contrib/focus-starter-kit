@@ -4,7 +4,7 @@ import FocusComponents from 'focus-components';
 import i18n from 'i18next-client';
 
 //web components
-import {mixin as formMixin} from 'focus-components/common/form';
+import {mixin as formPreset} from 'focus-components/common/form';
 
 //stores
 import movieStore from '../../../stores/movie';
@@ -14,21 +14,22 @@ import Poster from '../poster';
 
 export default React.createClass({
     displayName: 'MovieDetailHeaderExpanded',
-    mixins: [formMixin],
+    mixins: [formPreset],
     definitionPath: 'movie',
     stores: [{store: movieStore, properties: ['movie']}],
 
     /** @inheritDoc */
     renderContent() {
-        const {title, movieType, poster, productionYear} = this.state;
+        const {title, poster} = this.state;
         return (
             <div data-demo='header-content-expanded'>
                 <Poster poster={poster} title={title} />
                 <div data-demo='header-content-expanded__infos'>
                     <h2>{i18n.t('movie.keyConcept.name')}</h2>
-                    <h3>{title}</h3>
-                    <h5>{movieType}</h5>
-                    <h6>{productionYear}</h6>
+                    <h3>{this.textFor('title')}</h3>
+                    <h5>{this.textFor('movieType')}</h5>
+                    <h6>{this.textFor('productionYear')}</h6>
+                    <p>{this.textFor('shortSynopsis')}</p>
                 </div>
             </div>
         );

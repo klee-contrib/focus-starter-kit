@@ -4,7 +4,7 @@ import FocusComponents from 'focus-components';
 import i18n from 'i18next-client';
 
 //web components
-import {mixin as formMixin} from 'focus-components/common/form';
+import {mixin as formPreset} from 'focus-components/common/form';
 
 //stores
 import movieStore from '../../../stores/movie';
@@ -14,7 +14,7 @@ import Poster from '../poster';
 
 export default React.createClass({
     displayName: 'MovieDetailHeaderSummary',
-    mixins: [formMixin],
+    mixins: [formPreset],
     definitionPath: 'movie',
     stores: [{store: movieStore, properties: ['movie']}],
 
