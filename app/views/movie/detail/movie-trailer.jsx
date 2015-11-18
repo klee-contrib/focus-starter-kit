@@ -8,28 +8,32 @@ import {mixin as formPreset} from 'focus-components/common/form';
 
 //stores & actions
 import movieStore from '../../../stores/movie';
-import {caracteristicsActions} from '../../../action/movie';
+import {trailerActions} from '../../../action/movie';
+
+//custom components
+import Poster from '../poster';
 
 export default React.createClass({
-    displayName: 'MovieCaracteristics',
+    displayName: 'MovieTrailer',
     propTypes: {
         id: PropTypes.number
     },
     mixins: [formPreset],
     definitionPath: 'movie',
     stores: [{store: movieStore, properties: ['movie']}],
-    action: caracteristicsActions,
+    action: trailerActions,
 
     /** @inheritDoc */
     renderContent() {
+        const {trailerHRef} = this.state;
         return (
-            <Panel actions={this._renderActions} title='movie.detail.caracteristics'>
-                {this.fieldFor('title')}
-                {this.fieldFor('originalTitle')}
-                {this.fieldFor('keywords')}
-                {this.fieldFor('runtime')}
-                {this.fieldFor('movieType')}
-                {this.fieldFor('productionYear')}
+            <Panel title='movie.detail.trailer'>
+                {this.fieldFor('trailerName')}
+                {this.fieldFor('trailerHRef')}
+                <br/>
+                {trailerHRef &&
+                    <iframe src={trailerHRef} allowfullscreen={true} seamless={true} width="1024" height="768" />
+                }
             </Panel>
         );
     }

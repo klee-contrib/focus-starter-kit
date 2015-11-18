@@ -10,7 +10,8 @@ export default {
             actors: 'Acteurs',
             caracteristics: 'Carastéristiques',
             posters: 'Affiches',
-            synopsis: 'Synopsis'
+            synopsis: 'Synopsis',
+            trailer: 'Bande annonce'
         }
     },
     person: {
