@@ -1,8 +1,6 @@
-$picture-large-width:210px;
-$picture-small-width:30px;
+@import "variables";
 
 [data-demo="picture"] {
-    position: relative;
     div {
         //display: flex;
         position: relative;
@@ -18,9 +16,14 @@ $picture-small-width:30px;
             left: 0;
             width: 100%;
         }
+        i {
+            position: absolute;
+            color:#FFF;
+            font-size: 210px;
+            bottom: 0;
+        }
     }
 }
-
 
 [data-focus="header-top-row"] {
     [data-demo="header-content-summary"] {
@@ -30,6 +33,9 @@ $picture-small-width:30px;
                 width:$picture-small-width;
                 height: $picture-small-width;
                 border-width: 1px;
+                i {
+                    font-size: 30px;
+                }
             }
         }
     }

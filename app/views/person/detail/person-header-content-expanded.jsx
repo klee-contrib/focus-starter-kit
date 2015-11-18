@@ -4,7 +4,7 @@ import FocusComponents from 'focus-components';
 import i18n from 'i18next-client';
 
 //web components
-import {mixin as formMixin} from 'focus-components/common/form';
+import {mixin as formPreset} from 'focus-components/common/form';
 
 //stores
 import personStore from '../../../stores/person';
@@ -14,13 +14,13 @@ import Picture from '../picture';
 
 export default React.createClass({
     displayName: 'PersonDetailHeaderExpanded',
-    mixins: [formMixin],
+    mixins: [formPreset],
     definitionPath: 'person',
     stores: [{store: personStore, properties: ['person']}],
 
     /** @inheritDoc */
     renderContent() {
-        const {fullName, photoURL, shortBiography} = this.state;
+        const {fullName, photoURL} = this.state;
         return (
             <div data-demo='header-content-expanded'>
                 <Picture url={photoURL} title={fullName} />

@@ -4,7 +4,7 @@ import FocusComponents from 'focus-components';
 
 // web components
 import Panel from 'focus-components/components/panel';
-import {mixin as formMixin} from 'focus-components/common/form';
+import {mixin as formPreset} from 'focus-components/common/form';
 
 //stores & actions
 import personStore from '../../../stores/person';
@@ -15,7 +15,7 @@ export default React.createClass({
     propTypes: {
         id: PropTypes.number
     },
-    mixins: [formMixin],
+    mixins: [formPreset],
     definitionPath: 'person',
     stores: [{store: personStore, properties: ['person']}],
     action: biographyActions,

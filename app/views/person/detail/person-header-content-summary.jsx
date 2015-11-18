@@ -4,7 +4,7 @@ import FocusComponents from 'focus-components';
 import i18n from 'i18next-client';
 
 //web components
-import {mixin as formMixin} from 'focus-components/common/form';
+import {mixin as formPreset} from 'focus-components/common/form';
 
 //stores
 import personStore from '../../../stores/person';
@@ -14,7 +14,7 @@ import Picture from '../picture';
 
 export default React.createClass({
     displayName: 'PersonDetailHeaderSummary',
-    mixins: [formMixin],
+    mixins: [formPreset],
     definitionPath: 'person',
     stores: [{store: personStore, properties: ['person']}],
 

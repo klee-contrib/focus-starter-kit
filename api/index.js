@@ -63,11 +63,11 @@ app.put('/movies/:id', (req, res) => {
             return;
         }
         console.error('impossible de retrouver le film portant l\id :' + id);
-        res.status(500).sent('Erreur : le film n\'existe pas...');
+        res.status(404).sent('Erreur : le film n\'existe pas...');
     }
     console.error('impossible de retrouver le film portant l\id :' + id);
     console.error('Erreur : aucun id de film fourni...');
-    res.status(500).sent('Erreur : aucun id de film fourni...');
+    res.status(404).sent('Erreur : aucun id de film fourni...');
 });
 app.get('/test/error', function error(req, res) {
     res.status(422).json({
@@ -86,6 +86,26 @@ app.get('/persons/:id', (req, res) => {
         return person.code === id;
     }));
 });
+
+// PUT PERSON ID
+app.put('/persons/:id', (req, res) => {
+    const data = req.body.data;
+    const id = +data.id;
+    if(id) {
+        const person = _.find(personsDB, (person) => { return person.code === id });
+        if(person) {
+            _.assign(person, data);
+            res.json(person);
+            return;
+        }
+        console.error('impossible de retrouver la personne portant l\id :' + id);
+        res.status(404).sent('Erreur : le film n\'existe pas...');
+    }
+    console.error('impossible de retrouver la personne portant l\id :' + id);
+    console.error('Erreur : aucun id de personne fourni...');
+    res.status(404).sent('Erreur : aucun id de personne fourni...');
+});
+
 
 // Launch the server Server
 const server = app.listen(port, () => {

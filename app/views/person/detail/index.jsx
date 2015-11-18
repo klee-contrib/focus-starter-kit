@@ -38,10 +38,18 @@ export default React.createClass({
             cartridge: { component: HeaderExpanded, props },
             summary: { component: HeaderSummary, props },
             actions: {
-                primary: [],
+                primary: this._getGlobalPrimaryActions() || [],
                 secondary: []
             }
         };
+    },
+
+    _getGlobalPrimaryActions() {
+        const {id} = this.props;
+        const url = `http://www.allocine.fr/personne/fichepersonne_gen_cpersonne=${id}.html`;
+        const actions = [];
+        actions.push({label: 'Allociné', icon: 'launch', action: () => { window.open(url,'_blank'); }});
+        return actions;
     },
 
     /** @inheritDoc */
