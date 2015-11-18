@@ -49,6 +49,29 @@ export const movie = {
     }
 };
 
+export const moviePeople = {
+    code: {
+        domain: 'DO_ID',
+        required: true
+    },
+    name: {
+        domain: 'DO_LAST_NAME',
+        required: true
+    },
+    role: {
+        domain: 'DO_LAST_NAME',
+        required: true
+    },
+    photoURL: {
+        domain: 'DO_URL',
+        required: false
+    },
+    leadActor: {
+        domain: 'DO_YES_NO',
+        required: true
+    }
+}
+
 export const person = {
     code: {
         domain: 'DO_ID',
@@ -71,7 +94,7 @@ export const person = {
         required: true
     },
     sex: {
-        domain: 'DO_ID',
+        domain: 'DO_CODE',
         required: true
     },
     photoURL: {

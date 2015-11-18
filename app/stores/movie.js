@@ -6,7 +6,12 @@ import {CoreStore} from 'focus-core/store';
 */
 const movieStore = new CoreStore({
     definition: {
-        movie: 'movie'
+        movie: 'movie',
+        actors: 'actors',
+        cameramen: 'cameramen',
+        directors: 'directors',
+        producers: 'producers',
+        writers: 'writers'
     }
 });
 

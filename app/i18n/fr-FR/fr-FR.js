@@ -1,6 +1,7 @@
 export default {
     button: {
-        back: 'Retour'
+        back: 'Retour',
+        watchTrailer: 'Voir la bande annonce'
     },
     movie: {
         keyConcept: {
