@@ -12,6 +12,7 @@ import {trailerActions} from '../../../action/movie';
 
 //custom components
 import Poster from '../poster';
+import Trailer from '../trailer';
 
 export default React.createClass({
     displayName: 'MovieTrailer',
@@ -31,9 +32,7 @@ export default React.createClass({
                 {this.fieldFor('trailerName')}
                 {this.fieldFor('trailerHRef')}
                 <br/>
-                {trailerHRef &&
-                    <iframe src={trailerHRef} allowfullscreen={true} seamless={true} width="1024" height="768" />
-                }
+                <Trailer url={trailerHRef} />
             </Panel>
         );
     }
