@@ -6,10 +6,6 @@ import FocusComponents from 'focus-components';
 import ScrollspyContainer from 'focus-components/components/scrollspy-container';
 import {component as BackButton} from 'focus-components/common/button/back';
 import {cartridgeBehaviour} from 'focus-components/page/mixin';
-import {storeBehaviour} from 'focus-components/common/mixin';
-
-//stores
-import movieStore from '../../../stores/movie';
 
 //views
 import HeaderExpanded from './movie-header-content-expanded';
@@ -26,15 +22,12 @@ export default React.createClass({
     propTypes: {
         id: PropTypes.number
     },
-    mixins: [storeBehaviour, cartridgeBehaviour],
+    mixins: [cartridgeBehaviour],
 
     /** @inheritDoc */
     componentWillMount() {
         this._registerCartridge();
     },
-
-    definitionPath: 'movie',
-    stores: [{store: movieStore, properties: ['movie']}],
 
     /**
     * Related to the CartridgeBehaviour.
