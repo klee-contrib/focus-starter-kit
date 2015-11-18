@@ -9,10 +9,14 @@ export default {
         },
         detail: {
             actors: 'Acteurs',
+            cameramen: 'Camera men',
             caracteristics: 'Carastéristiques',
+            directors: 'Realisateurs',
             posters: 'Affiches',
+            producers: 'Producteurs',
             synopsis: 'Synopsis',
-            trailer: 'Bande annonce'
+            trailer: 'Bande annonce',
+            writers: 'Scénaristes'
         }
     },
     person: {

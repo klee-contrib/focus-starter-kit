@@ -10,9 +10,9 @@ export default {
         console.log(`[MOVIE] call loadMovieActors(${id}) method`);
         return fetch(movieUrl.loadMovieActors({urlData: {id}}));
     },
-    loadMovieCameraMen(id) {
-        console.log(`[MOVIE] call loadMovieCameraMen(${id}) method`);
-        return fetch(movieUrl.loadMovieCameraMen({urlData: {id}}));
+    loadMovieCameramen(id) {
+        console.log(`[MOVIE] call loadMovieCameramen(${id}) method`);
+        return fetch(movieUrl.loadMovieCameramen({urlData: {id}}));
     },
     loadMovieDirectors(id) {
         console.log(`[MOVIE] call loadMovieDirectors(${id}) method`);

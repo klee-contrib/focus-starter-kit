@@ -10,6 +10,42 @@ export const actorsActions = {
     })
 }
 
+export const cameramenActions = {
+    load: actionBuilder({
+        node: 'cameramen',
+        service: movieServices.loadMovieCameramen,
+        shouldDumpStoreOnActionCall: true,
+        status: 'loaded'
+    })
+}
+
+export const directorsActions = {
+    load: actionBuilder({
+        node: 'directors',
+        service: movieServices.loadMovieDirectors,
+        shouldDumpStoreOnActionCall: true,
+        status: 'loaded'
+    })
+}
+
+export const producersActions = {
+    load: actionBuilder({
+        node: 'producers',
+        service: movieServices.loadMovieDirectors,
+        shouldDumpStoreOnActionCall: true,
+        status: 'loaded'
+    })
+}
+
+export const writersActions = {
+    load: actionBuilder({
+        node: 'writers',
+        service: movieServices.loadMovieWriters,
+        shouldDumpStoreOnActionCall: true,
+        status: 'loaded'
+    })
+}
+
 export const caracteristicsActions = {
     load: actionBuilder({
         node: 'movie',

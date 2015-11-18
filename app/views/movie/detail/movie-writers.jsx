@@ -10,36 +10,36 @@ import PersonCardList from '../../person/person-card-list';
 
 //stores & actions
 import movieStore from '../../../stores/movie';
-import {actorsActions} from '../../../action/movie';
-
+import {writersActions} from '../../../action/movie';
 
 export default React.createClass({
-    displayName: 'MovieActors',
+    displayName: 'MovieWriters',
     propTypes: {
         id: PropTypes.number
     },
     mixins: [storeBehaviour],
-    stores: [{store: movieStore, properties: ['actors']}],
 
     /** @inheritDoc */
     getInitialState() {
         return {
-            actors: movieStore.getActors() || []
+            actors: movieStore.getWriters() || []
         }
     },
 
     /** @inheritDoc */
     componentWillMount(){
         const {id} = this.props;
-        actorsActions.load(id);
+        writersActions.load(id);
     },
+
+    stores: [{store: movieStore, properties: ['writers']}],
 
     /** @inheritDoc */
     render() {
-        const {actors} = this.state;
+        const {writers} = this.state;
         return (
-            <Panel title='movie.detail.actors'>
-                <PersonCardList personList={actors} />
+            <Panel title='movie.detail.writers'>
+                <PersonCardList personList={writers} />
             </Panel>
         );
     }

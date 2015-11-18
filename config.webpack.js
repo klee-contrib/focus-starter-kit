@@ -56,6 +56,11 @@ demoConfig = {
                 query: { mimetype: 'image/png' }
             },
             {
+                test: /\.gif$/,
+                loader: 'url-loader',
+                query: { mimetype: 'image/gif' }
+            },
+            {
                 test: /\.woff(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'url?limit=10000&mimetype=application/font-woff'
             },
