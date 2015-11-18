@@ -11,7 +11,7 @@ export default {
             actors: 'Acteurs',
             cameramen: 'Camera men',
             caracteristics: 'Carastéristiques',
-            directors: 'Realisateurs',
+            directors: 'Réalisateurs',
             posters: 'Affiches',
             producers: 'Producteurs',
             synopsis: 'Synopsis',
