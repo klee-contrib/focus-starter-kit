@@ -18,9 +18,10 @@ export function loadCountryListByCriteria({data: bodyData, urlData}) {
     const {criteria} = bodyData;
     const {skip, top} = urlData;
     console.log('criteria', criteria);
+    const filteredData = criteria !== null && criteria !== undefined ? fakeData.filter(country => country.name.indexOf(criteria) !== -1) : fakeData;
     const begin = skip;
     const end = begin + top;
-    return Promise.resolve(fakeData.slice(begin, end))
+    return Promise.resolve(filteredData.slice(begin, end))
                   .then(d => {return {dataList: d, totalCount: fakeData.length};});
 
 }

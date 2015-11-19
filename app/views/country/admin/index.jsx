@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import dispatcher from 'focus-core/dispatcher';
+import {component as Modal} from 'focus-components/application/popin';
 
 import {loadCountryListByCriteria} from '../../../services/country';
 
@@ -20,15 +21,33 @@ function _dispatchSearchCriteria(query) {
 }
 
 class CountryAdminPage extends Component {
+    _onDetailPopinClose = () => {
+        //Remove the detailId and call the list load action.
+        this.setState({detailId: null}, () => {
+            //Instead of doing so we can create the action in this component and provide it to the list instead of the store and the service.
+            this.refs.list.refs.smartList._action.load();
+        });
+    };
+
     render() {
         const {detailId} = this.state || {};
         return (
             <div>
-            <CountryCriteria onSearch={_dispatchSearchCriteria}/>
+                <CountryCriteria onSearch={_dispatchSearchCriteria}/>
             <CountryActionBar />
-            {detailId && <CountryDetail id={detailId}/>}
+            {
+                detailId &&
+                <Modal
+                    onPopinClose={this._onDetailPopinClose}
+                    open={true}
+                    type='from-right'
+                >
+                        <CountryDetail id={detailId}/>
+                </Modal>
+            }
             <CountryList
                 handleLineClick={(d) => this.setState({detailId: d.id})}
+                ref='list'
                 searchSvc={loadCountryListByCriteria}
                 store={_countryListStore}
             />

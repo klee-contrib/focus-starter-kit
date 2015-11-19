@@ -1,6 +1,6 @@
 import React from 'react';
-export default function CountryDetail(props){
+export default function CountryDetail({id}){
     return (
-        <div>Detail</div>
+        <div>Country {id}</div>
     );
 }
