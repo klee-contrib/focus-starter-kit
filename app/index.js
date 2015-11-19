@@ -1,3 +1,5 @@
+import React from 'react';
+window.React = React;
 //import material js
 import 'material-design-lite/material';
 
