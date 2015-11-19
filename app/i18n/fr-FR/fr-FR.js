@@ -1,6 +1,7 @@
 export default {
     button: {
-        back: 'Retour'
+        back: 'Retour',
+        watchTrailer: 'Voir la bande annonce'
     },
     movie: {
         keyConcept: {
@@ -8,10 +9,14 @@ export default {
         },
         detail: {
             actors: 'Acteurs',
+            cameramen: 'Camera men',
             caracteristics: 'Carastéristiques',
+            directors: 'Réalisateurs',
             posters: 'Affiches',
+            producers: 'Producteurs',
             synopsis: 'Synopsis',
-            trailer: 'Bande annonce'
+            trailer: 'Bande annonce',
+            writers: 'Scénaristes'
         }
     },
     person: {

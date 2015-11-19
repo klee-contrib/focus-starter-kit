@@ -6,6 +6,26 @@ export default {
         console.log(`[MOVIE] call loadMovie(${id}) method`);
         return fetch(movieUrl.loadMovie({urlData: {id}}));
     },
+    loadMovieActors(id) {
+        console.log(`[MOVIE] call loadMovieActors(${id}) method`);
+        return fetch(movieUrl.loadMovieActors({urlData: {id}}));
+    },
+    loadMovieCameramen(id) {
+        console.log(`[MOVIE] call loadMovieCameramen(${id}) method`);
+        return fetch(movieUrl.loadMovieCameramen({urlData: {id}}));
+    },
+    loadMovieDirectors(id) {
+        console.log(`[MOVIE] call loadMovieDirectors(${id}) method`);
+        return fetch(movieUrl.loadMovieDirectors({urlData: {id}}));
+    },
+    loadMovieProducers(id) {
+        console.log(`[MOVIE] call loadMovieProducers(${id}) method`);
+        return fetch(movieUrl.loadMovieProducers({urlData: {id}}));
+    },
+    loadMovieWriters(id) {
+        console.log(`[MOVIE] call loadMovieWriters(${id}) method`);
+        return fetch(movieUrl.loadMovieWriters({urlData: {id}}));
+    },
     saveMovieSynopsis(data) {
         console.log(`[MOVIE] call saveMovieSynopsis method. id=${data.id} data=${data}`);
         return fetch(movieUrl.saveMovie({urlData: {id: data.id}, data: {data}}));

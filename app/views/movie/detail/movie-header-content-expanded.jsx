@@ -41,7 +41,7 @@ export default React.createClass({
                     <p>{this.textFor('shortSynopsis')}</p>
                 </div>
                 <div>
-                    <Button label='Voir la bande annonce' type='button' handleOnClick={this.openTrailerPopin} />
+                    <Button label={i18n.t('button.watchTrailer')} type='button' handleOnClick={this.openTrailerPopin} />
                     <Modal ref="modal-trailer">
                         <Trailer url={trailerHRef} />
                     </Modal>

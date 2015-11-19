@@ -6,19 +6,19 @@ import FocusComponents from 'focus-components';
 import ScrollspyContainer from 'focus-components/components/scrollspy-container';
 import {component as BackButton} from 'focus-components/common/button/back';
 import {cartridgeBehaviour} from 'focus-components/page/mixin';
-import {storeBehaviour} from 'focus-components/common/mixin';
-
-//stores
-import movieStore from '../../../stores/movie';
 
 //views
 import HeaderExpanded from './movie-header-content-expanded';
 import HeaderSummary from './movie-header-content-summary';
 import MovieActors from './movie-actors';
+import MovieCameramen from './movie-cameramen';
+import MovieDirectors from './movie-directors';
 import MoviesCaracteristics from './movie-caracteristics';
 import MoviePosters from './movie-posters';
+import MovieProducers from './movie-producers';
 import MovieSynopsis from './movie-synospis';
 import MovieTrailer from './movie-trailer';
+import MovieWriters from './movie-writers';
 
 
 export default React.createClass({
@@ -26,15 +26,12 @@ export default React.createClass({
     propTypes: {
         id: PropTypes.number
     },
-    mixins: [storeBehaviour, cartridgeBehaviour],
+    mixins: [cartridgeBehaviour],
 
     /** @inheritDoc */
     componentWillMount() {
         this._registerCartridge();
     },
-
-    definitionPath: 'movie',
-    stores: [{store: movieStore, properties: ['movie']}],
 
     /**
     * Related to the CartridgeBehaviour.
@@ -78,6 +75,10 @@ export default React.createClass({
                 <MovieTrailer id={id} />
                 <MoviePosters id={id} />
                 <MovieActors id={id} />
+                <MovieCameramen id={id} />
+                <MovieDirectors id={id} />
+                <MovieProducers id={id} />
+                <MovieWriters id={id} />
             </ScrollspyContainer>
         );
     }

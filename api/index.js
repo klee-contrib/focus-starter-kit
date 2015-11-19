@@ -37,6 +37,26 @@ const allowCrossDomain = (req, res, next) => {
 }
 app.use(allowCrossDomain);
 
+/**
+* Get a movie by id.
+* @return {movie} the movie corresponding
+*/
+function getMovieById(movieId){
+    return _.find(moviesDB, (movie) => {
+        return movie.code === movieId;
+    });
+}
+
+function getMoviePeopleListByMovieId(movieId, listName) {
+    const movie = getMovieById(movieId);
+    const movieList = movie[listName];
+    if(movieList) {
+        console.log(movieList);
+        return movieList;
+    }
+    return [];
+}
+
 // GET all movies
 app.get('/movies/', (req, res) => {
     res.json(moviesDB);
@@ -45,10 +65,37 @@ app.get('/movies/', (req, res) => {
 // GET MOVIE ID.
 app.get('/movies/:id', (req, res) => {
     const id = +req.params.id;
-    res.json(_.find(moviesDB, (movie) => {
-        return movie.code === id;
-    }));
+    res.json(getMovieById(id));
+});
 
+// GET MOVIE ACTORS ID.
+app.get('/movies/:id/actors', (req, res) => {
+    const id = +req.params.id;
+    res.json(getMoviePeopleListByMovieId(id, 'actors'));
+});
+
+// GET MOVIE CAMERA MEN ID.
+app.get('/movies/:id/cameramen', (req, res) => {
+    const id = +req.params.id;
+    res.json(getMoviePeopleListByMovieId(id, 'camera'));
+});
+
+// GET MOVIE directors ID.
+app.get('/movies/:id/directors', (req, res) => {
+    const id = +req.params.id;
+    res.json(getMoviePeopleListByMovieId(id, 'directors'));
+});
+
+// GET MOVIE producers ID.
+app.get('/movies/:id/producers', (req, res) => {
+    const id = +req.params.id;
+    res.json(getMoviePeopleListByMovieId(id, 'producers'));
+});
+
+// GET MOVIE writers ID.
+app.get('/movies/:id/writers', (req, res) => {
+    const id = +req.params.id;
+    res.json(getMoviePeopleListByMovieId(id, 'writers'));
 });
 
 // PUT MOVIE ID
@@ -56,7 +103,7 @@ app.put('/movies/:id', (req, res) => {
     const data = req.body.data;
     const id = +data.id;
     if(id) {
-        const movie = _.find(moviesDB, (movie) => { return movie.code === id });
+        const movie = getMovieById(id);
         if(movie) {
             _.assign(movie, data);
             res.json(movie);
@@ -69,15 +116,6 @@ app.put('/movies/:id', (req, res) => {
     console.error('Erreur : aucun id de film fourni...');
     res.status(404).sent('Erreur : aucun id de film fourni...');
 });
-app.get('/test/error', function error(req, res) {
-    res.status(422).json({
-        fieldErrors: {
-            telephone: [
-                'Le champ telephone est obligatoire.'
-            ]
-        }
-    });
-})
 
 // GET PERSON ID.
 app.get('/persons/:id', (req, res) => {
@@ -106,6 +144,16 @@ app.put('/persons/:id', (req, res) => {
     res.status(404).sent('Erreur : aucun id de personne fourni...');
 });
 
+
+app.get('/test/error', function error(req, res) {
+    res.status(422).json({
+        fieldErrors: {
+            telephone: [
+                'Le champ telephone est obligatoire.'
+            ]
+        }
+    });
+})
 
 // Launch the server Server
 const server = app.listen(port, () => {
