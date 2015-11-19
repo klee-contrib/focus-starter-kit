@@ -32,7 +32,7 @@ export default React.createClass({
         const {id} = this.props;
         cameramenActions.load(id);
     },
-    
+
     stores: [{store: movieStore, properties: ['cameramen']}],
 
     /** @inheritDoc */
@@ -40,7 +40,7 @@ export default React.createClass({
         const {cameramen} = this.state;
         return (
             <Panel title='movie.detail.cameramen'>
-                <PersonCardList personList={cameramen} />
+                <PersonCardList persons={cameramen} />
             </Panel>
         );
     }

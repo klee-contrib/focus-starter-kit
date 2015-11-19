@@ -30,3 +30,12 @@ export const biographyActions = {
         status: 'saved'
     })
 }
+
+export const moviesActions = {
+    load: actionBuilder({
+        node: 'movies',
+        service: personSerivces.loadPersonMovies,
+        shouldDumpStoreOnActionCall: true,
+        status: 'loaded'
+    })
+}
