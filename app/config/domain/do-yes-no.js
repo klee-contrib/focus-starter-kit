@@ -1,6 +1,9 @@
-module.exports = {
-    type: 'boolean',
-    //"FieldComponent": FocusComponents.common.input.toggle.component
-    InputComponent: FocusComponents.common.input.checkbox.component,
-    DisplayComponent: FocusComponents.common.display.checkbox.component
+import FocusComponents from 'focus-components';
+import i18n from 'i18next-client';
+
+export default {
+    SelectComponent: FocusComponents.common.select.radio.component,
+    refContainer: {yesNoList: [{code: true, label: 'select.oui'}, {code: false, label: 'select.non'}]},
+    listName: 'yesNoList',
+    formatter: i18n.t
 };

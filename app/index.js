@@ -1,13 +1,16 @@
-/*global Backbone*/
+//import material js
+import 'material-design-lite/material';
 
-console.log('Application Focus-démo');
+//import app demo styles
+import './styles';
 
 //Initialisation des configurations et du layout.
-require('./initializer');
+import './initializer';
 
 // Démarrage de l'application
-require('./application');
-
+import './application';
 
 //Render all application modules for the first time.
 //React.render(<AlertModule />, document.querySelector('#notification-center'));
+
+console.log('Application Focus-démo');

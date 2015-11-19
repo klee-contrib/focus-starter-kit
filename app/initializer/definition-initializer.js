@@ -1,3 +1,5 @@
+import FocusCore from 'focus-core';
+
 FocusCore.definition.entity.container.setEntityConfiguration(require('../config/entity-definition'));
 
 //Display domaines utilisés

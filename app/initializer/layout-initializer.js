@@ -1,7 +1,6 @@
-const render = FocusCore.application.render;
-const Layout = FocusComponents.application.layout.component;
-const MenuLeft = require('../views/menu');
+import FocusCore from 'focus-core';
+import FocusComponents from 'focus-components';
+import render from 'focus-core/application/render';
+import Layout from 'focus-components/components/layout';
 
-render(Layout, 'body', {
-    props: {MenuLeft}
-});
+render(Layout, '[data-focus="application"]');

@@ -1,9 +1,6 @@
-module.exports = {
+export default {
     button: {
-        edit: "Modifier",
-        cancel: "Abandonner",
-        save: "Sauvegarder",
-        advancedSearch: "Recherche avancée",
-        back: "Retour"
+        back: 'Retour',
+        watchTrailer: 'Voir la bande annonce'
     }
 };

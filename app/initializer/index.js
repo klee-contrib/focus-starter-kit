@@ -1,30 +1,14 @@
-//React tap event initializer.
-//const injectTapEventPlugin = require('react-tap-event-plugin');
-
-//Needed for onTouchTap
-//Can go away when react 1.0 release
-//Check this repo:
-//https://github.com/zilverline/react-tap-event-plugin
-//injectTapEventPlugin();
-$(document).on('click', 'a:not([data-bypass])', function touchHandler(evt) {
-    const href = { prop: $(this).prop('href'), attr: $(this).attr('href') };
-    const root = location.protocol + '//' + location.host + '/';
-
-    if (href.prop && href.prop.slice(0, root.length) === root) {
-        evt.preventDefault();
-        Backbone.history.navigate(href.attr, true);
-    }
-});
-
-
+//Initialisation of global links
+import './global-link-initializer';
 //Initialisation des configurations
-require('./domain-initializer');
-require('./definition-initializer');
-require('./reference-list-initializer').initialize();
-require('./query-store-initializer').initialize();
-require('./translation-initializer');
-require('./user-initializer');
+import './domain-initializer';
+import './definition-initializer';
+// import referenceList from './reference-list-initializer';
+// referenceList.initialize();
+import queryStoreInitializer from './query-store-initializer';
+queryStoreInitializer.initialize();
+import './translation-initializer';
+import './user-initializer';
 
 //Initialisation du layout
-//
-require('./layout-initializer');
+import './layout-initializer';
