@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import dispatcher from 'focus-core/dispatcher';
+
+import {loadCountryListByCriteria} from '../../../services/country';
+
 import CountryList from './country-list';
 import CountryDetail from './country-detail';
 import CountryCriteria from './country-criteria';
@@ -15,20 +18,7 @@ function _dispatchSearchCriteria(query) {
         identifier: _countryListStore.identifier
     });
 }
-function _searchCountrySvc(criteria) {
-    console.log('criteria', criteria);
-    let fakeData = [];
-    for(let i = 0; i < 150; i++) {
-        fakeData.push({
-            id: i,
-            name: `Country ${i}`
-        })
-    }
-    const begin = criteria.urlData.skip;
-    const end = begin + criteria.urlData.top;
-    return Promise.resolve(fakeData.slice(begin, end))
-    .then(d => {return {dataList: d, totalCount: fakeData.length};})
-}
+
 class CountryAdminPage extends Component {
     render() {
         const {detailId} = this.state || {};
@@ -39,7 +29,7 @@ class CountryAdminPage extends Component {
             {detailId && <CountryDetail id={detailId}/>}
             <CountryList
                 handleLineClick={(d) => this.setState({detailId: d.id})}
-                searchSvc={_searchCountrySvc}
+                searchSvc={loadCountryListByCriteria}
                 store={_countryListStore}
             />
             </div>
