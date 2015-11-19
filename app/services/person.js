@@ -6,6 +6,10 @@ export default {
         console.log(`[PERSON] call loadPerson(${id}) method`);
         return fetch(personUrl.loadPerson({urlData: {id}}));
     },
+    loadPersonMovies(id) {
+        console.log(`[PERSON] call loadPersonMovies(${id}) method`);
+        return fetch(personUrl.loadPersonMovies({urlData: {id}}));
+    },
     savePersonIdentity(data) {
         console.log(`[PERSON] call savePersonIdentity method. id=${data.id} data=${data}`);
         return fetch(personUrl.savePerson({urlData: {id: data.id}, data: {data}}));

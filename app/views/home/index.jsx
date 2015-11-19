@@ -1,7 +1,7 @@
 import React from 'react';
 import Backbone from 'backbone';
 
-const HomePage =  React.createClass({
+export default React.createClass({
     displayName: 'HomeView',
     render() {
         return (
@@ -13,5 +13,3 @@ const HomePage =  React.createClass({
         );
     }
 });
-
-export default HomePage;

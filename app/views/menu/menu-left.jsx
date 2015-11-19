@@ -2,8 +2,8 @@ import React from 'react';
 import FocusComponents from 'focus-components';
 const {MenuLeft} = FocusComponents.components;
 
-var menuItems = [
-    {icon:'search', onClick:function(){console.log('I click here search')}, name: 'Search'}
+const menuItems = [
+    { icon:'search', onClick:function() { console.log('I click here search'); }, name: 'Search' }
 ];
 
 export default React.createClass({

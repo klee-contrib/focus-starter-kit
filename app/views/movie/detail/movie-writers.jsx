@@ -39,7 +39,7 @@ export default React.createClass({
         const {writers} = this.state;
         return (
             <Panel title='movie.detail.writers'>
-                <PersonCardList personList={writers} />
+                <PersonCardList persons={writers} />
             </Panel>
         );
     }
