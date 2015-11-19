@@ -1,6 +1,3 @@
 {
-    "extends": "focus",
-    "rules": {
-        "require-jsdoc/require-jsdoc": 0
-    }
+    "extends": "focus"
 }

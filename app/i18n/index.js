@@ -1,5 +1,7 @@
-const english = require('./en-GB');
+//import english from './en-GB';
+import french from './fr-FR';
 
-module.exports = {
-  'en-GB': {translation: english}
+export default {
+  //'en-GB': {translation: english},
+  'fr-FR': {translation: french}
 };

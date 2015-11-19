@@ -3,7 +3,7 @@ export default {
     validator: [{
         type: 'string',
         options: {
-            maxLength: 100
+            maxLength: 5
         }
     }]
 };
