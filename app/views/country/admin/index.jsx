@@ -25,7 +25,7 @@ class CountryAdminPage extends Component {
             <div>
                 <h1>{'Administration de la liste des pays'}</h1>
                 <CountryCriteria onSearch={_dispatchSearchCriteria}/>
-                <CountryActionBar />
+                <CountryActionBar onLetterClick={(letter) => {_dispatchSearchCriteria(letter)}}/>
                 {
                     detailId &&
                     <Modal
@@ -38,6 +38,7 @@ class CountryAdminPage extends Component {
                 }
                 <CountryList
                     action={loadCountryList}
+                    columns={[{label: 'name'}, {label: 'drigo'}]}
                     handleLineClick={(d) => this.setState({detailId: d.id})}
                     store={countryListStore}
                 />
