@@ -11,7 +11,8 @@ for(let i = 0; i < 150; i++) {
 
 
 export function loadCountryById(id) {
-    return fakeData.filter(country => country.id = id);
+    console.log('iDDDDD', id);
+    return Promise.resolve(fakeData.find(country => country.id === id));
 }
 
 export function loadCountryListByCriteria({data: bodyData, urlData}) {
@@ -24,4 +25,14 @@ export function loadCountryListByCriteria({data: bodyData, urlData}) {
     return Promise.resolve(filteredData.slice(begin, end))
                   .then(d => {return {dataList: d, totalCount: fakeData.length};});
 
+}
+
+export function saveCountry(country) {
+    const idx = fakeData.findIndex(c => c.id === country.id);
+    if(idx !== -1) {
+        fakeData[idx] = country;
+    }else {
+        console.warn('non existing country???');
+    }
+    return Promise.resolve(country);
 }
