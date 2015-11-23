@@ -136,7 +136,7 @@ function _getMovieResume(movieId) {
             movieType: movie.movieType,
             productionYear: movie.productionYear,
             linked: true
-        }
+        };
         return movieResume;
     }
     return null;

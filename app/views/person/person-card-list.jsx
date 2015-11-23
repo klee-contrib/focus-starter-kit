@@ -8,8 +8,7 @@ function PersonCardList({persons}) {
     return (
         <div data-demo='concept-card-list'>
             {persons &&
-                persons.map(person => {
-                    const {code, leadActor, name, photoURL, role, linked} = person;
+                persons.map(({code, leadActor, name, photoURL, role, linked}) => {
                     const key = `person-card-${code}`;
                     return (
                         <PersonCard key={key} code={code} leadActor={leadActor} linked={linked} name={name} photoURL={photoURL} role={role} />
