@@ -15,7 +15,7 @@ import {directorsActions} from '../../../action/movie';
 export default React.createClass({
     displayName: 'MovieDirectors',
     propTypes: {
-        id: PropTypes.number
+        id: PropTypes.number.isRequired
     },
     mixins: [storeBehaviour],
 

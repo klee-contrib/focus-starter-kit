@@ -8,7 +8,7 @@ import Panel from 'focus-components/components/panel';
 export default React.createClass({
     displayName: 'MoviePosters',
     propTypes: {
-        id: PropTypes.number
+        id: PropTypes.number.isRequired
     },
 
     /** @inheritDoc */

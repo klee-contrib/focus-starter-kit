@@ -3,16 +3,15 @@ import FocusComponents from 'focus-components';
 const {MenuLeft} = FocusComponents.components;
 
 const menuItems = [
-    { icon:'search', onClick:function() { console.log('I click here search'); }, name: 'Search' }
+    { icon:'home', onClick:function() { Backbone.history.navigate(`/`, true) } },
+    { icon:'search', onClick:function() { console.log('I click here search'); } }
 ];
 
-export default React.createClass({
-    displayName: 'DemoMenuLeft',
-    render() {
-        return (
-            <div>
-                <MenuLeft items={menuItems} />
-            </div>
-        );
-    }
-});
+function DemoMenuLeft() {
+    return (
+        <MenuLeft items={menuItems} />
+    );
+}
+
+DemoMenuLeft.displayName = 'DemoMenuLeft';
+export default DemoMenuLeft;

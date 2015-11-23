@@ -17,7 +17,7 @@ import Trailer from '../trailer';
 export default React.createClass({
     displayName: 'MovieTrailer',
     propTypes: {
-        id: PropTypes.number
+        id: PropTypes.number.isRequired
     },
     mixins: [formPreset],
     definitionPath: 'movie',

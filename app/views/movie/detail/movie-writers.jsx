@@ -15,7 +15,7 @@ import {writersActions} from '../../../action/movie';
 export default React.createClass({
     displayName: 'MovieWriters',
     propTypes: {
-        id: PropTypes.number
+        id: PropTypes.number.isRequired
     },
     mixins: [storeBehaviour],
 

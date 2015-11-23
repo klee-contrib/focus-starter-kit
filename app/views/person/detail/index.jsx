@@ -17,7 +17,7 @@ import PersonMovies from './person-movies';
 export default React.createClass({
     displayName: 'PersonDetailView',
     propTypes: {
-        id: PropTypes.number
+        id: PropTypes.number.isRequired
     },
     mixins: [cartridgeBehaviour],
 

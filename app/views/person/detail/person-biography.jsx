@@ -13,7 +13,7 @@ import {biographyActions} from '../../../action/person';
 export default React.createClass({
     displayName: 'PersonBiography',
     propTypes: {
-        id: PropTypes.number
+        id: PropTypes.number.isRequired
     },
     mixins: [formPreset],
     definitionPath: 'person',

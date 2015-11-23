@@ -20,11 +20,10 @@ import MovieSynopsis from './movie-synospis';
 import MovieTrailer from './movie-trailer';
 import MovieWriters from './movie-writers';
 
-
 export default React.createClass({
     displayName: 'MovieDetailView',
     propTypes: {
-        id: PropTypes.number
+        id: PropTypes.number.isRequired
     },
     mixins: [cartridgeBehaviour],
 
@@ -39,7 +38,7 @@ export default React.createClass({
     * @return {[type]} [description]
     */
     cartridgeConfiguration() {
-        const props = { hasLoad: false }; //{id: this.props.id};
+        const props = { hasLoad: false, hasForm: false }; //{id: this.props.id};
         return {
             barLeft: { component: BackButton },
             cartridge: { component: HeaderExpanded, props },

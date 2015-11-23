@@ -13,7 +13,7 @@ import {synopsisActions} from '../../../action/movie';
 export default React.createClass({
     displayName: 'MovieSynopsis',
     propTypes: {
-        id: PropTypes.number
+        id: PropTypes.number.isRequired
     },
     mixins: [formPreset],
     definitionPath: 'movie',

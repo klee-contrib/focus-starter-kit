@@ -16,7 +16,7 @@ import {actorsActions} from '../../../action/movie';
 export default React.createClass({
     displayName: 'MovieActors',
     propTypes: {
-        id: PropTypes.number
+        id: PropTypes.number.isRequired
     },
     mixins: [storeBehaviour],
     stores: [{store: movieStore, properties: ['actors']}],

@@ -4,10 +4,7 @@ import i18n from 'i18next-client';
 import Panel from 'focus-components/components/panel';
 import {mixin as formPreset} from 'focus-components/common/form';
 
-
-//web components
-
-//stores
+//stores & actions
 import countryStore from '../../../stores/country';
 import {countryActions} from '../../../action/country'
 

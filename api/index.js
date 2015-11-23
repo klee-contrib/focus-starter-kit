@@ -49,10 +49,13 @@ function _getMovieById(movieId){
 
 function _getMoviePeopleListByMovieId(movieId, listName) {
     const movie = _getMovieById(movieId);
-    const movieList = movie[listName];
-    if(movieList) {
-        console.log(movieList);
-        return movieList;
+    const peopleList = movie[listName];
+    if(peopleList) {
+        peopleList.map(people => {
+            const person = _getPerson(people.code);
+            people.linked = !!person;
+        });
+        return peopleList;
     }
     return [];
 }
@@ -131,7 +134,8 @@ function _getMovieResume(movieId) {
             title: movie.title,
             poster: movie.poster,
             movieType: movie.movieType,
-            productionYear: movie.productionYear
+            productionYear: movie.productionYear,
+            linked: true
         }
         return movieResume;
     }
