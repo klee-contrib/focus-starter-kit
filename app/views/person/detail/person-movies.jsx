@@ -14,7 +14,7 @@ import {moviesActions} from '../../../action/person';
 export default React.createClass({
     displayName: 'PersonMovie',
     propTypes: {
-        id: PropTypes.number
+        id: PropTypes.number.isRequired
     },
     mixins: [storeBehaviour],
 

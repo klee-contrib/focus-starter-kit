@@ -13,7 +13,7 @@ import {identityActions} from '../../../action/person';
 export default React.createClass({
     displayName: 'PersonIdendity',
     propTypes: {
-        id: PropTypes.number
+        id: PropTypes.number.isRequired
     },
     mixins: [formPreset],
     definitionPath: 'person',

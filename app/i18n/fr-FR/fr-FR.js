@@ -4,13 +4,20 @@ export default {
         watchTrailer: 'Voir la bande annonce'
     },
     movie: {
+        card: {
+            consult: {
+                info: 'Plus d\'info ?',
+                noProfil: 'Aucune fiche disponible',
+                profil: 'Voir le film'
+            }
+        },
         keyConcept: {
             name: 'Film'
         },
         detail: {
             actors: 'Acteurs',
             cameramen: 'Camera men',
-            caracteristics: 'Carastéristiques',
+            caracteristics: 'Caractéristiques',
             directors: 'Réalisateurs',
             posters: 'Affiches',
             producers: 'Producteurs',
@@ -20,6 +27,13 @@ export default {
         }
     },
     person: {
+        card: {
+            consult: {
+                info: 'Plus d\'info ?',
+                noProfil: 'Aucune fiche disponible',
+                profil: 'Voir le profil'
+            }
+        },
         keyConcept: {
             name: 'Personne'
         },

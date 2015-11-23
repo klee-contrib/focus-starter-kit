@@ -1,0 +1,34 @@
+@import "variables";
+@import "mixins";
+
+[data-demo="concept-card-list"] {
+    display:flex;
+    flex-wrap:wrap;
+}
+
+[data-demo="concept-card"] {
+    @include card('../assets/img/unknown-person.gif', $concept-card-height, $concept-card-width);
+    
+    .hover-actions {
+        @include hover-actions();
+        display: none;
+        .hover-actions--buttons {
+            margin-top: 40px;
+            text-align: center;
+            & > div {
+                margin: 10px 0;
+                color:#FFF;
+                font-size: 16px;
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .hover-actions {
+            display: block;
+        }
+    }
+}

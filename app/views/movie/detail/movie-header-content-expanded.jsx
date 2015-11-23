@@ -5,10 +5,8 @@ import i18n from 'i18next-client';
 
 //web components
 import {mixin as formPreset} from 'focus-components/common/form';
-//import Popin from 'focus-components/application/popin';
-//import Button from 'focus-components/common/button/action';
-const Modal = FocusComponents.application.popin.component;
-const Button = FocusComponents.common.button.action.component;
+import {component as Button} from 'focus-components/common/button/action';
+import {component as Modal} from 'focus-components/application/popin';
 
 //stores
 import movieStore from '../../../stores/movie';
@@ -32,7 +30,7 @@ export default React.createClass({
         const {title, poster, trailerHRef} = this.state;
         return (
             <div data-demo='header-content-expanded'>
-                <Poster poster={poster} title={title} />
+                <Poster poster={poster} title={title} hasZoom={true} />
                 <div data-demo='header-content-expanded__infos'>
                     <h2>{i18n.t('movie.keyConcept.name')}</h2>
                     <h3>{this.textFor('title')}</h3>

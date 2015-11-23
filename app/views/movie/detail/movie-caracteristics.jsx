@@ -13,7 +13,7 @@ import {caracteristicsActions} from '../../../action/movie';
 export default React.createClass({
     displayName: 'MovieCaracteristics',
     propTypes: {
-        id: PropTypes.number
+        id: PropTypes.number.isRequired
     },
     mixins: [formPreset],
     definitionPath: 'movie',

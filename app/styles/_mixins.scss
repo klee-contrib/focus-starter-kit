@@ -1,0 +1,72 @@
+
+@mixin background-cover($url) {
+    background-image: url($url);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+}
+
+@mixin card($defaultImgUrl, $height, $width) {
+    position: relative;
+    margin: 10px 10px;
+
+    .visuel {
+        @include background-cover($defaultImgUrl);
+        width: $width;
+        height: $height;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+    .card-info {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        color: #FFF;
+        padding-top: 20px;
+        @include linear-background();
+        .card-info--level1 {
+            text-align: center;
+            font-size: $concept-name-font-size;
+            line-height: $concept-name-font-size;
+            font-weight: bold;
+            padding: 15px 10px 5px 10px;
+        }
+        .card-info--level2 {
+            text-align: center;
+            font-size: $concept-role-font-size;
+            line-height: $concept-role-font-size;
+            padding: 5px 10px 10px 10px;
+        }
+        .card-info--level3 {
+            text-align: center;
+            font-size: $concept-role-font-size;
+            line-height: $concept-role-font-size;
+            padding: 5px 10px 10px 10px;
+        }
+    }
+}
+
+@mixin hover-background() {
+    background-color: rgba(0,0,0,0.5);
+}
+
+@mixin hover-actions() {
+    @include hover-background();
+    position: absolute;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom:0;
+    padding: 10px;
+    button {
+        color: #FFF;
+        border: 2px solid #FFF;
+        margin: 0 5px;
+    }
+}
+
+@mixin linear-background() {
+    background-image: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+}

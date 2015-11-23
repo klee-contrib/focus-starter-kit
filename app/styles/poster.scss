@@ -1,4 +1,9 @@
 @import "variables";
+@import "mixins";
+
+$poster-popin-img-height:80vh;
+$poster-popin-marin-top:(100vh - $poster-popin-img-height) / 2;
+$poster-popin-img-width:$poster-popin-img-height * ($poster-large-width / $poster-large-height);
 
 [data-demo="poster"] {
     background-color: #F1F1F1;
@@ -11,15 +16,59 @@
     align-items:center;
     position: relative;
     overflow: hidden;
-    i {
-        color: #C5C5C5;
-        font-size: 54px;
-    }
     img {
         position: absolute;
         top:0;
         left:0;
         width: 100%;
+    }
+    .zoom {
+        align-items: center;
+        display: none;
+        @include hover-actions();
+        button {
+            margin: 0 auto;
+        }
+    }
+
+    &:hover {
+        .zoom {
+            display: flex;
+        }
+    }
+    /*
+    &:after {
+    font-family: 'Material Icons';
+    content: 'local_movies';
+    position: absolute;
+    top: 0;
+    left:0;
+    color: #000;
+    font-size: 18px;
+}*/
+}
+
+[data-demo="poster"] {
+    [data-focus='popin'] {
+        &[data-type='full'] {
+            &[data-size='medium'] {
+                & > [data-focus='popin-overlay'] {
+                    height: auto;
+                    div[data-focus='popin-window'] {
+                        width: $poster-popin-img-width;
+                        height: $poster-popin-img-height;
+                        min-width: auto;
+                        min-height: auto;
+                        margin-top: $poster-popin-marin-top;
+                        margin-bottom: $poster-popin-marin-top;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
