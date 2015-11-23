@@ -2,20 +2,17 @@ import React, {Component, PropTypes} from 'react';
 import {component as SmartList} from 'focus-components/page/list'
 
 
-class CountryList extends Component {
-    render() {
-        const {handleLineClick, action, store, columns} = this.props;
-        return (
-            <SmartList
-                LineComponent={({data, onLineClick}) => <tr onClick={() => onLineClick(data)}><td>{data.id}</td><td>{data.name}</td></tr>}
-                action={{load: action}}
-                columns={columns}
-                onLineClick={handleLineClick}
-                ref='smartList'
-                store={store}
-            />
-        );
-    }
+function CountryList({handleLineClick, action, store, columns}) {
+    return (
+        <SmartList
+            LineComponent={({data, onLineClick}) => <tr onClick={() => onLineClick(data)}><td>{data.id}</td><td>{data.name}</td></tr>}
+            action={{load: action}}
+            columns={columns}
+            onLineClick={handleLineClick}
+            ref='smartList'
+            store={store}
+        />
+    );
 }
 
 CountryList.displayName = 'CountryList';
