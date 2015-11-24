@@ -22,7 +22,7 @@ function MovieCard({code, movieType, poster, productionYear, title, linked}) {
                     }
                     {linked &&
                         <div>
-                            <Button icon='person' shape='fab' label='movie.card.consult.profil' handleOnClick={() => Backbone.history.navigate(`persons/${code}`, true)} />
+                            <Button icon='person' shape='fab' label='movie.card.consult.profil' handleOnClick={() => Backbone.history.navigate(`movies/${code}`, true)} />
                             <span>{i18n.t('movie.card.consult.profil')}</span>
                         </div>
                     }
