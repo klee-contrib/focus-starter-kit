@@ -6,6 +6,41 @@
     background-position: 50% 0%;
 }
 
+@mixin picture($defaultImgUrl, $height, $width) {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    .picture {
+        @include background-cover($defaultImgUrl);
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@mixin card-info() {
+    .card-info {
+        color: $primary-text-color;
+        & > div {
+            margin:10px 0;
+        }
+        .card-info--level1 {
+            font-size: 22px;
+            color: $accent-color;
+        }
+        .card-info--level2 {
+            font-size: 16px;
+        }
+        .card-info--level3 {
+            font-size: 16px;
+        }
+    }
+}
+
+/* a supprimer */
 @mixin card($defaultImgUrl, $height, $width) {
     position: relative;
     margin: 10px 10px;

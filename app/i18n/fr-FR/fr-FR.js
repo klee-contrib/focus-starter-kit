@@ -27,12 +27,10 @@ export default {
         }
     },
     person: {
-        card: {
-            consult: {
-                info: 'Plus d\'info ?',
-                noProfil: 'Aucune fiche disponible',
-                profil: 'Voir le profil'
-            }
+        action: {
+            preview: 'Prévisualiser',
+            consult: 'Consulter la fiche',
+            create: 'Créer la fiche'
         },
         keyConcept: {
             name: 'Personne'

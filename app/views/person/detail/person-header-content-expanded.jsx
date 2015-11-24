@@ -10,7 +10,7 @@ import {mixin as formPreset} from 'focus-components/common/form';
 import personStore from '../../../stores/person';
 
 //custom components
-import Picture from '../picture';
+import Picture from '../../../components/picture';
 
 export default React.createClass({
     displayName: 'PersonDetailHeaderExpanded',

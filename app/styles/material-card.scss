@@ -1,0 +1,17 @@
+@import "variables";
+@import "mixins";
+
+[data-demo="material-card"] {
+    margin: 10px 10px;
+    [data-demo="material-card-picture"] {
+        @include picture('../assets/img/unknown-person.gif', $concept-card-height, $concept-card-width);
+    }
+    [data-demo="material-card-core"] {
+        @include card-info();
+    }
+    [data-demo="material-card-actions"] {
+        [data-focus="button-action"] {
+            color:$primary-color;
+        }
+    }
+}

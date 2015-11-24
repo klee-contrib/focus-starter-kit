@@ -11,15 +11,17 @@ $header-content-summary-padding-top: 5px;
         padding: 0 20px;
         h1, h2, h3, h4, h5, h6 {
             margin-bottom: 20px;
+            color: $accent-color;
         }
         h2 {
+            color: $accent-color;
             text-transform: uppercase;
         }
         h3, h4 {
-            color: $color-secondary;
+            color: $secondary-text-color;
         }
         h5, h6 {
-            color: $color-tertiary;
+            color: $secondary-text-color;
         }
     }
 }
@@ -44,13 +46,13 @@ $header-content-summary-padding-top: 5px;
             margin-right: 20px;
         }
         h5 {
-            color: $color-secondary;
+            color: $secondary-text-color;
             align-self: flex-end;
             margin: 0;
             margin-right: 20px;
         }
         h6 {
-            color: $color-tertiary;
+            color: $secondary-text-color;
             align-self: flex-end;
             margin: 0;
         }
