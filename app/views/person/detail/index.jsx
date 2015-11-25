@@ -8,11 +8,11 @@ import {component as BackButton} from 'focus-components/common/button/back';
 import {cartridgeBehaviour} from 'focus-components/page/mixin';
 
 //views
-import HeaderExpanded from './person-header-content-expanded';
-import HeaderSummary from './person-header-content-summary';
-import PersonBiography from './person-biography';
-import PersonIdentity from './person-identity';
-import PersonMovies from './person-movies';
+import HeaderExpanded from './header-content-expanded';
+import HeaderSummary from './header-content-summary';
+import PersonBiography from './biography';
+import PersonIdentity from './identity';
+import PersonMovies from './movies';
 
 export default React.createClass({
     displayName: 'PersonDetailView',
