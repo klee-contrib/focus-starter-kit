@@ -1,0 +1,23 @@
+@import "variables";
+
+[data-focus="scrollspy-container"] {
+    [data-focus="sticky-menu"] {
+        ul {
+            border-left: 1px solid #cbcbcb;
+            li {
+                color: $primary-text-color;
+                text-align: left;
+                font-size: 11pt;
+                margin: 0;
+                padding: 10px 5px 10px 20px;
+                position: relative;
+                left: -2px;
+                &[data-active="true"] {
+                    font-size: 20px;
+                    color: $primary-color;
+                    border-left: 3px solid $primary-color;
+                }
+            }
+        }
+    }
+}
