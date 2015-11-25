@@ -1,0 +1,13 @@
+@import "variables";
+
+[data-focus="sticky-menu"] {
+    ul {
+        li {
+            color: $primary-text-color;
+            &[data-active="true"] {
+                color: $primary-color;
+                border-color: $primary-color;
+            }
+        }
+    }
+}

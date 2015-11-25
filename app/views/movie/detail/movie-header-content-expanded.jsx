@@ -12,8 +12,8 @@ import {component as Modal} from 'focus-components/application/popin';
 import movieStore from '../../../stores/movie';
 
 //custom components
-import Poster from '../poster';
-import Trailer from '../trailer';
+import Poster from '../../../components/poster';
+import Trailer from '../../../components/trailer';
 
 export default React.createClass({
     displayName: 'MovieDetailHeaderExpanded',
@@ -32,7 +32,7 @@ export default React.createClass({
             <div data-demo='header-content-expanded'>
                 <Poster poster={poster} title={title} hasZoom={true} />
                 <div data-demo='header-content-expanded__infos'>
-                    <h2>{i18n.t('movie.keyConcept.name')}</h2>
+                    <div className="key-concept">{i18n.t('movie.keyConcept.name')}</div>
                     <h3>{this.textFor('title')}</h3>
                     <h5>{this.textFor('movieType')}</h5>
                     <h6>{this.textFor('productionYear')}</h6>

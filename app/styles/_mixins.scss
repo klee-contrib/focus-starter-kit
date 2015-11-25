@@ -1,3 +1,4 @@
+$black-and-white-variant: 0.8;
 
 @mixin background-cover($url) {
     background-image: url($url);
@@ -6,6 +7,59 @@
     background-position: 50% 0%;
 }
 
+@mixin picture($defaultImgUrl, $height, $width) {
+    position: relative;
+    width: 100%;
+    height: 440px;
+    & > div {
+        @include background-cover($defaultImgUrl);
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        img {
+            width: 100%;
+            filter: grayscale($black-and-white-variant);
+            -webkit-filter: grayscale($black-and-white-variant);
+            -moz-filter: grayscale($black-and-white-variant);
+            -o-filter: grayscale($black-and-white-variant);
+            -ms-filter: grayscale($black-and-white-variant);
+        }
+    }
+    & > p {
+        position: absolute;
+        bottom: 0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+        color: #FFF;
+        font-size: 16px;
+        text-transform: uppercase;
+        background-color: rgba(3, 169, 244, 0.5);
+    }
+}
+
+@mixin card-info() {
+    .card-info {
+        color: $primary-text-color;
+        & > div {
+            margin:10px 0;
+        }
+        .card-info--level1 {
+            font-size: 22px;
+            //color: $accent-color;
+        }
+        .card-info--level2 {
+            font-size: 16px;
+        }
+        .card-info--level3 {
+            font-size: 16px;
+            color: $secondary-text-color;
+        }
+    }
+}
+
+/* a supprimer */
 @mixin card($defaultImgUrl, $height, $width) {
     position: relative;
     margin: 10px 10px;

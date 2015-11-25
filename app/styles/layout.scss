@@ -6,6 +6,7 @@
     min-height: 100%;
     margin: 0;
     font-family: Roboto, Helvetica, Arial, sans-serif;
+    color: $primary-text-color;
 
     [data-focus='layout'] {
         background-color: transparent;
@@ -13,6 +14,7 @@
     }
 
     a {
+        color: $accent-color;
         cursor: pointer;
     }
 
@@ -21,7 +23,7 @@
         padding: 0;
         margin: 0;
         margin-bottom: 8px;
-        color: $color-primary;
+        color: $primary-color;
     }
     h1 {
         font-size: 112px;

@@ -4,12 +4,11 @@ export default {
         watchTrailer: 'Voir la bande annonce'
     },
     movie: {
-        card: {
-            consult: {
-                info: 'Plus d\'info ?',
-                noProfil: 'Aucune fiche disponible',
-                profil: 'Voir le film'
-            }
+        action: {
+            addphoto: 'Ajouter un poster',
+            preview: 'Prévisualiser',
+            consult: 'Consulter la fiche',
+            create: 'Créer la fiche'
         },
         keyConcept: {
             name: 'Film'
@@ -24,15 +23,15 @@ export default {
             synopsis: 'Synopsis',
             trailer: 'Bande annonce',
             writers: 'Scénaristes'
-        }
+        },
+        unknown: 'Aucune fiche'
     },
     person: {
-        card: {
-            consult: {
-                info: 'Plus d\'info ?',
-                noProfil: 'Aucune fiche disponible',
-                profil: 'Voir le profil'
-            }
+        action: {
+            addphoto: 'Ajouter une photo',
+            preview: 'Prévisualiser',
+            consult: 'Consulter la fiche',
+            create: 'Créer la fiche'
         },
         keyConcept: {
             name: 'Personne'
@@ -41,6 +40,7 @@ export default {
             biography: 'Biographie',
             identity: 'Identité',
             movies: 'Filmographie'
-        }
+        },
+        unknown: 'Aucune  fiche'
     }
 };

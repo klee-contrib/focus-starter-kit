@@ -47,6 +47,6 @@ class CountryAdminPage extends Component {
     }
 }
 
-CountryAdminPage.displayName = CountryAdminPage;
+CountryAdminPage.displayName = 'CountryAdminPage';
 
 export default CountryAdminPage;

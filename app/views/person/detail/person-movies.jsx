@@ -5,7 +5,7 @@ import FocusComponents from 'focus-components';
 // web components
 import Panel from 'focus-components/components/panel';
 import {storeBehaviour} from 'focus-components/common/mixin';
-import MovieCardList from '../../movie/movie-card-list';
+import MovieCardList from '../../../components/movie/movie-card-list';
 
 //stores & actions
 import personStore from '../../../stores/person';
