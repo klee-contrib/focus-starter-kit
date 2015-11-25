@@ -25,9 +25,8 @@ export default React.createClass({
             <div data-demo='header-content-expanded'>
                 <Picture url={photoURL} title={fullName} />
                 <div data-demo='header-content-expanded__infos'>
-                    <h2>{i18n.t('person.keyConcept.name')}</h2>
+                    <div className="key-concept">{i18n.t('person.keyConcept.name')}</div>
                     <h3>{this.textFor('fullName')}</h3>
-                    <h5>Age</h5>
                     <p>{this.textFor('shortBiography')}</p>
                 </div>
             </div>

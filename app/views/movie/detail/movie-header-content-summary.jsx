@@ -23,12 +23,12 @@ export default React.createClass({
         const {poster, title} = this.state;
         return (
             <div data-demo='header-content-summary'>
-                <h4>{i18n.t('movie.keyConcept.name')}</h4>
+                <div className="key-concept">{i18n.t('movie.keyConcept.name')}</div>
                 {poster &&
                     <Poster poster={poster} title={title} />
                 }
-                <h5>{this.textFor('title')}</h5>
-                <h6>{this.textFor('productionYear')}</h6>
+                <h4>{this.textFor('title')}</h4>
+                <h5>{this.textFor('productionYear')}</h5>
             </div>
         );
     }

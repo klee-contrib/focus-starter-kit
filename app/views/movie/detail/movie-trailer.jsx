@@ -11,8 +11,7 @@ import movieStore from '../../../stores/movie';
 import {trailerActions} from '../../../action/movie';
 
 //custom components
-import Poster from '../poster';
-import Trailer from '../trailer';
+import Trailer from '../../../components/trailer';
 
 export default React.createClass({
     displayName: 'MovieTrailer',

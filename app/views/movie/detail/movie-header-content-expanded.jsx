@@ -32,7 +32,7 @@ export default React.createClass({
             <div data-demo='header-content-expanded'>
                 <Poster poster={poster} title={title} hasZoom={true} />
                 <div data-demo='header-content-expanded__infos'>
-                    <h2>{i18n.t('movie.keyConcept.name')}</h2>
+                    <div className="key-concept">{i18n.t('movie.keyConcept.name')}</div>
                     <h3>{this.textFor('title')}</h3>
                     <h5>{this.textFor('movieType')}</h5>
                     <h6>{this.textFor('productionYear')}</h6>

@@ -23,9 +23,9 @@ export default React.createClass({
         const {fullName, photoURL} = this.state;
         return (
             <div data-demo='header-content-summary'>
-                <h4>{i18n.t('person.keyConcept.name')}</h4>
+                <div className="key-concept">{i18n.t('person.keyConcept.name')}</div>
                 <Picture url={photoURL} title={fullName} />
-                <h5>{this.textFor('fullName')}</h5>
+                <h4>{this.textFor('fullName')}</h4>
             </div>
         );
     }
