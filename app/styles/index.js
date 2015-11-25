@@ -9,5 +9,5 @@ import './menu-left.scss';
 import './picture.scss';
 import './panel.scss';
 import './poster.scss';
-import './sticky-menu.scss';
+import './scrollspy-container.scss';
 import './trailer.scss';

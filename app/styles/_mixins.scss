@@ -7,6 +7,14 @@ $black-and-white-variant: 0.8;
     background-position: 50% 0%;
 }
 
+@mixin back-white-filter {
+    filter: grayscale($black-and-white-variant);
+    -webkit-filter: grayscale($black-and-white-variant);
+    -moz-filter: grayscale($black-and-white-variant);
+    -o-filter: grayscale($black-and-white-variant);
+    -ms-filter: grayscale($black-and-white-variant);
+}
+
 @mixin picture($defaultImgUrl, $height, $width) {
     position: relative;
     width: 100%;
@@ -18,11 +26,7 @@ $black-and-white-variant: 0.8;
         overflow: hidden;
         img {
             width: 100%;
-            filter: grayscale($black-and-white-variant);
-            -webkit-filter: grayscale($black-and-white-variant);
-            -moz-filter: grayscale($black-and-white-variant);
-            -o-filter: grayscale($black-and-white-variant);
-            -ms-filter: grayscale($black-and-white-variant);
+            //@include back-white-filter;
         }
     }
     & > p {
