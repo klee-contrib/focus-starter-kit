@@ -8,17 +8,17 @@ import {component as BackButton} from 'focus-components/common/button/back';
 import {cartridgeBehaviour} from 'focus-components/page/mixin';
 
 //views
-import HeaderExpanded from './movie-header-content-expanded';
-import HeaderSummary from './movie-header-content-summary';
-import MovieActors from './movie-actors';
-import MovieCameramen from './movie-cameramen';
-import MovieDirectors from './movie-directors';
-import MoviesCaracteristics from './movie-caracteristics';
-import MoviePosters from './movie-posters';
-import MovieProducers from './movie-producers';
-import MovieSynopsis from './movie-synospis';
-import MovieTrailer from './movie-trailer';
-import MovieWriters from './movie-writers';
+import HeaderExpanded from './header-content-expanded';
+import HeaderSummary from './header-content-summary';
+import MovieActors from './actors';
+import MovieCameramen from './cameramen';
+import MovieDirectors from './directors';
+import MoviesCaracteristics from './caracteristics';
+import MoviePosters from './posters';
+import MovieProducers from './producers';
+import MovieSynopsis from './synospis';
+import MovieTrailer from './trailer';
+import MovieWriters from './writers';
 
 export default React.createClass({
     displayName: 'MovieDetailView',
