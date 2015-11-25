@@ -14,8 +14,8 @@
                 left: -2px;
                 &[data-active="true"] {
                     font-size: 20px;
-                    color: $primary-color;
-                    border-left: 3px solid $primary-color;
+                    color: $accent-color;
+                    border-left: 3px solid $accent-color;
                 }
             }
         }

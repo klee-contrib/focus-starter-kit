@@ -1,6 +1,5 @@
 // libraries
 import React from 'react';
-import FocusComponents from 'focus-components';
 import i18n from 'i18next-client';
 
 //web components

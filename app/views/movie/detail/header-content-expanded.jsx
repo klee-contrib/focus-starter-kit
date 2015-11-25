@@ -1,29 +1,21 @@
 // libraries
 import React from 'react';
-import FocusComponents from 'focus-components';
 import i18n from 'i18next-client';
 
 //web components
 import {mixin as formPreset} from 'focus-components/common/form';
-import {component as Button} from 'focus-components/common/button/action';
-import {component as Modal} from 'focus-components/application/popin';
 
 //stores
 import movieStore from '../../../stores/movie';
 
 //custom components
 import Poster from '../../../components/poster';
-import Trailer from '../../../components/trailer';
 
 export default React.createClass({
     displayName: 'MovieDetailHeaderExpanded',
     mixins: [formPreset],
     definitionPath: 'movie',
     stores: [{store: movieStore, properties: ['movie']}],
-
-    openTrailerPopin() {
-        this.refs['modal-trailer'].toggleOpen();
-    },
 
     /** @inheritDoc */
     renderContent() {
@@ -37,12 +29,6 @@ export default React.createClass({
                     <h5>{this.textFor('movieType')}</h5>
                     <h6>{this.textFor('productionYear')}</h6>
                     <p>{this.textFor('shortSynopsis')}</p>
-                </div>
-                <div>
-                    <Button label={i18n.t('button.watchTrailer')} type='button' handleOnClick={this.openTrailerPopin} />
-                    <Modal ref="modal-trailer">
-                        <Trailer url={trailerHRef} />
-                    </Modal>
                 </div>
             </div>
         );

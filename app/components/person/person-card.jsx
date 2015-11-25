@@ -31,7 +31,7 @@ function PersonCard({code, leadActor, linked, name, photoURL, role}) {
                     <Button shape={null} label='person.action.preview' />
                 }
                 {linked &&
-                    <Button shape={null} label='person.action.consult' handleOnClick={() => Backbone.history.navigate(`persons/${code}`, true)} />
+                    <Button shape={null} label='person.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`persons/${code}`, true)} />
                 }
                 {!linked &&
                     <Button shape={null} label='person.action.create' />

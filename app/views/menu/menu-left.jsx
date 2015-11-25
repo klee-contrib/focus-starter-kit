@@ -1,6 +1,5 @@
 import React from 'react';
-import FocusComponents from 'focus-components';
-const {MenuLeft} = FocusComponents.components;
+import Menu from 'focus-components/components/menu';
 
 const menuItems = [
     { icon:'home', onClick:function() { Backbone.history.navigate(`/`, true) } },
@@ -9,7 +8,7 @@ const menuItems = [
 
 function DemoMenuLeft() {
     return (
-        <MenuLeft items={menuItems} />
+        <Menu items={menuItems} />
     );
 }
 
