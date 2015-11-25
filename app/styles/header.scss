@@ -12,6 +12,12 @@ $header-content-summary-padding-top: 5px;
         margin-bottom: 20px;
     }
 
+    [data-focus="header-actions"] {
+        [data-focus="button-action"] {
+            background-color: $accent-color;
+        }
+    }
+
     [data-demo="header-content-expanded"] {
         display: flex;
         align-content:center;

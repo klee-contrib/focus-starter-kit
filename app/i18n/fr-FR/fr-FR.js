@@ -7,8 +7,12 @@ export default {
         action: {
             addphoto: 'Ajouter un poster',
             preview: 'Prévisualiser',
-            consult: 'Consulter la fiche',
-            create: 'Créer la fiche'
+            consult: {
+                    sheet: 'Consulter la fiche',
+                    allocine: 'Voir sur allocine'
+            },
+            create: 'Créer la fiche',
+            watchTrailer: 'Voir la bande annonce'
         },
         keyConcept: {
             name: 'Film'
@@ -18,6 +22,7 @@ export default {
             cameramen: 'Camera men',
             caracteristics: 'Caractéristiques',
             directors: 'Réalisateurs',
+            overview: 'Résumé',
             posters: 'Affiches',
             producers: 'Producteurs',
             synopsis: 'Synopsis',
@@ -30,7 +35,10 @@ export default {
         action: {
             addphoto: 'Ajouter une photo',
             preview: 'Prévisualiser',
-            consult: 'Consulter la fiche',
+            consult: {
+                    sheet: 'Consulter la fiche',
+                    allocine: 'Voir sur allocine'
+            },
             create: 'Créer la fiche'
         },
         keyConcept: {
@@ -39,7 +47,8 @@ export default {
         detail: {
             biography: 'Biographie',
             identity: 'Identité',
-            movies: 'Filmographie'
+            movies: 'Filmographie',
+            overview: 'Résumé'
         },
         unknown: 'Aucune  fiche'
     }

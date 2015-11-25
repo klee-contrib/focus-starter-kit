@@ -1,6 +1,5 @@
 // libraries
 import React, {PropTypes} from 'react';
-import FocusComponents from 'focus-components';
 
 // web components
 import ScrollspyContainer from 'focus-components/components/scrollspy-container';
@@ -10,9 +9,10 @@ import {cartridgeBehaviour} from 'focus-components/page/mixin';
 //views
 import HeaderExpanded from './header-content-expanded';
 import HeaderSummary from './header-content-summary';
-import PersonBiography from './biography';
-import PersonIdentity from './identity';
-import PersonMovies from './movies';
+import Biography from './biography';
+import Identity from './identity';
+import Movies from './movies';
+import Overview from './overview';
 
 export default React.createClass({
     displayName: 'PersonDetailView',
@@ -45,10 +45,8 @@ export default React.createClass({
     },
 
     _getGlobalPrimaryActions() {
-        const {id} = this.props;
-        const url = `http://www.allocine.fr/personne/fichepersonne_gen_cpersonne=${id}.html`;
         const actions = [];
-        actions.push({label: 'Allociné', icon: 'launch', action: () => { window.open(url,'_blank'); }});
+        actions.push({label: 'Imprimer', icon: 'print', action: () => { alert('todo print') }});
         return actions;
     },
 
@@ -57,9 +55,10 @@ export default React.createClass({
         const {id} = this.props;
         return (
             <ScrollspyContainer gridContentSize={10} gridMenuSize={2}>
-                <PersonIdentity id={id} />
-                <PersonBiography id={id} />
-                <PersonMovies id={id} />
+                <Overview hasLoad={false} hasForm={false} />
+                <Identity id={id} />
+                <Biography id={id} />
+                <Movies id={id} />
             </ScrollspyContainer>
         );
     }

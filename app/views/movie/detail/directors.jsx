@@ -1,6 +1,5 @@
 //librairies
 import React, {PropTypes} from 'react';
-import FocusComponents from 'focus-components';
 
 // web components
 import Panel from 'focus-components/components/panel';

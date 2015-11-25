@@ -6,4 +6,11 @@
             color:$primary-color;
         }
     }
+    &[data-demo="overview"] {
+        background-color: $primary-color-light;
+        [data-focus="button-action"] {
+            background-color: $accent-color;
+            color: $primary-color-text;
+        }
+    }
 }

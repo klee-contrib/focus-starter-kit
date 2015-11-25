@@ -1,6 +1,5 @@
 // libraries
 import React, {PropTypes} from 'react';
-import FocusComponents from 'focus-components';
 
 // web components
 import ScrollspyContainer from 'focus-components/components/scrollspy-container';
@@ -10,15 +9,16 @@ import {cartridgeBehaviour} from 'focus-components/page/mixin';
 //views
 import HeaderExpanded from './header-content-expanded';
 import HeaderSummary from './header-content-summary';
-import MovieActors from './actors';
-import MovieCameramen from './cameramen';
-import MovieDirectors from './directors';
-import MoviesCaracteristics from './caracteristics';
-import MoviePosters from './posters';
-import MovieProducers from './producers';
-import MovieSynopsis from './synospis';
-import MovieTrailer from './trailer';
-import MovieWriters from './writers';
+import Actors from './actors';
+import Cameramen from './cameramen';
+import Caracteristics from './caracteristics';
+import Directors from './directors';
+import Overview from './overview';
+import Posters from './posters';
+import Producers from './producers';
+import Synopsis from './synospis';
+import Trailer from './trailer';
+import Writers from './writers';
 
 export default React.createClass({
     displayName: 'MovieDetailView',
@@ -51,16 +51,8 @@ export default React.createClass({
     },
 
     _getGlobalPrimaryActions() {
-        const {id} = this.props;
-        const url = `http://www.allocine.fr/film/fichefilm_gen_cfilm=${id}.html`;
-
-        // build primary actions tab
-        //const {trailerHRef} = this.state;
         const actions = [];
-        // if(trailerHRef) {
-        //     this.actions.push({label: 'Jouer la bande annonce', icon: 'play_arrow', action: () => { console.log(trailerHRef); }});
-        // }
-        actions.push({label: 'Allociné', icon: 'launch', action: () => { window.open(url,'_blank'); }});
+        actions.push({label: 'Imprimer', icon: 'print', action: () => { alert('todo print') }});
         return actions;
     },
 
@@ -69,15 +61,16 @@ export default React.createClass({
         const {id} = this.props;
         return (
             <ScrollspyContainer gridContentSize={10} gridMenuSize={2}>
-                <MoviesCaracteristics id={id} />
-                <MovieSynopsis id={id} />
-                <MovieTrailer id={id} />
-                <MoviePosters id={id} />
-                <MovieActors id={id} />
-                <MovieCameramen id={id} />
-                <MovieDirectors id={id} />
-                <MovieProducers id={id} />
-                <MovieWriters id={id} />
+                <Overview hasLoad={false} hasForm={false} />
+                <Caracteristics id={id} />
+                <Synopsis id={id} />
+                <Trailer id={id} />
+                <Posters id={id} />
+                <Actors id={id} />
+                <Cameramen id={id} />
+                <Directors id={id} />
+                <Producers id={id} />
+                <Writers id={id} />
             </ScrollspyContainer>
         );
     }

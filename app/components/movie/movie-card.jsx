@@ -33,7 +33,7 @@ function MovieCard({code, movieType, poster, productionYear, title, linked}) {
                     <Button shape={null} label='movie.action.preview' />
                 }
                 {linked &&
-                    <Button shape={null} label='movie.action.consult' handleOnClick={() => Backbone.history.navigate(`movies/${code}`, true)} />
+                    <Button shape={null} label='movie.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`movies/${code}`, true)} />
                 }
                 {!linked &&
                     <Button shape={null} label='movie.action.create' />
