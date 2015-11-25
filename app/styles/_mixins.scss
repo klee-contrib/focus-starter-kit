@@ -26,7 +26,7 @@ $black-and-white-variant: 0.8;
         overflow: hidden;
         img {
             width: 100%;
-            //@include back-white-filter;
+            @include back-white-filter;
         }
     }
     & > p {
