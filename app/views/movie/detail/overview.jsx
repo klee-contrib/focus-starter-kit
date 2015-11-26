@@ -25,16 +25,15 @@ export default React.createClass({
     openTrailerPopin() {
         this.refs['modal-trailer'].toggleOpen();
     },
-
+    // pourcentage de complétude<br/>
+    // {userRating}<br/>
+    // {pressRating}<br/>
     /** @inheritDoc */
     renderContent() {
         const {code, pressRating, trailerName, trailerHRef, userRating} = this.state;
         const url = `http://www.allocine.fr/film/fichefilm_gen_cfilm=${code}.html`;
         return (
             <Panel title='movie.detail.overview' data-demo='overview'>
-                pourcentage de complétude<br/>
-                {userRating}<br/>
-                {pressRating}<br/>
                 <Button label={i18n.t('movie.action.watchTrailer')} type='button' handleOnClick={this.openTrailerPopin} />
                 <Button label={i18n.t('movie.action.consult.allocine')} type='button' handleOnClick={() => window.open(url,'_blank')} />
                 <Modal ref="modal-trailer">

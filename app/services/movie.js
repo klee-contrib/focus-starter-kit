@@ -6,6 +6,10 @@ export default {
         console.log(`[MOVIE] call loadMovie(${id}) method`);
         return fetch(movieUrl.loadMovie({urlData: {id}}));
     },
+    loadMoviePeople(id) {
+        console.log(`[MOVIE] call loadMoviePeople(${id}) method`);
+        return fetch(movieUrl.loadMoviePeople({urlData: {id}}));
+    },
     loadMovieActors(id) {
         console.log(`[MOVIE] call loadMovieActors(${id}) method`);
         return fetch(movieUrl.loadMovieActors({urlData: {id}}));

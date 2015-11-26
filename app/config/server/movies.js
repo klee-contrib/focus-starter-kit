@@ -5,6 +5,7 @@ const movieRoot = API_ROOT + '/movies/';
 export default {
     /* loads */
     loadMovie: builder(movieRoot + '${id}', 'GET'),
+    loadMoviePeople: builder(movieRoot + '${id}/people', 'GET'),
     loadMovieActors: builder(movieRoot + '${id}/actors', 'GET'),
     loadMovieCameramen: builder(movieRoot + '${id}/cameramen', 'GET'),
     loadMovieDirectors: builder(movieRoot + '${id}/directors', 'GET'),

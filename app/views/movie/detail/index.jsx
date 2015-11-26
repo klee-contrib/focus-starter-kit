@@ -9,16 +9,12 @@ import {cartridgeBehaviour} from 'focus-components/page/mixin';
 //views
 import HeaderExpanded from './header-content-expanded';
 import HeaderSummary from './header-content-summary';
-import Actors from './actors';
-import Cameramen from './cameramen';
 import Caracteristics from './caracteristics';
-import Directors from './directors';
+import Casting from './casting';
 import Overview from './overview';
 import Posters from './posters';
-import Producers from './producers';
 import Synopsis from './synospis';
 import Trailer from './trailer';
-import Writers from './writers';
 
 export default React.createClass({
     displayName: 'MovieDetailView',
@@ -66,11 +62,7 @@ export default React.createClass({
                 <Synopsis id={id} />
                 <Trailer id={id} />
                 <Posters id={id} />
-                <Actors id={id} />
-                <Cameramen id={id} />
-                <Directors id={id} />
-                <Producers id={id} />
-                <Writers id={id} />
+                <Casting id={id} />
             </ScrollspyContainer>
         );
     }

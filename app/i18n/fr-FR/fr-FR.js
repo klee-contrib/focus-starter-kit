@@ -12,13 +12,22 @@ export default {
                     allocine: 'Voir sur allocine'
             },
             create: 'Créer la fiche',
-            watchTrailer: 'Voir la bande annonce'
+            watchTrailer: 'Voir la bande annonce',
+            filter: {
+                all: 'Tous',
+                actors: 'Acteurs',
+                camera: 'Camera man',
+                directors: 'Réalisateurs',
+                producers: 'Producteurs',
+                writers: 'Scénaristes'
+            }
         },
         keyConcept: {
             name: 'Film'
         },
         detail: {
             actors: 'Acteurs',
+            casting: 'Casting',
             cameramen: 'Camera men',
             caracteristics: 'Caractéristiques',
             directors: 'Réalisateurs',

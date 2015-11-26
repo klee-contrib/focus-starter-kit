@@ -6,7 +6,6 @@ import {component as Button} from 'focus-components/common/button/action';
 import {component as Modal} from 'focus-components/application/popin';
 
 
-
 export default React.createClass({
     displayName: 'Poster',
     propTypes: {
