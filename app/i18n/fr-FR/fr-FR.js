@@ -16,7 +16,7 @@ export default {
             filter: {
                 all: 'Tous',
                 actors: 'Acteurs',
-                cameramen: 'Camera men',
+                camera: 'Camera man',
                 directors: 'Réalisateurs',
                 producers: 'Producteurs',
                 writers: 'Scénaristes'

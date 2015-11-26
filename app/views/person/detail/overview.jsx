@@ -25,15 +25,15 @@ export default React.createClass({
         this.refs['modal-trailer'].toggleOpen();
     },
 
+    //pourcentage de completude<br/>
+    // nombre de films<br/>
+    // nombre de réalisations<br/>
     /** @inheritDoc */
     renderContent() {
         const {code} = this.state;
         const url = `http://www.allocine.fr/personne/fichepersonne_gen_cpersonne=${code}.html`;
         return (
             <Panel title='person.detail.overview' data-demo='overview'>
-                pourcentage de completude<br/>
-                nombre de films<br/>
-                nombre de réalisations<br/>
                 <Button label={i18n.t('person.action.consult.allocine')} type='button' handleOnClick={() => window.open(url,'_blank')} />
             </Panel>
         );
