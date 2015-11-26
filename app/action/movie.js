@@ -19,6 +19,39 @@ export const cameramenActions = {
     })
 }
 
+export const castingActions = {
+    loadPeople: actionBuilder({
+        node: 'casting',
+        service: movieServices.loadMoviePeople,
+        shouldDumpStoreOnActionCall: true,
+        status: 'loaded'
+    }),
+    loadActors: actionBuilder({
+        node: 'casting',
+        service: movieServices.loadMovieActors,
+        shouldDumpStoreOnActionCall: true,
+        status: 'loaded'
+    }),
+    loadDirectors: actionBuilder({
+        node: 'casting',
+        service: movieServices.loadMovieDirectors,
+        shouldDumpStoreOnActionCall: true,
+        status: 'loaded'
+    }),
+    loadProducers: actionBuilder({
+        node: 'casting',
+        service: movieServices.loadMovieProducers,
+        shouldDumpStoreOnActionCall: true,
+        status: 'loaded'
+    }),
+    loadWriters: actionBuilder({
+        node: 'casting',
+        service: movieServices.loadMovieWriters,
+        shouldDumpStoreOnActionCall: true,
+        status: 'loaded'
+    })
+}
+
 export const directorsActions = {
     load: actionBuilder({
         node: 'directors',

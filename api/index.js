@@ -47,6 +47,29 @@ function _getMovieById(movieId){
     });
 }
 
+
+function _getPerson(personId) {
+    return _.find(personsDB, (person) => {
+        return person.code === personId;
+    });
+}
+
+function _getMovieResume(movieId) {
+    const movie = _getMovieById(movieId);
+    if (movie) {
+        const movieResume = {
+            code: movie.code,
+            title: movie.title,
+            poster: movie.poster,
+            movieType: movie.movieType,
+            productionYear: movie.productionYear,
+            linked: true
+        };
+        return movieResume;
+    }
+    return null;
+}
+
 function _getMoviePeopleListByMovieId(movieId, listName) {
     const movie = _getMovieById(movieId);
     const peopleList = movie[listName];
@@ -101,6 +124,19 @@ app.get('/movies/:id/writers', (req, res) => {
     res.json(_getMoviePeopleListByMovieId(id, 'writers'));
 });
 
+// GET MOVIE people
+app.get('/movies/:id/people', (req, res) => {
+    const id = +req.params.id;
+    let data = {};
+    data.actors = _getMoviePeopleListByMovieId(id, 'actors');
+    data.camera = _getMoviePeopleListByMovieId(id, 'camera');
+    data.directors = _getMoviePeopleListByMovieId(id, 'directors');
+    data.producers = _getMoviePeopleListByMovieId(id, 'producers');
+    data.writers = _getMoviePeopleListByMovieId(id, 'writers');
+    console.log(data);
+    res.json(data);
+});
+
 // PUT MOVIE
 app.put('/movies/:id', (req, res) => {
     const data = req.body.data;
@@ -119,28 +155,6 @@ app.put('/movies/:id', (req, res) => {
     console.error('Erreur : aucun id de film fourni...');
     res.status(404).sent('Erreur : aucun id de film fourni...');
 });
-
-function _getPerson(personId) {
-    return _.find(personsDB, (person) => {
-        return person.code === personId;
-    });
-}
-
-function _getMovieResume(movieId) {
-    const movie = _getMovieById(movieId);
-    if (movie) {
-        const movieResume = {
-            code: movie.code,
-            title: movie.title,
-            poster: movie.poster,
-            movieType: movie.movieType,
-            productionYear: movie.productionYear,
-            linked: true
-        };
-        return movieResume;
-    }
-    return null;
-}
 
 // GET PERSON
 app.get('/persons/:id', (req, res) => {

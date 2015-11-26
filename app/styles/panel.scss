@@ -13,4 +13,24 @@
             color: $primary-color-text;
         }
     }
+    [data-focus="panel-content"] {
+        position: relative;
+        padding-top: 80px;
+        .filters-bar {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background-color: $accent-color;
+            padding-top: 20px;
+            [data-focus='button-action']{
+                color:$primary-color-text;
+                &[data-active="true"]{
+                    border-bottom: 3px solid $primary-color-text;
+                    background-color: rgba(255,255,255, 0.12);
+                }
+            }
+        }
+    }
 }
