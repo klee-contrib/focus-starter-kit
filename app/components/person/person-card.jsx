@@ -16,7 +16,7 @@ function PersonCard({code, leadActor, linked, name, photoURL, role}) {
                 }
                 {linked && !photoURL &&
                     <span className="mdl-card__menu">
-                        <Button shape='icon' label='person.action.add-photo' icon='add_a_photo' />
+                        <Button shape='icon' label='person.action.add-photo' icon='add_a_photo' handleOnClick={() => console.log('click on person card add photo')} />
                     </span>
                 }
             </div>
@@ -28,13 +28,13 @@ function PersonCard({code, leadActor, linked, name, photoURL, role}) {
             </div>
             <div className='mdl-card__actions mdl-card--border'>
                 {linked &&
-                    <Button shape={null} label='person.action.preview' />
+                    <Button shape={null} label='person.action.preview' handleOnClick={() => console.log('click on person card preview')} />
                 }
                 {linked &&
                     <Button shape={null} label='person.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`persons/${code}`, true)} />
                 }
                 {!linked &&
-                    <Button shape={null} label='person.action.create' />
+                    <Button shape={null} label='person.action.create' handleOnClick={() => console.log('click on person card create')} />
                 }
             </div>
         </div>

@@ -11,7 +11,7 @@ const MoviesRouter = router.extend({
     },
     movies(id) {
         console.log(`ROUTE: MOVIES ${id}`);
-        this._pageContent(MovieDetailView, {props: {id}});
+        this._pageContent(MovieDetailView, {props: {id : +id}});
     }
 });
 

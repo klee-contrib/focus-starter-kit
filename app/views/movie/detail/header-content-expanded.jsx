@@ -28,7 +28,7 @@ export default React.createClass({
                     <h3>{this.textFor('title')}</h3>
                     <h5>{this.textFor('movieType')}</h5>
                     <h6>{this.textFor('productionYear')}</h6>
-                    <p>{this.textFor('shortSynopsis')}</p>
+                    <div>{this.textFor('shortSynopsis')}</div>
                 </div>
             </div>
         );
