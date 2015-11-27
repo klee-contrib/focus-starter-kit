@@ -83,7 +83,7 @@ export default React.createClass({
             <Panel title='movie.detail.casting'>
                 <div className='filters-bar'>
                     {['actors','camera','directors','producers','writers'].map(peopleType =>
-                        <Button shape={null} label={this._getActionLabel(peopleType)} handleOnClick={() => this._setPeople(peopleType)} data-active={this._isActive(peopleType)} />
+                        <Button key={`btn-filter-${peopleType}`} shape={null} label={this._getActionLabel(peopleType)} handleOnClick={() => this._setPeople(peopleType)} data-active={this._isActive(peopleType)} />
                     )}
                 </div>
                 <PersonCardList persons={list} />

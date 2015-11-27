@@ -11,7 +11,7 @@ const PersonsRouter = router.extend({
     },
     persons(id) {
         console.log(`ROUTE: PERSONS ${id}`);
-        this._pageContent(PersonDetailView, {props: {id}});
+        this._pageContent(PersonDetailView, {props: {id : +id}});
     }
 });
 

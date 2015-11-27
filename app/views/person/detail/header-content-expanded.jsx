@@ -26,7 +26,7 @@ export default React.createClass({
                 <div data-demo='header-content-expanded__infos'>
                     <div className="key-concept">{i18n.t('person.keyConcept.name')}</div>
                     <h3>{this.textFor('fullName')}</h3>
-                    <p>{this.textFor('shortBiography')}</p>
+                    <div>{this.textFor('shortBiography')}</div>
                 </div>
             </div>
         );
