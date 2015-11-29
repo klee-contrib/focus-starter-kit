@@ -3,19 +3,22 @@
 [data-focus="scrollspy-container"] {
     [data-focus="sticky-menu"] {
         ul {
-            border-left: 1px solid #cbcbcb;
+            border-right: 1px solid #cbcbcb;
+            margin-right: 20px;
             li {
                 color: $primary-text-color;
-                text-align: left;
+                text-align: right;
                 font-size: 11pt;
                 margin: 0;
-                padding: 10px 5px 10px 20px;
+                padding: 10px 20px 10px 5px;
                 position: relative;
-                left: -2px;
+                right: -2px;
+                border:0;
+                border-right: 3px solid transparent;
                 &[data-active="true"] {
                     font-size: 20px;
                     color: $accent-color;
-                    border-left: 3px solid $accent-color;
+                    border-right: 3px solid $accent-color;
                 }
             }
         }
