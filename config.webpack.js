@@ -23,10 +23,10 @@ demoConfig = {
         alias: {
             //'focus-core': path.resolve(__dirname, '../focus-core/lib'),
             'focus-core': path.resolve(__dirname, './node_modules/focus-core/lib'),
-            //focus-components': path.resolve(__dirname, '../focus-components/src'),
+            //'focus-components': path.resolve(__dirname, '../focus-components/src'),
             'focus-components': path.resolve(__dirname, './node_modules/focus-components/src'),
             react: path.resolve(__dirname, './node_modules/react'),
-            //'_variable.scss': path.resolve(__dirname, './node_modules/focus-components/src/style/_mdl_variables.scss')
+            '_variable.scss': path.resolve(__dirname, './node_modules/focus-components/src/style/_mdl_variables.scss')
             //'backbone': path.resolve(__dirname, './node_modules/backbone'), // to force webpack to resolve conflicts with backbone when component is call in local
             //'i18next-client': path.resolve(__dirname, './node_modules/i18next-client') // to force webpack to resolve conflicts with i18n when component is call in local
         },
