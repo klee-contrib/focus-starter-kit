@@ -5,7 +5,7 @@ function Trailer({url}) {
     return (
         <div data-demo='trailer'>
             {url &&
-                <iframe src={url} allowFullScreen={true} seamless={true} width="1024" height="768" />
+                <iframe src={url} allowFullScreen={true} seamless={true} />
             }
         </div>
     );
