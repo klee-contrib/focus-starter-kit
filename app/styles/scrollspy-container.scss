@@ -1,5 +1,8 @@
 @import "variables";
 
+$scrollspy-container-menu-size:220px;
+$media-desktop-breakpoint: 840px !default;
+
 [data-focus="scrollspy-container"] {
     [data-focus="sticky-menu"] {
         ul {
@@ -21,6 +24,17 @@
                     border-right: 3px solid $accent-color;
                 }
             }
+        }
+    }
+}
+
+@media (min-width: $media-desktop-breakpoint - 1) {
+    [data-focus="scrollspy-container"] {
+        [data-focus="sticky-menu"] {
+            width: $scrollspy-container-menu-size;
+        }
+        [data-focus="scrollspy-container-content"] {
+            margin-left: #{$scrollspy-container-menu-size + 10px};
         }
     }
 }
