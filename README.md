@@ -4,6 +4,8 @@
 
 This application sets to music FOCUS libraries and components.
 
+![image](https://cloud.githubusercontent.com/assets/5349745/11563963/ea3a509c-99d6-11e5-8810-acc4b4b67493.png)
+
 ## How to install it ?
 
 Clone or download project code sources.
