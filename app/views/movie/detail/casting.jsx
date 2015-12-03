@@ -5,7 +5,7 @@ import i18n from 'i18next-client';
 // web components
 import Panel from 'focus-components/components/panel';
 import {storeBehaviour} from 'focus-components/common/mixin';
-import PersonCardList from '../../../components/person/person-card-list';
+import PersonCardList from '../../person/components/person-card-list';
 import {component as Button} from 'focus-components/common/button/action';
 
 //stores & actions

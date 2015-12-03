@@ -4,11 +4,12 @@ import movieUrl from '../config/server/movies';
 export default {
     loadMovie(id) {
         console.log(`[MOVIE] call loadMovie(${id}) method`);
-        return fetch(movieUrl.loadMovie({urlData: {id}}));
+        return fetch(movieUrl.loadMovie({urlData: {id}}), {isCORS: true});
     },
     loadMoviePeople(id) {
         console.log(`[MOVIE] call loadMoviePeople(${id}) method`);
-        return fetch(movieUrl.loadMoviePeople({urlData: {id}}));
+        fetch(movieUrl.loadMovie({urlData: {id}}), {isCORS: true});
+        return fetch(movieUrl.loadMoviePeople({urlData: {id}}), {isCORS: true});
     },
     loadMovieActors(id) {
         console.log(`[MOVIE] call loadMovieActors(${id}) method`);
