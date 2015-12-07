@@ -14,7 +14,7 @@ export default React.createClass({
     // stores: [{store: movieStore, properties: ['movie']}],
 
     /** @inheritDoc */
-    renderContent() {
+    render() {
         return (
             <div>test</div>
         );

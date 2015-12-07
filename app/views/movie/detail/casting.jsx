@@ -3,10 +3,12 @@ import React, {PropTypes} from 'react';
 import i18n from 'i18next-client';
 
 // web components
+import {component as Modal} from 'focus-components/application/popin';
 import Panel from 'focus-components/components/panel';
 import {storeBehaviour} from 'focus-components/common/mixin';
 import PersonCardList from '../../person/components/person-card-list';
 import {component as Button} from 'focus-components/common/button/action';
+import PersonCreation from '../../person/creation';
 
 //stores & actions
 import movieStore from '../../../stores/movie';
@@ -21,15 +23,15 @@ export default React.createClass({
     mixins: [storeBehaviour],
     stores: [{store: movieStore, properties: ['casting']}],
 
-    /** @inheritDoc */
     getInitialState() {
         return {
-            filter: 'actors'
+            filter: 'actors',
+            personCodeCreation: null
         }
     },
 
     /** @inheritDoc */
-    componentWillMount(){
+    componentWillMount() {
         const {id} = this.props;
         castingActions.loadPeople(id);
     },
@@ -76,7 +78,7 @@ export default React.createClass({
 
     /** @inheritDoc */
     render() {
-        const {actors, camera, directors, producers, writers, filter} = this.state;
+        const {actors, camera, directors, producers, personCodeCreation, writers, filter} = this.state;
         const people = this._getPeople();
         const list = people ? people : [];
         return (
@@ -86,8 +88,17 @@ export default React.createClass({
                         <Button key={`btn-filter-${peopleType}`} shape={null} label={this._getActionLabel(peopleType)} handleOnClick={() => this._setPeople(peopleType)} data-active={this._isActive(peopleType)} />
                     )}
                 </div>
-                <PersonCardList persons={list} />
+                <PersonCardList persons={list} onClickCreate={(personId) => this.setState({personCodeCreation: personId})} />
+                {personCodeCreation &&
+                    <Modal open={true} onPopinClose={this._onCreatePersonPopinClose} type='from-right'>
+                        <PersonCreation id={personCodeCreation}/>
+                    </Modal>
+                }
             </Panel>
         );
+    },
+
+    _onCreatePersonPopinClose() {
+        this.setState({personCodeCreation: null});
     }
 });
