@@ -125,7 +125,7 @@ app.get('/movies/:id/writers', (req, res) => {
 });
 
 // GET MOVIE people
-app.get('/movies/:id/actors', (req, res) => {
+app.get('/movies/:id/people', (req, res) => {
     const id = +req.params.id;
     let data = {};
     data.actors = _getMoviePeopleListByMovieId(id, 'actors');
