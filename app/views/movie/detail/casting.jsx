@@ -8,7 +8,7 @@ import Panel from 'focus-components/components/panel';
 import {storeBehaviour} from 'focus-components/common/mixin';
 import PersonCardList from '../../person/components/person-card-list';
 import {component as Button} from 'focus-components/common/button/action';
-import PersonCreation from '../../person/creation';
+import PersonPreview from '../../person/preview';
 
 //stores & actions
 import movieStore from '../../../stores/movie';
@@ -26,7 +26,7 @@ export default React.createClass({
     getInitialState() {
         return {
             filter: 'actors',
-            personCodeCreation: null
+            personCodePreview: null
         }
     },
 
@@ -78,7 +78,7 @@ export default React.createClass({
 
     /** @inheritDoc */
     render() {
-        const {actors, camera, directors, producers, personCodeCreation, writers, filter} = this.state;
+        const {actors, camera, directors, producers, personCodePreview, writers, filter} = this.state;
         const people = this._getPeople();
         const list = people ? people : [];
         return (
@@ -88,10 +88,10 @@ export default React.createClass({
                         <Button key={`btn-filter-${peopleType}`} shape={null} label={this._getActionLabel(peopleType)} handleOnClick={() => this._setPeople(peopleType)} data-active={this._isActive(peopleType)} />
                     )}
                 </div>
-                <PersonCardList persons={list} onClickCreate={(personId) => this.setState({personCodeCreation: personId})} />
-                {personCodeCreation &&
+                <PersonCardList persons={list} onClickPreview={(personId) => this.setState({personCodePreview: personId})} />
+                {personCodePreview &&
                     <Modal open={true} onPopinClose={this._onCreatePersonPopinClose} type='from-right'>
-                        <PersonCreation id={personCodeCreation}/>
+                        <PersonPreview id={personCodePreview} />
                     </Modal>
                 }
             </Panel>
@@ -99,6 +99,6 @@ export default React.createClass({
     },
 
     _onCreatePersonPopinClose() {
-        this.setState({personCodeCreation: null});
+        this.setState({personCodePreview: null});
     }
 });

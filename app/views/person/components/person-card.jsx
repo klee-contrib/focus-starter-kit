@@ -8,7 +8,7 @@ export default React.createClass({
     displayName: 'PersonCard',
     propTypes: {
         code: PropTypes.number,
-        onClickCreate: PropTypes.func,
+        onClickPreview: PropTypes.func,
         leadActor: PropTypes.bool,
         linked: PropTypes.bool,
         name: PropTypes.string,
@@ -17,10 +17,10 @@ export default React.createClass({
     },
 
     render() {
-        const {code, onClickCreate, leadActor, linked, name, photoURL, role} = this.props;
+        const {code, onClickPreview, leadActor, linked, name, photoURL, role} = this.props;
         return (
             <div className='mdl-card mdl-shadow--4dp' data-demo='material-card'>
-                <div className='picture'>
+                <div className='visuel'>
                     <div>
                         {photoURL && <img src={photoURL} title='Picture' alt='Picture' />}
                     </div>
@@ -39,17 +39,12 @@ export default React.createClass({
                         <div className='card-info--level2'>{role}</div>
                     </div>
                 </div>
-                <div className='mdl-card__actions mdl-card--border'>
-                    {linked &&
-                        <Button shape={null} label='person.action.preview' handleOnClick={() => console.log('click on person card preview')} />
-                    }
-                    {linked &&
+                {linked &&
+                    <div className='mdl-card__actions mdl-card--border'>
+                        <Button shape={null} label='person.action.preview' handleOnClick={() => onClickPreview(+code)} />
                         <Button shape={null} label='person.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`persons/${code}`, true)} />
-                    }
-                    {!linked &&
-                        <Button handleOnClick={() => onClickCreate(+code)} label='person.action.create' shape={null} />
-                    }
-                </div>
+                    </div>
+                }
             </div>
         );
     }

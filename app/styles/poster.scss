@@ -1,9 +1,6 @@
 @import "variables";
 @import "mixins";
 
-$poster-popin-img-height:80vh;
-$poster-popin-marin-top:(100vh - $poster-popin-img-height) / 2;
-$poster-popin-img-width:$poster-popin-img-height * ($poster-large-width / $poster-large-height);
 
 [data-demo="poster"] {
     background-color: #F1F1F1;
@@ -59,8 +56,8 @@ $poster-popin-img-width:$poster-popin-img-height * ($poster-large-width / $poste
                         height: $poster-popin-img-height;
                         min-width: auto;
                         min-height: auto;
-                        margin-top: $poster-popin-marin-top;
-                        margin-bottom: $poster-popin-marin-top;
+                        margin-top: $poster-popin-margin-top;
+                        margin-bottom: $poster-popin-margin-top;
                         img {
                             width: 100%;
                             height: 100%;

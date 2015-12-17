@@ -20,7 +20,7 @@ export default React.createClass({
         const {code, movieType, poster, productionYear, title, linked} = this.props;
         return (
             <div className='mdl-card mdl-shadow--4dp' data-demo='material-card'>
-                <div className='picture'>
+                <div className='visuel'>
                     <div>
                         {poster && <img src={poster} title='Picture' alt='Picture' />}
                     </div>

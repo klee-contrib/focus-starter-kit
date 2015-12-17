@@ -1,6 +1,7 @@
 import personSerivces from '../services/person';
 import actionBuilder from 'focus-core/application/action-builder';
 
+
 export const identityActions = {
     load: actionBuilder({
         node: 'person',

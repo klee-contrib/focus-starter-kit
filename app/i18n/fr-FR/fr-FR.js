@@ -57,7 +57,8 @@ export default {
             biography: 'Biographie',
             identity: 'Identité',
             movies: 'Filmographie',
-            overview: 'Résumé'
+            overview: 'Résumé',
+            lastmovies: 'Derniers films'
         },
         unknown: 'Aucune  fiche'
     }

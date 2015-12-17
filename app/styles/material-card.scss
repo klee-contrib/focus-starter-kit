@@ -2,12 +2,5 @@
 @import "mixins";
 
 [data-demo="material-card"] {
-    margin: 10px 10px;
-    .picture {
-        @include picture('../assets/img/unknown-person.gif', $concept-card-height, $concept-card-width);
-    }
-    @include card-info();
-    [data-focus="button-action"] {
-        color:$accent-color;;
-    }
+    @include card('../assets/img/unknown-person.gif', $concept-card-height, $concept-card-width);
 }
