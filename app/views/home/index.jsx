@@ -4,7 +4,7 @@ import {application} from 'focus-core';
 const {confirm} = application;
 // web components
 import {cartridgeBehaviour} from 'focus-components/page/mixin';
-import HeaderSearchBar from '../../components/search/header-search-bar';
+// import HeaderSearchBar from '../search/header-search-bar';
 
 export default React.createClass({
     displayName: 'HomeView',
@@ -14,22 +14,22 @@ export default React.createClass({
     componentWillMount() {
         this._registerCartridge();
     },
-
-    /**
-    * Related to the CartridgeBehaviour.
-    * Define the cartridge configuration.
-    * @return {[type]} [description]
-    */
-    cartridgeConfiguration() {
-        //const props = { hasLoad: false, hasForm: false }; //{id: this.props.id};
-        return {
-            cartridge: { component: HeaderSearchBar },
-            actions: {
-                primary: [],
-                secondary: []
-            }
-        };
-    },
+    //
+    // /**
+    // * Related to the CartridgeBehaviour.
+    // * Define the cartridge configuration.
+    // * @return {[type]} [description]
+    // */
+    // cartridgeConfiguration() {
+    //     //const props = { hasLoad: false, hasForm: false }; //{id: this.props.id};
+    //     return {
+    //         cartridge: { component: HeaderSearchBar },
+    //         actions: {
+    //             primary: [],
+    //             secondary: []
+    //         }
+    //     };
+    // },
 
     /** @inheritDoc */
     render() {

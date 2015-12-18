@@ -6,9 +6,10 @@
     flex-wrap:wrap;
 }
 
+/*
 [data-demo="concept-card"] {
     @include card('../assets/img/unknown-person.gif', $concept-card-height, $concept-card-width);
-    
+
     .hover-actions {
         @include hover-actions();
         display: none;
@@ -31,4 +32,4 @@
             display: block;
         }
     }
-}
+}*/

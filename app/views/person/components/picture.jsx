@@ -1,7 +1,7 @@
 //libraries
 import React, {PropTypes} from 'react';
 
-function Picture( {title, url}) {
+function Picture({title, url}) {
     return (
         <div data-demo='picture'>
             <div>

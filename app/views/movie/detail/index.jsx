@@ -7,10 +7,10 @@ import {component as BackButton} from 'focus-components/common/button/back';
 import {cartridgeBehaviour} from 'focus-components/page/mixin';
 
 //views
-import HeaderExpanded from './header-content-expanded';
-import HeaderSummary from './header-content-summary';
 import Caracteristics from './caracteristics';
 import Casting from './casting';
+import HeaderExpanded from './header-content-expanded';
+import HeaderSummary from './header-content-summary';
 import Overview from './overview';
 import Posters from './posters';
 import Synopsis from './synospis';
@@ -48,7 +48,7 @@ export default React.createClass({
 
     _getGlobalPrimaryActions() {
         const actions = [];
-        actions.push({label: 'Imprimer', icon: 'print', action: () => { alert('todo print') }});
+        actions.push({label: 'Imprimer', icon: 'print', action: () => { alert('todo print')}});
         return actions;
     },
 

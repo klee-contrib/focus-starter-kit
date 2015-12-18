@@ -9,7 +9,7 @@ import {mixin as formPreset} from 'focus-components/common/form';
 import personStore from '../../../stores/person';
 
 //custom components
-import Picture from '../../../components/picture';
+import Picture from '../components/picture';
 
 export default React.createClass({
     displayName: 'PersonDetailHeaderExpanded',
@@ -26,6 +26,7 @@ export default React.createClass({
                 <div data-demo='header-content-expanded__infos'>
                     <div className="key-concept">{i18n.t('person.keyConcept.name')}</div>
                     <h3>{this.textFor('fullName')}</h3>
+                    <h5>{this.textFor('activity')}</h5>
                     <div>{this.textFor('shortBiography')}</div>
                 </div>
             </div>
