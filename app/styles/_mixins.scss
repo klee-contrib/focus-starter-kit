@@ -15,6 +15,13 @@ $black-and-white-variant: 0.8;
     -ms-filter: grayscale($black-and-white-variant);
 }
 
+@mixin headings {
+    h1, h2, h3,
+    h4, h5, h6 {
+        @content;
+    }
+}
+
 @mixin picture($defaultImgUrl) {
     position: relative;
     width: 100%;

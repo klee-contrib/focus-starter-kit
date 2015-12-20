@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 .demo-app {
     background-color: #FAFAFA;
@@ -18,13 +19,13 @@
         cursor: pointer;
     }
 
-    //default styles
-    h1, h2, h3, h4, h5, h6 {
+    @include headings {
         padding: 0;
         margin: 0;
         margin-bottom: 8px;
         color: $primary-color;
     }
+
     h1 {
         font-size: 112px;
         line-height: 98px;

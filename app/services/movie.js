@@ -38,5 +38,9 @@ export default {
     saveMovieCaracteristics(data) {
         console.log(`[MOVIE] call saveMovieCaracteristics method. id=${data.id} data=${data}`);
         return fetch(movieUrl.saveMovie({urlData: {id: data.id}, data: {data}}), {isCORS: true});
+    },
+    searchMovie(criteria) {
+        console.log(`[MOVIE] call searchMovie method. criteria=${criteria}`);
+        return fetch(movieUrl.saveMovie(criteria), {isCORS: true});
     }
 }

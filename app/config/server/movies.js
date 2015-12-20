@@ -13,5 +13,8 @@ export default {
     loadMovieWriters: builder(movieRoot + '${id}/writers', 'GET'),
 
     /* save */
-    saveMovie: builder(movieRoot + '${id}', 'PUT')
+    saveMovie: builder(movieRoot + '${id}', 'PUT'),
+
+    /* search movie */
+    searchMovie: builder(movieRoot + '/search', 'POST')
 };

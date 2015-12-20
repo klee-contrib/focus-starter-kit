@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 $header-content-summary-padding-top: 5px;
 
@@ -25,7 +26,7 @@ $header-content-summary-padding-top: 5px;
         [data-demo="header-content-expanded__infos"] {
             width: 700px;
             padding: 0 20px;
-            h1, h2, h3, h4, h5, h6 {
+            @include headings {
                 margin-bottom: 20px;
                 color: $accent-color;
             }
@@ -37,7 +38,6 @@ $header-content-summary-padding-top: 5px;
             }
         }
     }
-
 
     [data-focus="header-top-row"] {
         form {
@@ -57,16 +57,21 @@ $header-content-summary-padding-top: 5px;
                 margin: 0;
                 margin-right: 20px;
             }
-            h4 {
+            @include headings {
                 color: $secondary-text-color;
                 align-self: flex-end;
-                margin-right: 20px;
             }
-            h5 {
-                color: $secondary-text-color;
-                align-self: flex-end;
+            h4 {
+                margin-right: 20px;
             }
         }
 
+    }
+
+    [data-demo='header-search-bar'] {
+        @include headings {
+            text-align: center;
+            margin-bottom: 20px;
+        }
     }
 }

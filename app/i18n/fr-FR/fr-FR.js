@@ -3,13 +3,18 @@ export default {
         back: 'Retour',
         watchTrailer: 'Voir la bande annonce'
     },
+    header: {
+        search: {
+            title: 'Vous rechercher ?'
+        }
+    },
     movie: {
         action: {
             addphoto: 'Ajouter un poster',
             preview: 'Prévisualiser',
             consult: {
-                    sheet: 'Consulter la fiche',
-                    allocine: 'Voir sur allocine'
+                sheet: 'Consulter la fiche',
+                allocine: 'Voir sur allocine'
             },
             create: 'Créer la fiche',
             watchTrailer: 'Voir la bande annonce',
@@ -45,8 +50,8 @@ export default {
             addphoto: 'Ajouter une photo',
             preview: 'Prévisualiser',
             consult: {
-                    sheet: 'Consulter la fiche',
-                    allocine: 'Voir sur allocine'
+                sheet: 'Consulter la fiche',
+                allocine: 'Voir sur allocine'
             },
             create: 'Créer la fiche'
         },
@@ -61,5 +66,15 @@ export default {
             lastmovies: 'Derniers films'
         },
         unknown: 'Aucune  fiche'
+    },
+    search: {
+        bar: {
+            placeholder: 'Saisissez un nom de film, ou de personne...'
+        },
+        scope: {
+            all: 'Tous',
+            movie: 'Film',
+            person: 'Personne'
+        }
     }
 };
