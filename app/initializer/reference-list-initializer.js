@@ -11,9 +11,9 @@ module.exports = {
                 return new Promise(success => {
                     success(
                         [
-                            {code: 'all', label: 'search.scope.all'},
-                            {code: 'movie', label: 'search.scope.movie'},
-                            {code: 'person', label: 'search.scope.person'}
+                            {code: 'ALL', icon: 'all_inclusive', label: 'search.scope.all'},
+                            {code: 'MOVIE', icon: 'movie', label: 'search.scope.movie'},
+                            {code: 'PERSON', icon: 'person', label: 'search.scope.person'}
                         ]
                     );
                 });

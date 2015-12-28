@@ -5,7 +5,7 @@ const {confirm} = application;
 
 // web components
 import {cartridgeBehaviour} from 'focus-components/page/mixin';
-import HeaderSearchBar from '../search/header-search-bar';
+import HeaderSearchBar from '../search/components/header-search-bar';
 
 export default React.createClass({
     displayName: 'HomeView',

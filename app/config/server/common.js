@@ -4,5 +4,5 @@ const searchRoot = API_ROOT + '/common/';
 
 export default {
     /* loads */
-    loadMovie: builder(movieRoot + '/search', 'POST')
+    search: builder(searchRoot + 'search', 'POST')
 };
