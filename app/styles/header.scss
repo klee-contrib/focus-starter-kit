@@ -68,8 +68,10 @@ $header-content-summary-padding-top: 5px;
 
     }
 
-    [data-demo='header-search-bar'] {
+    [data-focus='cartridge-search'] {
         @include headings {
+            font-size: 42px;
+            line-height: 50px;
             text-align: center;
             margin-bottom: 20px;
         }

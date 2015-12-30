@@ -10,5 +10,5 @@ export default {
     savePerson: builder(personRoot + '${id}', 'PUT'),
 
     /* search */
-    searchPerson: builder(personRoot + '/search', 'POST')
+    search: builder(personRoot + 'search?listState.skip=${skip}&listState.sortDesc=${sortDesc}&listState.top=${top}', 'POST')
 };

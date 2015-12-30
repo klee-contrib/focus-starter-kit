@@ -5,7 +5,10 @@ const {confirm} = application;
 
 // web components
 import {cartridgeBehaviour} from 'focus-components/page/mixin';
-import HeaderSearchBar from '../search/components/header-search-bar';
+
+//cartridge configuration
+import CartridgePageSearch from 'focus-components/page/search/search-header/cartridge';
+import SummaryPageSearch from 'focus-components/page/search/search-header/summary';
 
 export default React.createClass({
     displayName: 'HomeView',
@@ -27,9 +30,15 @@ export default React.createClass({
     * @return {[type]} [description]
     */
     cartridgeConfiguration() {
-        //const props = { hasLoad: false, hasForm: false }; //{id: this.props.id};
         return {
-            cartridge: { component: HeaderSearchBar, props: {onSearchCriteriaChange: this._navigateAdvancedSearch}},
+            summary: {
+                component: SummaryPageSearch,
+                props: { onSearchCriteriaChange: this._navigateAdvancedSearch }
+            },
+            cartridge: {
+                component: CartridgePageSearch,
+                props: { onSearchCriteriaChange: this._navigateAdvancedSearch }
+            },
             actions: {
                 primary: [],
                 secondary: []

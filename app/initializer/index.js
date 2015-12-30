@@ -5,8 +5,8 @@ import './domain-initializer';
 import './definition-initializer';
 import referenceList from './reference-list-initializer';
 referenceList.initialize();
-import queryStoreInitializer from './query-store-initializer';
-queryStoreInitializer.initialize();
+import searchStoreInitializer from './search-store-initializer';
+searchStoreInitializer.initialize();
 import './translation-initializer';
 import './user-initializer';
 

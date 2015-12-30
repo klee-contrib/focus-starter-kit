@@ -3,9 +3,18 @@ export default {
         back: 'Retour',
         watchTrailer: 'Voir la bande annonce'
     },
-    header: {
-        search: {
-            title: 'Vous rechercher ?'
+    live: {
+        filter: {
+            title: 'Filtres',
+            facets: {
+                FCT_MOVIE_TITLE: 'Titre',
+                FCT_MOVIE_TYPE: 'Type',
+                FCT_MOVIE_YEAR: 'Année',
+                FCT_PERSON_ACTIVITY: 'Activité',
+                FCT_PERSON_NAME: 'Nom',
+                FCT_MOVIE_SEX: 'Sexe', // à renommer en FCT_PERSON_SEX sur le backend car concerne les personnes
+                FCT_SCOPE: 'Thème',
+            }
         }
     },
     movie: {
@@ -45,6 +54,7 @@ export default {
         },
         unknown: 'Aucune fiche'
     },
+    movies: 'Films',
     person: {
         action: {
             addphoto: 'Ajouter une photo',
@@ -67,10 +77,15 @@ export default {
         },
         unknown: 'Aucune  fiche'
     },
+    persons: 'Personnes',
     search: {
+        cartridge: {
+            title: 'Vous recherchez ?'
+        },
         bar: {
             placeholder: 'Saisissez un nom de film, ou de personne...'
         },
+        mostRelevant: 'Les plus pertinents',
         scope: {
             all: 'Tous',
             movie: 'Film',

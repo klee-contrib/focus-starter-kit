@@ -4,5 +4,5 @@ const searchRoot = API_ROOT + '/common/';
 
 export default {
     /* loads */
-    search: builder(searchRoot + 'search', 'POST')
+    search: builder(searchRoot + 'search?listState.skip=${skip}&listState.top=${top}', 'POST')
 };

@@ -16,5 +16,5 @@ export default {
     saveMovie: builder(movieRoot + '${id}', 'PUT'),
 
     /* search movie */
-    searchMovie: builder(movieRoot + '/search', 'POST')
+    search: builder(movieRoot + 'search?listState.skip=${skip}&listState.sortDesc=${sortDesc}&listState.top=${top}', 'POST')
 };
