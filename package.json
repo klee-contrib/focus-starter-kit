@@ -35,8 +35,8 @@
         "moment": "^2.10.3",
         "native-promise-only": "^0.8.0-a",
         "numeral": "^1.5.3",
-        "react": "0.14.1",
-        "react-dom": "0.14.1"
+        "react": "0.14.4",
+        "react-dom": "0.14.4"
     },
     "devDependencies": {
         "babel": "^5.8.21",
