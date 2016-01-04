@@ -65,8 +65,8 @@
   "license": "MIT",
   "dependencies": {
     "backbone": "^1.2.0",
-    "focus-core": "0.12.2-beta1",
-    "focus-components": "0.8.4-beta6",
+    "focus-core": "0.12.2-beta2",
+    "focus-components": "0.8.4-beta7",
     "i18next-client": "^1.11.0",
     "immutable": "^3.7.2",
     "jquery": "3.0.0-alpha1",
