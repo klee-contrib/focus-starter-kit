@@ -106,5 +106,4 @@
     "webpack-dev-server": "^1.11.0",
     "webpack-focus": "^0.8.1"
   }
->>>>>>> Update webpack config
 }
