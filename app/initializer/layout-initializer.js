@@ -6,6 +6,8 @@ import Layout from 'focus-components/components/layout';
 import ConfirmWrapper from 'focus-components/components/confirm';
 import DemoMenuLeft from '../views/menu/menu-left';
 
-render(Layout, '[data-focus="application"]', {
-    props: {MenuLeft: DemoMenuLeft}
+render(Layout, `.${__ANCHOR_CLASS__}`, {
+    props: {
+        MenuLeft: DemoMenuLeft
+    }
 });
