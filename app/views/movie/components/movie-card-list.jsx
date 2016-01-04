@@ -4,18 +4,19 @@ import React, {PropTypes} from 'react';
 //web components
 import MovieCard from './movie-card';
 
-function MovieCardList({movies}) {
+function MovieCardList({onClickPreview, movies}) {
+
     return (
         <div data-demo='concept-card-list'>
-        {movies &&
+            {movies &&
             movies.map(movie => {
                 const {code, linked, movieType, poster, productionYear, title} = movie;
                 const key = `movie-card-${code}`;
                 return (
-                    <MovieCard key={key} code={code} linked={linked} movieType={movieType} poster={poster} productionYear={productionYear} title={title} />
+                    <MovieCard key={key} code={code} linked={linked} movieType={movieType} onClickPreview={onClickPreview} poster={poster} productionYear={productionYear} title={title}  />
                 );
             })
-        }
+            }
         </div>
     );
 }
