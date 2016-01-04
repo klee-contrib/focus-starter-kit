@@ -1,6 +1,6 @@
 import builder from 'focus-core/util/url/builder';
 
-const movieRoot = API_ROOT + '/movies/';
+const movieRoot = './movies/';
 
 export default {
     /* loads */

@@ -1,6 +1,6 @@
 import builder from 'focus-core/util/url/builder';
 
-const personRoot = API_ROOT + '/persons/';
+const personRoot = './persons/';
 
 export default {
     loadPerson: builder(personRoot + '${id}', 'GET'),
