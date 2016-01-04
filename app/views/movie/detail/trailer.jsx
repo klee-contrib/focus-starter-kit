@@ -10,7 +10,7 @@ import movieStore from '../../../stores/movie';
 import {trailerActions} from '../../../action/movie';
 
 //custom components
-import Trailer from '../../../components/trailer';
+import Trailer from '../components/trailer';
 
 export default React.createClass({
     displayName: 'MovieTrailer',

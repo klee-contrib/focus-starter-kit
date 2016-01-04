@@ -9,7 +9,7 @@ import {mixin as formPreset} from 'focus-components/common/form';
 import movieStore from '../../../stores/movie';
 
 //custom components
-import Poster from '../../../components/poster';
+import Poster from '../components/poster';
 
 export default React.createClass({
     displayName: 'MovieDetailHeaderSummary',

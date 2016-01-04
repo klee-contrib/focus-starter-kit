@@ -2,17 +2,60 @@
 import React, {PropTypes} from 'react';
 import i18n from 'i18next-client';
 
+//web components
+import {component as Button} from 'focus-components/common/button/action';
+import {storeBehaviour} from 'focus-components/common/mixin';
+import builtInComponents from 'focus-components/common/mixin/built-in-components';
+
+// actions & stores
+import movieStore from '../../../stores/movie'
+import {caracteristicsActions} from '../../../action/movie'
+
+//custom components
+import Poster from '../components/poster';
+import MovieCaracteristics from'../detail/caracteristics'
+import MovieSynopsis from'../detail/synospis'
+
+
+
 export default React.createClass({
     displayName: 'MoviePreview',
     propTypes: {
         id: PropTypes.number.isRequired
     },
+    mixins: [builtInComponents, storeBehaviour],
+    definitionPath: 'movie',
+    stores: [{store: movieStore, properties: ['movie']}],
+
+    /** @inheritDoc */
+    getInitialState(){
+        return {};
+    },
+
+    /** @inheritDoc */
+    componentDidMount() {
+        const {id} = this.props;
+        caracteristicsActions.load(id);
+    },
 
     /** @inheritDoc */
     render() {
+        const {poster,title} = this.state;
+        const {id} = this.props;
         return (
-            <div>
-                'MoviePreview' {this.props.id}
+            <div data-demo='preview'>
+                <div data-demo='preview-header'>
+                    <Poster poster={poster} title={title} hasZoom={true}/>
+                    <div>
+                        <h3>{this.textFor('title')}</h3>
+                        <br/>
+                        <Button label='person.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`movies/${id}`, true)} />
+                    </div>
+                </div>
+                <div data-demo='preview-content'>
+                    <MovieCaracteristics id={id} hasEdit={false}/>
+                    <MovieSynopsis id={id}  hasEdit={false}/>
+                </div>
             </div>
         ) ;
     }
