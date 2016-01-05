@@ -1,4 +1,3 @@
-import 'focus-components/style';
 import './back-to-top.scss';
 import './concept-card.scss';
 import './field.scss';
