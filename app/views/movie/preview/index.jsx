@@ -48,13 +48,16 @@ export default React.createClass({
                     <Poster poster={poster} title={title} hasZoom={true}/>
                     <div>
                         <h3>{this.textFor('title')}</h3>
+                        <h5>{this.textFor('movieType')}</h5>
+                        <h5>{this.textFor('productionYear')}</h5>
                         <br/>
                         <Button label='person.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`movies/${id}`, true)} />
                     </div>
                 </div>
                 <div data-demo='preview-content'>
+                    <h3>{this.textFor('title')}</h3>
+                    <h3>{this.fieldFor('synopsis')}</h3>
                     <MovieCaracteristics id={id} hasEdit={false}/>
-                    <MovieSynopsis id={id}  hasEdit={false}/>
                 </div>
             </div>
         ) ;
