@@ -6,16 +6,15 @@ import GroupComponent from '../components/group';
 
 //search configurations
 import cartridgeConfiguration from './cartridge';
-import lineComponentMapper from '../../lines';
-import onLineClick from './line';
+import lineMapper from '../../lines/mapper';
+import onLineClick from './line-click';
 
 export const configuration = {
     onLineClick,
     isSelection: false,
     cartridgeConfiguration,
-    //idField: 'code', // TODO : à quoi ca sert ?
     service,
-    lineComponentMapper,
+    lineMapper,
     groupComponent: GroupComponent,
     groupMaxRows: 5 // ne fonctionne pas, n'est pas renvoyé dans la config du service search.
 };
