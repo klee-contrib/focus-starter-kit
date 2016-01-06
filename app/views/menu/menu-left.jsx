@@ -2,7 +2,7 @@ import React from 'react';
 import Menu from 'focus-components/components/menu';
 
 const menuItems = [
-    { icon:'home', onClick:function() { Backbone.history.navigate(`/`, true) } },
+    { icon:'home', route: 'home'},
     { icon:'search', onClick:function() { console.log('I click here search'); } }
 ];
 

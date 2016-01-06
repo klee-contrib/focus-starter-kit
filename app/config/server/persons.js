@@ -5,5 +5,10 @@ const personRoot = './persons/';
 export default {
     loadPerson: builder(personRoot + '${id}', 'GET'),
     loadPersonMovies: builder(personRoot + '${id}/movies', 'GET'),
-    savePerson: builder(personRoot + '${id}', 'PUT')
+
+    /* save */
+    savePerson: builder(personRoot + '${id}', 'PUT'),
+
+    /* search */
+    search: builder(personRoot + 'search?listState.skip=${skip}&listState.sortDesc=${sortDesc}&listState.top=${top}', 'POST')
 };
