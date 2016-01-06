@@ -10,7 +10,7 @@ import {component as Button} from 'focus-components/common/button/action';
 import personStore from '../../../stores/person';
 
 //custom components
-import Trailer from '../../../components/trailer';
+import Trailer from '../../movie/components/trailer';
 
 export default React.createClass({
     displayName: 'Overview',

@@ -17,7 +17,7 @@ export default React.createClass({
 
 
     render() {
-        const {code, movieType, poster, productionYear, title, linked} = this.props;
+        const {code, onClickPreview, movieType, poster, productionYear, title, linked} = this.props;
         return (
             <div className='mdl-card mdl-shadow--4dp' data-demo='material-card'>
                 <div className='visuel'>
@@ -42,7 +42,7 @@ export default React.createClass({
                 </div>
                 <div className='mdl-card__actions mdl-card--border'>
                     {linked &&
-                        <Button shape={null} label='movie.action.preview' />
+                        <Button shape={null} label='movie.action.preview' handleOnClick={() => onClickPreview(+code)} />
                     }
                     {linked &&
                         <Button shape={null} label='movie.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`movies/${code}`, true)} />

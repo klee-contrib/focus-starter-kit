@@ -11,7 +11,7 @@ import {component as Modal} from 'focus-components/application/popin';
 import movieStore from '../../../stores/movie';
 
 //custom components
-import Trailer from '../../../components/trailer';
+import Trailer from '../components/trailer';
 
 export default React.createClass({
     displayName: 'Overview',
