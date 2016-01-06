@@ -55,8 +55,8 @@ export default React.createClass({
                     </div>
                 </div>
                 <div data-demo='preview-content'>
-                    <h3>{this.textFor('title')}</h3>
-                    <h3>{this.fieldFor('synopsis')}</h3>
+                    <h6>{this.textFor('synopsis')}</h6>
+                    <br/>
                     <MovieCaracteristics id={id} hasEdit={false}/>
                 </div>
             </div>
