@@ -58,7 +58,7 @@
         "ENTRY_FILE_PATH": "./app/index",
         "PAGE_TITLE": "Focus demonstration application",
         "MINIMIFY": false,
-        "API_PORT": 9999,
+        "API_PORT": 8080,
         "OUTPUT_DIR": "./public",
         "LOCAL_FOCUS": false,
         "PACKAGE_JSON_PATH": "./"
