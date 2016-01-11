@@ -14,7 +14,7 @@ export const configuration = {
     isSelection: false,
     cartridgeConfiguration,
     service,
-    lineMapper,
+    lineComponentMapper: lineMapper,
     groupComponent: GroupComponent,
     groupMaxRows: 5 // ne fonctionne pas, n'est pas renvoyé dans la config du service search.
 };
