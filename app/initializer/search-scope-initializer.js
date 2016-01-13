@@ -2,13 +2,19 @@ import {map} from 'lodash';
 
 let _scopes;
 
-//global publish function to get Scopes
+/**
+ * Global publish function to get Scopes
+ * @return {[scope]} scope list
+ */
 export function getScopes(){
     console.debug('[SCOPES] lazy get application scopes');
     return _scopes;
 }
 
-//global loadScopes function
+/**
+ * global loadScopes function
+ * @return {[scope]} scope list
+ */
 export function loadScopes() {
     console.log('[INIT] Load application scopes');
     return Promise.resolve(
@@ -20,13 +26,13 @@ export function loadScopes() {
         ]
     ).then(scopes => {
         //here define application icons
-        map(scopes, applyAdditionalScopeProperties);
+        map(scopes, _applyAdditionalScopeProperties);
         _scopes = scopes;
         return scopes;
     });
 }
 
-function applyAdditionalScopeProperties(scope) {
+function _applyAdditionalScopeProperties(scope) {
     switch (scope.code) {
         case 'ALL':
             scope.icon = 'all_inclusive';
