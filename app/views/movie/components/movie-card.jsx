@@ -24,10 +24,7 @@ export default React.createClass({
                     <div>
                         {poster && <img src={poster} title='Picture' alt='Picture' />}
                     </div>
-                    {!linked &&
-                        <p><span>{i18n.t('movie.unknown')}</span></p>
-                    }
-                    {linked && !poster &&
+                    {!poster &&
                         <span className="mdl-card__menu">
                             <Button shape='icon' label='movie.action.add-photo' icon='add_a_photo' />
                         </span>
@@ -41,15 +38,8 @@ export default React.createClass({
                     </div>
                 </div>
                 <div className='mdl-card__actions mdl-card--border'>
-                    {linked &&
-                        <Button shape={null} label='movie.action.preview' handleOnClick={() => onClickPreview(+code)} />
-                    }
-                    {linked &&
-                        <Button shape={null} label='movie.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`movies/${code}`, true)} />
-                    }
-                    {!linked &&
-                        <Button shape={null} label='movie.action.create' />
-                    }
+                    <Button shape={null} label='movie.action.preview' handleOnClick={() => onClickPreview(+code)} />
+                    <Button shape={null} label='movie.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`movies/${code}`, true)} />
                 </div>
             </div>
         );

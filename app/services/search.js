@@ -3,8 +3,27 @@ import fetch from 'focus-core/network/fetch';
 import commonUrl from '../config/server/common';
 import moviesUrl from '../config/server/movies';
 import personsUrl from '../config/server/persons';
+import {map} from 'lodash';
 
 export default {
+
+    _rewriteFacets(facets) {
+        if(facets.length === 1) {
+            return this._rewriteFacet(facets[0]);
+        }
+        const newFacets = [];
+        map(facets, (facet) => {
+            newFacets.push(this._rewriteFacet(facet));
+        });
+        return newFacets;
+    },
+
+    _rewriteFacet(facet) {
+        const newFacet = {};
+        newFacet[facet.key] = facet.value;
+        return newFacet;
+    },
+
     /**
     * Search with scope.
     * @param  {Object} AdvancedSearch config that launches the call of this service
@@ -14,7 +33,8 @@ export default {
         const {data} = config;
         const {criteria, facets, groups} = data;
         const {query, scope} = criteria;
-        config.data = { criteria: query, facets, group: groups };
+        const rewrittenFacets = this._rewriteFacets(facets);
+        config.data = { criteria: query, facets: rewrittenFacets, group: groups };
         switch (scope) {
             case 'MOVIE':
                 console.log(`[SEARCH MOVIE] config: ${JSON.stringify(config)}`);

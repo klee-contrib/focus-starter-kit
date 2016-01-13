@@ -22,7 +22,7 @@ export default React.createClass({
     /** @inheritDoc */
     getInitialState() {
         return {
-            movies: personStore.getMovies() || [],
+            movieLinks: personStore.getMovies() || [],
             movieCodePreview: null
         }
     },
@@ -36,10 +36,10 @@ export default React.createClass({
 
     /** @inheritDoc */
     render() {
-        const {movies,movieCodePreview} = this.state;
+        const {movieLinks, movieCodePreview} = this.state;
         return (
             <Panel title='person.detail.movies'>
-                <MovieCardList movies={movies}  onClickPreview={(movieId) => this.setState({movieCodePreview: movieId})}/>
+                <MovieCardList movies={movieLinks} onClickPreview={(movieId) => this.setState({movieCodePreview: movieId})}/>
                 {movieCodePreview &&
                     <Modal open={true} onPopinClose={this._onCreateMoviePopinClose} type='from-right'>
                         <MoviePreview id={movieCodePreview}/>

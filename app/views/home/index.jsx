@@ -48,7 +48,6 @@ export default React.createClass({
 
     /** @inheritDoc */
     render() {
-        console.log('confirm', confirm);
         return (
             <div>
                 <p><a onClick={() => Backbone.history.navigate('movies/10053', true)}>Movie 10053</a></p>

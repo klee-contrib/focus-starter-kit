@@ -8,13 +8,17 @@ import GroupComponent from '../components/group';
 import cartridgeConfiguration from './cartridge';
 import lineMapper from '../../lines/mapper';
 import onLineClick from './line-click';
+//import {getScopes} from '../../../../initializer/search-scope-initializer';
+import {scopesConfig} from '../../../../config/scopes';
 
 export const configuration = {
     onLineClick,
-    isSelection: false,
+    isSelection: true,
     cartridgeConfiguration,
     service,
     lineComponentMapper: lineMapper,
     groupComponent: GroupComponent,
-    groupMaxRows: 5 // ne fonctionne pas, n'est pas renvoyé dans la config du service search.
+    groupMaxRows: 5, // ne fonctionne pas, n'est pas renvoyé dans la config du service search.
+    //
+    scopesConfig: scopesConfig
 };

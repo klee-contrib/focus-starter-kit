@@ -11,10 +11,7 @@ function PersonCard({code, onClickPreview, leadActor, linked, name, photoURL, ro
                 <div>
                     {photoURL && <img src={photoURL} title='Picture' alt='Picture' />}
                 </div>
-                {!linked &&
-                    <p><span>{i18n.t('person.unknown')}</span></p>
-                }
-                {linked && !photoURL &&
+                {!photoURL &&
                     <span className="mdl-card__menu">
                         <Button shape='icon' label='person.action.add-photo' icon='add_a_photo' handleOnClick={() => console.log('click on person card add photo')} />
                     </span>
@@ -26,12 +23,10 @@ function PersonCard({code, onClickPreview, leadActor, linked, name, photoURL, ro
                     <div className='card-info--level2'>{role}</div>
                 </div>
             </div>
-            {linked &&
-                <div className='mdl-card__actions mdl-card--border'>
-                    <Button shape={null} label='person.action.preview' handleOnClick={() => onClickPreview(+code)} />
-                    <Button shape={null} label='person.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`persons/${code}`, true)} />
-                </div>
-            }
+            <div className='mdl-card__actions mdl-card--border'>
+                <Button shape={null} label='person.action.preview' handleOnClick={() => onClickPreview(+code)} />
+                <Button shape={null} label='person.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`persons/${code}`, true)} />
+            </div>
         </div>
     );
 };
