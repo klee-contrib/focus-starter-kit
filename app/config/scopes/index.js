@@ -3,7 +3,6 @@
 /// Mapping scope keys between app and api...
 ////////////////////////////////////////////////////
 
-// TODO: to remove ?
 export const scopesConfig = {
     Movies: 'MOVIE',
     Persons: 'PERSON'
