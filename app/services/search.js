@@ -3,7 +3,6 @@ import fetch from 'focus-core/network/fetch';
 import commonUrl from '../config/server/common';
 import moviesUrl from '../config/server/movies';
 import personsUrl from '../config/server/persons';
-import {map} from 'lodash';
 
 export default {
 
@@ -12,7 +11,7 @@ export default {
             return this._rewriteFacet(facets[0]);
         }
         const newFacets = [];
-        map(facets, (facet) => {
+        facets.map((facet) => {
             newFacets.push(this._rewriteFacet(facet));
         });
         return newFacets;

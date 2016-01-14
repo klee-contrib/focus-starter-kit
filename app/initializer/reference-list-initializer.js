@@ -1,4 +1,4 @@
-import FocusCore from 'focus-core';
+import {reference} from 'focus-core';
 import {getScopes} from './search-scope-initializer';
 
 // Path to the reference service.
@@ -7,13 +7,12 @@ import {getScopes} from './search-scope-initializer';
 module.exports = {
     initialize() {
         //FocusCore.reference.config.set({scopes: referenceService.getScopes});
-        FocusCore.reference.config.set({
+        reference.config.set({
             scopes() {
                 return new Promise(success => {
                     success(getScopes());
                 });
             }
         });
-
     }
 };

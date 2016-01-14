@@ -1,5 +1,3 @@
-import {map} from 'lodash';
-
 let _scopes;
 
 /**
@@ -7,7 +5,6 @@ let _scopes;
  * @return {[scope]} scope list
  */
 export function getScopes(){
-    console.debug('[SCOPES] lazy get application scopes');
     return _scopes;
 }
 
@@ -16,7 +13,6 @@ export function getScopes(){
  * @return {[scope]} scope list
  */
 export function loadScopes() {
-    console.log('[INIT] Load application scopes');
     return Promise.resolve(
         //here call your webservice to get scope references
         [
@@ -26,7 +22,7 @@ export function loadScopes() {
         ]
     ).then(scopes => {
         //here define application icons
-        map(scopes, _applyAdditionalScopeProperties);
+        scopes.map(_applyAdditionalScopeProperties);
         _scopes = scopes;
         return scopes;
     });
