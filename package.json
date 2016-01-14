@@ -68,14 +68,13 @@
   "license": "MIT",
   "dependencies": {
     "backbone": "^1.2.0",
-    "focus-components": "0.8.4-beta9",
-    "focus-core": "0.12.2-beta4",
+    "focus-components": "0.8.4",
+    "focus-core": "0.12.2",
     "i18next-client": "^1.11.0",
     "immutable": "^3.7.2",
     "jquery": "3.0.0-alpha1",
     "lodash": "^3.10.1",
-    "material-design-icons": "^2.0.0",
-    "material-design-lite": "1.0.5",
+    "material-design-lite": "1.0.6",
     "moment": "^2.10.3",
     "native-promise-only": "^0.8.0-a",
     "numeral": "^1.5.3",
@@ -100,7 +99,7 @@
     "extract-text-webpack-plugin": "^0.8.2",
     "font-awesome": "^4.5.0",
     "json-loader": "^0.5.3",
-    "material-design-icons-iconfont": "^2.0.3",
+    "material-design-icons-iconfont": "^2.0.4",
     "migration-tool": "^0.1.0",
     "react": "^0.14.6",
     "react-addons-css-transition-group": "^0.14.6",
@@ -111,6 +110,6 @@
     "url-loader": "^0.5.6",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.11.0",
-    "webpack-focus": "0.8.3"
+    "webpack-focus": "^0.8.6"
   }
 }

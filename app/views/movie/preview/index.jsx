@@ -50,12 +50,13 @@ export default React.createClass({
                         <h3>{this.textFor('title')}</h3>
                         <h5>{this.textFor('movieType')}</h5>
                         <h5>{this.textFor('productionYear')}</h5>
+                        <div>{this.textFor('synopsis')}</div>
                         <br/>
                         <Button label='person.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`movies/${id}`, true)} />
                     </div>
                 </div>
                 <div data-demo='preview-content'>
-                    <h6>{this.textFor('synopsis')}</h6>
+                    <h6></h6>
                     <br/>
                     <MovieCaracteristics id={id} hasEdit={false}/>
                 </div>

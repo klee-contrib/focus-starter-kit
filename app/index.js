@@ -3,10 +3,13 @@
 import 'material-design-lite/material';
 
 //Initialisation des configurations et du layout.
-import './initializer';
-
+import initialize from './initializer';
 // Démarrage de l'application
-import './application';
+import start from './application';
+
+initialize().then(() => {
+    start();
+})
 
 //import app demo styles
 import './styles';
