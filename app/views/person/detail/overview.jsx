@@ -5,6 +5,7 @@ import React, {PropTypes} from 'react';
 import Panel from 'focus-components/components/panel';
 import {mixin as formPreset} from 'focus-components/common/form';
 import {component as Button} from 'focus-components/common/button/action';
+import {translate} from 'focus-core/translation';
 
 //stores & actions
 import personStore from '../../../stores/person';
@@ -34,7 +35,7 @@ export default React.createClass({
         const url = `http://www.allocine.fr/personne/fichepersonne_gen_cpersonne=${code}.html`;
         return (
             <Panel title='person.detail.overview' data-demo='overview'>
-                <Button label={i18n.t('person.action.consult.allocine')} type='button' handleOnClick={() => window.open(url,'_blank')} />
+                <Button label={translate('person.action.consult.allocine')} type='button' handleOnClick={() => window.open(url,'_blank')} />
             </Panel>
         );
     }

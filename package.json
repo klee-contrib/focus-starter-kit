@@ -18,12 +18,13 @@
     "start": "npm run start:npm",
     "start:local": "better-npm-run webpack-dev-server-local-focus",
     "start:npm": "better-npm-run webpack-dev-server-npm-focus",
-    "mocked-api": "node api/index.js"
+    "mocked-api": "node api/index.js",
+    "profile": "better-npm-run profile"
   },
   "main": "app/index.js",
   "betterScripts": {
     "bundle": {
-      "command": "webpack --progress",
+      "command": "webpack --progress --json --profile",
       "env": {
         "ANCHOR_CLASS": "demo-app",
         "ENTRY_FILE_PATH": "./app/index",
@@ -31,7 +32,19 @@
         "DEV": false,
         "NODE_ENV": "production",
         "LIBRARY_NAME": "FocusDemoApp",
-        "MINIMIFY": false,
+        "OUTPUT_DIR": "./public",
+        "PACKAGE_JSON_PATH": "./"
+      }
+    },
+    "profile": {
+      "command": "webpack --progress --json --profile > profile.json",
+      "env": {
+        "ANCHOR_CLASS": "demo-app",
+        "ENTRY_FILE_PATH": "./app/index",
+        "BABELIFIED_PATH": "./app",
+        "DEV": false,
+        "NODE_ENV": "production",
+        "LIBRARY_NAME": "FocusDemoApp",
         "OUTPUT_DIR": "./public",
         "PACKAGE_JSON_PATH": "./"
       }
@@ -43,8 +56,7 @@
         "BABELIFIED_PATH": "./app",
         "ENTRY_FILE_PATH": "./app/index",
         "PAGE_TITLE": "Focus demonstration application",
-        "MINIMIFY": false,
-        "API_PORT": 9999,
+        "API_PORT": 8080,
         "OUTPUT_DIR": "./public",
         "LOCAL_FOCUS": true,
         "PACKAGE_JSON_PATH": "./"
@@ -57,7 +69,6 @@
         "BABELIFIED_PATH": "./app",
         "ENTRY_FILE_PATH": "./app/index",
         "PAGE_TITLE": "Focus demonstration application",
-        "MINIMIFY": false,
         "API_PORT": 8080,
         "OUTPUT_DIR": "./public",
         "LOCAL_FOCUS": false,
@@ -67,14 +78,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "backbone": "^1.2.0",
-    "focus-components": "0.8.4",
-    "focus-core": "0.12.2",
-    "i18next-client": "^1.11.0",
+    "focus-components": "0.8.6-beta2",
+    "focus-core": "0.12.4-beta4",
     "immutable": "^3.7.2",
     "jquery": "3.0.0-alpha1",
     "lodash": "^3.10.1",
-    "material-design-lite": "1.0.6",
     "moment": "^2.10.3",
     "native-promise-only": "^0.8.0-a",
     "numeral": "^1.5.3",
@@ -95,6 +103,7 @@
     "eslint-config-focus": "0.3.0",
     "eslint-plugin-filenames": "0.1.1",
     "eslint-plugin-react": "3.5.0",
+    "exports-loader": "^0.6.2",
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^0.8.2",
     "font-awesome": "^4.5.0",

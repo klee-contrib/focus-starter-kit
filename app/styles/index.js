@@ -1,7 +1,7 @@
 import './back-to-top.scss';
 import './concept-card.scss';
 import './field.scss';
-import 'material-design-lite/material.css';
+//import 'material-design-lite/material.css';
 import 'material-design-icons-iconfont/dist/material-design-icons.scss';
 import './layout.scss';
 import './header.scss';

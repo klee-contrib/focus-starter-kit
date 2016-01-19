@@ -1,5 +1,6 @@
 // TODO rewrite : remove jquery
 import $ from 'jquery';
+import {history} from 'focus-core';
 
 $(document).on('click', 'a:not([data-bypass])', function touchHandler(evt) {
     const href = { prop: $(this).prop('href'), attr: $(this).attr('href') };
@@ -7,6 +8,6 @@ $(document).on('click', 'a:not([data-bypass])', function touchHandler(evt) {
 
     if (href.prop && href.prop.slice(0, root.length) === root) {
         evt.preventDefault();
-        Backbone.history.navigate(href.attr, true);
+        history.navigate(href.attr, true);
     }
 });

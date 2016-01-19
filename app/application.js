@@ -1,6 +1,6 @@
-import Backbone from 'backbone';
+import history from 'focus-core/history';
 
-export default function startApp(){
+export default function startApp() {
     //Start the application.
     console.info('############# Application starting ############');
     console.info('Load all the routes...');
@@ -8,5 +8,5 @@ export default function startApp(){
     console.info('All the routes are loaded...');
 
     //Start the router.
-    Backbone.history.start();
+    history.start();
 }

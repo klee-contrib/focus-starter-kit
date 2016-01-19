@@ -1,7 +1,3 @@
-
-//import material js
-import 'material-design-lite/material';
-
 //Initialisation des configurations et du layout.
 import initialize from './initializer';
 // Démarrage de l'application

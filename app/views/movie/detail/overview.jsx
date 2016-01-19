@@ -6,6 +6,7 @@ import Panel from 'focus-components/components/panel';
 import {mixin as formPreset} from 'focus-components/common/form';
 import {component as Button} from 'focus-components/common/button/action';
 import {component as Modal} from 'focus-components/application/popin';
+import {translate} from 'focus-core/translation';
 
 //stores & actions
 import movieStore from '../../../stores/movie';
@@ -34,8 +35,8 @@ export default React.createClass({
         const url = `http://www.allocine.fr/film/fichefilm_gen_cfilm=${code}.html`;
         return (
             <Panel title='movie.detail.overview' data-demo='overview'>
-                <Button label={i18n.t('movie.action.watchTrailer')} type='button' handleOnClick={this.openTrailerPopin} />
-                <Button label={i18n.t('movie.action.consult.allocine')} type='button' handleOnClick={() => window.open(url,'_blank')} />
+                <Button label={translate('movie.action.watchTrailer')} type='button' handleOnClick={this.openTrailerPopin} />
+                <Button label={translate('movie.action.consult.allocine')} type='button' handleOnClick={() => window.open(url,'_blank')} />
                 <Modal ref="modal-trailer">
                     <Trailer url={trailerHRef} />
                 </Modal>
