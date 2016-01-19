@@ -1,6 +1,6 @@
 //librairies
 import React from 'react';
-import i18n from 'i18next-client';
+import {translate} from 'focus-core/translation';
 
 //web components
 import {mixin as formPreset} from 'focus-components/common/form';
@@ -22,7 +22,7 @@ export default React.createClass({
         const {poster, title} = this.state;
         return (
             <div data-demo='header-content-summary'>
-                <div className="key-concept">{i18n.t('movie.keyConcept.name')}</div>
+                <div className="key-concept">{translate('movie.keyConcept.name')}</div>
                 {poster &&
                     <Poster poster={poster} title={title} />
                 }

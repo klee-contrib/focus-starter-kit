@@ -1,6 +1,7 @@
 //libraries
 import React, {PropTypes} from 'react';
-import i18n from 'i18next-client';
+import {translate} from 'focus-core/translation';
+import {history} from 'focus-core';
 
 //web components
 import {component as Button} from 'focus-components/common/button/action';
@@ -52,7 +53,7 @@ export default React.createClass({
                         <h5>{this.textFor('productionYear')}</h5>
                         <div>{this.textFor('synopsis')}</div>
                         <br/>
-                        <Button label='person.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`movies/${id}`, true)} />
+                        <Button label='person.action.consult.sheet' handleOnClick={() => history.navigate(`movies/${id}`, true)} />
                     </div>
                 </div>
                 <div data-demo='preview-content'>

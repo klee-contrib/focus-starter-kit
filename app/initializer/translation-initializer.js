@@ -1,10 +1,5 @@
-import i18n from 'i18next-client';
+import {translate, init} from 'focus-core/translation';
 import traductionFiles from '../i18n';
-
-//####################LOPEZ#########################
-// TODO: remove and will be rewritten https://github.com/KleeGroup/focus-components/blob/develop/src/common/i18n/mixin/index.js
-window.i18n = i18n;
-//#############################################
 
 // Initialize translations configuration.
 const i18nConfig = {
@@ -27,6 +22,6 @@ headers: {
 });*/
 
 // Plugin initialization.
-i18n.init(i18nConfig, () => {
+init(i18nConfig, () => {
     return console.log('Translation correctly initialized.');
 });

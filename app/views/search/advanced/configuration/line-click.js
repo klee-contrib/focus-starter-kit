@@ -1,4 +1,4 @@
-import Backbone from 'backbone';
+import {history} from 'focus-core';
 
 //TODO : à revoir avec Pierre et Nicolas => comment je connais le type de ligne ???
 export default function onLineClick(data) {
@@ -13,6 +13,6 @@ export default function onLineClick(data) {
     if(isPerson) {
         url = `#persons/${code}`;
     }
-    Backbone.history.navigate(url, true);
+    history.navigate(url, true);
     window.scrollTo(0, 0);
 }

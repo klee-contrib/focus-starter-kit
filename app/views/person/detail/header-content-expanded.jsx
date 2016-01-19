@@ -1,6 +1,6 @@
 // libraries
 import React from 'react';
-import i18n from 'i18next-client';
+import {translate} from 'focus-core/translation';
 
 //web components
 import {mixin as formPreset} from 'focus-components/common/form';
@@ -24,7 +24,7 @@ export default React.createClass({
             <div data-demo='header-content-expanded'>
                 <Picture url={photoURL} title={fullName} />
                 <div data-demo='header-content-expanded__infos'>
-                    <div className="key-concept">{i18n.t('person.keyConcept.name')}</div>
+                    <div className="key-concept">{translate('person.keyConcept.name')}</div>
                     <h3>{this.textFor('fullName')}</h3>
                     <h5>{this.textFor('activity')}</h5>
                     <div>{this.textFor('shortBiography')}</div>

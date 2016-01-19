@@ -1,6 +1,7 @@
 //libraries
 import React, {PropTypes} from 'react';
-import i18n from 'i18next-client';
+import {translate} from 'focus-core/translation';
+import {history} from 'focus-core';
 
 //web components
 import {component as Button} from 'focus-components/common/button/action';
@@ -39,7 +40,7 @@ export default React.createClass({
                 </div>
                 <div className='mdl-card__actions mdl-card--border'>
                     <Button shape={null} label='movie.action.preview' handleOnClick={() => onClickPreview(+code)} />
-                    <Button shape={null} label='movie.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`movies/${code}`, true)} />
+                    <Button shape={null} label='movie.action.consult.sheet' handleOnClick={() => history.navigate(`movies/${code}`, true)} />
                 </div>
             </div>
         );

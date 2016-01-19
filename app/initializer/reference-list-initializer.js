@@ -8,11 +8,7 @@ module.exports = {
     initialize() {
         //FocusCore.reference.config.set({scopes: referenceService.getScopes});
         reference.config.set({
-            scopes() {
-                return new Promise(success => {
-                    success(getScopes());
-                });
-            }
+            scopes: getScopes
         });
     }
 };

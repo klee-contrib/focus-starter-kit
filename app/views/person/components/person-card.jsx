@@ -1,5 +1,6 @@
 //libraries
 import React, {PropTypes} from 'react';
+import {history} from 'focus-core';
 
 //web components
 import {component as Button} from 'focus-components/common/button/action';
@@ -25,7 +26,7 @@ function PersonCard({code, onClickPreview, leadActor, linked, name, photoURL, ro
             </div>
             <div className='mdl-card__actions mdl-card--border'>
                 <Button shape={null} label='person.action.preview' handleOnClick={() => onClickPreview(+code)} />
-                <Button shape={null} label='person.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`persons/${code}`, true)} />
+                <Button shape={null} label='person.action.consult.sheet' handleOnClick={() => history.navigate(`persons/${code}`, true)} />
             </div>
         </div>
     );

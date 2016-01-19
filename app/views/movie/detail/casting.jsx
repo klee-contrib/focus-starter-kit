@@ -1,6 +1,6 @@
 //librairies
 import React, {PropTypes} from 'react';
-import i18n from 'i18next-client';
+import {translate} from 'focus-core/translation';
 
 // web components
 import {component as Modal} from 'focus-components/application/popin';
@@ -68,7 +68,7 @@ export default React.createClass({
     _getActionLabel(filter) {
         const people = this._getPeopleByName(filter);
         const size = people ? people.length : 0;
-        return`${i18n.t(`movie.action.filter.${filter}`)} (${size})`;
+        return`${translate(`movie.action.filter.${filter}`)} (${size})`;
     },
 
     _isActive(value) {

@@ -1,6 +1,7 @@
 //libraries
 import React, {PropTypes} from 'react';
-import i18n from 'i18next-client';
+import {translate} from 'focus-core/translation';
+import {history} from 'focus-core';
 
 // web components
 import {component as Button} from 'focus-components/common/button/action';
@@ -19,7 +20,7 @@ import Picture from '../components/picture';
 export default React.createClass({
     displayName: 'PersonPreview',
     propTypes: {
-        id: PropTypes.number.isRequired,
+        id: PropTypes.number.isRequired
     },
     mixins: [builtInComponents, definitionMixin, storeBehaviour],
     definitionPath: 'person',
@@ -49,7 +50,7 @@ export default React.createClass({
                         <h5>{this.textFor('activity')}</h5>
                         <div>{this.textFor('shortBiography')}</div>
                         <br/>
-                        <Button label='person.action.consult.sheet' handleOnClick={() => Backbone.history.navigate(`persons/${code}`, true)} />
+                        <Button label='person.action.consult.sheet' handleOnClick={() => history.navigate(`persons/${code}`, true)} />
                     </div>
                 </div>
                 <div data-demo='preview-content'>
