@@ -1,6 +1,8 @@
-import FocusCore from 'focus-core';
+import entityContainer from 'focus-core/definition/entity/container';
+import entitytDefinition from '../config/entity-definition';
+import {uniq} from 'lodash/array';
 
-FocusCore.definition.entity.container.setEntityConfiguration(require('../config/entity-definition'));
+entityContainer.setEntityConfiguration(entitytDefinition);
 
 //Display domaines utilisés
 const entityDef = require('../config/entity-definition');
@@ -10,7 +12,7 @@ for (const node in entityDef) {
         arr.push(entityDef[node][sub].domain);
     }
 }
-const appDomains = _.uniq(arr);
+const appDomains = uniq(arr);
 const domains = Object.keys(require('../config/domain'));
 
 console.info('########################## DOMAINS ##############################');
