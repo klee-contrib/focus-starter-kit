@@ -6,8 +6,10 @@ import Layout from 'focus-components/components/layout';
 import ConfirmWrapper from 'focus-components/components/confirm';
 import DemoMenuLeft from '../views/menu/menu-left';
 
-render(Layout, `.${__ANCHOR_CLASS__}`, {
-    props: {
-        MenuLeft: DemoMenuLeft
-    }
-});
+export default () => {
+    render(Layout, `.${__ANCHOR_CLASS__}`, {
+        props: {
+            MenuLeft: DemoMenuLeft
+        }
+    });
+}

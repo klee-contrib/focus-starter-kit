@@ -11,12 +11,12 @@ import SummaryPageSearch from 'focus-components/page/search/search-header/summar
 
 export default React.createClass({
     displayName: 'HomeView',
-    // mixins: [cartridgeBehaviour],
-    //
-    // /** @inheritDoc */
-    // componentWillMount() {
-    //     this._registerCartridge();
-    // },
+    mixins: [cartridgeBehaviour],
+
+    /** @inheritDoc */
+    componentWillMount() {
+        this._registerCartridge();
+    },
 
     /** @inheritDoc */
     _navigateAdvancedSearch() {

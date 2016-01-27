@@ -1,3 +1,5 @@
 import FocusCore from 'focus-core';
 
-FocusCore.user.setRoles(['DEFAULT_ROLE']);
+export default () => {
+    FocusCore.user.setRoles(['DEFAULT_ROLE']);
+}
