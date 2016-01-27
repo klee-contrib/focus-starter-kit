@@ -1,24 +1,28 @@
 import entityContainer from 'focus-core/definition/entity/container';
-import entitytDefinition from '../config/entity-definition';
+import entitytDefinitionConfig from '../config/entity-definition';
+import domainsConfig from '../config/domain';
 import {uniq} from 'lodash/array';
 
 export default () => {
-    entityContainer.setEntityConfiguration(entitytDefinition);
+
+    console.log(entitytDefinitionConfig);
+    console.log(domainsConfig);
+    
+    entityContainer.setEntityConfiguration(entitytDefinitionConfig);
 
     //Display domaines utilisés
-    const entityDef = require('../config/entity-definition');
     const arr = [];
-    for (const node in entityDef) {
-        for (const sub in entityDef[node]) {
-            arr.push(entityDef[node][sub].domain);
+    for (const node in entitytDefinitionConfig) {
+        for (const sub in entitytDefinitionConfig[node]) {
+            arr.push(entitytDefinitionConfig[node][sub].domain);
         }
     }
     const appDomains = uniq(arr);
-    const domains = Object.keys(require('../config/domain'));
+    const domains = Object.keys(domainsConfig);
 
     console.info('########################## DOMAINS ##############################');
-    console.info('Entity definitions domains: ', appDomains);
-    console.info('Domains with a definition', domains);
+    //console.info('Entity definitions domains: ', appDomains);
+    //console.info('Domains with a definition', domains);
     console.warn('Missing domain\'s definition', _.difference(appDomains, _.intersection(appDomains, domains)));
     console.warn('Useless domain\'s definition', _.difference(domains, _.intersection(appDomains, domains)));
     console.info('####################################################################');
