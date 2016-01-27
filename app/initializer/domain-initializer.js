@@ -1,4 +1,6 @@
-import DomainContainer from 'focus-core/definition/domain/container';
+import domainContainer from 'focus-core/definition/domain/container';
 import domains from '../config/domain';
 
-DomainContainer.setAll(domains);
+export default () => {
+    domainContainer.setAll(domains);
+}

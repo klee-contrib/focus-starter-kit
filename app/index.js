@@ -1,16 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const initializer = require('./initializer');
     const start = require('./application');
-    initializer.initialize().then(() => {
+    const initializer = require('./initializer');
+    initializer.initializeAfterDOMContentLoaded().then(() => {
         start();
         console.log('Application Focus-démo started');
     });
 });
 
-console.log('IMPORT reference lists initializer');
-import referenceList from './initializer/reference-list-initializer';
-console.log('INIT reference lists');
-referenceList.initialize();
+import referenceListInitializer from './initializer/reference-list-initializer';
+referenceListInitializer();
 
 //import app demo styles
 import './styles';

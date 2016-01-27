@@ -1,40 +1,30 @@
-//Initialisation of global links
-console.log('IMPORT global link initializer');
-import './global-link-initializer';
-
-//Initialisation des configurations
-console.log('IMPORT domain initializer');
-import './domain-initializer';
-
-console.log('IMPORT definition initializer');
-import './definition-initializer';
-
-console.log('IMPORT search store initializer');
+//Initializing configurations
+import globalLinkInitializer from './global-link-initializer';
+//import referenceListInitializer from './reference-list-initializer';
+import domainInitializer from './domain-initializer';
+import definitionInitializer from './definition-initializer';
 import searchStoreInitializer from './search-store-initializer';
-
-console.log('IMPORT translation initializer');
-import './translation-initializer';
-
-console.log('IMPORT user initializer');
-import './user-initializer';
-
-console.log('IMPORT search scope loader');
+import translationInitializer from './translation-initializer';
+import userInitializer from './user-initializer';
 import {loadScopes} from './search-scope-initializer';
+import layoutInitializer from './layout-initializer';
 
-console.log('IMPORT layout initializer');
-//Initialisation du layout
-import './layout-initializer';
+export const initializeBeforeDOMContentLoaded = () => {
+    //referenceListInitializer();
+};
 
-export default {
-    initialize() {
-        console.log('[INITIALIZE]');
+export const initializeAfterDOMContentLoaded = () => {
+    globalLinkInitializer();
+    domainInitializer();
+    definitionInitializer();
 
-        // synchronous
-        console.log('[searchStoreInitializer] INIT');
-        searchStoreInitializer.initialize();
+    // synchronous
+    searchStoreInitializer();
 
-        //asynchronous
-        console.log('[loadScopes] Promise');
-        return Promise.all([loadScopes()])
-    }
-}
+    translationInitializer();
+    userInitializer();
+    layoutInitializer();
+
+    //asynchronous
+    return Promise.all([loadScopes()])
+};
