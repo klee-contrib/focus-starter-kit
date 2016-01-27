@@ -27,15 +27,6 @@ export default React.createClass({
 
     /** @inheritDoc */
     componentWillMount() {
-        dispatcher.handleViewAction({
-            data: {
-                cartridgeComponent: {
-                    component: () => (<p>lol</p>),
-                    props: {}
-                }
-            },
-            type: 'update'
-        });
         this._registerCartridge();
     },
 
