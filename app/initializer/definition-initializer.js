@@ -4,10 +4,6 @@ import domainsConfig from '../config/domain';
 import {uniq} from 'lodash/array';
 
 export default () => {
-
-    console.log(entitytDefinitionConfig);
-    console.log(domainsConfig);
-    
     entityContainer.setEntityConfiguration(entitytDefinitionConfig);
 
     //Display domaines utilisés
@@ -21,8 +17,8 @@ export default () => {
     const domains = Object.keys(domainsConfig);
 
     console.info('########################## DOMAINS ##############################');
-    //console.info('Entity definitions domains: ', appDomains);
-    //console.info('Domains with a definition', domains);
+    console.info('Entity definitions domains: ', appDomains);
+    console.info('Domains with a definition', domains);
     console.warn('Missing domain\'s definition', _.difference(appDomains, _.intersection(appDomains, domains)));
     console.warn('Useless domain\'s definition', _.difference(domains, _.intersection(appDomains, domains)));
     console.info('####################################################################');
