@@ -1,0 +1,3 @@
+const webpackConfig = require('./webpack.config');
+const serverLauncher = require('webpack-focus').serverLauncher;
+serverLauncher(webpackConfig);
