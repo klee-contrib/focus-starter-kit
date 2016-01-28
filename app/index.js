@@ -1,18 +1,13 @@
+import {initializeAfterDOMContentLoaded, initializeBeforeDOMContentLoaded} from './initializer';
+
+initializeBeforeDOMContentLoaded();
 
 document.addEventListener('DOMContentLoaded', () => {
-    const start = require('./application');
-    const initializer = require('./initializer');
-    initializer.initializeAfterDOMContentLoaded().then(() => {
-        start();
+    initializeAfterDOMContentLoaded().then(() => {
+        require('./application')();
         console.log('Application Focus-démo started');
     });
 });
-
-import {initializeBeforeDOMContentLoaded} from './initializer';
-initializeBeforeDOMContentLoaded();
-
-//import referenceListInitializer from './initializer/reference-list-initializer';
-//referenceListInitializer();
 
 //import app demo styles
 import './styles';

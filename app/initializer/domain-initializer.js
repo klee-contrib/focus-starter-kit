@@ -1,4 +1,4 @@
-import domainContainer from 'focus-core/definition/domain/container';
+import {container as domainContainer} from 'focus-core/definition/domain';
 import domains from '../config/domain';
 
 export default () => {

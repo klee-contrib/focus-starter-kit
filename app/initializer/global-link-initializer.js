@@ -1,6 +1,6 @@
 // TODO rewrite : remove jquery
 import $ from 'jquery';
-import {history} from 'focus-core';
+import history from 'focus-core/history';
 
 export default () => {
     $(document).on('click', 'a:not([data-bypass])', function touchHandler(evt) {

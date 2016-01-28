@@ -35,10 +35,10 @@ export default {
         const rewrittenFacets = this._rewriteFacets(facets);
         config.data = { criteria: query, facets: rewrittenFacets, group: groups };
         switch (scope) {
-            case 'MOVIE':
+            case 'movie':
                 console.log(`[SEARCH MOVIE] config: ${JSON.stringify(config)}`);
                 return fetch(moviesUrl.search(config));
-            case 'PERSON':
+            case 'person':
                 console.log(`[SEARCH PERSON] config: ${JSON.stringify(config)}`);
                 return fetch(personsUrl.search(config));
             default:

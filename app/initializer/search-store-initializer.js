@@ -1,4 +1,5 @@
-import FocusCore,{dispatcher} from 'focus-core';
+import dispatcher from 'focus-core/dispatcher';
+import {advancedSearchStore} from 'focus-core/search/built-in-store';
 
 export default () => {
     dispatcher.handleViewAction({
@@ -7,6 +8,6 @@ export default () => {
             scope: 'ALL'
         },
         type: 'update',
-        identifier: FocusCore.search.builtInStore.advancedSearchStore.identifier
+        identifier: advancedSearchStore.identifier
     });
 }
