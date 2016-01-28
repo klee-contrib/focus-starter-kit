@@ -1,6 +1,5 @@
 // libraries
 import React, {PropTypes} from 'react';
-import dispatcher from 'focus-core/dispatcher';
 
 // web components
 import ScrollspyContainer from 'focus-components/components/scrollspy-container';

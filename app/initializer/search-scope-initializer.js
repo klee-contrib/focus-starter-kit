@@ -16,9 +16,9 @@ export function loadScopes() {
     return Promise.resolve(
         //here call your webservice to get scope references
         [
-            {code: 'ALL', label: 'search.scope.all'},
-            {code: 'MOVIE', label: 'search.scope.movie'},
-            {code: 'PERSON', label: 'search.scope.person'}
+            {code: 'all', label: 'search.scope.all'},
+            {code: 'movie', label: 'search.scope.movie'},
+            {code: 'person', label: 'search.scope.person'}
         ]
     ).then(scopes => {
         //here define application icons
