@@ -1,7 +1,8 @@
-import {application, router} from 'focus-core';
+import application from 'focus-core/application';
+import router from 'focus-core/router';
 import AdminCountryView from '../views/country/admin';
 
-const AdminRouter = router.extend({
+export default router.extend({
     log: true,
     beforeRoute() {
         application.changeRoute('admin');
@@ -13,5 +14,3 @@ const AdminRouter = router.extend({
         this._pageContent(AdminCountryView);
     }
 });
-
-new AdminRouter();

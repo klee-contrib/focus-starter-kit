@@ -1,7 +1,8 @@
-import {application, router} from 'focus-core';
+import application from 'focus-core/application';
+import router from 'focus-core/router';
 import ErorView from '../views/test/error';
 
-const ErrorRouter = router.extend({
+export default router.extend({
     log: true,
     beforeRoute() {
         application.changeRoute('test');
@@ -14,5 +15,3 @@ const ErrorRouter = router.extend({
         this._pageContent(ErorView, {props: {id}});
     }
 });
-
-new ErrorRouter();

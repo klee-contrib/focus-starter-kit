@@ -1,6 +1,9 @@
 export default {
     button: {
+        cancel: 'Abandonner',
         back: 'Retour',
+        edit: 'Modifier',
+        save: 'Enregistrer',
         watchTrailer: 'Voir la bande annonce'
     },
     live: {
@@ -15,6 +18,15 @@ export default {
                 FCT_MOVIE_SEX: 'Sexe', // à renommer en FCT_PERSON_SEX sur le backend car concerne les personnes
                 FCT_SCOPE: 'Thème',
             }
+        }
+    },
+    list: {
+        actionBar: {
+            selection: {
+                all: 'Tout',
+                none: 'Aucun'
+            },
+            ungroup: 'Dégrouper'
         }
     },
     movie: {
@@ -78,6 +90,12 @@ export default {
         unknown: 'Aucune  fiche'
     },
     persons: 'Personnes',
+    result: {
+        for: 'résultat pour'
+    },
+    results: {
+        for: 'résultats pour'
+    },
     search: {
         cartridge: {
             title: 'Vous recherchez ?'

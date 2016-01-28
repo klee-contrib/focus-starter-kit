@@ -1,7 +1,8 @@
-import {application, router} from 'focus-core';
+import application from 'focus-core/application';
+import router from 'focus-core/router';
 import MovieDetailView from '../views/movie/detail';
 
-const MoviesRouter = router.extend({
+export default router.extend({
     log: true,
     beforeRoute() {
         application.changeRoute('movies');
@@ -14,5 +15,3 @@ const MoviesRouter = router.extend({
         this._pageContent(MovieDetailView, {props: {id : +id}});
     }
 });
-
-new MoviesRouter();

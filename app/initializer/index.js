@@ -1,4 +1,4 @@
-//Initializing configurations
+//Initializing configurations$
 import globalLinkInitializer from './global-link-initializer';
 import referenceListInitializer from './reference-list-initializer';
 import domainInitializer from './domain-initializer';
@@ -17,10 +17,7 @@ export const initializeAfterDOMContentLoaded = () => {
     globalLinkInitializer();
     domainInitializer();
     definitionInitializer();
-
-    // synchronous
     searchStoreInitializer();
-
     translationInitializer();
     userInitializer();
     layoutInitializer();

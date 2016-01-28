@@ -6,8 +6,6 @@ import ScrollspyContainer from 'focus-components/components/scrollspy-container'
 import {component as BackButton} from 'focus-components/common/button/back';
 import {cartridgeBehaviour} from 'focus-components/page/mixin';
 
-import {dispatcher} from 'focus-core';
-
 //views
 import Caracteristics from './caracteristics';
 import Casting from './casting';

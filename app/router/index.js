@@ -1,7 +1,15 @@
+import AdminRouter from './admin-router';
+import HomeRouter from './home-router';
+import MovieRouter from './movie-router';
+import PersonRouter from './person-router';
+import SearchRouter from './search-router';
+import TestRouter from './test-router';
 
-import './admin-router';
-import './home-router';
-import './movie-router';
-import './person-router';
-import './search-router';
-import './test-router';
+export const registerRoutes = () => {
+    new AdminRouter();
+    new HomeRouter();
+    new MovieRouter();
+    new PersonRouter();
+    new SearchRouter();
+    new TestRouter();
+};

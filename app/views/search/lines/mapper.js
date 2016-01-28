@@ -6,9 +6,9 @@ import PersonLine from './person';
 export default function lineComponentMapper(groupKey, list) {
     switch (groupKey) {
         case 'Movies': return MovieLine;
-        case 'MOVIE': return MovieLine;
+        case 'movie': return MovieLine;
         case 'Persons': return PersonLine;
-        case 'PERSON': return PersonLine;
+        case 'person': return PersonLine;
         default: return DefaultLine;
     }
 }
