@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const start = require('./application');
     const initializer = require('./initializer');
@@ -7,8 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-import referenceListInitializer from './initializer/reference-list-initializer';
-referenceListInitializer();
+import {initializeBeforeDOMContentLoaded} from './initializer';
+initializeBeforeDOMContentLoaded();
+
+//import referenceListInitializer from './initializer/reference-list-initializer';
+//referenceListInitializer();
 
 //import app demo styles
 import './styles';

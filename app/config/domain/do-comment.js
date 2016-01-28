@@ -1,8 +1,8 @@
-import FocusComponents from 'focus-components';
+import InputDate from 'focus-components/components/input/textarea';
 
 export default {
     type: 'text',
-    InputComponent: FocusComponents.components.input.Textarea,
+    InputComponent: InputDate,
     validator: [{
         type: 'string',
         options: {
