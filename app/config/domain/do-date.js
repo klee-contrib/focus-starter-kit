@@ -1,8 +1,8 @@
 import moment from 'moment';
-import FocusComponents from 'focus-components';
+import InputDate from 'focus-components/components/input/date';
 
 export default {
-    InputComponent: FocusComponents.components.input.Date,
+    InputComponent: InputDate,
     formatter: date => date ? moment(date, moment.ISO_8601).format('DD/MM/YYYY') : '',
     format: ['DD/MM/YYYY', 'DD-MM-YYYY', 'D MMM YYYY']
 };
