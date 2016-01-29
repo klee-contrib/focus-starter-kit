@@ -74,7 +74,7 @@
   "main": "app/index.js",
   "license": "MIT",
   "dependencies": {
-    "focus-components": "0.8.6-beta4",
+    "focus-components": "0.8.6-beta5",
     "focus-core": "0.12.4-beta4",
     "jquery": "^2.2.0",
     "lodash": "^4.0.1",
