@@ -15,7 +15,7 @@ export default React.createClass({
     displayName: 'MovieDetailHeaderExpanded',
     mixins: [formPreset],
     definitionPath: 'movie',
-    stores: [{store: movieStore, properties: ['movie']}],
+    stores: [{store: movieStore, properties: ['movieCaracteristics', 'movieSynopsis']}],
 
     /** @inheritDoc */
     renderContent() {

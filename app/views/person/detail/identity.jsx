@@ -10,13 +10,13 @@ import personStore from '../../../stores/person';
 import {identityActions} from '../../../action/person';
 
 export default React.createClass({
-    displayName: 'PersonIdendity',
+    displayName: 'PersonIdentity',
     propTypes: {
         id: PropTypes.number.isRequired
     },
     mixins: [formPreset],
     definitionPath: 'person',
-    stores: [{store: personStore, properties: ['person']}],
+    stores: [{store: personStore, properties: ['personIdentity']}],
     action: identityActions,
 
     /** @inheritDoc */

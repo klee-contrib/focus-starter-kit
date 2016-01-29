@@ -4,13 +4,13 @@ import actionBuilder from 'focus-core/application/action-builder';
 
 export const identityActions = {
     load: actionBuilder({
-        node: 'person',
+        node: 'personIdentity',
         service: personSerivces.loadPerson,
         shouldDumpStoreOnActionCall: true,
         status: 'loaded'
     }),
     save: actionBuilder({
-        node: 'person',
+        node: 'personIdentity',
         service: personSerivces.savePersonIdentity,
         shouldDumpStoreOnActionCall: true,
         status: 'saved'
@@ -19,22 +19,22 @@ export const identityActions = {
 
 export const biographyActions = {
     load: actionBuilder({
-        node: 'person',
+        node: 'personBiography',
         service: personSerivces.loadPerson,
         shouldDumpStoreOnActionCall: true,
         status: 'loaded'
     }),
     save: actionBuilder({
-        node: 'person',
+        node: 'personBiography',
         service: personSerivces.savePersonBiography,
         shouldDumpStoreOnActionCall: true,
         status: 'saved'
     })
 }
 
-export const moviesActions = {
+export const moviesLinksActions = {
     load: actionBuilder({
-        node: 'movies',
+        node: 'personMovieLinks',
         service: personSerivces.loadPersonMovies,
         shouldDumpStoreOnActionCall: true,
         status: 'loaded'

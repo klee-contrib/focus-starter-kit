@@ -15,7 +15,7 @@ export default React.createClass({
     displayName: 'PersonDetailHeaderSummary',
     mixins: [formPreset],
     definitionPath: 'person',
-    stores: [{store: personStore, properties: ['person']}],
+    stores: [{store: personStore, properties: ['personIdentity']}],
 
     /** @inheritDoc */
     renderContent() {

@@ -10,7 +10,7 @@ import MoviePreview from '../../movie/preview';
 
 //stores & actions
 import personStore from '../../../stores/person';
-import {moviesActions} from '../../../action/person';
+import {moviesLinksActions} from '../../../action/person';
 
 export default React.createClass({
     displayName: 'PersonMovie',
@@ -22,7 +22,7 @@ export default React.createClass({
     /** @inheritDoc */
     getInitialState() {
         return {
-            movieLinks: personStore.getMovies() || [],
+            personMovieLinks: personStore.getPersonMovieLinks() || [],
             movieCodePreview: null
         }
     },
@@ -30,16 +30,16 @@ export default React.createClass({
     /** @inheritDoc */
     componentWillMount() {
         const {id} = this.props;
-        moviesActions.load(id);
+        moviesLinksActions.load(id);
     },
-    stores: [{store: personStore, properties: ['movies']}],
+    stores: [{store: personStore, properties: ['personMovieLinks']}],
 
     /** @inheritDoc */
     render() {
-        const {movieLinks, movieCodePreview} = this.state;
+        const {personMovieLinks, movieCodePreview} = this.state;
         return (
             <Panel title='person.detail.movies'>
-                <MovieCardList movies={movieLinks} onClickPreview={(movieId) => this.setState({movieCodePreview: movieId})}/>
+                <MovieCardList movies={personMovieLinks} onClickPreview={(movieId) => this.setState({movieCodePreview: movieId})}/>
                 {movieCodePreview &&
                     <Modal open={true} onPopinClose={this._onCreateMoviePopinClose} type='from-right'>
                         <MoviePreview id={movieCodePreview}/>

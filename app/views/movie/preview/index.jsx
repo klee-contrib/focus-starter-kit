@@ -17,8 +17,6 @@ import Poster from '../components/poster';
 import MovieCaracteristics from'../detail/caracteristics'
 import MovieSynopsis from'../detail/synospis'
 
-
-
 export default React.createClass({
     displayName: 'MoviePreview',
     propTypes: {
@@ -26,7 +24,7 @@ export default React.createClass({
     },
     mixins: [builtInComponents, storeBehaviour],
     definitionPath: 'movie',
-    stores: [{store: movieStore, properties: ['movie']}],
+    stores: [{store: movieStore, properties: ['MovieCaracteristics', 'movieSynopsis']}],
 
     /** @inheritDoc */
     getInitialState(){
@@ -57,8 +55,6 @@ export default React.createClass({
                     </div>
                 </div>
                 <div data-demo='preview-content'>
-                    <h6></h6>
-                    <br/>
                     <MovieCaracteristics id={id} hasEdit={false}/>
                 </div>
             </div>

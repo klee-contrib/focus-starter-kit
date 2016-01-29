@@ -6,8 +6,9 @@ import {CoreStore} from 'focus-core/store';
 */
 const personStore = new CoreStore({
     definition: {
-        person: 'person',
-        movies: 'movies'
+        personIdentity: 'person',
+        personBiography: 'personBiography',
+        personMovieLinks: 'personMovieLinks'
     }
 });
 

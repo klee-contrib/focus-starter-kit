@@ -2,6 +2,7 @@ import {translate, init} from 'focus-core/translation';
 import traductionFiles from '../i18n';
 
 export default () => {
+    console.log('|--- [initializer] TRANSLATIONS');
 
     // Initialize translations configuration.
     const i18nConfig = {
@@ -11,7 +12,7 @@ export default () => {
 
     // Plugin initialization.
     init(i18nConfig, () => {
-        return console.log('Translation correctly initialized.');
+        return console.log('--> Translation correctly initialized.');
     });
 
 }

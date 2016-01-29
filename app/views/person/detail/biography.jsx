@@ -16,7 +16,7 @@ export default React.createClass({
     },
     mixins: [formPreset],
     definitionPath: 'person',
-    stores: [{store: personStore, properties: ['person']}],
+    stores: [{store: personStore, properties: ['PersonBiography']}],
     action: biographyActions,
 
     /** @inheritDoc */

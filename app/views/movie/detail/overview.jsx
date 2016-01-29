@@ -18,7 +18,7 @@ export default React.createClass({
     displayName: 'Overview',
     mixins: [formPreset],
     definitionPath: 'movie',
-    stores: [{store: movieStore, properties: ['movie']}],
+    stores: [{store: movieStore, properties: ['movieCaracteristics']}],
 
     /**
      * Open the trailer popin.

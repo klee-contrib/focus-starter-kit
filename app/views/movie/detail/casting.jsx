@@ -21,7 +21,7 @@ export default React.createClass({
         id: PropTypes.number.isRequired
     },
     mixins: [storeBehaviour],
-    stores: [{store: movieStore, properties: ['casting']}],
+    stores: [{store: movieStore, properties: ['movieCasting']}],
 
     getInitialState() {
         return {

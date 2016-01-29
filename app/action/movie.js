@@ -3,7 +3,7 @@ import actionBuilder from 'focus-core/application/action-builder';
 
 export const castingActions = {
     loadPeople: actionBuilder({
-        node: 'casting',
+        node: 'movieCasting',
         service: movieServices.loadMovieCasting,
         shouldDumpStoreOnActionCall: true,
         status: 'loaded'
@@ -12,13 +12,13 @@ export const castingActions = {
 
 export const caracteristicsActions = {
     load: actionBuilder({
-        node: 'movie',
+        node: 'movieCaracteristiques',
         service: movieServices.loadMovie,
         shouldDumpStoreOnActionCall: true,
         status: 'loaded'
     }),
     save: actionBuilder({
-        node: 'movie',
+        node: 'movieCaracteristiques',
         service: movieServices.saveMovieCaracteristics,
         shouldDumpStoreOnActionCall: true,
         status: 'saved'
@@ -27,13 +27,13 @@ export const caracteristicsActions = {
 
 export const synopsisActions = {
     load: actionBuilder({
-        node: 'movie',
+        node: 'movieSynopsis',
         service: movieServices.loadMovie,
         shouldDumpStoreOnActionCall: true,
         status: 'loaded'
     }),
     save: actionBuilder({
-        node: 'movie',
+        node: 'movieSynopsis',
         service: movieServices.saveMovieSynopsis,
         shouldDumpStoreOnActionCall: true,
         status: 'saved'
@@ -42,7 +42,7 @@ export const synopsisActions = {
 
 export const trailerActions = {
     load: actionBuilder({
-        node: 'movie',
+        node: 'movieTrailer',
         service: movieServices.loadMovie,
         shouldDumpStoreOnActionCall: true,
         status: 'loaded'
