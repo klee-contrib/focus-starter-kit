@@ -12,13 +12,13 @@ export const castingActions = {
 
 export const caracteristicsActions = {
     load: actionBuilder({
-        node: 'movieCaracteristiques',
+        node: 'movieCaracteristics',
         service: movieServices.loadMovie,
         shouldDumpStoreOnActionCall: true,
         status: 'loaded'
     }),
     save: actionBuilder({
-        node: 'movieCaracteristiques',
+        node: 'movieCaracteristics',
         service: movieServices.saveMovieCaracteristics,
         shouldDumpStoreOnActionCall: true,
         status: 'saved'
