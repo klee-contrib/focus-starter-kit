@@ -22,12 +22,6 @@ export default React.createClass({
         id: PropTypes.number.isRequired
     },
     mixins: [cartridgeBehaviour],
-
-    /** @inheritDoc */
-    componentWillMount() {
-        this._registerCartridge();
-    },
-
     /**
     * Related to the CartridgeBehaviour.
     * Define the cartridge configuration.

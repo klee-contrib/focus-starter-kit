@@ -78,7 +78,7 @@ export default React.createClass({
 
     /** @inheritDoc */
     render() {
-        const {actors, camera, directors, producers, personCodePreview, writers, filter} = this.state;
+        const {personCodePreview, filter} = this.state;
         const people = this._getPeople();
         const list = people ? people : [];
         return (

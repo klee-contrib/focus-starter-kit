@@ -8,7 +8,6 @@ import GroupComponent from '../components/group';
 import cartridgeConfiguration from './cartridge';
 import lineMapper from '../../lines/mapper';
 import onLineClick from './line-click';
-//import {getScopes} from '../../../../initializer/search-scope-initializer';
 import {scopesConfig} from '../../../../config/scopes';
 
 export const configuration = {
