@@ -6,8 +6,10 @@ import {CoreStore} from 'focus-core/store';
 */
 const movieStore = new CoreStore({
     definition: {
-        movie: 'movie',
-        casting: 'casting'
+        movieCaracteristics: 'movieCaracteristics',
+        movieCasting: 'movieCasting',
+        movieSynopsis: 'movieSynopsis',
+        movieTrailer: 'movieTrailer'
     }
 });
 

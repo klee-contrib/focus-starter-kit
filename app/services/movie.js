@@ -8,7 +8,9 @@ export default {
     },
     loadMovieCasting(id) {
         console.log(`[MOVIE] call loadMovieCasting(${id}) method`);
-        return fetch(movieUrl.loadMovie({urlData: {id}}), {isCORS: true});
+        return fetch(movieUrl.loadMovie({urlData: {id}}), {isCORS: true}).then(({actors, camera, directors, producers, writers}) => {
+            return {actors, camera, directors, producers, writers};
+        });;
     },
     saveMovieSynopsis(data) {
         console.log(`[MOVIE] call saveMovieSynopsis method. id=${data.id} data=${data}`);

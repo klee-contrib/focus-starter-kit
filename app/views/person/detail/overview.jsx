@@ -17,14 +17,7 @@ export default React.createClass({
     displayName: 'Overview',
     mixins: [formPreset],
     definitionPath: 'person',
-    stores: [{store: personStore, properties: ['person']}],
-
-    /**
-     * Open the trailer popin.
-     */
-    openTrailerPopin() {
-        this.refs['modal-trailer'].toggleOpen();
-    },
+    stores: [{store: personStore, properties: ['personIdentity']}],
 
     //pourcentage de completude<br/>
     // nombre de films<br/>

@@ -8,7 +8,9 @@ export default {
     },
     loadPersonMovies(id) {
         console.log(`[PERSON] call loadPersonMovies(${id}) method`);
-        return fetch(personUrl.loadPerson({urlData: {id}}), {isCORS: true});
+        return fetch(personUrl.loadPerson({urlData: {id}}), {isCORS: true}).then(({movieLinks}) => {
+            return movieLinks;
+        });
     },
     savePersonIdentity(data) {
         console.log(`[PERSON] call savePersonIdentity method. id=${data.id} data=${data}`);

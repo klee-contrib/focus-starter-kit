@@ -16,7 +16,7 @@ export default React.createClass({
     },
     mixins: [formPreset],
     definitionPath: 'movie',
-    stores: [{store: movieStore, properties: ['movie']}],
+    stores: [{store: movieStore, properties: ['movieSynopsis']}],
     action: synopsisActions,
 
     /** @inheritDoc */

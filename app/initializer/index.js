@@ -13,6 +13,7 @@ import layoutInitializer from './layout-initializer';
  * Launch initializers that can to be executed before DOM content is loaded (asap)
  */
 export const initializeBeforeDOMContentLoaded = () => {
+    console.log('[BEFORE CONTENT LOADED]');
     definitionInitializer();
     domainInitializer();
     referenceListInitializer();
@@ -23,6 +24,7 @@ export const initializeBeforeDOMContentLoaded = () => {
  * Launches initializers that has to be loaded after DOM content is loaded.
  */
 export const initializeAfterDOMContentLoaded = () => {
+    console.log('[AFTER CONTENT LOADED]');
     globalLinkInitializer();
     searchStoreInitializer();
     userInitializer();
