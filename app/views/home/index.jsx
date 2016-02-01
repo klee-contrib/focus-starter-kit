@@ -24,7 +24,6 @@ export default React.createClass({
     * @return {[type]} [description]
     */
     cartridgeConfiguration() {
-        console.log('cartridgeConfiguration');
         return {
             summary: {
                 component: SummaryPageSearch,
