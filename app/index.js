@@ -1,7 +1,4 @@
-import {initializeAfterDOMContentLoaded, initializeBeforeDOMContentLoaded} from './initializer';
-
 const logs = require(`../package.json`);
-
 console.log(
     `
         FOCUS DEMO
@@ -11,11 +8,13 @@ console.log(
 
 console.log('#########################[INIT]#######################################');
 // initializers before DOM CONTENT LOADED
-initializeBeforeDOMContentLoaded();
+const beforeDomContentLoadedScript = require('./initializer/before');
+beforeDomContentLoadedScript.initialize();
 
 // initializers after DOM CONTENT LOADED
 document.addEventListener('DOMContentLoaded', () => {
-    initializeAfterDOMContentLoaded();
+    const afterDomContentLoadedScript = require('./initializer/after');
+    afterDomContentLoadedScript.initialize();
     console.log('#########################[START APP]############################');
     require('./application')();
     console.log('#########################[APP STARTED]##########################');

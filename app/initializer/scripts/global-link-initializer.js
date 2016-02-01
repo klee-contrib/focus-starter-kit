@@ -3,7 +3,7 @@ import $ from 'jquery';
 import history from 'focus-core/history';
 
 export default () => {
-    console.log('|--- [initializer] GLOBAL LINKS');
+    console.log('|--- GLOBAL LINKS');
 
     $(document).on('click', 'a:not([data-bypass])', function touchHandler(evt) {
         const href = { prop: $(this).prop('href'), attr: $(this).attr('href') };

@@ -5,7 +5,7 @@ import {config} from 'focus-core/reference';
 
 // load here all your reference lists
 export default () => {
-    console.log('|--- [initializer] REFERENCES');
+    console.log('|--- REFERENCES');
 
     config.set({
         scopes: () => {

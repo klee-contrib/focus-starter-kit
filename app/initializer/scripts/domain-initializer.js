@@ -1,10 +1,10 @@
 import {container as domainContainer} from 'focus-core/definition/domain';
-import domainsConfig from '../config/domain';
-import entitytDefinitionConfig from '../config/entity-definition';
+import domainsConfig from '../../config/domain';
+import entitytDefinitionConfig from '../../config/entity-definition';
 import {difference, intersection, uniq} from 'lodash/array';
 
 export default () => {
-    console.log('|--- [initializer] DOMAINS');
+    console.log('|--- DOMAINS');
     domainContainer.setAll(domainsConfig);
 
     const arr = [];
