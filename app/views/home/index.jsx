@@ -8,6 +8,7 @@ import {cartridgeBehaviour} from 'focus-components/page/mixin';
 //cartridge configuration
 import CartridgePageSearch from 'focus-components/page/search/search-header/cartridge';
 import SummaryPageSearch from 'focus-components/page/search/search-header/summary';
+import searchService from '../../services/search';
 
 
 export default React.createClass({
@@ -27,11 +28,11 @@ export default React.createClass({
         return {
             summary: {
                 component: SummaryPageSearch,
-                props: { onSearchCriteriaChange: this._navigateAdvancedSearch }
+                props: { onSearchCriteriaChange: this._navigateAdvancedSearch, service: searchService }
             },
             cartridge: {
                 component: CartridgePageSearch,
-                props: { onSearchCriteriaChange: this._navigateAdvancedSearch }
+                props: { onSearchCriteriaChange: this._navigateAdvancedSearch, service: searchService }
             },
             actions: {
                 primary: [],

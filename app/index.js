@@ -1,5 +1,5 @@
 const logs = require(`../package.json`);
-console.log(
+console.info(
     `
         FOCUS DEMO
         version: ${logs.version}
