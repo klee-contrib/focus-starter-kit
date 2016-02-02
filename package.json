@@ -90,7 +90,7 @@
     },
     "license": "MIT",
     "dependencies": {
-        "focus-components": "0.8.6-beta6",
+        "focus-components": "0.8.6-beta8",
         "focus-core": "0.12.4-beta6",
         "immutable": "^3.7.2",
         "jquery": "3.0.0-alpha1",

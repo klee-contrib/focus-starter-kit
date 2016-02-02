@@ -1,0 +1,18 @@
+@import "variables";
+
+[data-demo="quick-search-view"] {
+    h5 {
+        text-align: center;
+        margin: 10px 0;
+    }
+}
+
+[data-focus='quick-search'] {
+    [data-focus='quick-search-results'] {
+        h3 {
+            font-size: 22px;
+            line-height: 22px;
+            font-weight: 600px;
+        }
+    }
+}

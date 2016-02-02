@@ -105,7 +105,7 @@ export default {
         },
         mostRelevant: 'Les plus pertinents',
         scope: {
-            all: 'Tous',
+            all: 'Tout',
             movie: 'Film',
             person: 'Personne'
         }

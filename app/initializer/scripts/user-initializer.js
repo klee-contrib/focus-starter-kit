@@ -1,6 +1,6 @@
 import user from 'focus-core/user';
 
 export default () => {
-    console.log('|--- USER');
+    console.info('|--- USER');
     user.setRoles(['DEFAULT_ROLE']);
 }

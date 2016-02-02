@@ -18,5 +18,7 @@ import './panel.scss';
 import './picture.scss';
 import './poster.scss';
 import './preview.scss';
+import './quick-search.scss';
+import './selection-list.scss';
 import './scrollspy-container.scss';
 import './trailer.scss';

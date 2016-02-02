@@ -1,15 +1,16 @@
 import CartridgePageSearch from 'focus-components/page/search/search-header/cartridge';
 import SummaryPageSearch from 'focus-components/page/search/search-header/summary';
+import service from '../../../../services/search';
 
 export default function cartridgeConfiguration() {
     return {
         summary: {
             component: SummaryPageSearch,
-            props: { }
+            props: { service }
         },
         cartridge: {
             component: CartridgePageSearch,
-            props: { }
+            props: { service }
         },
         actions: {
             primary: [],

@@ -8,10 +8,10 @@ export default router.extend({
         application.changeRoute('search');
     },
     routes: {
-        'search/advanced(/:keywords)': 'advanced'
+        'search/advanced': 'advanced'
     },
-    advanced(keywords) {
-        console.log(`ROUTE: SEARCH ADVANCED ${keywords}`);
-        this._pageContent(AdvancedSearchView, {props: {keywords : keywords}});
+    advanced() {
+        console.log(`ROUTE: SEARCH ADVANCED`);
+        this._pageContent(AdvancedSearchView);
     }
 });

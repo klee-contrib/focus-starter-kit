@@ -7,6 +7,7 @@ import {component as AdvancedSearch} from 'focus-components/page/search/advanced
 import {configuration} from './configuration';
 
 function AdvancedSearchView() {
+    console.log(configuration);
     return <AdvancedSearch {...configuration} />;
 };
 

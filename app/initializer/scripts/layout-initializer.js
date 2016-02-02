@@ -4,7 +4,7 @@ import Layout from 'focus-components/components/layout';
 import DemoMenuLeft from '../../views/menu/menu-left';
 
 export default () => {
-    console.log('|--- LAYOUT');
+    console.info('|--- LAYOUT');
 
     render(Layout, `.${__ANCHOR_CLASS__}`, {
         props: {
