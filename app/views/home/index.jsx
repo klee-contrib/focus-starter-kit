@@ -28,11 +28,11 @@ export default React.createClass({
         return {
             summary: {
                 component: SummaryPageSearch,
-                props: { onSearchCriteriaChange: this._navigateAdvancedSearch, service: searchService }
+                props: { onScopeSelection: this._navigateAdvancedSearch, service: searchService }
             },
             cartridge: {
                 component: CartridgePageSearch,
-                props: { onSearchCriteriaChange: this._navigateAdvancedSearch, service: searchService }
+                props: { onScopeSelection: this._navigateAdvancedSearch, service: searchService }
             },
             actions: {
                 primary: [],
@@ -45,8 +45,8 @@ export default React.createClass({
     render() {
         return (
             <div>
-            <p><a onClick={() => history.navigate('movies/10053', true)}>Movie 10053</a></p>
-            <p><a onClick={() => history.navigate('persons/10', true)}>Person 10</a></p>
+                <p><a onClick={() => history.navigate('movies/10053', true)}>Movie 10053</a></p>
+                <p><a onClick={() => history.navigate('persons/10', true)}>Person 10</a></p>
             </div>
         );
     }
