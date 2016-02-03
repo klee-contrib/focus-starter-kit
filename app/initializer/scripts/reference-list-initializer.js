@@ -12,7 +12,7 @@ export default () => {
             return Promise.resolve(
                 //here call your webservice to get scope references
                 [
-                    {code: 'all', label: 'search.scope.all'},
+                    {code: 'ALL', label: 'search.scope.all'},
                     {code: 'movie', label: 'search.scope.movie'},
                     {code: 'person', label: 'search.scope.person'}
                 ]
@@ -27,7 +27,7 @@ export default () => {
 
 function _applyAdditionalScopeProperties(scope) {
     switch (scope.code) {
-        case 'all':
+        case 'ALL':
             scope.icon = 'all_inclusive';
             break;
         case 'movie':

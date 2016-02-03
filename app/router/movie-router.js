@@ -11,7 +11,6 @@ export default router.extend({
         'movies(/:id)': 'movies'
     },
     movies(id) {
-        console.log(`ROUTE: MOVIES ${id}`);
         this._pageContent(MovieDetailView, {props: {id : +id}});
     }
 });

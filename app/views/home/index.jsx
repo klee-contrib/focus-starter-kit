@@ -28,11 +28,11 @@ export default React.createClass({
         return {
             summary: {
                 component: SummaryPageSearch,
-                props: { onScopeSelection: this._navigateAdvancedSearch, service: searchService }
+                props: { onSearchCriteriaChangeByUser: this._navigateAdvancedSearch, service: searchService }
             },
             cartridge: {
                 component: CartridgePageSearch,
-                props: { onScopeSelection: this._navigateAdvancedSearch, service: searchService }
+                props: { onSearchCriteriaChangeByUser: this._navigateAdvancedSearch, service: searchService }
             },
             actions: {
                 primary: [],

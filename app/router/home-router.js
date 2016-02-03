@@ -12,7 +12,6 @@ export default router.extend({
         home: 'home'
     },
     home() {
-        console.log('ROUTE: HOME');
         this._pageContent(HomeView);
     }
 });

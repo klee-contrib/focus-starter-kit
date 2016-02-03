@@ -1,8 +1,13 @@
-const logs = require(`../package.json`);
+import focusDemoConf from '../package.json';
+import focusCoreConf from 'focus-core/package.json';
+import focusComponentsConf from 'focus-components/package.json';
 console.info(
     `
         FOCUS DEMO
-        version: ${logs.version}
+        version: ${focusDemoConf.version}
+        focus-core: ${focusCoreConf.version}
+        focus-components: ${focusComponentsConf.version}
+        web: http://getfocus.io
     `
 );
 
