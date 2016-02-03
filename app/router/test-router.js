@@ -11,7 +11,6 @@ export default router.extend({
         'test/error': 'error'
     },
     error(id) {
-        console.log(`ROUTE: ERROR`);
         this._pageContent(ErorView, {props: {id}});
     }
 });

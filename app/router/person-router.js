@@ -11,7 +11,6 @@ export default router.extend({
         'persons(/:id)': 'persons'
     },
     persons(id) {
-        console.log(`ROUTE: PERSONS ${id}`);
         this._pageContent(PersonDetailView, {props: {id : +id}});
     }
 });

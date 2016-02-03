@@ -11,7 +11,6 @@ export default router.extend({
         'search/advanced': 'advanced'
     },
     advanced() {
-        console.log(`ROUTE: SEARCH ADVANCED`);
         this._pageContent(AdvancedSearchView);
     }
 });
