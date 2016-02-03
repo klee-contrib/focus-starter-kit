@@ -1,10 +1,12 @@
 ////////////////////////////////////////////////////////
 /// SCRIPT EXECUTED AFTER DOM CONTENT LOADED
 ////////////////////////////////////////////////////////
+import React from 'react';
 import globalLinkInitializer from './scripts/global-link-initializer';
 import storesInitializer from './scripts/stores-initializer';
 import userInitializer from './scripts/user-initializer';
 import layoutInitializer from './scripts/layout-initializer';
+import headerInitializer from './scripts/header-initializer'
 
 
 /**
@@ -16,4 +18,5 @@ export const initialize = () => {
     storesInitializer();
     userInitializer();
     layoutInitializer();
+    headerInitializer();
 };

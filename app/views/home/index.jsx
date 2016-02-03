@@ -10,7 +10,6 @@ import CartridgePageSearch from 'focus-components/page/search/search-header/cart
 import SummaryPageSearch from 'focus-components/page/search/search-header/summary';
 import searchService from '../../services/search';
 
-
 export default React.createClass({
     displayName: 'HomeView',
     mixins: [cartridgeBehaviour],
