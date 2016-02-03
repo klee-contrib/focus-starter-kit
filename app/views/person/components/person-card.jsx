@@ -1,6 +1,6 @@
 //libraries
 import React, {PropTypes} from 'react';
-import {history} from 'focus-core';
+import history from 'focus-core/history';
 
 //web components
 import {component as Button} from 'focus-components/common/button/action';
