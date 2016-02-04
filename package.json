@@ -92,6 +92,7 @@
     "dependencies": {
         "focus-components": "0.8.6-beta11",
         "focus-core": "0.12.4-beta7",
+        "focus-notifications": "^0.2.0-rc3",
         "immutable": "^3.7.2",
         "jquery": "3.0.0-alpha1",
         "lodash": "^3.10.1",
