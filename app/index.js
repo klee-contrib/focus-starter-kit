@@ -1,6 +1,7 @@
 import focusDemoConf from '../package.json';
 import focusCoreConf from 'focus-core/package.json';
 import focusComponentsConf from 'focus-components/package.json';
+
 console.info(
     `
         FOCUS DEMO
@@ -27,3 +28,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //import app demo styles
 import './styles';
+import 'babel-polyfill/dist/polyfill';
