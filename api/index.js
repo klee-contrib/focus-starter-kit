@@ -200,12 +200,12 @@ app.put('/persons/:id', (req, res) => {
 
 // RANKINGS ROUTES
 app.get('/rankings/date', (req, res) => {
-    const mostRecents = moviesDB.filter(movie => movie.productionYear).sort((a, b) => (b.productionYear - a.productionYear)).slice(0, 5);
+    const mostRecents = moviesDB.filter(movie => (movie.productionYear && movie.poster)).sort((a, b) => (b.productionYear - a.productionYear)).slice(0, 6);
     res.json(mostRecents);
 });
 
 app.get('/rankings/mark', (req, res) => {
-    const bestMarks = moviesDB.sort((a, b) => (b.userRating - a.userRating)).slice(0, 5);
+    const bestMarks = moviesDB.sort((a, b) => (b.userRating - a.userRating)).slice(0, 6);
     res.json(bestMarks);
 });
 
