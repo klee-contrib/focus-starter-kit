@@ -4,6 +4,7 @@ import history from 'focus-core/history';
 
 // web components
 import {cartridgeBehaviour} from 'focus-components/page/mixin';
+import Rankings from './rankings';
 
 //cartridge configuration
 import CartridgePageSearch from 'focus-components/page/search/search-header/cartridge';
@@ -43,9 +44,9 @@ export default React.createClass({
     /** @inheritDoc */
     render() {
         return (
-            <div>
-                <p><a onClick={() => history.navigate('movies/10053', true)}>Movie 10053</a></p>
-                <p><a onClick={() => history.navigate('persons/10', true)}>Person 10</a></p>
+            <div data-role='homepage'>
+                <div data-role='background-overlay'/>
+                <Rankings/>
             </div>
         );
     }
