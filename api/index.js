@@ -3,7 +3,7 @@
 const express = require('express');
 const _ = require('lodash');
 const bodyParser = require('body-parser')
-const port = 9999;
+const port = 8080;
 const moviesDB = require('./db-movies.json');
 const personsDB = require('./db-persons.json');
 const moment = require('moment');
@@ -195,9 +195,19 @@ app.put('/persons/:id', (req, res) => {
     }
     console.error('impossible de retrouver la personne portant l\id :' + id);
     console.error('Erreur : aucun id de personne fourni...');
-    res.status(404).sent('Erreur : aucun id de personne fourni...');
+    res.status(404).send('Erreur : aucun id de personne fourni...');
 });
 
+// RANKINGS ROUTES
+app.get('/rankings/date', (req, res) => {
+    const mostRecents = moviesDB.filter(movie => movie.productionYear).sort((a, b) => (b.productionYear - a.productionYear)).slice(0, 5);
+    res.json(mostRecents);
+});
+
+app.get('/rankings/mark', (req, res) => {
+    const bestMarks = moviesDB.sort((a, b) => (b.userRating - a.userRating)).slice(0, 5);
+    res.json(bestMarks);
+});
 
 app.get('/test/error', function error(req, res) {
     res.status(422).json({
