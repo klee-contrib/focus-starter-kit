@@ -70,7 +70,8 @@ export default {
             },
             best: {
                 title: 'Films les mieux notés'
-            }
+            },
+            viewDetails: 'Voir détails'
         },
         unknown: 'Aucune fiche'
     },

@@ -200,7 +200,7 @@ app.put('/persons/:id', (req, res) => {
 
 // RANKINGS ROUTES
 app.get('/rankings/date', (req, res) => {
-    const mostRecents = moviesDB.filter(movie => (movie.productionYear && movie.poster)).sort((a, b) => (b.productionYear - a.productionYear)).slice(0, 6);
+    const mostRecents = moviesDB.filter(movie => (movie.productionYear && movie.poster && movie.runtime && movie.userRating !== -1)).sort((a, b) => (b.productionYear - a.productionYear)).slice(0, 6);
     res.json(mostRecents);
 });
 

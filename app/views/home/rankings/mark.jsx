@@ -9,6 +9,7 @@ class MarkRanking extends Component {
         return (
             <div data-role='ranking'>
                 <h1>{this.i18n('movie.rankings.best.title')}</h1>
+                <hr/>
                 <div data-role='cards'>
                     {markRanking.map(movie => <MovieCard key={movie.code} {...movie}/>)}
                 </div>

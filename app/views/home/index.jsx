@@ -45,7 +45,6 @@ export default React.createClass({
     render() {
         return (
             <div data-role='homepage'>
-                <div data-role='background-overlay'/>
                 <Rankings/>
             </div>
         );
