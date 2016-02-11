@@ -9,7 +9,6 @@ class DateRanking extends Component {
         return (
             <div data-role='ranking'>
                 <h1>{this.i18n('movie.rankings.latest.title')}</h1>
-                <hr/>
                 <div data-role='cards'>
                     {dateRanking.map(movie => <MovieCard key={movie.code} {...movie}/>)}
                 </div>

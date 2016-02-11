@@ -1,19 +1,22 @@
+@import './_variables.scss';
+
 $width: 250px;
-$mainColor: rebeccapurple;
 
 [data-role='homepage'] {
     [data-role='ranking'] {
         opacity: 0.99;
         margin-bottom: 20px;
-        
+
         h1 {
-            text-align: center;
+            color: $accent-color;
             font-size: 2em;
-            margin-bottom: -30px;
+            margin-left: 30px;
+            margin-bottom: -10px;
         }
         [data-role='cards'] {
             display: flex;
             justify-content: space-around;
+            flex-wrap: wrap;
 
             [data-role='movie-card'] {
                 width: $width;
@@ -89,7 +92,7 @@ $mainColor: rebeccapurple;
                             }
 
                             button {
-                                background-color: $mainColor;
+                                background-color: $accent-color;
                                 color: white;
                                 transform: translateY(20px);
                                 transition: transform 0.2s ease-in;
@@ -102,9 +105,10 @@ $mainColor: rebeccapurple;
                     font-weight: bold;
                     text-overflow: ellipsis;
                     width: $width;
-                    color: #607D8B;
+                    color: $primary-color;
                 }
                 [data-role='year'] {
+                    color: $primary-color;
                     font-size: 1.2em;
                 }
             }
