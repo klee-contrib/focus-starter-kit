@@ -1,0 +1,117 @@
+@import './_variables.scss';
+
+$width: 250px;
+
+[data-role='homepage'] {
+    [data-role='ranking'] {
+        opacity: 0.99;
+        margin-bottom: 20px;
+
+        h1 {
+            color: $accent-color;
+            font-size: 2em;
+            margin-left: 30px;
+            margin-bottom: -10px;
+        }
+        [data-role='cards'] {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+            [data-role='movie-card'] {
+                width: $width;
+                [data-role='poster'] {
+                    width: $width;
+                    height: 2.8 / 2 * $width;
+                    position: relative;
+                    background-color: #EEE;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        opacity: 0.99;
+                    }
+                    & > i {
+                        position: absolute;
+                        top: 100px;
+                        left: 75px;
+                        font-size: 4em;
+                    }
+
+                    [data-role='overlay'] {
+                        opacity: 0;
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        transition: opacity 0.15s ease-in;
+
+                        &:hover {
+                            opacity: 1;
+
+                            [data-role='content'] {
+                                button {
+                                    transform: translateY(0);
+                                }
+                            }
+                        }
+
+                        [data-role='background'] {
+                            opacity: 0.85;
+                            background-color: #555;
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            top: 0;
+                            bottom: 0;
+                        }
+                        [data-role='content'] {
+                            height: 100%;
+                            width: 100%;
+                            color: white;
+                            text-align: center;
+                            font-size: 1.5em;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            opacity: 0.99;
+
+                            i {
+                                margin-right: 5px;
+                            }
+
+                            [data-role='caption'] {
+                                margin-top: 2px;
+                            }
+
+                            [data-role='info'] {
+                                display: flex;
+                                justify-content: center;
+                                height: 40px;
+                            }
+
+                            button {
+                                background-color: $accent-color;
+                                color: white;
+                                transform: translateY(20px);
+                                transition: transform 0.2s ease-in;
+                            }
+                        }
+                    }
+                }
+                [data-role='title'] {
+                    font-size: 1.3em;
+                    font-weight: bold;
+                    text-overflow: ellipsis;
+                    width: $width;
+                    color: $primary-color;
+                }
+                [data-role='year'] {
+                    color: $primary-color;
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+}

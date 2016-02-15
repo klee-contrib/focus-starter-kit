@@ -64,6 +64,15 @@ export default {
             trailer: 'Bande annonce',
             writers: 'Scénaristes'
         },
+        rankings: {
+            latest: {
+                title: 'Films les plus récents'
+            },
+            best: {
+                title: 'Films les mieux notés'
+            },
+            viewDetails: 'Voir détails'
+        },
         unknown: 'Aucune fiche'
     },
     movies: 'Films',

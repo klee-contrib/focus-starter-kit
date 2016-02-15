@@ -28,4 +28,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //import app demo styles
 import './styles';
-import 'babel-polyfill/dist/polyfill';
+// import 'babel-polyfill/dist/polyfill';
