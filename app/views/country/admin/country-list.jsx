@@ -1,16 +1,18 @@
 import React, {Component, PropTypes} from 'react';
-import {component as SmartList} from 'focus-components/page/list'
-
+import {component as SmartList} from 'focus-components/page/list';
+import  {component as ListComponent} from 'focus-components/list/selection/list'
+import CountryLine from './country-line';
 
 function CountryList({handleLineClick, action, store, columns}) {
     return (
         <SmartList
-            LineComponent={({data, onLineClick}) => <tr onClick={() => onLineClick(data)}><td>{data.id}</td><td>{data.name}</td></tr>}
+            ListComponent={ListComponent}
+            LineComponent={CountryLine}
             action={{load: action}}
             columns={columns}
             onLineClick={handleLineClick}
-            ref='smartList'
             store={store}
+            isSelection={false}
         />
     );
 }
@@ -21,7 +23,7 @@ CountryList.propTypes = {
     action: PropTypes.func,
     columns: PropTypes.array,
     handleLineClick: PropTypes.func,
-    onLineClick: PropTypes.func.isRequired,
-    store: PropTypes.func
+    handleLineClick: PropTypes.func.isRequired,
+    store: PropTypes.object
 }
 export default CountryList;
