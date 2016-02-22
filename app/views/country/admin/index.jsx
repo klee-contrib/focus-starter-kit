@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {component as Modal} from 'focus-components/application/popin';
 import {setHeader} from 'focus-core/application'
+import {translate} from 'focus-core/translation';
 import CountryList from './country-list';
 import CountryDetail from './country-detail';
 import CountryCriteria from './country-criteria';
@@ -28,11 +29,11 @@ class CountryAdminPage extends Component {
       setHeader({
           canDeploy: false,
           barLeft: {
-            component: p => <h4>{'Administration de la liste des pays'}</h4>
+            component: p => <h4>{translate('countryList.title')}</h4>
           },
           summary: {
             // the criteria component is injected into the header in order to have a more elegant page
-            component: p => <CountryCriteria onSearch={_dispatchSearchCriteria}/>
+              component: p => <CountryCriteria onSearch={_dispatchSearchCriteria}/>
           }
       });
     }
@@ -60,8 +61,7 @@ class CountryAdminPage extends Component {
                 {/*LIST : This is the list which trigger the search and is connected to the list store */}
                 <CountryList
                     action={loadCountryList}
-                    columns={[{label: 'name'}, {label: 'drigo'}]}
-                    handleLineClick={d => this.setState({detailId: d.id}, ()=> console.log(this.constructor.displayName, this.state))}
+                    handleLineClick={d => this.setState({detailId: d.id})}
                     store={countryListStore}
                 />
 
@@ -76,7 +76,7 @@ class CountryAdminPage extends Component {
                         open={true}
                         type='from-right'
                     >
-                        <CountryDetail id={detailId}/>
+                        <CountryDetail id={detailId} isEdit={true}/>
                     </Modal>
                 }
             </div>

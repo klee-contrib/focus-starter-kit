@@ -1,7 +1,11 @@
 
 export default {
-    code: {
+    id: {
         domain: 'DO_ID',
+        required: true
+    },
+    code: {
+        domain: 'DO_CODE',
         required: true
     },
     name: {

@@ -16,16 +16,14 @@ export default React.createClass({
     action: countryActions,
     /** @inheritDoc */
     renderContent() {
-        const {name, maps, code} = this.state;
         return (
           <div>
             <h3>{translate('country.detail.title')}</h3>
-            <Panel title={translate('country.detail.infos')} actions={this._renderActions}>
-                {this.displayFor('id')}
-                {this.fieldFor('code')}
-                {this.fieldFor('name')}
-                {this.fieldFor('maps')}
-            </Panel>
+            {this.displayFor('id')}
+            {this.fieldFor('code')}
+            {this.fieldFor('name')}
+            {this.fieldFor('maps')}
+            {this._renderActions()}
           </div>
         );
     }

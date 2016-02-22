@@ -29,6 +29,20 @@ export default {
             ungroup: 'Dégrouper'
         }
     },
+    countryList:{
+      title: 'Administration de la liste des pays',
+      filter: 'Filtrez la liste'
+    },
+    country:{
+      detail:{
+        title: 'Detail du pays',
+        infos: 'Informations'
+      },
+      id: 'Id',
+      code: 'Code',
+      name: 'Nom',
+      maps: 'Carte'
+    },
     movie: {
         action: {
             addphoto: 'Ajouter un poster',
