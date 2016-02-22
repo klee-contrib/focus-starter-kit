@@ -1,16 +1,14 @@
 import React, {PropTypes} from 'react';
 import {debounce} from 'lodash/function';
-
+import InputText from 'focus-components/components/input/text';
 function CountryCriteria({onSearch}) {
     const _onSearchDebounced = debounce(value => onSearch(value), 200);
     return (
-        <div data-demo='country-list-criteria'>
-            <input
-                onChange={({target: {value}}) => _onSearchDebounced(value)}
-                placeholder='Affinez votre recherche'
+            <InputText
+                onChange={value => _onSearchDebounced(value)}
+                placeholder='Filtrez votre recherche'
                 type='search'
             />
-        </div>
     );
 }
 

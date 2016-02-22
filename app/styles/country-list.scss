@@ -13,23 +13,27 @@
 }
 
 [data-demo='country-list-criteria']{
-  margin: 20px 10px 20px 10px;
+//  margin: 20px 10px 20px 10px;
 }
 [data-demo='country-line-content']{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  div{
-    flex-grow: 1;
-  }
   div.img{
     height: 50px;
+    width: 20%;
     img{
       height: 100%;
     }
   }
-  div[name='country.name']{
-    flex-grow: 3;
+  div[name='country.code']{
+    width: 20%;
     text-align: right;
+    text-align: left;
+  }
+  //flex-grow: 3;
+  div[name='country.name']{
+    width: 60%;
+    text-align: left;
   }
 }

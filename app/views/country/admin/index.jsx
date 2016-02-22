@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-
 import {component as Modal} from 'focus-components/application/popin';
-
+import {setHeader} from 'focus-core/application'
 import CountryList from './country-list';
 import CountryDetail from './country-detail';
 import CountryCriteria from './country-criteria';
@@ -9,16 +8,33 @@ import CountryActionBar from './country-action-bar';
 import {loadCountryList, updateCountyListProperties} from '../../../action/country';
 import countryListStore from '../../../stores/country-list';
 
+//Allow us to dispatch informations in the store using the built in action
 function _dispatchSearchCriteria(query) {
     updateCountyListProperties({criteria: query});
 }
 
+// Page which stands for the administration
 class CountryAdminPage extends Component {
     constructor(props){
       super(props);
+
+      // Initial state
       this.state = {
-        isCriteria: true
+        isCriteria: true,
+        detailId: null
       };
+
+      // dispatch components insode the header
+      setHeader({
+          canDeploy: false,
+          barLeft: {
+            component: p => <h4>{'Administration de la liste des pays'}</h4>
+          },
+          summary: {
+            // the criteria component is injected into the header in order to have a more elegant page
+            component: p => <CountryCriteria onSearch={_dispatchSearchCriteria}/>
+          }
+      });
     }
     _onDetailPopinClose = () => {
         //Remove the detailId and call the list load action.
@@ -29,13 +45,12 @@ class CountryAdminPage extends Component {
         const {detailId, isCriteria} = this.state;
         return (
             <div>
-                <h2>{'Administration de la liste des pays'}</h2>
-
                 {
                   /*Criteria */
                   isCriteria ?
                     /*This is a simple search field where the user can type something to filter the list*/
-                    <CountryCriteria onSearch={_dispatchSearchCriteria}/>
+                    /*<CountryCriteria onSearch={_dispatchSearchCriteria}/>*/
+                    null
                     :
                     /* This is an example of an action bar which consists in filtering the list with a letter criteria*/
                     <CountryActionBar onLetterClick={(letter) => {_dispatchSearchCriteria(letter)}}/>
@@ -55,7 +70,7 @@ class CountryAdminPage extends Component {
                       When it is in the state, the popin is automatically displayed
                       The detail popin is handled by this id
                     */
-                    detailId &&
+                    detailId !== null &&
                     <Modal
                         onPopinClose={this._onDetailPopinClose}
                         open={true}
