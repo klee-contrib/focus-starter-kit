@@ -14,19 +14,47 @@ function _dispatchSearchCriteria(query) {
 }
 
 class CountryAdminPage extends Component {
+    constructor(props){
+      super(props);
+      this.state = {
+        isCriteria: true
+      };
+    }
     _onDetailPopinClose = () => {
         //Remove the detailId and call the list load action.
         this.setState({detailId: null}, () => loadCountryList());
     };
 
     render() {
-        const {detailId} = this.state || {};
+        const {detailId, isCriteria} = this.state;
         return (
             <div>
-                <h1>{'Administration de la liste des pays'}</h1>
-                <CountryCriteria onSearch={_dispatchSearchCriteria}/>
-                <CountryActionBar onLetterClick={(letter) => {_dispatchSearchCriteria(letter)}}/>
+                <h2>{'Administration de la liste des pays'}</h2>
+
                 {
+                  /*Criteria */
+                  isCriteria ?
+                    /*This is a simple search field where the user can type something to filter the list*/
+                    <CountryCriteria onSearch={_dispatchSearchCriteria}/>
+                    :
+                    /* This is an example of an action bar which consists in filtering the list with a letter criteria*/
+                    <CountryActionBar onLetterClick={(letter) => {_dispatchSearchCriteria(letter)}}/>
+
+                }
+
+                {/*LIST : This is the list which trigger the search and is connected to the list store */}
+                <CountryList
+                    action={loadCountryList}
+                    columns={[{label: 'name'}, {label: 'drigo'}]}
+                    handleLineClick={d => this.setState({detailId: d.id}, ()=> console.log(this.constructor.displayName, this.state))}
+                    store={countryListStore}
+                />
+
+                {
+                    /*
+                      When it is in the state, the popin is automatically displayed
+                      The detail popin is handled by this id
+                    */
                     detailId &&
                     <Modal
                         onPopinClose={this._onDetailPopinClose}
@@ -36,12 +64,6 @@ class CountryAdminPage extends Component {
                         <CountryDetail id={detailId}/>
                     </Modal>
                 }
-                <CountryList
-                    action={loadCountryList}
-                    columns={[{label: 'name'}, {label: 'drigo'}]}
-                    handleLineClick={(d) => this.setState({detailId: d.id})}
-                    store={countryListStore}
-                />
             </div>
         );
     }

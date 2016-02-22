@@ -1,0 +1,35 @@
+[data-demo='country-list-action-bar']{
+  display: flex;
+  text-decoration: none;
+  list-style-type: none;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 0;
+  button{
+    margin-right: 5px;
+        margin-top: 5px;
+  }
+
+}
+
+[data-demo='country-list-criteria']{
+  margin: 20px 10px 20px 10px;
+}
+[data-demo='country-line-content']{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  div{
+    flex-grow: 1;
+  }
+  div.img{
+    height: 50px;
+    img{
+      height: 100%;
+    }
+  }
+  div[name='country.name']{
+    flex-grow: 3;
+    text-align: right;
+  }
+}
