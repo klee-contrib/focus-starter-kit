@@ -1,3 +1,5 @@
+import 'babel-polyfill';
+import 'es5-shim';
 import focusDemoConf from '../package.json';
 import focusCoreConf from 'focus-core/package.json';
 import focusComponentsConf from 'focus-components/package.json';
