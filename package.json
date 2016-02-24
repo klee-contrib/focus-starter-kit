@@ -31,20 +31,23 @@
     "plugins": [
       "transform-class-properties",
       "transform-decorators-legacy",
-      "add-module-exports"
+      "add-module-exports",
+      "transform-proto-to-assign",
+      ["transform-es2015-classes", {"loose": true}]
     ]
   },
   "betterScripts": {
     "bundle": {
-      "command": "webpack --progress --json --profile",
+      "command": "webpack --progress",
       "env": {
         "ANCHOR_CLASS": "demo-app",
-        "ENTRY_FILE_PATH": "./app/index",
         "BABELIFIED_PATH": "./app",
-        "DEV": false,
-        "NODE_ENV": "production",
-        "LIBRARY_NAME": "FocusDemoApp",
+        "ENTRY_FILE_PATH": "./app/index",
+        "PAGE_TITLE": "Focus demonstration application",
+        "API_PORT": 8080,
         "OUTPUT_DIR": "./public",
+        "LOCAL_FOCUS": true,
+        "GENERATE_HTML": false,
         "PACKAGE_JSON_PATH": "./"
       }
     },
@@ -71,6 +74,7 @@
         "API_PORT": 8080,
         "OUTPUT_DIR": "./public",
         "LOCAL_FOCUS": true,
+        "GENERATE_HTML": false,
         "PACKAGE_JSON_PATH": "./"
       }
     },
@@ -84,6 +88,7 @@
         "API_PORT": 8080,
         "OUTPUT_DIR": "./public",
         "LOCAL_FOCUS": false,
+        "GENERATE_HTML": false,
         "PACKAGE_JSON_PATH": "./"
       }
     }
