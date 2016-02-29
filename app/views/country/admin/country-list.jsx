@@ -22,7 +22,6 @@ CountryList.propTypes = {
     LineComponent: PropTypes.element,
     action: PropTypes.func,
     columns: PropTypes.array,
-    handleLineClick: PropTypes.func,
     handleLineClick: PropTypes.func.isRequired,
     store: PropTypes.object
 }

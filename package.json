@@ -19,32 +19,27 @@
     "start:local": "better-npm-run webpack-dev-server-local-focus",
     "start:npm": "better-npm-run webpack-dev-server-npm-focus",
     "mocked-api": "node api/index.js",
-    "profile": "better-npm-run profile"
+    "profile": "better-npm-run profile",
+    "test": "return  0"
   },
   "main": "app/index.js",
   "babel": {
     "presets": [
-      "stage-0",
-      "react",
-      "es2015"
-    ],
-    "plugins": [
-      "transform-class-properties",
-      "transform-decorators-legacy",
-      "add-module-exports"
+      "focus"
     ]
   },
   "betterScripts": {
     "bundle": {
-      "command": "webpack --progress --json --profile",
+      "command": "webpack --progress",
       "env": {
         "ANCHOR_CLASS": "demo-app",
-        "ENTRY_FILE_PATH": "./app/index",
         "BABELIFIED_PATH": "./app",
-        "DEV": false,
-        "NODE_ENV": "production",
-        "LIBRARY_NAME": "FocusDemoApp",
+        "ENTRY_FILE_PATH": "./app/index",
+        "PAGE_TITLE": "Focus demonstration application",
+        "API_PORT": 8080,
         "OUTPUT_DIR": "./public",
+        "LOCAL_FOCUS": true,
+        "GENERATE_HTML": false,
         "PACKAGE_JSON_PATH": "./"
       }
     },
@@ -71,6 +66,7 @@
         "API_PORT": 8080,
         "OUTPUT_DIR": "./public",
         "LOCAL_FOCUS": true,
+        "GENERATE_HTML": false,
         "PACKAGE_JSON_PATH": "./"
       }
     },
@@ -84,6 +80,7 @@
         "API_PORT": 8080,
         "OUTPUT_DIR": "./public",
         "LOCAL_FOCUS": false,
+        "GENERATE_HTML": false,
         "PACKAGE_JSON_PATH": "./"
       }
     }
@@ -109,13 +106,7 @@
     "babel-core": "^6.4.5",
     "babel-eslint": "^5.0.0-beta6",
     "babel-loader": "^6.2.1",
-    "babel-plugin-add-module-exports": "^0.1.2",
-    "babel-plugin-transform-class-properties": "^6.4.0",
-    "babel-plugin-transform-decorators-legacy": "^1.3.4",
-    "babel-polyfill": "^6.3.14",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
-    "babel-preset-stage-0": "^6.3.13",
+    "babel-preset-focus": "^0.5.2",
     "babel-runtime": "^6.3.19",
     "better-npm-run": "0.0.5",
     "body-parser": "^1.14.1",
