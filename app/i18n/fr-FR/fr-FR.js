@@ -127,6 +127,14 @@ export default {
             placeholder: 'Saisissez un nom de film, ou de personne...'
         },
         mostRelevant: 'Les plus pertinents',
+        show: {
+            all: 'Tout voir',
+            more: 'Voir plus'
+        },
+        group: {
+            movies: 'Films',
+            persons: 'Personnes'
+        },
         scope: {
             all: 'Tout',
             movie: 'Film',

@@ -19,6 +19,9 @@ const customConfig = {
                 if (req.originalUrl === '/') {
                     return '/index.html';
                 }
+                // if (req.originalUrl === '/images/') {
+                //     return '/images/';
+                // }
             }
         }
     }

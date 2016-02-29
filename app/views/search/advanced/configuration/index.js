@@ -1,9 +1,6 @@
 // seearch services
 import service from '../../../../services/search';
 
-//components
-import GroupComponent from '../components/group';
-
 //search configurations
 import cartridgeConfiguration from './cartridge';
 import lineMapper from '../../lines/mapper';
@@ -16,8 +13,6 @@ export const configuration = {
     cartridgeConfiguration,
     service,
     lineComponentMapper: lineMapper,
-    groupComponent: GroupComponent,
     groupMaxRows: 5, // ne fonctionne pas, n'est pas renvoyé dans la config du service search.
-    //
     scopesConfig: scopesConfig
 };

@@ -1,0 +1,21 @@
+@import "variables";
+@import "mixins";
+
+
+[data-focus='advanced-search'] {
+    [data-focus='result-container'] {
+        [data-focus="group-container"] {
+            h3 {
+                span:nth-child(2) {
+                    color: $secondary-text-color;
+                    &:after {
+                        content: ')';
+                    }
+                    &:before {
+                        content: '(';
+                    }
+                }
+            }
+        }
+    }
+}
