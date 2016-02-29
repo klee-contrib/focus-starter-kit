@@ -24,7 +24,7 @@ export default React.createClass({
     },
     mixins: [builtInComponents, definitionMixin, storeBehaviour],
     definitionPath: 'person',
-    stores: [{store: personStore, properties: ['person']}],
+    stores: [{store: personStore, properties: ['personIdentity', 'personBiography']}],
 
     /** @inheritDoc */
     getInitialState(){

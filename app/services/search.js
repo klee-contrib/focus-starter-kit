@@ -4,36 +4,26 @@ import commonUrl from '../config/server/common';
 import moviesUrl from '../config/server/movies';
 import personsUrl from '../config/server/persons';
 
+import trim from 'lodash/string/trim';
+
 export default {
 
-    _rewriteFacets(facets) {
-        if(facets.length === 1) {
-            return this._rewriteFacet(facets[0]);
-        }
-        const newFacets = [];
-        facets.map((facet) => {
-            newFacets.push(this._rewriteFacet(facet));
-        });
-        return newFacets;
-    },
-
-    _rewriteFacet(facet) {
-        const newFacet = {};
-        newFacet[facet.key] = facet.value;
-        return newFacet;
-    },
-
-    /**
-    * Search with scope.
-    * @param  {Object} AdvancedSearch config that launches the call of this service
-    * @return {Promise}
-    */
-    scoped(config) {
+    _transformConfig(config, includeFacets = true) {
         const {data} = config;
-        const {criteria, facets, groups} = data;
-        const {query, scope} = criteria;
-        const rewrittenFacets = this._rewriteFacets(facets);
-        config.data = { criteria: query, facets: rewrittenFacets, group: groups };
+        const {criteria, facets, group} = data;
+        const {query} = criteria;
+        const trimmedGroup = trim(group);
+        config.data = { criteria: query };
+        if(includeFacets) {
+            config.data['facets'] = facets;  // we should have to do this. check with backend API to remove that.
+        }
+        if(trimmedGroup.length > 0) {
+            config.data['group'] = trimmedGroup;
+        }
+        return config;
+    },
+
+    _search(config, scope) { // this should the target : search service should be written this way.
         switch (scope) {
             case 'movie':
                 console.log(`[SEARCH MOVIE] config: ${JSON.stringify(config)}`);
@@ -42,10 +32,21 @@ export default {
                 console.log(`[SEARCH PERSON] config: ${JSON.stringify(config)}`);
                 return fetch(personsUrl.search(config));
             default:
-                console.error(`Unknown scope ${scope}. The backend search web service is not called.`);
-                return;
+                console.log(`[SEARCH ALL] config: ${JSON.stringify(config)}`);
+                return fetch(commonUrl.search(config));
         }
+    },
 
+    /**
+    * Search with scope.
+    * @param  {Object} AdvancedSearch config that launches the call of this service
+    * @return {Promise}
+    */
+    scoped(config) {
+        const {criteria} = config.data;
+        const {scope} = criteria;
+        const serverConfig = this._transformConfig(config);
+        return this._search(serverConfig, scope);
     },
     /**
     * Search without scope.
@@ -53,11 +54,7 @@ export default {
     * @return {Promise}
     */
     unscoped(config) {
-        const {data} = config;
-        const {criteria} = data;
-        const {query, scope} = criteria;
-        config.data = { criteria: query };
-        console.log(`[SEARCH] call search unscoped with config.\nCONFIGURATION: ${JSON.stringify(config)}`);
-        return fetch(commonUrl.search(config));
+        let serverConfig = this._transformConfig(config, false);
+        return this._search(serverConfig);
     }
 };
