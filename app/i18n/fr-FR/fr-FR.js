@@ -122,6 +122,7 @@ export default {
             title: 'Vous recherchez ?'
         },
         empty: 'Aucun résultat',
+        loadingMore: 'Chargement des résultats suivants...',
         mostRelevant: 'Les plus pertinents',
         show: {
             all: 'Tout voir',
