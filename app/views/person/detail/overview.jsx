@@ -27,8 +27,8 @@ export default React.createClass({
         const {code} = this.state;
         const url = `http://www.allocine.fr/personne/fichepersonne_gen_cpersonne=${code}.html`;
         return (
-            <Panel title='person.detail.overview' data-demo='overview'>
-                <Button label={translate('person.action.consult.allocine')} type='button' handleOnClick={() => window.open(url,'_blank')} />
+            <Panel title='view.person.detail.overview' data-demo='overview'>
+                <Button label={translate('view.person.action.consult.allocine')} type='button' handleOnClick={() => window.open(url,'_blank')} />
             </Panel>
         );
     }

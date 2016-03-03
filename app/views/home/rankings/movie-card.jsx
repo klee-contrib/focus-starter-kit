@@ -19,7 +19,7 @@ const MovieCard = ({poster, originalTitle, productionYear, userRating, runtime, 
                         <i className='material-icons'>schedule</i><div data-role='caption'>{moment.utc(moment.duration(runtime, 'seconds').asMilliseconds()).format('h:mm')}</div>
                     </div>
                     <div data-role='detail-button'>
-                        <Button label={translate('movie.rankings.viewDetails')} handleOnClick={() => history.navigate(`#movies/${code}`, true)}/>
+                        <Button label={translate('view.movie.rankings.viewDetails')} handleOnClick={() => history.navigate(`#movies/${code}`, true)}/>
                     </div>
                 </div>
             </div>

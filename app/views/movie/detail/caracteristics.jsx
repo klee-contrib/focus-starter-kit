@@ -22,7 +22,7 @@ export default React.createClass({
     /** @inheritDoc */
     renderContent() {
         return (
-            <Panel actions={this._renderActions} title='movie.detail.caracteristics'>
+            <Panel actions={this._renderActions} title='view.movie.detail.caracteristics'>
                 {this.fieldFor('title')}
                 {this.fieldFor('originalTitle')}
                 {this.fieldFor('keywords')}

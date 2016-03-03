@@ -26,7 +26,7 @@ export default React.createClass({
                 {poster && hasZoom &&
                     <div>
                         <div className='zoom'>
-                            <Button icon='zoom_in' shape='fab' label='person.card.consult.info' handleOnClick={this.openPosterPopin} />
+                            <Button icon='zoom_in' shape='fab' label='view.person.card.consult.info' handleOnClick={this.openPosterPopin} />
                         </div>
                         <Modal className='popin-poster' ref='modal-poster'>
                             <img alt={title} src={poster} title={title} />

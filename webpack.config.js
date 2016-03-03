@@ -8,8 +8,9 @@ const customConfig = localFocus ? {
         alias: {
             'focus-core': path.resolve(process.cwd(), '../focus-core'),
             'focus-components': path.resolve(process.cwd(), '../focus-components'),
-            react: path.resolve(process.cwd(), './node_modules/react'),
-            moment: path.resolve(process.cwd(), './node_modules/moment')
+            moment: path.resolve(process.cwd(), './node_modules/moment'),
+            numeral: path.resolve(process.cwd(), './node_modules/numeral'),
+            react: path.resolve(process.cwd(), './node_modules/react')
         }
     }
 } : {};

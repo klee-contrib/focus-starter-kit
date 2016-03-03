@@ -22,7 +22,7 @@ export default React.createClass({
         const {fullName, photoURL} = this.state;
         return (
             <div data-demo='header-content-summary'>
-                <div className="key-concept">{translate('person.keyConcept.name')}</div>
+                <div className="key-concept">{translate('view.person.keyConcept.name')}</div>
                 <Picture url={photoURL} title={fullName} />
                 <h4>{this.textFor('fullName')}</h4>
             </div>

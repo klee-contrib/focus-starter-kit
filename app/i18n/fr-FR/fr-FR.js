@@ -30,110 +30,106 @@ export default {
         }
     },
     countryList:{
-      title: 'Administration de la liste des pays',
-      filter: 'Filtrez la liste'
+        title: 'Administration de la liste des pays',
+        filter: 'Filtrez la liste'
     },
     country:{
-      detail:{
-        title: 'Detail du pays',
-        infos: 'Informations'
-      },
-      id: 'Id',
-      code: 'Code',
-      name: 'Nom',
-      maps: 'Carte'
+        detail:{
+            title: 'Detail du pays',
+            infos: 'Informations'
+        },
+        id: 'Id',
+        code: 'Code',
+        name: 'Nom',
+        maps: 'Carte'
     },
-    movie: {
-        action: {
-            addphoto: 'Ajouter un poster',
-            preview: 'Prévisualiser',
-            consult: {
-                sheet: 'Consulter la fiche',
-                allocine: 'Voir sur allocine'
+    view: {
+        movie: {
+            action: {
+                addphoto: 'Ajouter un poster',
+                preview: 'Prévisualiser',
+                consult: {
+                    sheet: 'Consulter la fiche',
+                    allocine: 'Voir sur allocine'
+                },
+                create: 'Créer la fiche',
+                filter: {
+                    all: 'Tous',
+                    actors: 'Acteurs',
+                    camera: 'Camera man',
+                    directors: 'Réalisateurs',
+                    producers: 'Producteurs',
+                    writers: 'Scénaristes'
+                },
+                watchTrailer: 'Voir la bande annonce'
             },
-            create: 'Créer la fiche',
-            watchTrailer: 'Voir la bande annonce',
-            filter: {
-                all: 'Tous',
+            detail: {
                 actors: 'Acteurs',
-                camera: 'Camera man',
+                casting: 'Casting',
+                cameramen: 'Camera men',
+                caracteristics: 'Caractéristiques',
                 directors: 'Réalisateurs',
+                overview: 'Résumé',
+                posters: 'Affiches',
                 producers: 'Producteurs',
+                synopsis: 'Synopsis',
+                trailer: 'Bande annonce',
                 writers: 'Scénaristes'
+            },
+            keyConcept: {
+                name: 'Film'
+            },
+            rankings: {
+                latest: {
+                    title: 'Films les plus récents'
+                },
+                best: {
+                    title: 'Films les mieux notés'
+                },
+                viewDetails: 'Voir détails'
             }
         },
-        keyConcept: {
-            name: 'Film'
-        },
-        detail: {
-            actors: 'Acteurs',
-            casting: 'Casting',
-            cameramen: 'Camera men',
-            caracteristics: 'Caractéristiques',
-            directors: 'Réalisateurs',
-            overview: 'Résumé',
-            posters: 'Affiches',
-            producers: 'Producteurs',
-            synopsis: 'Synopsis',
-            trailer: 'Bande annonce',
-            writers: 'Scénaristes'
-        },
-        rankings: {
-            latest: {
-                title: 'Films les plus récents'
+        person: {
+            action: {
+                addphoto: 'Ajouter une photo',
+                preview: 'Prévisualiser',
+                consult: {
+                    sheet: 'Consulter la fiche',
+                    allocine: 'Voir sur allocine'
+                },
+                create: 'Créer la fiche'
             },
-            best: {
-                title: 'Films les mieux notés'
+            detail: {
+                biography: 'Biographie',
+                identity: 'Identité',
+                movies: 'Filmographie',
+                overview: 'Résumé',
+                lastmovies: 'Derniers films'
             },
-            viewDetails: 'Voir détails'
+            keyConcept: {
+                name: 'Personne'
+            }
         },
-        unknown: 'Aucune fiche'
     },
-    movies: 'Films',
-    person: {
-        action: {
-            addphoto: 'Ajouter une photo',
-            preview: 'Prévisualiser',
-            consult: {
-                sheet: 'Consulter la fiche',
-                allocine: 'Voir sur allocine'
-            },
-            create: 'Créer la fiche'
-        },
-        keyConcept: {
-            name: 'Personne'
-        },
-        detail: {
-            biography: 'Biographie',
-            identity: 'Identité',
-            movies: 'Filmographie',
-            overview: 'Résumé',
-            lastmovies: 'Derniers films'
-        },
-        unknown: 'Aucune  fiche'
-    },
-    persons: 'Personnes',
     result: {
-        for: 'résultat pour'
-    },
-    results: {
-        for: 'résultats pour'
+        for: 'résultat(s) pour'
     },
     search: {
-        cartridge: {
-            title: 'Vous recherchez ?'
-        },
         bar: {
             placeholder: 'Saisissez un nom de film, ou de personne...'
         },
+        cartridge: {
+            title: 'Vous recherchez ?'
+        },
+        empty: 'Aucun résultat',
         mostRelevant: 'Les plus pertinents',
         show: {
             all: 'Tout voir',
             more: 'Voir plus'
         },
         group: {
-            movies: 'Films',
-            persons: 'Personnes'
+            movie: 'Film',
+            person: 'Personne'
         },
         scope: {
             all: 'Tout',

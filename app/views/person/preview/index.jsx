@@ -50,16 +50,16 @@ export default React.createClass({
                         <h5>{this.textFor('activity')}</h5>
                         <div>{this.textFor('shortBiography')}</div>
                         <br/>
-                        <Button label='person.action.consult.sheet' handleOnClick={() => history.navigate(`persons/${code}`, true)} />
+                        <Button label='view.person.action.consult.sheet' handleOnClick={() => history.navigate(`persons/${code}`, true)} />
                     </div>
                 </div>
                 <div data-demo='preview-content'>
-                    <Panel title='person.detail.identity'>
+                    <Panel title='view.person.detail.identity'>
                         {this.displayFor('fullName')}
                         {this.displayFor('firstName')}
                         {this.displayFor('birthDate')}
                     </Panel>
-                    <Panel title='person.detail.lastmovies'>
+                    <Panel title='view.person.detail.lastmovies'>
 
                     </Panel>
                 </div>

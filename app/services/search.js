@@ -4,36 +4,29 @@ import commonUrl from '../config/server/common';
 import moviesUrl from '../config/server/movies';
 import personsUrl from '../config/server/persons';
 
-import trim from 'lodash/string/trim';
+import searchParser from './helpers/old-search-parser';
 
 export default {
 
-    _transformConfig(config, includeFacets = true) {
-        const {data} = config;
-        const {criteria, facets, group} = data;
-        const {query} = criteria;
-        const trimmedGroup = trim(group);
-        config.data = { criteria: query };
-        if(includeFacets) {
-            config.data['facets'] = facets;  // we should have to do this. check with backend API to remove that.
-        }
-        if(trimmedGroup.length > 0) {
-            config.data['group'] = trimmedGroup;
-        }
-        return config;
-    },
-
-    _search(config, scope) { // this should the target : search service should be written this way.
+    /**
+     * Target search service call.
+     * (This should the target : search service should be written this way.)
+     *
+     * @param  {object} config search call configuration.
+     * @param  {string} scope  scope search
+     * @return {object}        search response
+     */
+    _search(config, scope) {
         switch (scope) {
             case 'movie':
                 console.log(`[SEARCH MOVIE] config: ${JSON.stringify(config)}`);
-                return fetch(moviesUrl.search(config));
+                return fetch(moviesUrl.search(config)).then(data => searchParser.transformResponse(data));
             case 'person':
                 console.log(`[SEARCH PERSON] config: ${JSON.stringify(config)}`);
-                return fetch(personsUrl.search(config));
+                return fetch(personsUrl.search(config)).then(data => searchParser.transformResponse(data));
             default:
                 console.log(`[SEARCH ALL] config: ${JSON.stringify(config)}`);
-                return fetch(commonUrl.search(config));
+                return fetch(commonUrl.search(config)).then(data => searchParser.transformResponse(data));
         }
     },
 
@@ -45,7 +38,7 @@ export default {
     scoped(config) {
         const {criteria} = config.data;
         const {scope} = criteria;
-        const serverConfig = this._transformConfig(config);
+        const serverConfig = searchParser.transformConfig(config);
         return this._search(serverConfig, scope);
     },
     /**
@@ -54,7 +47,7 @@ export default {
     * @return {Promise}
     */
     unscoped(config) {
-        let serverConfig = this._transformConfig(config, false);
+        const serverConfig = searchParser.transformConfig(config, false);
         return this._search(serverConfig);
     }
 };

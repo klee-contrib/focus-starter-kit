@@ -51,7 +51,7 @@ export default React.createClass({
                         <h5>{this.textFor('productionYear')}</h5>
                         <div>{this.textFor('synopsis')}</div>
                         <br/>
-                        <Button label='person.action.consult.sheet' handleOnClick={() => history.navigate(`movies/${id}`, true)} />
+                        <Button label='view.movie.action.consult.sheet' handleOnClick={() => history.navigate(`movies/${id}`, true)} />
                     </div>
                 </div>
                 <div data-demo='preview-content'>

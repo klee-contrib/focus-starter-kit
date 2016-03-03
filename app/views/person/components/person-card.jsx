@@ -14,7 +14,7 @@ function PersonCard({code, onClickPreview, leadActor, linked, name, photoURL, ro
                 </div>
                 {!photoURL &&
                     <span className="mdl-card__menu">
-                        <Button shape='icon' label='person.action.add-photo' icon='add_a_photo' handleOnClick={() => console.log('click on person card add photo')} />
+                        <Button shape='icon' label='view.person.action.add-photo' icon='add_a_photo' handleOnClick={() => console.log('click on person card add photo')} />
                     </span>
                 }
             </div>
@@ -25,8 +25,8 @@ function PersonCard({code, onClickPreview, leadActor, linked, name, photoURL, ro
                 </div>
             </div>
             <div className='mdl-card__actions mdl-card--border'>
-                <Button shape={null} label='person.action.preview' handleOnClick={() => onClickPreview(+code)} />
-                <Button shape={null} label='person.action.consult.sheet' handleOnClick={() => history.navigate(`persons/${code}`, true)} />
+                <Button shape={null} label='view.person.action.preview' handleOnClick={() => onClickPreview(+code)} />
+                <Button shape={null} label='view.person.action.consult.sheet' handleOnClick={() => history.navigate(`persons/${code}`, true)} />
             </div>
         </div>
     );

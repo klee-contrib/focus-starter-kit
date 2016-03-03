@@ -27,7 +27,7 @@ export default React.createClass({
                     </div>
                     {!poster &&
                         <span className="mdl-card__menu">
-                            <Button shape='icon' label='movie.action.add-photo' icon='add_a_photo' />
+                            <Button shape='icon' label='view.movie.action.add-photo' icon='add_a_photo' />
                         </span>
                     }
                 </div>
@@ -39,8 +39,8 @@ export default React.createClass({
                     </div>
                 </div>
                 <div className='mdl-card__actions mdl-card--border'>
-                    <Button shape={null} label='movie.action.preview' handleOnClick={() => onClickPreview(+code)} />
-                    <Button shape={null} label='movie.action.consult.sheet' handleOnClick={() => history.navigate(`movies/${code}`, true)} />
+                    <Button shape={null} label='view.movie.action.preview' handleOnClick={() => onClickPreview(+code)} />
+                    <Button shape={null} label='view.movie.action.consult.sheet' handleOnClick={() => history.navigate(`movies/${code}`, true)} />
                 </div>
             </div>
         );
