@@ -13,7 +13,7 @@ export default React.createClass({
     /** @inheritDoc */
     render() {
         return (
-            <Panel title='movie.detail.posters'>
+            <Panel title='view.movie.detail.posters'>
                 Ici les posters.
             </Panel>
         );

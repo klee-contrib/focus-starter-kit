@@ -24,7 +24,7 @@ export default React.createClass({
             <div data-demo='header-content-expanded'>
                 <Picture url={photoURL} title={fullName} />
                 <div data-demo='header-content-expanded__infos'>
-                    <div className="key-concept">{translate('person.keyConcept.name')}</div>
+                    <div className="key-concept">{translate('view.person.keyConcept.name')}</div>
                     <h3>{this.textFor('fullName')}</h3>
                     <h5>{this.textFor('activity')}</h5>
                     <div>{this.textFor('shortBiography')}</div>

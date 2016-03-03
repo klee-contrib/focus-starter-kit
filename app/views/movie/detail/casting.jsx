@@ -68,7 +68,7 @@ export default React.createClass({
     _getActionLabel(filter) {
         const people = this._getPeopleByName(filter);
         const size = people ? people.length : 0;
-        return`${translate(`movie.action.filter.${filter}`)} (${size})`;
+        return`${translate(`view.movie.action.filter.${filter}`)} (${size})`;
     },
 
     _isActive(value) {
@@ -82,7 +82,7 @@ export default React.createClass({
         const people = this._getPeople();
         const list = people ? people : [];
         return (
-            <Panel title='movie.detail.casting'>
+            <Panel title='view.movie.detail.casting'>
                 <div className='filters-bar'>
                     {['actors','camera','directors','producers','writers'].map(peopleType =>
                         <Button key={`btn-filter-${peopleType}`} shape={null} label={this._getActionLabel(peopleType)} handleOnClick={() => this._setPeople(peopleType)} data-active={this._isActive(peopleType)} />

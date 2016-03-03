@@ -22,7 +22,7 @@ export default React.createClass({
     /** @inheritDoc */
     renderContent() {
         return (
-            <Panel actions={this._renderActions} title='person.detail.identity'>
+            <Panel actions={this._renderActions} title='view.person.detail.identity'>
                 {this.fieldFor('fullName')}
                 {this.fieldFor('firstName')}
                 {this.fieldFor('sex')}

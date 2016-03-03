@@ -26,7 +26,7 @@ export default React.createClass({
     renderContent() {
         const {trailerHRef} = this.state;
         return (
-            <Panel title='movie.detail.trailer'>
+            <Panel title='view.movie.detail.trailer'>
                 {this.fieldFor('trailerName')}
                 {this.fieldFor('trailerHRef')}
                 <br/>

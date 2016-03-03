@@ -22,7 +22,7 @@ export default React.createClass({
         const {poster, title} = this.state;
         return (
             <div data-demo='header-content-summary'>
-                <div className="key-concept">{translate('movie.keyConcept.name')}</div>
+                <div className="key-concept">{translate('view.movie.keyConcept.name')}</div>
                 {poster &&
                     <Poster poster={poster} title={title} />
                 }

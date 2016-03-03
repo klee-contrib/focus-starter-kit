@@ -38,7 +38,7 @@ export default React.createClass({
     render() {
         const {personMovieLinks, movieCodePreview} = this.state;
         return (
-            <Panel title='person.detail.movies'>
+            <Panel title='view.person.detail.movies'>
                 <MovieCardList movies={personMovieLinks} onClickPreview={(movieId) => this.setState({movieCodePreview: movieId})}/>
                 {movieCodePreview &&
                     <Modal open={true} onPopinClose={this._onCreateMoviePopinClose} type='from-right'>
