@@ -15,6 +15,7 @@ export default {
                 FCT_MOVIE_YEAR: 'Année',
                 FCT_PERSON_ACTIVITY: 'Activité',
                 FCT_PERSON_NAME: 'Nom',
+                FCT_PERSON_SEX: 'Sexe',
                 FCT_MOVIE_SEX: 'Sexe', // à renommer en FCT_PERSON_SEX sur le backend car concerne les personnes
                 FCT_SCOPE: 'Thème',
             }
