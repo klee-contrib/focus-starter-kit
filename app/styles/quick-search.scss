@@ -14,5 +14,31 @@
             line-height: 22px;
             font-weight: 600px;
         }
+        [data-focus="group-container"] {
+            h3 {
+                span:nth-child(2) {
+                    color: $secondary-text-color;
+                    &:after {
+                        content: ')';
+                    }
+                    &:before {
+                        content: '(';
+                    }
+                }
+            }
+            [data-focus='group-container-title'] {
+                display: flex;
+                align-items: center;
+
+                & > div:nth-child(1) {
+                    flex-grow: 4;
+                }
+
+                [data-focus='group-container-actions__right'] {
+                    text-align: right;
+                    flex-grow: 1;
+                }
+            }
+        }
     }
 }

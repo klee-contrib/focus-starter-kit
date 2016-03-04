@@ -45,9 +45,11 @@ export default React.createClass({
             <div>
                 <Menu onPopinClose={this._onQuickSearchModalToggle} items={items} handleBrandClick={this._onHomeClick} />
                 {isQuickSearchModalOpen &&
-                    <Modal open={true} type='from-menu'>
-                        <QuickSearchView />
-                    </Modal>
+                    <div data-demo='quick-search-area'>
+                        <Modal open={true} type='from-menu'>
+                            <QuickSearchView handleClosePopin={this._onQuickSearchModalToggle} />
+                        </Modal>
+                    </div>
                 }
             </div>
         );
