@@ -1,6 +1,7 @@
 import builder from 'focus-core/util/url/builder';
+import {apiRoot} from './index';
 
-const rankingsRoot = './movies/rankings/';
+const rankingsRoot = `${apiRoot}movies/rankings/`;
 
 export default {
     dateRanking: builder(rankingsRoot + 'date', 'GET'),
