@@ -1,16 +1,18 @@
 @import './_variables.scss';
 
 $width: 250px;
+$height: 2.8 / 2 * $width;
 
 [data-role='homepage'] {
     [data-role='ranking'] {
         opacity: 0.99;
         margin-bottom: 20px;
-
+        padding: 0 15px;
         h1 {
             color: $accent-color;
             font-size: 2em;
-            margin-left: 30px;
+            margin-left: 15px;
+            line-height: 30px;
         }
         [data-role='cards'] {
             display: flex;
@@ -19,9 +21,10 @@ $width: 250px;
 
             [data-role='movie-card'] {
                 width: $width;
+                margin: 20px 0;
                 [data-role='poster'] {
                     width: $width;
-                    height: 2.8 / 2 * $width;
+                    height: $height;
                     position: relative;
                     background-color: #EEE;
 
@@ -32,9 +35,10 @@ $width: 250px;
                     }
                     & > i {
                         position: absolute;
-                        top: 100px;
-                        left: 75px;
+                        top: 130px;
+                        left: 95px;
                         font-size: 4em;
+                        color: rgba(0, 0, 0, 0.35);
                     }
 
                     [data-role='overlay'] {
