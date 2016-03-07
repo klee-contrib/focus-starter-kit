@@ -1,6 +1,7 @@
 import builder from 'focus-core/util/url/builder';
+import {apiRoot} from './index';
 
-const commonRoot = './common/';
+const commonRoot = `${apiRoot}common/`;
 
 export default {
     /* loads */

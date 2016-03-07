@@ -20,13 +20,17 @@ const beforeDomContentLoadedScript = require('./initializer/before');
 beforeDomContentLoadedScript.initialize();
 
 // initializers after DOM CONTENT LOADED
-document.addEventListener('DOMContentLoaded', () => {
+const onDOMContentLoaded = () => {
     const afterDomContentLoadedScript = require('./initializer/after');
     afterDomContentLoadedScript.initialize();
     console.log('#########################[START APP]############################');
     require('./application')();
     console.log('#########################[APP STARTED]##########################');
-});
+};
+
+window.onDOMContentLoaded = onDOMContentLoaded;
+
+document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
 
 //import app demo styles
 import './styles';

@@ -6,6 +6,23 @@
 </head>
 <body>
     <div class="demo-app"/>
-    <script src="focus-demo-app.js"></script>
+    <script>
+    var bundlePath = './focus-demo-app.js';
+    if(typeof process !== 'undefined' && process.env.ENVIRONMENT === 'DEV') {
+        bundlePath = 'http://localhost:3000/focus-demo-app.js';
+    }
+    var bundleScriptEl = document.createElement('script');
+    bundleScriptEl.src = bundlePath;
+    document.currentScript.parentNode.insertBefore(bundleScriptEl, document.currentScript);
+    </script>
+    <script>
+    document.onreadystatechange = function () {
+        var state = document.readyState;
+        if (state == 'complete') {
+            window.onDOMContentLoaded();
+        }
+    }
+    </script>
+    <script src=''></script>
 </body>
 </html>
