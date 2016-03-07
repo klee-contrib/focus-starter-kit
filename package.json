@@ -87,8 +87,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "focus-core": "^0.13.0-beta5",
-    "focus-components": "^0.13.0-beta5",
+    "focus-core": "^0.13.0-rc0",
+    "focus-components": "^0.13.0-rc0",
     "focus-notifications": "^0.2.0-rc6",
     "immutable": "^3.7.2",
     "jquery": "3.0.0-alpha1",
