@@ -72,12 +72,14 @@
 [data-demo='header-content-expanded'] {
     [data-demo="poster"] {
         width: $poster-large-width;
+        min-width: $poster-large-width;
         height: $poster-large-height;
     }
 }
 [data-demo='header-content-summary'] {
     [data-demo="poster"] {
         width: $poster-small-width;
+        min-width: $poster-small-width;
         height: $poster-small-height;
         margin-right: 10px;
         i {

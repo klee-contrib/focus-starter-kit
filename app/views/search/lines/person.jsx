@@ -16,7 +16,7 @@ export default React.createClass({
         const {code} = data;
         return (
             <div key={code} data-demo='person-line'>
-                <div className='level1'>{this.textFor('fullName') || this.textFor('fullname')}</div>
+                <div className='level1'>{this.textFor('fullname')}</div>
                 <div className='level2'>{this.textFor('activity')}</div>
             </div>
         );

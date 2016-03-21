@@ -16,13 +16,19 @@ export default React.createClass({
     _getMenuItems() {
         return [
             { icon:'home', onClick:() => { this._onHomeClick(); } }, // route: 'home'
-            { icon:'search', onClick:() => { this._onQuickSearchModalToggle() }}
+            { icon:'search', onClick:() => { this._onQuickSearchModalToggle() }},
+            { icon:'build', onClick:() => { this._onAdminClick(); } }
         ];
     },
 
     _onHomeClick() {
         this._onMenuItemClick();
         history.navigate('#', true);
+    },
+
+    _onAdminClick() {
+        this._onMenuItemClick();
+        history.navigate('#admin/masterdata', true);
     },
 
     _onMenuItemClick() {

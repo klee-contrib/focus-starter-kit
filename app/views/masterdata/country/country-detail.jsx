@@ -17,14 +17,14 @@ export default React.createClass({
     /** @inheritDoc */
     renderContent() {
         return (
-          <div>
-            <h3>{translate('country.detail.title')}</h3>
-            {this.displayFor('id')}
-            {this.fieldFor('code')}
-            {this.fieldFor('name')}
-            {this.fieldFor('maps')}
-            {this._renderActions()}
-          </div>
+            <div>
+                <h3>{translate('country.detail.title')}</h3>
+                {this.displayFor('id')}
+                {this.fieldFor('code')}
+                {this.fieldFor('name')}
+                {this.fieldFor('maps')}
+                {this._renderActions()}
+            </div>
         );
     }
-})
+});

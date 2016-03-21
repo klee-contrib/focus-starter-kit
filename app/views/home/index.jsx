@@ -1,5 +1,4 @@
 import React from 'react';
-import application from 'focus-core/application';
 import history from 'focus-core/history';
 
 // web components

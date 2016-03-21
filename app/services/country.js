@@ -249,14 +249,12 @@ let fakeData = [
 
 
 export function loadCountryById(id) {
-    console.log('iDDDDD', id);
     return Promise.resolve(fakeData.find(country => country.id === id));
 }
 
 export function loadCountryListByCriteria({data: bodyData, urlData}) {
     const {criteria} = bodyData;
     const {skip, top} = urlData;
-    console.log('criteria', criteria);
     const filteredData = criteria !== null && criteria !== undefined ? fakeData.filter(country => country.name.toLowerCase().indexOf(criteria) !== -1) : fakeData;
     const begin = skip;
     const end = begin + top;
