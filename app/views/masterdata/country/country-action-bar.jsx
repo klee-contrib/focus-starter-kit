@@ -18,4 +18,4 @@ export default function CountryActionBar({onLetterClick, criteria}) {
           }
         </ul>
     );
-}
+};

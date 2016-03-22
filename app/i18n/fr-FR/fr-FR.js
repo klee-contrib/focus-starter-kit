@@ -6,30 +6,6 @@ export default {
         save: 'Enregistrer',
         watchTrailer: 'Voir la bande annonce'
     },
-    live: {
-        filter: {
-            title: 'Filtres',
-            facets: {
-                FCT_MOVIE_TITLE: 'Titre',
-                FCT_MOVIE_TYPE: 'Type',
-                FCT_MOVIE_YEAR: 'Année',
-                FCT_PERSON_ACTIVITY: 'Activité',
-                FCT_PERSON_NAME: 'Nom',
-                FCT_PERSON_SEX: 'Sexe',
-                FCT_MOVIE_SEX: 'Sexe', // à renommer en FCT_PERSON_SEX sur le backend car concerne les personnes
-                FCT_SCOPE: 'Thème',
-            }
-        }
-    },
-    list: {
-        actionBar: {
-            selection: {
-                all: 'Tout',
-                none: 'Aucun'
-            },
-            ungroup: 'Dégrouper'
-        }
-    },
     countryList:{
         title: 'Administration de la liste des pays',
         filter: 'Filtrez la liste'
@@ -44,7 +20,72 @@ export default {
         name: 'Nom',
         maps: 'Carte'
     },
+    field: {
+        required: 'Ce champ est obligatoire'
+    },
+    live: {
+        filter: {
+            title: 'Filtres',
+            facets: {
+                FCT_MOVIE_TITLE: 'Titre',
+                FCT_MOVIE_TYPE: 'Type',
+                FCT_MOVIE_YEAR: 'Année',
+                FCT_PERSON_ACTIVITY: 'Activité',
+                FCT_PERSON_NAME: 'Nom',
+                FCT_PERSON_SEX: 'Sexe',
+                FCT_SCOPE: 'Thème'
+            }
+        }
+    },
+    list: {
+        actionBar: {
+            selection: {
+                all: 'Tout',
+                none: 'Aucun'
+            },
+            ungroup: 'Dégrouper'
+        }
+    },
+    result: {
+        for: 'résultat(s) pour'
+    },
+    search: {
+        bar: {
+            placeholder: 'Saisissez un nom de film, ou de personne...'
+        },
+        cartridge: {
+            title: 'Vous recherchez ?'
+        },
+        empty: 'Aucun résultat',
+        loadingMore: 'Chargement des résultats suivants...',
+        mostRelevant: 'Les plus pertinents',
+        show: {
+            all: 'Tout voir',
+            more: 'Voir plus'
+        },
+        group: {
+            movie: 'Film',
+            person: 'Personne'
+        },
+        scope: {
+            all: 'Tout',
+            movie: 'Film',
+            person: 'Personne'
+        }
+    },
+    select: {
+        unSelected: ''
+    },
     view: {
+        admin: {
+            masterdata: {
+                title: 'Listes de référence',
+                countries: 'Pays',
+                home: 'Choisissez une liste de ref dans le menu...',
+                movietype: 'Types de film',
+                gender: 'Sexes'
+            }
+        },
         movie: {
             action: {
                 addphoto: 'Ajouter un poster',
@@ -111,32 +152,5 @@ export default {
                 name: 'Personne'
             }
         },
-    },
-    result: {
-        for: 'résultat(s) pour'
-    },
-    search: {
-        bar: {
-            placeholder: 'Saisissez un nom de film, ou de personne...'
-        },
-        cartridge: {
-            title: 'Vous recherchez ?'
-        },
-        empty: 'Aucun résultat',
-        loadingMore: 'Chargement des résultats suivants...',
-        mostRelevant: 'Les plus pertinents',
-        show: {
-            all: 'Tout voir',
-            more: 'Voir plus'
-        },
-        group: {
-            movie: 'Film',
-            person: 'Personne'
-        },
-        scope: {
-            all: 'Tout',
-            movie: 'Film',
-            person: 'Personne'
-        }
     }
 };

@@ -11,7 +11,7 @@ export const identityActions = {
     }),
     save: actionBuilder({
         node: 'personIdentity',
-        service: personSerivces.savePersonIdentity,
+        service: personSerivces.updatePersonIdentity,
         shouldDumpStoreOnActionCall: true,
         status: 'saved'
     })
@@ -26,7 +26,7 @@ export const biographyActions = {
     }),
     save: actionBuilder({
         node: 'personBiography',
-        service: personSerivces.savePersonBiography,
+        service: personSerivces.updatePersonBiography,
         shouldDumpStoreOnActionCall: true,
         status: 'saved'
     })

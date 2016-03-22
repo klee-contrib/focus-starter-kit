@@ -4,11 +4,8 @@ import {apiRoot} from './index';
 const personRoot = `${apiRoot}persons/`;
 
 export default {
-    loadPerson: builder(personRoot + '${id}', 'GET'),
-
-    /* save */
-    savePerson: builder(personRoot + '${id}', 'PUT'),
-
-    /* search */
-    search: builder(personRoot + 'search?listState.skip=${skip}&listState.sortDesc=${sortDesc}&listState.top=${top}', 'POST')
+    create: builder(personRoot, 'POST'),
+    load: builder(personRoot + '${id}', 'GET'),
+    search: builder(personRoot + 'search?listState.skip=${skip}&listState.sortDesc=${sortDesc}&listState.top=${top}', 'POST'),
+    update: builder(personRoot + '${id}', 'PUT')
 };

@@ -8,6 +8,7 @@
     margin: 0;
     font-family: Roboto, Helvetica, Arial, sans-serif;
     color: $primary-text-color;
+    position: relative;
 
     [data-focus='layout'] {
         background-color: transparent;

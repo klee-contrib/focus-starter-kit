@@ -18,6 +18,7 @@ export default React.createClass({
     definitionPath: 'person',
     stores: [{store: personStore, properties: ['personIdentity']}],
     action: identityActions,
+    referenceNames: ['genders'],
 
     /** @inheritDoc */
     renderContent() {
@@ -25,7 +26,7 @@ export default React.createClass({
             <Panel actions={this._renderActions} title='view.person.detail.identity'>
                 {this.fieldFor('fullName')}
                 {this.fieldFor('firstName')}
-                {this.fieldFor('sex')}
+                {this.fieldFor('sex', {listName: 'genders'})}
                 {this.fieldFor('birthDate')}
                 {this.fieldFor('birthPlace')}
                 {this.fieldFor('activity')}
