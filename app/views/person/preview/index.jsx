@@ -50,7 +50,7 @@ export default React.createClass({
                         <h5>{this.textFor('activity')}</h5>
                         <div>{this.textFor('shortBiography')}</div>
                         <br/>
-                        <Button label='view.person.action.consult.sheet' handleOnClick={() => history.navigate(`persons/${code}`, true)} />
+                        <Button label='view.person.action.consult.sheet' handleOnClick={() => {history.navigate(`persons/${code}`, true); window.scrollTo(0, 0);}} />
                     </div>
                 </div>
                 <div data-demo='preview-content'>

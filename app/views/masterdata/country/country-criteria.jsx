@@ -16,6 +16,7 @@ function CountryCriteria({onSearch}) {
                 placeholder={translate('countryList.filter')}
                 type='search'
                 name='search'
+                expandIcon='search'
             />
         </div>
     );

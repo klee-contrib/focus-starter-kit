@@ -5,7 +5,8 @@ import history from 'focus-core/history';
 //web components
 import {component as Button} from 'focus-components/common/button/action';
 
-function PersonCard({code, onClickPreview, leadActor, linked, name, photoURL, role}) {
+function PersonCard({onClickPreview, person}) {
+    const {code, leadActor, linked, name, photoURL, role} = person;
     return (
         <div className='mdl-card mdl-shadow--4dp' data-demo='material-card'>
             <div className='visuel'>
@@ -25,7 +26,7 @@ function PersonCard({code, onClickPreview, leadActor, linked, name, photoURL, ro
                 </div>
             </div>
             <div className='mdl-card__actions mdl-card--border'>
-                <Button shape={null} label='view.person.action.preview' handleOnClick={() => onClickPreview(+code)} />
+                {onClickPreview && <Button shape={null} label='view.person.action.preview' handleOnClick={() => onClickPreview(+code)} />}
                 <Button shape={null} label='view.person.action.consult.sheet' handleOnClick={() => history.navigate(`persons/${code}`, true)} />
             </div>
         </div>
@@ -34,12 +35,7 @@ function PersonCard({code, onClickPreview, leadActor, linked, name, photoURL, ro
 
 PersonCard.displayName = 'PersonCard';
 PersonCard.propTypes = {
-    code: PropTypes.number,
     onClickPreview: PropTypes.func,
-    leadActor: PropTypes.bool,
-    linked: PropTypes.bool,
-    name: PropTypes.string,
-    photoURL: PropTypes.string,
-    role: PropTypes.string
+    person: PropTypes.object.isRequired
 };
 export default PersonCard;

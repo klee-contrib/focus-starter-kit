@@ -62,14 +62,14 @@ $black-and-white-variant: 0.8;
             margin:10px 0;
         }
         .card-info--level1 {
-            font-size: 22px;
-            line-height: 24px;
+            font-size: 19px;
+            line-height: 22px;
         }
         .card-info--level2 {
-            font-size: 16px;
+            font-size: 15px;
         }
         .card-info--level3 {
-            font-size: 16px;
+            font-size: 15px;
             color: $secondary-text-color;
         }
     }
@@ -83,6 +83,23 @@ $black-and-white-variant: 0.8;
     .visuel {
         height: $height;
         @include picture('../images/unknown-person.gif');
+        .visuel-infos {
+            position: absolute;
+            bottom: 0;
+            height: 20px;
+            padding: 10px 0;
+            background: rgba(2,168,243, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #FFF;
+            & > div {
+                margin: 0 10px;
+                padding: 0 10px;
+                display: flex;
+                align-items: center;
+            }
+        }
     }
     @include card-info();
     [data-focus="button-action"] {

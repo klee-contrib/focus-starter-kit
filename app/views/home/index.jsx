@@ -4,6 +4,7 @@ import history from 'focus-core/history';
 // web components
 import {cartridgeBehaviour} from 'focus-components/page/mixin';
 import Rankings from './rankings';
+import DemoTitle from '../components/demo-title';
 
 //cartridge configuration
 import CartridgePageSearch from 'focus-components/page/search/search-header/cartridge';
@@ -29,6 +30,9 @@ export default React.createClass({
                 component: SummaryPageSearch,
                 props: { onSearchCriteriaChangeByUser: this._navigateAdvancedSearch, service: searchService }
             },
+            barLeft: {
+                component: DemoTitle
+            },
             cartridge: {
                 component: CartridgePageSearch,
                 props: { onSearchCriteriaChangeByUser: this._navigateAdvancedSearch, service: searchService }
@@ -43,7 +47,7 @@ export default React.createClass({
     /** @inheritDoc */
     render() {
         return (
-            <div data-role='homepage'>
+            <div data-demo='homepage'>
                 <Rankings/>
             </div>
         );

@@ -33,7 +33,7 @@ export default React.createClass({
         reference: PropTypes.string,
         ReferenceComponent: PropTypes.func
     },
-    getDefaultProps: function() {
+    getDefaultProps() {
         return {
             reference: null,
             ReferenceComponent: MasterdataHome

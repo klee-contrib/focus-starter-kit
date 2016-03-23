@@ -3,25 +3,45 @@ import React, {PropTypes} from 'react';
 
 //web components
 import PersonCard from './person-card';
+import {component as Modal} from 'focus-components/application/popin';
+import PersonPreview from '../../person/preview';
 
-function PersonCardList({onClickPreview, persons}) {
-    return (
-        <div data-demo='concept-card-list'>
-            {persons &&
-                persons.map(({code, leadActor, name, photoURL, role, linked}) => {
-                    const key = `person-card-${code}`;
-                    return (
-                        <PersonCard key={key} code={code} leadActor={leadActor} linked={linked} name={name} onClickPreview={onClickPreview} photoURL={photoURL} role={role} />
-                    );
-                })
-            }
-        </div>
-    );
-}
 
-PersonCardList.displayName = 'PersonCardList';
-PersonCardList.propTypes = {
-    onClickPreview: PropTypes.func,
-    persons: PropTypes.array
-};
-export default PersonCardList;
+export default React.createClass({
+    displayName: 'PersonCardList',
+    propTypes: {
+        persons: PropTypes.array
+    },
+    getDefaultProps() {
+        return {
+            persons: []
+        }
+    },
+    getInitialState() {
+        return {
+            personCodePreview: null
+        }
+    },
+    render() {
+        const {persons} = this.props;
+        const {personCodePreview} = this.state;
+        return (
+            <div data-demo='concept-card-list'>
+                {persons &&
+                    persons.map(person => {
+                        const {code} = person;
+                        const key = `person-card-${code}`;
+                        return (
+                            <PersonCard key={key} person={person} onClickPreview={personId => this.setState({personCodePreview: personId})} />
+                        );
+                    })
+                }
+                {personCodePreview &&
+                    <Modal open={true} onPopinClose={() => this.setState({personCodePreview: null})} type='from-right'>
+                        <PersonPreview id={personCodePreview} />
+                    </Modal>
+                }
+            </div>
+        );
+    }
+});

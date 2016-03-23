@@ -3,26 +3,46 @@ import React, {PropTypes} from 'react';
 
 //web components
 import MovieCard from './movie-card';
+import {component as Modal} from 'focus-components/application/popin';
+import MoviePreview from '../../movie/preview';
 
-function MovieCardList({onClickPreview, movies}) {
+export default React.createClass({
+    displayName: 'MovieCardList',
+    propTypes: {
+        movies: PropTypes.array
+    },
+    getDefaultProps() {
+        return {
+            movies: []
+        }
+    },
+    /** @inheritDoc */
+    getInitialState() {
+        return {
+            movieCodePreview: null
+        }
+    },
 
-    return (
-        <div data-demo='concept-card-list'>
-            {movies &&
-            movies.map(movie => {
-                const {code, linked, movieType, poster, productionYear, title} = movie;
-                const key = `movie-card-${code}`;
-                return (
-                    <MovieCard key={key} code={code} linked={linked} movieType={movieType} onClickPreview={onClickPreview} poster={poster} productionYear={productionYear} title={title}  />
-                );
-            })
-            }
-        </div>
-    );
-}
-
-MovieCardList.displayName = 'MovieCardList';
-MovieCardList.propTypes = {
-    movies: PropTypes.array
-};
-export default MovieCardList;
+    render() {
+        const {movies} = this.props;
+        const {movieCodePreview} = this.state;
+        return (
+            <div data-demo='concept-card-list'>
+                {movies &&
+                    movies.map(movie => {
+                        const {code} = movie;
+                        const key = `movie-card-${code}`;
+                        return (
+                            <MovieCard key={key} movie={movie} onClickPreview={movieId => this.setState({movieCodePreview: movieId})} />
+                        );
+                    })
+                }
+                {movieCodePreview &&
+                    <Modal open={true} onPopinClose={() => this.setState({movieCodePreview: null})} type='from-right'>
+                        <MoviePreview id={movieCodePreview}/>
+                    </Modal>
+                }
+            </div>
+        );
+    }
+});

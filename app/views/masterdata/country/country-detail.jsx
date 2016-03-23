@@ -18,12 +18,13 @@ export default React.createClass({
     renderContent() {
         return (
             <div>
-                <h3>{translate('country.detail.title')}</h3>
-                {this.displayFor('id')}
-                {this.fieldFor('code')}
-                {this.fieldFor('name')}
-                {this.fieldFor('maps')}
-                {this._renderActions()}
+                <h4>{translate('country.detail.title')}</h4>
+                <Panel actions={this._renderActions} title='view.masterdata.country.caracteristics'>
+                    {this.displayFor('id')}
+                    {this.fieldFor('code')}
+                    {this.fieldFor('name')}
+                    {this.fieldFor('maps')}
+                </Panel>
             </div>
         );
     }

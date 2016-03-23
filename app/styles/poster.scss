@@ -6,6 +6,7 @@
     background-color: #F1F1F1;
     border: 1px solid #C0C0C0;
     width: $poster-large-width;
+    min-width: $poster-large-width;
     height: $poster-large-height;
     text-align: center;
     display: flex;

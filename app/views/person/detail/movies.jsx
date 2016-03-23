@@ -2,11 +2,9 @@
 import React, {PropTypes} from 'react';
 
 // web components
-import {component as Modal} from 'focus-components/application/popin';
 import Panel from 'focus-components/components/panel';
 import {storeBehaviour} from 'focus-components/common/mixin';
 import MovieCardList from '../../movie/components/movie-card-list';
-import MoviePreview from '../../movie/preview';
 
 //stores & actions
 import personStore from '../../../stores/person';
@@ -22,8 +20,7 @@ export default React.createClass({
     /** @inheritDoc */
     getInitialState() {
         return {
-            personMovieLinks: personStore.getPersonMovieLinks() || [],
-            movieCodePreview: null
+            personMovieLinks: personStore.getPersonMovieLinks() || []
         }
     },
 
@@ -36,19 +33,11 @@ export default React.createClass({
 
     /** @inheritDoc */
     render() {
-        const {personMovieLinks, movieCodePreview} = this.state;
+        const {personMovieLinks} = this.state;
         return (
             <Panel title='view.person.detail.movies'>
-                <MovieCardList movies={personMovieLinks} onClickPreview={(movieId) => this.setState({movieCodePreview: movieId})}/>
-                {movieCodePreview &&
-                    <Modal open={true} onPopinClose={this._onCreateMoviePopinClose} type='from-right'>
-                        <MoviePreview id={movieCodePreview}/>
-                    </Modal>
-                }
+                <MovieCardList movies={personMovieLinks} />
             </Panel>
         );
-    },
-    _onCreateMoviePopinClose() {
-        this.setState({movieCodePreview: null});
     }
 });

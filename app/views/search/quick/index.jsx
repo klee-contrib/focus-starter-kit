@@ -14,7 +14,7 @@ function QuickSearchView({handleClosePopin}) {
     return (
         <div data-demo="quick-search-view">
             <h5>Recherche rapide</h5>
-            <QuickSearch {...configuration} />
+            <QuickSearch {...configuration} showAllHandler={handleClosePopin} />
         </div>
     );
 }

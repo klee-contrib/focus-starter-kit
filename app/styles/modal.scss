@@ -3,6 +3,9 @@
     &[data-size="medium"] {
         [data-focus="popin-window"] {
             width: 50vw;
+            [data-focus="panel"] {
+                margin-top: 30px;
+            }
         }
     }
 }
