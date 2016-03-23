@@ -4,12 +4,10 @@ import {translate} from 'focus-core/translation';
 import reduce from 'lodash/collection/reduce';
 
 // web components
-import {component as Modal} from 'focus-components/application/popin';
 import Panel from 'focus-components/components/panel';
 import {storeBehaviour} from 'focus-components/common/mixin';
 import PersonCardList from '../../person/components/person-card-list';
 import {component as Button} from 'focus-components/common/button/action';
-import PersonPreview from '../../person/preview';
 
 //stores & actions
 import movieStore from '../../../stores/movie';
@@ -26,8 +24,7 @@ export default React.createClass({
 
     getInitialState() {
         return {
-            filter: null,
-            personCodePreview: null
+            filter: null
         }
     },
 
@@ -43,7 +40,7 @@ export default React.createClass({
             const tabs = this._getTabs();
             return tabs.length > 0 ? tabs[0] : 'actors';
         }
-        return fitler;
+        return filter;
     },
 
     _getPeople() {
@@ -98,7 +95,7 @@ export default React.createClass({
 
     /** @inheritDoc */
     render() {
-        const {personCodePreview, filter} = this.state;
+        const {filter} = this.state;
         const list = this._getPeople();
         const tabs = this._getTabs();
         return (
@@ -108,17 +105,8 @@ export default React.createClass({
                         <Button key={`btn-filter-${peopleType}`} shape={null} label={this._getActionLabel(peopleType)} handleOnClick={() => this._setFilter(peopleType)} data-active={this._isActive(peopleType)} />
                     )}
                 </div>
-                <PersonCardList persons={list} onClickPreview={(personId) => this.setState({personCodePreview: personId})} />
-                    {personCodePreview &&
-                        <Modal open={true} onPopinClose={this._onCreatePersonPopinClose} type='from-right'>
-                            <PersonPreview id={personCodePreview} />
-                        </Modal>
-                    }
+                <PersonCardList persons={list} />
             </Panel>
         );
-    },
-
-    _onCreatePersonPopinClose() {
-        this.setState({personCodePreview: null});
     }
 });

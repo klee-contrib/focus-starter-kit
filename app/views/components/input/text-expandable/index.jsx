@@ -11,7 +11,7 @@ const MODE = {isEdit: true};
 const propTypes = {
     disabled: PropTypes.bool,
     error: PropTypes.string,
-    expandIcon: PropTypes.string,
+    expandIcon: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     onKeyPress: PropTypes.func,
@@ -64,15 +64,15 @@ class InputExpandableText extends Component {
      * @override
     */
     render() {
-        const {error, name, placeholder, style, value: rawValue, formatter, ...otherProps} = this.props;
+        const {error, expandIcon, name, placeholder, style, value: rawValue, formatter, ...otherProps} = this.props;
         const value = formatter(rawValue, MODE);
         const pattern = error ? 'hasError' : null; //add pattern to overide mdl error style when displaying an focus error.
         const inputProps = {...otherProps, value, id: name, onChange: this._handleInputChange, pattern};
         const cssClass = `mdl-textfield mdl-js-textfield mdl-textfield--expandable${error ? ' is-invalid' : ''}`;
         return (
-            <div className={cssClass} data-focus='input-text' ref='inputText'>
+            <div className={cssClass} data-focus='input-expandable-text' ref='inputText'>
                 <label className='mdl-button mdl-js-button mdl-button--icon' htmlFor={name}>
-                    <Icon name='search' />
+                    <Icon name={expandIcon} />
                 </label>
                 <div className='mdl-textfield__expandable-holder'>
                     <input className='mdl-textfield__input' ref='htmlInput' {...inputProps} />

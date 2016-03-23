@@ -24,7 +24,7 @@ export default React.createClass({
     },
     mixins: [builtInComponents, storeBehaviour],
     definitionPath: 'movie',
-    stores: [{store: movieStore, properties: ['MovieCaracteristics', 'movieSynopsis']}],
+    stores: [{store: movieStore, properties: ['movieCaracteristics', 'movieSynopsis']}],
 
     /** @inheritDoc */
     getInitialState(){
@@ -51,7 +51,7 @@ export default React.createClass({
                         <h5>{this.textFor('productionYear')}</h5>
                         <div>{this.textFor('synopsis')}</div>
                         <br/>
-                        <Button label='view.movie.action.consult.sheet' handleOnClick={() => history.navigate(`movies/${id}`, true)} />
+                        <Button label='view.movie.action.consult.sheet' handleOnClick={() => {history.navigate(`movies/${id}`, true); window.scrollTo(0, 0);}} />
                     </div>
                 </div>
                 <div data-demo='preview-content'>

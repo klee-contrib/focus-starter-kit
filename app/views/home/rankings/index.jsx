@@ -22,7 +22,7 @@ class Rankings extends Component {
     render() {
         const {dateRanking, markRanking} = this.props;
         return (
-            <div data-role='rankings'>
+            <div>
                 <DateRanking dateRanking={dateRanking || []}/>
                 <MarkRanking markRanking={markRanking || []}/>
             </div>

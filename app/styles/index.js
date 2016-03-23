@@ -6,13 +6,15 @@ import 'material-design-icons-iconfont/dist/material-design-icons.scss';
 
 //--------------------------------------------------------------------------
 //styles from demo
+import './layout.scss';
+//
 import './advanced-search.scss';
 import './back-to-top.scss';
 import './concept-card.scss';
+import './demo-title.scss';
 import './field.scss';
 import './header.scss';
 import './home.scss';
-import './layout.scss';
 import './list-action-bar.scss';
 import './list-summary.scss';
 import './masterdata.scss';

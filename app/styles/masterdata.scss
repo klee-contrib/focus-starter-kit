@@ -5,17 +5,34 @@ $masterdata-nav-width: 250px;
 $masterdata-nav-margin-left:40px;
 
 [data-focus="header-scrolling"] {
-    &[data-deployed="false"] {
-        & ~ div {
-            [data-demo='masterdata'] {
-                [data-demo='masterdata--nav'] {
-                    ul {
-                        position:fixed;
-                        top: 100px;
-                        width: $masterdata-nav-width;
+    &[data-route="admin"] {
+        box-shadow: 0 0 0;
+        @include headings {
+            color: $primary-color-dark;
+        }
+        &[data-deployed="false"] {
+            [data-focus="header-top-row"] {
+                box-shadow: 0 0 0;
+            }
+            & ~ div {
+                [data-demo='masterdata'] {
+                    [data-demo='masterdata--nav'] {
+                        ul {
+                            position:fixed;
+                            top: 100px;
+                            width: $masterdata-nav-width;
+                        }
                     }
                 }
             }
+        }
+        &[data-deployed="true"] {
+            [data-focus="header-content"] {
+                background-color: $primary-color-light;
+            }
+        }
+        [data-focus="header-top-row"] {
+            background-color: $primary-color-light;
         }
     }
 }
@@ -27,7 +44,8 @@ $masterdata-nav-margin-left:40px;
         &:before {
             content: '';
             height: 100%;
-            background-color: $primary-color-light;
+            box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            background-color: #FFF;
             position: absolute;
             top: 0;
             left: 60px;
@@ -40,27 +58,14 @@ $masterdata-nav-margin-left:40px;
         border:1px solid red;
         ul {
             opacity: 0.99; //to placed over the :before
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
             li {
-                margin-bottom: 10px;
                 a {
-                    background-color: #E8E8E8;
-                    color: #000;
+                    color: $secondary-text-color;
                     text-decoration: none;
-                    display: block;
-                    padding: 10px 15px;
-                    border-radius: 3px;
-                    &:hover {
-                        background-color: #FFF; //$primary-color-light;
-                    }
                 }
                 &[data-active] {
                     a {
-                        background-color: #FFF;
                         color: $accent-color;
-                        @include shadow();
                     }
                 }
             }

@@ -9,13 +9,22 @@ const links = [
 
 function masterdataMenu({reference}) {
     return (
-        <ul>
-            {
-                links.map(link => {
-                    const otherProps = link.reference === reference ? { 'data-active':true } : {};
-                    return (<li {...otherProps}><a href={link.href}>{translate(link.title)}</a></li>);
-                })
-            }
+        <ul className="mdl-list">
+        {
+            links.map(link => {
+                const otherProps = { className: 'mdl-list__item' };
+                if(link.reference === reference) {
+                    otherProps['data-active'] = true;
+                }
+                return (
+                    <li key={link.reference} {...otherProps}>
+                        <a href={link.href}>
+                            <span className="mdl-list__item-primary-content">{translate(link.title)}</span>
+                        </a>
+                    </li>
+                );
+            })
+        }
         </ul>
     );
 }
