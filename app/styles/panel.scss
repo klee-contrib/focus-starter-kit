@@ -2,6 +2,12 @@
 
 $panel-padding-sides:20px;
 
+[data-mode="edit"] {
+    [data-focus='panel'] {
+        border: 3px solid $primary-color-light;
+    }
+}
+
 [data-focus='panel'] {
     [data-focus='panel-title'] {
         h1,h2,h3,h4 {

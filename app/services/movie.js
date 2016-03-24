@@ -1,5 +1,6 @@
 import fetch from 'focus-core/network/fetch';
 import movieUrl from '../config/server/movies';
+import omit from 'lodash/object/omit';
 
 export default {
     loadMovie(id) {
@@ -13,13 +14,15 @@ export default {
         });
     },
     updateMovieCaracteristics(data) {
-        console.log(`[MOVIE] call saveMovieCaracteristics method. data=${JSON.stringify(data)}`);
-        delete data.writers;
-        return fetch(movieUrl.update({urlData: {id: data.id}, data: {data}}), {isCORS: true});
+        const movieId = data.id;
+        omit(data, ['id', 'actors', 'camera', 'directors', 'producers', 'writers']);
+        console.log(`[MOVIE] call updateMovieCaracteristics ${movieId} method. data=${JSON.stringify(data)}`);
+        return fetch(movieUrl.update({urlData: {id: movieId}, data}), {isCORS: true});
     },
     updateMovieSynopsis(data) {
-        console.log(`[MOVIE] call saveMovieSynopsis method. data=${JSON.stringify(data)}`);
-        delete data.writers;
-        return fetch(movieUrl.update({urlData: {id: data.id}, data: {data}}), {isCORS: true});
+        const movieId = data.id;
+        omit(data, ['id', 'actors', 'camera', 'directors', 'producers', 'writers']);
+        console.log(`[MOVIE] call updateMovieSynopsis method. data=${JSON.stringify(data)}`);
+        return fetch(movieUrl.update({urlData: {id: movieId}, data}), {isCORS: true});
     }
 }
