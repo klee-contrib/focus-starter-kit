@@ -13,6 +13,7 @@ import './back-to-top.scss';
 import './concept-card.scss';
 import './demo-title.scss';
 import './field.scss';
+import './footer.scss';
 import './header.scss';
 import './home.scss';
 import './list-action-bar.scss';

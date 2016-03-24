@@ -23,6 +23,11 @@ export default {
     field: {
         required: 'Ce champ est obligatoire'
     },
+    footer: {
+        klee: {
+            powered: 'Propulsé par'
+        }
+    },
     live: {
         filter: {
             title: 'Filtres',
