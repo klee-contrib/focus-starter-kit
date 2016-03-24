@@ -20,6 +20,9 @@ export default {
         name: 'Nom',
         maps: 'Carte'
     },
+    detail: {
+        saved: 'Les modifications ont bien été sauvegardées.'
+    },
     field: {
         required: 'Ce champ est obligatoire'
     },

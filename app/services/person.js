@@ -1,5 +1,6 @@
 import fetch from 'focus-core/network/fetch';
 import personUrl from '../config/server/persons';
+import omit from 'lodash/object/omit';
 
 export default {
     loadPerson(id) {
@@ -13,11 +14,15 @@ export default {
         });
     },
     updatePersonBiography(data) {
+        const personId = data.id;
         console.log(`[PERSON] call savePersonBiography method. data=${JSON.stringify(data)}`);
-        return fetch(personUrl.update({urlData: {id: data.id}, data: {data}}), {isCORS: true});
+        omit(data, ['movieLinks']);
+        return fetch(personUrl.update({urlData: {id: personId}, data}), {isCORS: true});
     },
     updatePersonIdentity(data) {
+        const personId = data.id;
         console.log(`[PERSON] call savePersonIdentity method. data=${JSON.stringify(data)}`);
-        return fetch(personUrl.update({urlData: {id: data.id}, data: {data}}), {isCORS: true});
+        omit(data, ['movieLinks']);
+        return fetch(personUrl.update({urlData: {id: personId}, data}), {isCORS: true});
     }
 }

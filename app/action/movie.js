@@ -20,7 +20,7 @@ export const caracteristicsActions = {
     save: actionBuilder({
         node: 'movieCaracteristics',
         service: movieServices.updateMovieCaracteristics,
-        shouldDumpStoreOnActionCall: true,
+        shouldDumpStoreOnActionCall: false,
         status: 'saved'
     })
 }
@@ -35,7 +35,7 @@ export const synopsisActions = {
     save: actionBuilder({
         node: 'movieSynopsis',
         service: movieServices.updateMovieSynopsis,
-        shouldDumpStoreOnActionCall: true,
+        shouldDumpStoreOnActionCall: false,
         status: 'saved'
     })
 }
