@@ -35,11 +35,15 @@ export default React.createClass({
         const url = `http://www.allocine.fr/film/fichefilm_gen_cfilm=${code}.html`;
         return (
             <Panel title='view.movie.detail.overview' data-demo='overview'>
-                <Button label={translate('view.movie.action.watchTrailer')} type='button' handleOnClick={this.openTrailerPopin} />
+                {trailerHRef &&
+                    <div>
+                        <Button label={translate('view.movie.action.watchTrailer')} type='button' handleOnClick={this.openTrailerPopin} />
+                        <Modal ref='modal-trailer'>
+                            <Trailer url={trailerHRef} />
+                        </Modal>
+                    </div>
+                }
                 <Button label={translate('view.movie.action.consult.allocine')} type='button' handleOnClick={() => window.open(url,'_blank')} />
-                <Modal ref="modal-trailer">
-                    <Trailer url={trailerHRef} />
-                </Modal>
             </Panel>
         );
     }
