@@ -1,1 +1,1 @@
-export const apiRoot = process ? 'http://localhost:3000/' : './';
+export const apiRoot = __API_ROOT__;

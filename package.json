@@ -40,22 +40,21 @@
                 "PAGE_TITLE": "Focus demonstration application",
                 "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
-                "LOCAL_FOCUS": true,
-                "GENERATE_HTML": false,
-                "PACKAGE_JSON_PATH": "./"
+                "LOCAL_FOCUS": false,
+                "HEROKU_API": true
             }
         },
         "profile": {
             "command": "webpack --progress --json --profile > profile.json",
             "env": {
                 "ANCHOR_CLASS": "demo-app",
-                "ENTRY_FILE_PATH": "./app/index",
                 "BABELIFIED_PATH": "./app",
-                "DEV": false,
-                "NODE_ENV": "production",
-                "LIBRARY_NAME": "FocusDemoApp",
+                "ENTRY_FILE_PATH": "./app/index",
+                "PAGE_TITLE": "Focus demonstration application",
+                "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
-                "PACKAGE_JSON_PATH": "./"
+                "LOCAL_FOCUS": true,
+                "HEROKU_API": true
             }
         },
         "watch": {
@@ -68,8 +67,7 @@
                 "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
                 "LOCAL_FOCUS": false,
-                "GENERATE_HTML": false,
-                "PACKAGE_JSON_PATH": "./"
+                "HEROKU_API": true
             }
         },
         "webpack-dev-server-local-focus": {
@@ -82,8 +80,7 @@
                 "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
                 "LOCAL_FOCUS": true,
-                "GENERATE_HTML": false,
-                "PACKAGE_JSON_PATH": "./"
+                "HEROKU_API": true
             }
         },
         "webpack-dev-server-npm-focus": {
@@ -96,8 +93,7 @@
                 "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
                 "LOCAL_FOCUS": false,
-                "GENERATE_HTML": false,
-                "PACKAGE_JSON_PATH": "./"
+                "HEROKU_API": true
             }
         }
     },
@@ -148,6 +144,6 @@
         "url-loader": "^0.5.6",
         "webpack": "^1.12.14",
         "webpack-dev-server": "^1.14.1",
-        "webpack-focus": "^0.11.0"
+        "webpack-focus": "^0.11.2"
     }
 }
