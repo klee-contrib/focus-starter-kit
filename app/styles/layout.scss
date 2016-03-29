@@ -1,19 +1,20 @@
 @import "variables";
 @import "mixins";
 
-.demo-app {
+.demo-app  {
     background-color: #FAFAFA;
     width: 100%;
     min-height: 100%;
     margin: 0;
+
+   [data-focus='layout']{
+
     //font-family: Roboto, Helvetica, Arial, sans-serif;
     color: $primary-text-color;
     position: relative;
 
-    [data-focus='layout'] {
         background-color: transparent;
         min-height: 100%;
-    }
 
     a {
         color: $accent-color;
@@ -57,5 +58,5 @@
         line-height: 20px;
         font-weight: 500;
     }
-
+  }
 }
