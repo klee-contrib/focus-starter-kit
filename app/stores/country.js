@@ -10,4 +10,6 @@ const countryStore = new CoreStore({
     }
 });
 
+countryStore.name = 'CountryStore';
+
 export default countryStore;

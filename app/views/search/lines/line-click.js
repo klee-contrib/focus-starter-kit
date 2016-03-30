@@ -4,7 +4,7 @@ import history from 'focus-core/history';
 export default function onLineClick(data) {
     let url = '#';
     const isMovie = !!data.movieType && !!data.title; // baaaaaad ! do not copy !
-    const isPerson = !!data.fullname; // baaaaaad ! do not copy !
+    const isPerson = !!data.fullName; // baaaaaad ! do not copy !
     const {code} = data;
     //console.log(data, '\n', isMovie,'\n', isPerson,'\n', code);
     if(isMovie) {

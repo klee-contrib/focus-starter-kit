@@ -39,10 +39,11 @@
                 "BABELIFIED_PATH": "./app",
                 "ENTRY_FILE_PATH": "./app/index",
                 "PAGE_TITLE": "Focus demonstration application",
+                "API_HOST": "localhost",
                 "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
                 "LOCAL_FOCUS": false,
-                "HEROKU_API": false
+                "LEGACY_SEARCH_API": false
             }
         },
         "profile": {
@@ -52,10 +53,11 @@
                 "BABELIFIED_PATH": "./app",
                 "ENTRY_FILE_PATH": "./app/index",
                 "PAGE_TITLE": "Focus demonstration application",
+                "API_HOST": "localhost",
                 "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
                 "LOCAL_FOCUS": true,
-                "HEROKU_API": false
+                "LEGACY_SEARCH_API": false
             }
         },
         "watch": {
@@ -65,10 +67,11 @@
                 "BABELIFIED_PATH": "./app",
                 "ENTRY_FILE_PATH": "./app/index",
                 "PAGE_TITLE": "Focus demonstration application",
+                "API_HOST": "localhost",
                 "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
                 "LOCAL_FOCUS": false,
-                "HEROKU_API": false
+                "LEGACY_SEARCH_API": false
             }
         },
         "webpack-dev-server-local-focus": {
@@ -78,10 +81,11 @@
                 "BABELIFIED_PATH": "./app",
                 "ENTRY_FILE_PATH": "./app/index",
                 "PAGE_TITLE": "Focus demonstration application",
+                "API_HOST": "localhost",
                 "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
                 "LOCAL_FOCUS": true,
-                "HEROKU_API": false
+                "LEGACY_SEARCH_API": false
             }
         },
         "webpack-dev-server-npm-focus": {
@@ -91,10 +95,11 @@
                 "BABELIFIED_PATH": "./app",
                 "ENTRY_FILE_PATH": "./app/index",
                 "PAGE_TITLE": "Focus demonstration application",
+                "API_HOST": "localhost",
                 "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
                 "LOCAL_FOCUS": false,
-                "HEROKU_API": false
+                "LEGACY_SEARCH_API": false
             }
         }
     },
@@ -102,7 +107,7 @@
     "dependencies": {
         "focus-core": "^0.14.0-beta0",
         "focus-components": "^0.14.0-beta2",
-        "focus-devtools": "^0.3.2",
+        "focus-devtools": "^0.3.5",
         "focus-notifications": "^0.2.0-rc6",
         "immutable": "^3.7.2",
         "jquery": "3.0.0-alpha1",
@@ -146,6 +151,6 @@
         "url-loader": "^0.5.6",
         "webpack": "^1.12.14",
         "webpack-dev-server": "^1.14.1",
-        "webpack-focus": "^0.11.2"
+        "webpack-focus": "^0.11.3"
     }
 }

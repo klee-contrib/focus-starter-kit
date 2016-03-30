@@ -7,4 +7,6 @@ const rankingsStore = new CoreStore({
     }
 });
 
+rankingsStore.name = 'RankingsStore';
+
 export default rankingsStore;

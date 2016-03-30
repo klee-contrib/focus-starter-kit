@@ -12,4 +12,6 @@ const personStore = new CoreStore({
     }
 });
 
+personStore.name = 'PersonStore';
+
 export default personStore;

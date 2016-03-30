@@ -1,2 +1,6 @@
 import ListStore from 'focus-core/store/list';
-export default new ListStore({identifier: 'countryList'});
+const countryListStore= new ListStore({identifier: 'countryList'});
+
+countryListStore.name = 'CountryListStore';
+
+export default countryListStore;

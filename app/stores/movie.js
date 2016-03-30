@@ -13,4 +13,6 @@ const movieStore = new CoreStore({
     }
 });
 
+movieStore.name ='MovieStore';
+
 export default movieStore;
