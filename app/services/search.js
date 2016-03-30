@@ -6,7 +6,7 @@ import personsUrl from '../config/server/persons';
 
 import searchParser from './helpers/old-search-parser';
 
-const ENABLE_NEW_SEARCH_API = false;
+const ENABLE_NEW_SEARCH_API = __HEROKU_API__;
 
 export default {
     _legacyfyServerResult(serverData) {

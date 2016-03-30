@@ -41,7 +41,7 @@
                 "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
                 "LOCAL_FOCUS": false,
-                "HEROKU_API": true
+                "HEROKU_API": false
             }
         },
         "profile": {
@@ -54,7 +54,7 @@
                 "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
                 "LOCAL_FOCUS": true,
-                "HEROKU_API": true
+                "HEROKU_API": false
             }
         },
         "watch": {
@@ -67,7 +67,7 @@
                 "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
                 "LOCAL_FOCUS": false,
-                "HEROKU_API": true
+                "HEROKU_API": false
             }
         },
         "webpack-dev-server-local-focus": {
@@ -80,7 +80,7 @@
                 "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
                 "LOCAL_FOCUS": true,
-                "HEROKU_API": true
+                "HEROKU_API": false
             }
         },
         "webpack-dev-server-npm-focus": {
@@ -93,7 +93,7 @@
                 "API_PORT": 8080,
                 "OUTPUT_DIR": "./public",
                 "LOCAL_FOCUS": false,
-                "HEROKU_API": true
+                "HEROKU_API": false
             }
         }
     },

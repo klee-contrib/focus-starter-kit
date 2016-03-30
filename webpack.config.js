@@ -21,7 +21,8 @@ const customConfig = localFocus ? {
 } : {};
 
 const globals = {
-    __API_ROOT__: JSON.stringify(HEROKU_API ? 'focus-demo-api.herokuapp.com' : `${API_HOST}:${API_PORT}/`)
+    __API_ROOT__: JSON.stringify(HEROKU_API ? 'http://focus-demo-api.herokuapp.com/' : `http://${API_HOST}:${API_PORT}/`),
+    __HEROKU_API__: JSON.stringify(HEROKU_API)
 }
 
 module.exports = configBuilder(customConfig, globals);
