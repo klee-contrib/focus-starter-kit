@@ -1,1 +1,1 @@
-export const apiRoot = __API_ROOT__;
+export const apiRoot = `${__API_ROOT__}`;
