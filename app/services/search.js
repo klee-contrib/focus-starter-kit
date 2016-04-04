@@ -1,12 +1,13 @@
 import fetch from 'focus-core/network/fetch';
 
-import commonUrl from '../config/server/common';
-import moviesUrl from '../config/server/movies';
-import personsUrl from '../config/server/persons';
+//~ import commonUrl from '../config/server/common';
+//~ import moviesUrl from '../config/server/movies';
+//~ import personsUrl from '../config/server/persons';
 
 import searchParser from './helpers/old-search-parser';
 
 const ENABLE_NEW_SEARCH_API = !__LEGACY_SEARCH_API__;
+const fakeSearch = () => (Promise.resolve({}));
 
 export default {
     _legacyfyServerResult(serverData) {
@@ -29,16 +30,19 @@ export default {
         switch (scope) {
             case 'movie':
                 console.log(`[SEARCH MOVIE] config: ${JSON.stringify(config)}`);
-                return fetch(moviesUrl.search(config))
-                .then(this._legacyfyServerResult);
+                return fakeSearch();
+                //~ return fetch(moviesUrl.search(config))
+                //~ .then(this._legacyfyServerResult);
             case 'person':
                 console.log(`[SEARCH PERSON] config: ${JSON.stringify(config)}`);
-                return fetch(personsUrl.search(config))
-                .then(this._legacyfyServerResult);
+                return fakeSearch();
+                //~ return fetch(personsUrl.search(config))
+                //~ .then(this._legacyfyServerResult);
             default:
                 console.log(`[SEARCH ALL] config: ${JSON.stringify(config)}`);
-                return fetch(commonUrl.search(config))
-                .then(this._legacyfyServerResult);
+                return fakeSearch();
+                //~ return fetch(commonUrl.search(config))
+                //~ .then(this._legacyfyServerResult);
         }
     },
 

@@ -4,6 +4,4 @@
 ////////////////////////////////////////////////////
 
 export const scopesConfig = {
-    movie: 'movie',
-    person: 'person'
 };
