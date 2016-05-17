@@ -1,15 +1,15 @@
 {
   "author": "focus@kleegroup.com",
-  "name": "focus-demo-app",
+  "name": "my-awesome-project-to-rename-app",
   "description": "Focus demonstration application",
-  "version": "2.0.0-beta0",
+  "version": "0.0.0",
   "homepage": "https://github.com/KleeGroup/focus-demo-app",
   "repository": {
     "type": "git",
     "url": "https://github.com/KleeGroup/focus-demo-app.git"
   },
   "engines": {
-    "node": "0.4.x",
+    "node": "4.3.x",
     "npm": "2.14.x"
   },
   "scripts": {
@@ -19,9 +19,7 @@
     "start:local": "better-npm-run webpack-dev-server-local-focus",
     "start:npm": "better-npm-run webpack-dev-server-npm-focus",
     "watch": "better-npm-run watch",
-    "mocked-api": "node api/index.js",
-    "profile": "better-npm-run profile",
-    "gh-pages": "git fetch && git reset --hard origin/develop && git clean -f ./** && git branch -D gh-pages && git checkout -b gh-pages && npm run bundle && git add . && git commit -m 'gh-pages release' && git push --set-upstream origin gh-pages -f && git checkout develop"
+    "profile": "better-npm-run profile"
   },
   "main": "app/index.js",
   "babel": {
@@ -36,8 +34,8 @@
         "ANCHOR_CLASS": "demo-app",
         "BABELIFIED_PATH": "./app",
         "ENTRY_FILE_PATH": "./app/index",
-        "PAGE_TITLE": "Focus demonstration application",
-        "API_HOST": "146.185.134.136",
+        "PAGE_TITLE": "Your project application",
+        "API_HOST": "localhost",
         "API_PORT": 8080,
         "OUTPUT_DIR": "./",
         "OUTPUT_PUBLIC_PATH": "./",
@@ -56,7 +54,7 @@
         "ANCHOR_CLASS": "demo-app",
         "BABELIFIED_PATH": "./app",
         "ENTRY_FILE_PATH": "./app/index",
-        "PAGE_TITLE": "Focus demonstration application",
+        "PAGE_TITLE": "Project application application",
         "API_HOST": "localhost",
         "API_PORT": 8080,
         "OUTPUT_DIR": "./public",
@@ -117,8 +115,6 @@
     "focus-core": "^0.14.0",
     "focus-devtools": "^0.3.5",
     "focus-notifications": "^0.2.0-rc6",
-    "immutable": "^3.7.2",
-    "jquery": "3.0.0-alpha1",
     "lodash": "^3.10.1",
     "moment": "^2.10.3",
     "native-promise-only": "^0.8.0-a",
