@@ -5,6 +5,15 @@ export default {
     loadConfig() {
         console.log(`[CONFIG] call loadConfig method. `);
         return Promise.resolve({});
-//        return fetch(configUrl.loadConfig(), {isCORS: false});
+        // return configApiDriver.loadConfig();
+    },
+    loadUser() {
+        console.log(`[CONFIG] call loadUser method. `);
+        return Promise.resolve({
+            profile: {},
+            roles: [],
+            login: undefined
+        });
+        // return configApiDriver.loadUser();
     }
 }
