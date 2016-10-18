@@ -6,3 +6,4 @@ const customConfig = {
 }
 
 serverLauncher(webpackConfig, customConfig);
+require('./api');

@@ -6,6 +6,8 @@ import focusComponentsConf from 'focus-components/package.json';
 import {initialize as appConfigInitialize} from './initializer/scripts/app-configuration-initializer';
 import {initialize as userInitialize } from './initializer/scripts/user-initializer';
 
+
+
 console.info(
     `
         FOCUS DEMO
