@@ -6,5 +6,3 @@ import 'material-design-icons-iconfont/dist/material-design-icons.scss';
 
 //--------------------------------------------------------------------------
 //styles from demo
-
-import './todoList.scss'; 
