@@ -9,8 +9,8 @@ const test  =  function initDb() {
   sequelize.authenticate().then(() => sequelize.sync({ force: true }).then( () => {
     if (process.env.DB_ENV !== 'prod') {
         // Populate the database with fake data
-        let data = [];
-        for (let i = 0; i < 10; i++) {
+        var data = [];
+        for (var i = 0; i < 10; i++) {
             data.push({
                 title: faker.name.firstName(),
                 originalTitle: faker.name.firstName(),
