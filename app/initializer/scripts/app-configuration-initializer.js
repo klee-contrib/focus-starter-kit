@@ -1,24 +1,29 @@
-import FocusCore from 'focus-core';
+import dispatcher from 'focus-core/dispatcher';
+
 import configServices from '../../services/config';
 import ConfigStore from '../../stores/config';
 
-import {once} from 'lodash';
+import { once } from 'lodash';
 
-const initialize =  (appInitialisation) => {
-console.log('#########################[INIT APP CONFIG]#######################################');
-  configServices.loadConfig().then(
+const initialize = (appInitialisation) => {
+    console.log('#########################[INIT APP CONFIG]#######################################');
+    console.info('|--- USER');
+
+    configServices.loadConfig().then(
     (data) => {
-      ConfigStore.addConfigChangeListener(once(appInitialisation));
-      FocusCore.dispatcher.handleServerAction({
-        data : {
-          config: data
+        console.info('   |--- Configuration loaded');
+
+        ConfigStore.addConfigChangeListener(once(appInitialisation));
+        dispatcher.handleServerAction({
+          data: {
+            config: data
         },
-        type: 'update'
+          type: 'update'
       });
     }
   );
 };
 
 export default {
-  initialize:initialize
+    initialize: initialize
 };

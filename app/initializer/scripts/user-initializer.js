@@ -1,24 +1,20 @@
-import FocusCore from 'focus-core';
+import dispatcher from 'focus-core/dispatcher';
+import { builtInStore as UserStore } from 'focus-core/user';
+
 import configServices from '../../services/config';
-import {builtInStore as UserStore} from 'focus-core/user';
 
-import {once} from 'lodash';
-
-/*
-import user from 'focus-core/user';
-
-export default () => {
-    console.info('|--- USER');
-    user.setRoles(['DEFAULT_ROLE']);
-}*/
+import { once } from 'lodash';
 
 
 const initialize = (appInitialisation) => {
     console.info('|--- USER');
     configServices.loadUser().then(
         (data) => {
+            console.info('   |--- User loaded');
+
             UserStore.addProfileChangeListener(once(appInitialisation));
-            FocusCore.dispatcher.handleServerAction({
+
+            dispatcher.handleServerAction({
                 data: {
                     profile: data.profile,
                     roles: data.roles,
@@ -27,7 +23,7 @@ const initialize = (appInitialisation) => {
                 type: 'update'
             });
         }
-      );
+    );
 };
 
 export default {

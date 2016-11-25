@@ -1,32 +1,34 @@
 import React from 'react';
-import history from 'focus-core/history';
+import { navigate } from 'focus-core/history';
 import Menu from 'focus-components/components/menu';
-import {component as Modal} from 'focus-components/application/popin';
+import { component as Modal } from 'focus-components/application/popin';
 
 //custom web component
 import QuickSearchView from '../search/quick';
 
 export default React.createClass({
     displayName: 'DemoMenuLeft',
-    getInitialState () {
+    getInitialState() {
         return {
             isQuickSearchModalOpen: false
         };
     },
     _getMenuItems() {
         return [
-            { icon:'home', onClick:() => { this._onHomeClick(); } }, // route: 'home'
-            { icon:'search', onClick:() => { this._onQuickSearchModalToggle() }},
-            { icon:'build', onClick:() => { this._onAdminClick(); } }
+            { icon: 'home', onClick: () => { this._onHomeClick(); } }, // route: 'home'
+            { icon: 'search', onClick: () => { this._onQuickSearchModalToggle() } },
+            { icon: 'build', onClick: () => { this._onAdminClick(); } }
         ];
     },
 
     _onHomeClick() {
         this._onMenuItemClick();
+        navigate('home');
     },
 
     _onAdminClick() {
         this._onMenuItemClick();
+        navigate('admin');
     },
 
     _onMenuItemClick() {
