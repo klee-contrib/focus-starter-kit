@@ -13,6 +13,7 @@
     "npm": "3.10.x"
   },
   "scripts": {
+    "production": "better-npm-run production",
     "bundle": "better-npm-run bundle",
     "build": "npm run bundle",
     "start": "npm run start:npm",
@@ -76,6 +77,24 @@
         "LOCAL_FOCUS": false,
         "LEGACY_SEARCH_API": false,
         "BASE_URL": "/"
+      }
+    },
+    "production": {
+      "command": "webpack --progress",
+      "env": {
+        "ANCHOR_CLASS": "demo-app",
+        "BABELIFIED_PATH": "./app",
+        "ENTRY_FILE_PATH": "./app/index",
+        "PAGE_TITLE": "Focus demonstration application",
+        "OUTPUT_DIR": "./production",
+        "LOCAL_FOCUS": false,
+        "LEGACY_SEARCH_API": false,
+        "BASE_URL": "/",
+        "API_ROOT": "/",
+        "DEV": false,
+        "SOURCE_MAPS": false,
+        "MINIMIFY": true,
+        "NODE_ENV": "production"
       }
     },
     "webpack-dev-server-local-focus": {
