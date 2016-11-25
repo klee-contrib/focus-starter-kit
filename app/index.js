@@ -5,6 +5,7 @@ import focusCoreConf from 'focus-core/package.json';
 import focusComponentsConf from 'focus-components/package.json';
 import appConfigInitializer from './initializer/scripts/app-configuration-initializer';
 import userInitializer from './initializer/scripts/user-initializer';
+import consoleInitializer from './initializer/scripts/console-initializer';
 
 console.info(
     `
@@ -17,29 +18,30 @@ console.info(
 );
 
 // Flag to know if DOM was loaded
-document.addEventListener('DOMContentLoaded', () => {window._hasFiredDOMContentLoaded = true;});
+document.addEventListener('DOMContentLoaded', () => { window._hasFiredDOMContentLoaded = true; });
 
 
 const appInit = () => {
-	// initializers before DOM CONTENT LOADED
-    	const beforeDomContentLoadedScript = require('./initializer/before');
-    	beforeDomContentLoadedScript.initialize();
+    // initializers before DOM CONTENT LOADED
+    const beforeDomContentLoadedScript = require('./initializer/before');
+    beforeDomContentLoadedScript.initialize();
 
-    	// initializers after DOM CONTENT LOADED
-    	const onDOMContentLoaded = () => {
+    // initializers after DOM CONTENT LOADED
+    const onDOMContentLoaded = () => {
         const afterDomContentLoadedScript = require('./initializer/after');
+        const info = console.info;
         afterDomContentLoadedScript.initialize();
-        console.log('#########################[START APP]############################');
-        require('./application')();
-        console.log('#########################[APP STARTED]##########################');
-    	};
+        info('#########################[START APP]############################');
+        require('./application')(info);
+        info('#########################[APP STARTED]##########################');
+    };
 
-    	window.onDOMContentLoaded = onDOMContentLoaded;
-    	if(window._hasFiredDOMContentLoaded) {
+    window.onDOMContentLoaded = onDOMContentLoaded;
+    if (window._hasFiredDOMContentLoaded) {
         onDOMContentLoaded();
-    	} else {
+    } else {
         document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
-    	}
+    }
 };
 console.log('[INITIALIZER - BEFORE ANYTHING (prerequisites)]');
 // Initalisation de la configuration applicative (avant tout le reste, si besoin pour autres initialisers)
