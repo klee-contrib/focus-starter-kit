@@ -7,7 +7,7 @@ import { once } from 'lodash';
 
 const initialize = (appInitialisation) => {
     console.log('#########################[INIT APP CONFIG]#######################################');
-    console.info('|--- USER');
+    console.info('|--- CONFIG');
 
     configServices.loadConfig().then(
     (data) => {

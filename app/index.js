@@ -5,7 +5,6 @@ import focusCoreConf from 'focus-core/package.json';
 import focusComponentsConf from 'focus-components/package.json';
 import appConfigInitializer from './initializer/scripts/app-configuration-initializer';
 import userInitializer from './initializer/scripts/user-initializer';
-import consoleInitializer from './initializer/scripts/console-initializer';
 
 console.info(
     `
