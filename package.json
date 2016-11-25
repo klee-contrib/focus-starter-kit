@@ -9,8 +9,8 @@
     "url": "https://github.com/KleeGroup/focus-demo-app.git"
   },
   "engines": {
-    "node": "4.3.x",
-    "npm": "2.14.x"
+    "node": "6.9.x",
+    "npm": "3.10.x"
   },
   "scripts": {
     "bundle": "better-npm-run bundle",
