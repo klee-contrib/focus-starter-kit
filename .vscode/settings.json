@@ -4,7 +4,8 @@
         "eslint.autoFixOnSave": true,
         "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\sh.exe",
         "terminal.integrated.shellArgs.windows": [
-                "--login"
+                "--login",
+                "-i"
         ],
         "editor.formatOnSave": true,
         "files.autoSave": "onFocusChange"
