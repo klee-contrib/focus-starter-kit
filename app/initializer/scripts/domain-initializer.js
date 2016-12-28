@@ -1,7 +1,7 @@
-import {container as domainContainer} from 'focus-core/definition/domain';
+import { container as domainContainer } from 'focus-core/definition/domain';
 import domainsConfig from '../../config/domain';
 import entitytDefinitionConfig from '../../config/entity-definition';
-import {difference, intersection, uniq} from 'lodash/array';
+import { difference, intersection, uniq } from 'lodash';
 
 export default () => {
     console.info('|--- DOMAINS');
@@ -21,10 +21,10 @@ export default () => {
 
     const diffAppDomains = difference(appDomains, intersection(appDomains, domains))
     const diffDomains = difference(domains, intersection(appDomains, domains))
-    if(diffAppDomains.length > 0) {
+    if (diffAppDomains.length > 0) {
         console.warn('   |--- Missing domain\'s definition :', diffAppDomains);
     }
-    if(diffDomains.length > 0) {
+    if (diffDomains.length > 0) {
         console.warn('   |--- Useless domain\'s definition :', diffDomains);
     }
 }

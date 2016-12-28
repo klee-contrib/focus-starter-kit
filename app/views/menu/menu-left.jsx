@@ -4,7 +4,7 @@ import Menu from 'focus-components/components/menu';
 import { component as Modal } from 'focus-components/application/popin';
 
 //custom web component
-import QuickSearchView from '../search/quick';
+const QuickSearchView = () => <div>{'QuickSearch TODO'}</div>;
 
 export default React.createClass({
     displayName: 'DemoMenuLeft',
@@ -52,7 +52,7 @@ export default React.createClass({
                 <Menu onPopinClose={this._onQuickSearchModalToggle} items={items} handleBrandClick={this._onHomeClick} />
                 {isQuickSearchModalOpen &&
                     <div data-demo='quick-search-area'>
-                        <Modal open={true} type='from-menu'>
+                        <Modal open type='from-menu'>
                             <QuickSearchView handleClosePopin={this._onQuickSearchModalToggle} />
                         </Modal>
                     </div>

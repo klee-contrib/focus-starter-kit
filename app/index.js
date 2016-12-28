@@ -3,8 +3,8 @@ import 'babel-preset-focus/dist/focus-polyfill';
 import focusDemoConf from '../package.json';
 import focusCoreConf from 'focus-core/package.json';
 import focusComponentsConf from 'focus-components/package.json';
-import appConfigInitializer from './initializer/scripts/app-configuration-initializer';
-import userInitializer from './initializer/scripts/user-initializer';
+import {initialize as appConfigInitialize} from './initializer/scripts/app-configuration-initializer';
+import {initialize as userInitialize } from './initializer/scripts/user-initializer';
 
 console.info(
     `
@@ -45,7 +45,7 @@ const appInit = () => {
 console.log('[INITIALIZER - BEFORE ANYTHING (prerequisites)]');
 // Initalisation de la configuration applicative (avant tout le reste, si besoin pour autres initialisers)
 // Initalisation de l'utilisateur connecté
-appConfigInitializer.initialize(() => userInitializer.initialize(appInit));
+appConfigInitialize(() => userInitialize(appInit));
 
 
 //import app demo styles

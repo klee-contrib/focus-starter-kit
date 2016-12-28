@@ -1,5 +1,4 @@
-import keys from 'lodash/object/keys';
-import trim from 'lodash/string/trim';
+import { keys, trim } from 'lodash';
 
 export default {
 
@@ -24,10 +23,10 @@ export default {
     * @return {object}      transform repsonse object
     */
     transformResponse(data) {
-        if(data.groups){
+        if (data.groups) {
             this._transformSearchResponseObjectToArray(data, 'groups');
         }
-        if(data.facets) {
+        if (data.facets) {
             this._transformSearchResponseObjectToArray(data, 'facets');
             data.facets.map((facet) => {
                 keys(facet).map((key) => {
@@ -50,13 +49,13 @@ export default {
         const {query} = criteria;
         const trimmedGroup = trim(group);
         config.data = { criteria: query };
-        if(includeFacets) {
-            config.data['facets'] = facets;  // we should have to do this. check with backend API to remove that.
+        if (includeFacets) {
+            config.data.facets = facets;  // we should have to do this. check with backend API to remove that.
         }
-        if(trimmedGroup.length > 0) {
-            config.data['group'] = trimmedGroup;
+        if (trimmedGroup.length > 0) {
+            config.data.group = trimmedGroup;
         }
         return config;
-    },
+    }
 
 };

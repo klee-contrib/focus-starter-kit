@@ -1,5 +1,5 @@
-import React from 'react';
-import dispatcher from 'focus-core/dispatcher';
+// import React from 'react';
+// import dispatcher from 'focus-core/dispatcher';
 // import NotificationCenter from 'focus-notifications';
 
 export default () => {
