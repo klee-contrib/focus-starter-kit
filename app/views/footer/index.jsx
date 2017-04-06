@@ -1,10 +1,10 @@
 import React from 'react';
-import {translate} from 'focus-core/translation';
+import { translate } from 'focus-core/translation';
 
 function masterdataHome() {
     return (
         <div data-app='footer'>
-        FOOTER
+            FOOTER
         </div>
     );
 }

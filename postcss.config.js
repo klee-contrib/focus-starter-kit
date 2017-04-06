@@ -1,4 +1,4 @@
-const defaultConfig = require('webpack-focus/lib/postcss.config.js');
+const defaultConfig = require('webpack-focus/postcss.config.js');
 // Load the default config.
 
 module.exports = defaultConfig;

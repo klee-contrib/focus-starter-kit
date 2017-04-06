@@ -38,7 +38,7 @@ export default React.createClass({
     },
 
     _onQuickSearchModalToggle() {
-        const {isQuickSearchModalOpen} = this.state;
+        const { isQuickSearchModalOpen } = this.state;
         this.setState({
             isQuickSearchModalOpen: !isQuickSearchModalOpen
         });
@@ -46,7 +46,7 @@ export default React.createClass({
 
     render() {
         const items = this._getMenuItems();
-        const {isQuickSearchModalOpen} = this.state;
+        const { isQuickSearchModalOpen } = this.state;
         return (
             <div>
                 <Menu onPopinClose={this._onQuickSearchModalToggle} items={items} handleBrandClick={this._onHomeClick} />

@@ -1,4 +1,5 @@
-const defaultConfig = require('webpack-focus/lib/webpack.config.js');
-// Load the default config.
+const baseConfig = require('webpack-focus/config/default');
+const envParser = require('webpack-focus/webpack-utilities/env-parser');
 
-module.exports = defaultConfig;
+const parsedConf = envParser(process.env);
+module.exports = baseConfig(process.env, {}).toWebpackConfig(parsedConf);
