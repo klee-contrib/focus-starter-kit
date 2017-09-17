@@ -1,7 +1,6 @@
 ////////////////////////////////////////////////////////
 /// SCRIPT EXECUTED AFTER DOM CONTENT LOADED
 ////////////////////////////////////////////////////////
-import React from 'react';
 import storesInitializer from './scripts/stores-initializer';
 import headerInitializer from './scripts/header-initializer'
 import consoleInitializer from './scripts/console-initializer'

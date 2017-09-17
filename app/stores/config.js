@@ -5,19 +5,13 @@ import { CoreStore } from 'focus-core/store';
 */
 const configStore = new CoreStore({
     definition: {
-      config: 'config'
-  }
+        config: 'config'
+    }
 });
 
-const getConfigValue = function getConfigValue(name) {
-    return this.getConfig()[name];
-};
-configStore.getConfigValue = configStore::getConfigValue;
+configStore.getConfigValue = (name) => (this.getConfig()[name]);
 
 // Example methods
-//~ const getPasswordMessageSecurite = function(){
-//~ return this.getConfigValue('passwordMessageSecurite');
-//~ };
-//~ configStore.getPasswordMessageSecurite = configStore::getPasswordMessageSecurite;
+// configStore.getPasswordMessageSecurite = () => (configStore.getConfigValue('passwordMessageSecurite'));
 
 export default configStore; 

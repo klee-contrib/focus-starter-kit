@@ -6,15 +6,15 @@ import Footer from '../views/footer';
 import DevTools from './dev-tools';
 
 const CustomLayout = (props) => (
-  <div>
-    <Layout
-      Footer={Footer}
-      MenuLeft={MenuLeft}
-      >
-      {props.children}
-    </Layout>
-    {__DEV__ && <DevTools />}
-  </div >
+    <div>
+        <Layout
+            Footer={Footer}
+            MenuLeft={MenuLeft}
+        >
+            {props.children}
+        </Layout>
+        {__DEV__ && <DevTools />}
+    </div >
 );
 CustomLayout.displayName = 'CustomAppLayout';
 

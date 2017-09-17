@@ -1,28 +1,5 @@
-import {config} from 'focus-core/reference';
+import { config } from 'focus-core/reference';
 //import masterdataServices from '../../services/masterdata';
-
-// load here all your reference lists
-export default () => {
-    console.info('|--- REFERENCES');
-    //config.set({genders: masterdataServices.loadGenders});
-    config.set({
-        scopes: () => {
-            return Promise.resolve(
-                //here call your webservice to get scope references
-                [
-                    {code: 'ALL', label: 'search.scope.all'},
-                    {code: 'movie', label: 'search.scope.movie'},
-                    {code: 'person', label: 'search.scope.person'}
-                ]
-            ).then(scopes => {
-                //here define application icons
-                scopes.map(_applyAdditionalScopeProperties);
-                return scopes  ;
-            });
-        }
-    });
-}
-
 function _applyAdditionalScopeProperties(scope) {
     switch (scope.code) {
         case 'ALL':
@@ -39,3 +16,26 @@ function _applyAdditionalScopeProperties(scope) {
             break;
     }
 }
+// load here all your reference lists
+export default () => {
+    console.info('|--- REFERENCES');
+    //config.set({genders: masterdataServices.loadGenders});
+    config.set({
+        scopes: () => {
+            return Promise.resolve(
+                //here call your webservice to get scope references
+                [
+                    { code: 'ALL', label: 'search.scope.all' },
+                    { code: 'movie', label: 'search.scope.movie' },
+                    { code: 'person', label: 'search.scope.person' }
+                ]
+            ).then(scopes => {
+                //here define application icons
+                scopes.map(_applyAdditionalScopeProperties);
+                return scopes;
+            });
+        }
+    });
+}
+
+

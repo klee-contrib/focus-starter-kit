@@ -1,7 +1,6 @@
 import builtInReferenceAction from 'focus-core/reference/built-in-action';
 import dispatcher from 'focus-core/dispatcher';
-import {advancedSearchStore} from 'focus-core/search/built-in-store';
-import {quickSearchStore} from 'focus-core/search/built-in-store';
+import {advancedSearchStore, quickSearchStore} from 'focus-core/search/built-in-store';
 
 // ordonnancement des chargements de stores
 export default () => {

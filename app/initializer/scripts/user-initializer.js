@@ -26,6 +26,6 @@ const initialize = (appInitialisation) => {
     );
 };
 
-export default {
-    initialize: initialize
+export {
+    initialize
 };

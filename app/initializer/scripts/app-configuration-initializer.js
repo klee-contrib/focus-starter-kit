@@ -10,20 +10,20 @@ const initialize = (appInitialisation) => {
     console.info('|--- CONFIG');
 
     configServices.loadConfig().then(
-    (data) => {
-        console.info('   |--- Configuration loaded');
+        (data) => {
+            console.info('   |--- Configuration loaded');
 
-        ConfigStore.addConfigChangeListener(once(appInitialisation));
-        dispatcher.handleServerAction({
-          data: {
-            config: data
-        },
-          type: 'update'
-      });
-    }
-  );
+            ConfigStore.addConfigChangeListener(once(appInitialisation));
+            dispatcher.handleServerAction({
+                data: {
+                    config: data
+                },
+                type: 'update'
+            });
+        }
+    );
 };
 
-export default {
-    initialize: initialize
+export {
+    initialize
 };

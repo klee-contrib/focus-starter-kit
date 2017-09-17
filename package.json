@@ -1,176 +1,110 @@
 {
-  "author": "focus@kleegroup.com",
-  "name": "my-awesome-project-to-rename-app",
-  "description": "Focus demonstration application",
-  "version": "0.0.0",
-  "homepage": "https://github.com/KleeGroup/focus-demo-app",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/KleeGroup/focus-demo-app.git"
-  },
-  "engines": {
-    "node": "6.9.x",
-    "npm": "3.10.x"
-  },
-  "scripts": {
-    "production": "better-npm-run production",
-    "bundle": "better-npm-run bundle",
-    "build": "npm run bundle",
-    "start": "npm run start:npm",
-    "start:local": "better-npm-run webpack-dev-server-local-focus",
-    "start:npm": "better-npm-run webpack-dev-server-npm-focus",
-    "watch": "better-npm-run watch",
-    "profile": "better-npm-run profile"
-  },
-  "main": "app/index.js",
-  "babel": {
-    "presets": [
-      "focus"
-    ]
-  },
-  "betterScripts": {
-    "bundle": {
-      "command": "webpack --progress",
-      "env": {
-        "ANCHOR_CLASS": "demo-app",
-        "BABELIFIED_PATH": "./app",
-        "ENTRY_FILE_PATH": "./app/index",
-        "PAGE_TITLE": "Your project application",
-        "API_HOST": "localhost",
-        "API_PORT": 8080,
-        "OUTPUT_DIR": "./",
-        "OUTPUT_PUBLIC_PATH": "./",
-        "GENERATE_HTML": false,
-        "LOCAL_FOCUS": false,
-        "LEGACY_SEARCH_API": false,
-        "DEV": false,
-        "node_env": "production",
-        "BABEL_ENV": "production",
-        "BASE_URL": "/"
-      }
+    "author": "focus@kleegroup.com",
+    "name": "my-awesome-project-to-rename-app",
+    "description": "Focus demonstration application",
+    "version": "0.0.0",
+    "homepage": "https://github.com/KleeGroup/focus-demo-app",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/KleeGroup/focus-demo-app.git"
     },
-    "profile": {
-      "command": "webpack --progress --json --profile > profile.json",
-      "env": {
-        "ANCHOR_CLASS": "demo-app",
-        "BABELIFIED_PATH": "./app",
-        "ENTRY_FILE_PATH": "./app/index",
-        "PAGE_TITLE": "Project application application",
-        "API_HOST": "localhost",
-        "API_PORT": 8080,
-        "OUTPUT_DIR": "./public",
-        "LOCAL_FOCUS": true,
-        "LEGACY_SEARCH_API": false,
-        "BASE_URL": "/"
-      }
+    "engines": {
+        "node": "6.9.x",
+        "npm": "3.10.x"
     },
-    "watch": {
-      "command": "webpack --watch",
-      "env": {
-        "ANCHOR_CLASS": "demo-app",
-        "BABELIFIED_PATH": "./app",
-        "ENTRY_FILE_PATH": "./app/index",
-        "PAGE_TITLE": "Focus demonstration application",
-        "API_HOST": "localhost",
-        "API_PORT": 8080,
-        "OUTPUT_DIR": "./public",
-        "LOCAL_FOCUS": false,
-        "LEGACY_SEARCH_API": false,
-        "BASE_URL": "/"
-      }
+    "scripts": {
+        "production": "better-npm-run production",
+        "analyze": "better-npm-run analyze",
+        "build": "npm run production",
+        "start": "better-npm-run webpack-dev-server-npm-focus",
+        "watch": "better-npm-run watch"
     },
-    "production": {
-      "command": "webpack --progress",
-      "env": {
-        "ANCHOR_CLASS": "demo-app",
-        "BABELIFIED_PATH": "./app",
-        "ENTRY_FILE_PATH": "./app/index",
-        "PAGE_TITLE": "Focus demonstration application",
-        "OUTPUT_DIR": "./production",
-        "LOCAL_FOCUS": false,
-        "LEGACY_SEARCH_API": false,
-        "BASE_URL": "/",
-        "API_ROOT": "/",
-        "DEV": false,
-        "SOURCE_MAPS": false,
-        "MINIMIFY": true,
-        "NODE_ENV": "production"
-      }
+    "main": "app/index.js",
+    "betterScripts": {
+        "production": {
+            "command": "webpack --progress",
+            "env": {
+                "ANCHOR_CLASS": "demo-app",
+                "BABELIFIED_PATH": "./app",
+                "ENTRY_FILE_PATH": "./app/index",
+                "PAGE_TITLE": "Your project application",
+                "OUTPUT_DIR": "./prod",
+                "OUTPUT_PUBLIC_PATH": "./",
+                "API_ROOT": "/",
+                "BASE_URL": "/",
+                "DEV": "false",
+                "SOURCE_MAPS": "false",
+                "MINIMIFY": "true",
+                "DROP_CONSOLE": "true",
+                "NODE_ENV": "production"
+            }
+        },
+        "analyze": {
+            "command": "webpack --progress",
+            "env": {
+                "ANCHOR_CLASS": "demo-app",
+                "BABELIFIED_PATH": "./app",
+                "ENTRY_FILE_PATH": "./app/index",
+                "PAGE_TITLE": "Your project application",
+                "OUTPUT_DIR": "./prod",
+                "OUTPUT_PUBLIC_PATH": "./",
+                "API_ROOT": "/",
+                "BASE_URL": "/",
+                "DEV": "false",
+                "SOURCE_MAPS": "false",
+                "MINIMIFY": "true",
+                "DROP_CONSOLE": "true",
+                "NODE_ENV": "production",
+                "ANALYZE": "true"
+            }
+        },
+        "watch": {
+            "command": "webpack --watch",
+            "env": {
+                "ANCHOR_CLASS": "demo-app",
+                "BABELIFIED_PATH": "./app",
+                "ENTRY_FILE_PATH": "./app/index",
+                "PAGE_TITLE": "Focus demonstration application",
+                "OUTPUT_DIR": "./watch",
+                "OUTPUT_PUBLIC_PATH": "./",
+                "API_ROOT": "/",
+                "BASE_URL": "/",
+                "NODE_ENV": "development"
+            }
+        },
+        "webpack-dev-server-npm-focus": {
+            "command": "node ./dev-server.js",
+            "env": {
+                "ANCHOR_CLASS": "demo-app",
+                "BABELIFIED_PATH": "./app",
+                "ENTRY_FILE_PATH": "./app/index",
+                "PAGE_TITLE": "Focus demonstration application",
+                "OUTPUT_DIR": "./public",
+                "OUTPUT_PUBLIC_PATH": "./",
+                "API_HOST": "localhost",
+                "API_PORT": 8080,
+                "BASE_URL": "/",
+                "NODE_ENV": "development",
+                "HOT_RELOAD": "true",
+                "GENERATE_HTML": "true"
+            }
+        }
     },
-    "webpack-dev-server-local-focus": {
-      "command": "node ./dev-server.js",
-      "env": {
-        "ANCHOR_CLASS": "demo-app",
-        "BABELIFIED_PATH": "./app",
-        "ENTRY_FILE_PATH": "./app/index",
-        "PAGE_TITLE": "Focus demonstration application",
-        "API_HOST": "localhost",
-        "API_PORT": 8080,
-        "OUTPUT_DIR": "./public",
-        "LOCAL_FOCUS": true,
-        "LEGACY_SEARCH_API": false,
-        "BASE_URL": "/"
-      }
-    },
-    "webpack-dev-server-npm-focus": {
-      "command": "node ./dev-server.js",
-      "env": {
-        "ANCHOR_CLASS": "demo-app",
-        "BABELIFIED_PATH": "./app",
-        "ENTRY_FILE_PATH": "./app/index",
-        "PAGE_TITLE": "Focus demonstration application",
-        "API_HOST": "localhost",
-        "API_PORT": 8080,
-        "OUTPUT_DIR": "./public",
-        "LOCAL_FOCUS": false,
-        "LEGACY_SEARCH_API": false,
-        "BASE_URL": "/"
-      }
+    "license": "MIT",
+    "devDependencies": {
+        "better-npm-run": "0.1.0",
+        "eslint-config-focus": "0.6.0",
+        "focus-components": "2.2.0-beta1",
+        "focus-core": "2.2.0-beta3",
+        "focus-devtools": "0.4.0",
+        "lodash": "4.17.4",
+        "material-design-icons-iconfont": "3.0.3",
+        "moment": "2.18.1",
+        "numeral": "2.0.6",
+        "react": "15.4.2",
+        "react-addons-css-transition-group": "15.4.2",
+        "react-dom": "15.4.2",
+        "react-router": "3.0.5",
+        "webpack-focus": "1.0.0-beta3"
     }
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "animate.css": "^3.4.0",
-    "autoprefixer-loader": "^3.2.0",
-    "babel-cli": "^6.4.5",
-    "babel-core": "^6.4.5",
-    "babel-eslint": "^5.0.0-beta6",
-    "babel-loader": "^6.2.4",
-    "babel-preset-focus": "^0.5.2",
-    "babel-runtime": "^6.3.19",
-    "better-npm-run": "0.0.5",
-    "body-parser": "^1.14.1",
-    "css-loader": "^0.21.0",
-    "eslint": "1.5.1",
-    "eslint-config-focus": "0.3.0",
-    "eslint-plugin-filenames": "0.1.1",
-    "eslint-plugin-react": "3.5.0",
-    "exports-loader": "^0.6.2",
-    "express": "^4.13.3",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "focus-components": "2.0.0",
-    "focus-core": "2.0.0",
-    "focus-devtools": "0.4.0",
-    "font-awesome": "^4.5.0",
-    "json-loader": "^0.5.3",
-    "lodash": "^3.10.1",
-    "material-design-icons-iconfont": "^2.0.4",
-    "migration-tool": "^0.1.0",
-    "moment": "^2.16.0",
-    "native-promise-only": "^0.8.0-a",
-    "numeral": "^1.5.3",
-    "react": "^15.3.2",
-    "react-addons-css-transition-group": "^15.3.2",
-    "react-hot-loader": "^3.0.0-beta.6",
-    "react-date-picker": "^3.1.10",
-    "react-dom": "^15.3.2",
-    "react-router": "^3.0.0",
-    "sass-loader": "^3.1.2",
-    "source-map-loader": "^0.1.5",
-    "style-loader": "^0.12.4",
-    "url-loader": "^0.5.6",
-    "webpack": "^1.12.14",
-    "webpack-dev-server": "^1.14.1",
-    "webpack-focus": "^0.12.2"
-  }
 }

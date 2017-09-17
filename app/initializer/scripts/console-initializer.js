@@ -1,5 +1,4 @@
-import { container as entityContainer } from 'focus-core/definition/entity';
-import noop from 'lodash/utility/noop';
+import { noop } from 'lodash';
 
 export default () => {
     console.info('|--- CONSOLE');
