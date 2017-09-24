@@ -1,19 +1,19 @@
 import React from 'react'
-import { render } from 'react-dom'
 import { Router, browserHistory } from 'react-router';
+
 import Routes from './routes';
 
 import { filterByRoles } from './utilities/router'
 
-export default function startApp(logger) {
-    logger('Launching the app...');
+/**
+ * Root component of the application.
+ * @returns {any} the root component of the application
+ */
+const Application = () => (
+    <Router
+        history={browserHistory}
+        routes={filterByRoles(Routes)}
+    />
+);
 
-    render((
-        <Router
-            history={browserHistory}
-            routes={filterByRoles(Routes)}
-        />
-    ),
-        document.getElementsByClassName(`${__ANCHOR_CLASS__}`)[0]
-    );
-}
+export default Application;

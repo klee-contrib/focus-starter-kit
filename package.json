@@ -19,10 +19,20 @@
         "start": "npm run start:npm",
         "initDB": "node ./api/db/init.js",
         "start:npm": "better-npm-run webpack-dev-server-npm-focus",
-        "watch": "better-npm-run watch"
+        "watch": "better-npm-run watch",
+        "generate": "better-npm-run service-generator"
     },
     "main": "app/index.js",
     "betterScripts": {
+        "service-generator": {
+            "command": "focus-service-generator",
+            "env": {
+                "TEMPLATE_FOLDER": "./node_modules/focus-service-generator/templates",
+                "DEST_FOLDER": "./app/config/server/generated",
+                "SWAGGER_SOURCE": "http://localhost:8080/swagger.json",
+                "EOL": "\r\n"
+            }
+        },
         "bundle": {
             "command": "webpack --color --progress",
             "env": {
@@ -86,35 +96,41 @@
                 "BABELIFIED_PATH": "./app",
                 "ENTRY_FILE_PATH": "./app/index",
                 "PAGE_TITLE": "Focus demonstration application",
+                "NODE_ENV": "development",
                 "API_HOST": "localhost",
                 "API_PORT": 8080,
                 "GENERATE_HTML": "true",
                 "OUTPUT_DIR": "./public",
                 "LOCAL_FOCUS": "false",
                 "LEGACY_SEARCH_API": "false",
-                "BASE_URL": "/"
+                "BASE_URL": "/",
+                "HOT_RELOAD": "true",
+                "DEV": "true"
             }
         }
     },
     "license": "MIT",
     "devDependencies": {
-        "better-npm-run": "0.0.15",
-        "body-parser": "1.17.2",
-        "eslint-config-focus": "0.5.0",
-        "faker": "3.1.0",
-        "focus-components": "2.1.7-1",
-        "focus-core": "2.1.1",
+        "better-npm-run": "0.1.0",
+        "body-parser": "1.18.2",
+        "eslint-config-focus": "0.6.0",
+        "faker": "4.1.0",
+        "focus-components": "2.2.0-beta2",
+        "focus-core": "2.2.0-beta3",
         "focus-devtools": "0.4.0",
+        "focus-service-generator": "0.0.1",
         "lodash": "4.17.4",
         "material-design-icons-iconfont": "3.0.3",
-        "moment": "2.17.1",
-        "native-promise-only": "0.8.1",
-        "numeral": "1.5.6",
+        "material-design-lite": "1.3.0",
+        "moment": "2.18.1",
+        "numeral": "2.0.6",
         "react": "15.4.2",
+        "react-addons-css-transition-group": "15.4.2",
         "react-dom": "15.4.2",
-        "react-router": "3.0.0",
-        "sequelize": "3.30.4",
-        "sqlite3": "3.1.8",
-        "webpack-focus": "0.13.0"
+        "react-router": "3.0.3",
+        "sequelize": "4.10.3",
+        "sqlite3": "3.1.12",
+        "swagger-jsdoc": "1.9.7",
+        "webpack-focus": "1.0.0-beta3"
     }
 }
