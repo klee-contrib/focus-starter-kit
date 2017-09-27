@@ -103,7 +103,9 @@ app.get(API_ROOT + '/movie/:id', function getAllNotifications(req, res) {
  *         description: Successfully updated
  */
 app.put(API_ROOT + '/movie/:id', function getAllNotifications(req, res) {
-    Movie.update(req.body, { where: { id: req.params.id } }).then(movie => res.json(movie));
+    Movie.update(req.body, { where: { id: req.params.id } })
+        .then(data => Movie.find({ where: { id: req.params.id } }))
+        .then(movie => res.json(movie));
 }
 );
 
@@ -129,7 +131,9 @@ app.put(API_ROOT + '/movie/:id', function getAllNotifications(req, res) {
  *         description: Successfully created
  */
 app.post(API_ROOT + '/movie', function getAllNotifications(req, res) {
-    Movie.create(req.body).then(movie => res.json(movie));
+    Movie.create(req.body)
+        .then(({ id }) => Movie.find({ where: { id } }))
+        .then(movie => res.json(movie));
 }
 );
 
@@ -162,17 +166,24 @@ app.post(API_ROOT + '/movie', function getAllNotifications(req, res) {
  *         description: Successfully created
  */
 app.post(API_ROOT + '/movies/search', function getAllNotifications(req, res) {
-    console.log(req.query);
-    const limit = req.query && req.query['pagination.limit'] || 10;
-    const offset = req.query && req.query['pagination.skip'] || 0;
-    const orderBy = req.query && req.query['pagination.orderBy'] || 'id';
-    const sortDesc = req.query && req.query['pagination.sortDesc'] ? true : false;
-    Movie.findAndCountAll({
-        where: req.body,
+    const crit = req.body && req.body.criteria ? { title: { $like: `%${req.body.criteria}%` } } : null;
+
+    const limit = req.query && req.query.top && +req.query.top || 10;
+    const offset = req.query && req.query.skip && +req.query.skip || 0;
+    const orderBy = req.query && req.query.sortFieldName !== 'undefined' && req.query.sortFieldName !== 'null' && req.query.sortFieldName || 'id';
+    const sortDesc = req.query && req.query.sortDesc && req.query.sortDesc === 'true' ? true : false;
+
+    const query = {
         limit: limit,
         offset: offset,
-        order: [orderBy].concat(sortDesc ? ['DESC'] : [])
-    }).then(data => res.json({ data: data.rows, totalCount: data.count }));
+        order: [[orderBy, sortDesc ? 'DESC' : 'ASC']]
+    };
+
+    if (crit) {
+        query.where = crit;
+    }
+
+    Movie.findAndCountAll(query).then(data => res.json({ dataList: data.rows, totalCount: data.count }));
 }
 );
 /**
