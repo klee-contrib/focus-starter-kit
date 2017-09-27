@@ -140,7 +140,7 @@ app.post(API_ROOT + '/movie', function getAllNotifications(req, res) {
  *     tags:
  *       - Movies
  *     description: Search/list movies
- *     operationId: Movies_createMovie
+ *     operationId: Movies_searchMovie
  *     produces:
  *       - application/json
  *     parameters:

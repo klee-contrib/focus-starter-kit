@@ -13,6 +13,7 @@ const getConfigValue = function getConfigValue(name) {
     return this.getConfig()[name];
 };
 configStore.getConfigValue = configStore::getConfigValue;
+configStore.name = 'ConfigStore';
 
 // Example methods
 //~ const getPasswordMessageSecurite = function(){

@@ -27,7 +27,7 @@
         "service-generator": {
             "command": "focus-service-generator",
             "env": {
-                "TEMPLATE_FOLDER": "./node_modules/focus-service-generator/templates",
+                "TEMPLATE_FOLDER": "./templates",
                 "DEST_FOLDER": "./app/config/server/generated",
                 "SWAGGER_SOURCE": "http://localhost:8080/swagger.json",
                 "EOL": "\r\n"
