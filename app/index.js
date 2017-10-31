@@ -3,25 +3,12 @@ import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader';
 
-import focusDemoConf from '../package.json';
-import focusCoreConf from 'focus-core/package.json';
-import focusComponentsConf from 'focus-components/package.json';
 import { initialize as appConfigInitialize } from './initializer/scripts/app-configuration-initializer';
 import { initialize as userInitialize } from './initializer/scripts/user-initializer';
 import { initialize as beforeInit } from './initializer/before';
 import { initialize as afterInit } from './initializer/after';
 
 import Application from './application';
-
-console.info(
-    `
-        FOCUS DEMO
-        version: ${focusDemoConf.version}
-        focus-core: ${focusCoreConf.version}
-        focus-components: ${focusComponentsConf.version}
-        web: http://getfocus.io
-    `
-);
 
 // Flag to know if DOM was loaded
 document.addEventListener('DOMContentLoaded', () => { window._hasFiredDOMContentLoaded = true; });
@@ -82,4 +69,4 @@ console.log('[INITIALIZER - BEFORE ANYTHING (prerequisites)]');
 appConfigInitialize(() => userInitialize(appInit));
 
 //Reference styles inside the application
-import './styles';
+import './styles/index.scss';
