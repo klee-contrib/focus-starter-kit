@@ -1,4 +1,4 @@
-import {translate, init} from 'focus-core/translation';
+import { translate, init } from 'focus-core/translation';
 import traductionFiles from '../../i18n';
 
 export default () => {
@@ -7,6 +7,8 @@ export default () => {
     // Initialize translations configuration.
     const i18nConfig = {
         resources: traductionFiles,
+        nsSeparator: ':::',
+        interpolation: { escapeValue: false },
         lng: 'fr-FR'///langOpts.i18nCulture
     };
 
