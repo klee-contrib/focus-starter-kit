@@ -27,7 +27,7 @@ const swaggerDefinition = {
         version: '1.0.0',
         description: 'Small demo RESTful API with Swagger'
     },
-    host: 'localhost:8080',
+    host: 'localhost:' + MOCKED_API_PORT,
     basePath: '/',
     definitions: {
         Movie: {
