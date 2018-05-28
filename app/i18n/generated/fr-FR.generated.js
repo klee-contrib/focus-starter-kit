@@ -10,6 +10,8 @@ export default {
         originalTitle: 'Titre original',
         movieType: 'Type de film',
         productionYear: 'Année de production',
+        createdAt: 'Date de création',
+        updatedAt: 'Date de modification',
         shortSynopsis: 'Synopsis court',
         runtime: 'Durée en minutes',
         poster: 'URL de l\'affiche',
