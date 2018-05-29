@@ -166,7 +166,7 @@ app.post(API_ROOT + '/movie', function getAllNotifications(req, res) {
  *         description: Successfully created
  */
 app.post(API_ROOT + '/movies/search', function getAllNotifications(req, res) {
-    const crit = req.body && req.body.criteria ? { title: { $like: `%${req.body.criteria}%` } } : null;
+    const crit = req.body && req.body.criteria ? { title: { $like: `%${req.body.criteria.title}%` } } : null;
 
     const limit = req.query && req.query.top && +req.query.top || 10;
     const offset = req.query && req.query.skip && +req.query.skip || 0;

@@ -4,6 +4,11 @@ export default {
             detail: {
                 characteristics: "Détail du film",
                 dates: "Détails de l'objet en base"
+            },
+            search: {
+                criteria: 'Critère de recherche',
+                results: 'Résultat'
+
             }
         }
     },

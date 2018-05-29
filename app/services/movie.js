@@ -10,7 +10,6 @@ export default {
         return movieApiDriver.updateMovie({ id }, data);
     },
     searchMovie({ urlData, data }) {
-        const { criteria } = data;
-        return movieApiDriver.searchMovie(urlData, criteria);
+        return movieApiDriver.searchMovie(urlData, data);
     }
 }
