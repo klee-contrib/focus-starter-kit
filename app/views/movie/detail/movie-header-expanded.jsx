@@ -5,7 +5,6 @@ import { mixin as formPreset } from 'focus-components/common/form';
 
 import movieStore from '../../../stores/movie';
 
-
 const MovieHeaderExpanded = React.createClass({
     displayName: 'MovieHeaderExpanded',
     mixins: [formPreset],

@@ -5,7 +5,6 @@ import movieListStore from '../../../stores/movie-list';
 import { component as Modal } from 'focus-components/application/popin';
 
 import movieActions from '../../../action/movie'
-import movieServices from '../../../services/movie'
 
 /// COMPONENTS
 import { component as SmartList } from 'focus-components/page/list';
@@ -35,7 +34,10 @@ export default React.createClass({
 
         };
         return (<div style={{ 'list-style-type': 'none' }}>
-            <MovieCriteria />
+            <MovieCriteria
+                isEdit
+                updateMovieListProperties={movieActions.searchMovies.updateProperties}
+            />
 
             <SmartList
                 action={{ load: movieActions.searchMovies.load }} // L'action qui charge la liste
@@ -56,5 +58,3 @@ export default React.createClass({
         </div>);
     }
 });
-
-//service = { movieServices.searchMovie } // L'action qui charge la liste

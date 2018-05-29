@@ -2,12 +2,14 @@ import React, { PropTypes } from 'react';
 import MovieDetail from './movie-detail';
 import MovieDates from './movie-dates';
 import ScrollspyContainer from 'focus-components/components/scrollspy-container';
-import { Panel } from 'focus-components/components'
+import { Panel } from 'focus-components/components';
 
 import { cartridgeBehaviour } from 'focus-components/page/mixin';
 
 import MovieHeaderCollapsed from './movie-header-collapsed';
 import MovieHeaderExpanded from './movie-header-expanded';
+
+import movieActions from '../../../action/movie';
 
 export default React.createClass({
     displayName: 'movie-detail-page',
@@ -15,6 +17,15 @@ export default React.createClass({
     propTypes: {
         id: PropTypes.number.isRequired
     },
+
+    action: {
+        load: movieActions.getMovie
+    },
+
+    componentDidMount() {
+        this.action.load(this.props.id);
+    },
+
     cartridgeConfiguration() {
         const props = { hasLoad: false, hasForm: false }; // props qui seront données aux composants du header
         return {
@@ -31,13 +42,14 @@ export default React.createClass({
         };
     },
     render() {
-        return (<ScrollspyContainer>
-            <Panel title='view.movie.detail.characteristics'>
-                <MovieDetail id={this.props.id} />
-            </Panel>
-            <Panel title='view.movie.detail.dates'>
-                <MovieDates id={this.props.id} />
-            </Panel>
-        </ScrollspyContainer>);
+        return (
+            <ScrollspyContainer>
+                <Panel title='view.movie.detail.characteristics'>
+                    <MovieDetail id={this.props.id} hasLoad={false} />
+                </Panel>
+                <Panel title='view.movie.detail.dates'>
+                    <MovieDates hasLoad={false} />
+                </Panel>
+            </ScrollspyContainer>);
     }
 });

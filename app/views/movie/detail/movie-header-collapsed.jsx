@@ -11,6 +11,7 @@ const MovieHeaderExpanded = React.createClass({
     mixins: [formPreset],
     definitionPath: 'movie',
     stores: [{ store: movieStore, properties: ['movie'] }],
+
     renderContent() {
         return (
             <div>

@@ -32,4 +32,4 @@ export default apiDriverBuilder({
         method: 'PUT'
     }
 
- });
+});
