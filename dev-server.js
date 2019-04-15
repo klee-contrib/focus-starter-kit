@@ -1,8 +1,4 @@
-const webpackConfig = require('./webpack.config');
-const serverLauncher = require('webpack-focus').serverLauncher;
+const server = require("webpack-focus/dev-server").serverLauncher;
+const config = require("./webpack.config");
 
-const customConfig = {
-    // proxy: null
-};
-
-serverLauncher(webpackConfig, customConfig);
+server(config, {});
