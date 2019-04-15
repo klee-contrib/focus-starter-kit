@@ -12,7 +12,7 @@ export default {
         productionYear: 'Année de production',
         shortSynopsis: 'Synopsis court',
         runtime: 'Durée en minutes',
-        poster: 'URL de l\'affiche',
+        poster: "URL de l'affiche",
         synopsis: 'Synopsis',
         title: 'Titre',
         trailerName: 'Nom de la bande annonce',

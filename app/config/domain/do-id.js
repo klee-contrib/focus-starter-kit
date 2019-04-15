@@ -1,6 +1,8 @@
 export default {
-    type: 'number',
-    validator: [{
-        type: 'number'
-    }]
+  type: "number",
+  validator: [
+    {
+      type: "number"
+    }
+  ]
 };

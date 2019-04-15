@@ -1,9 +1,11 @@
 export default {
     type: 'text',
-    validator: [{
-        type: 'string',
-        options: {
-            maxLength: 5
+    validator: [
+        {
+            type: 'string',
+            options: {
+                maxLength: 5
+            }
         }
-    }]
+    ]
 };

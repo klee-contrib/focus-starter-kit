@@ -1,9 +1,11 @@
 export default {
-    type: 'password',
-    validator: [{
-        type: 'string',
-        options: {
-            maxLength: 32
-        }
-    }]
+  type: "password",
+  validator: [
+    {
+      type: "string",
+      options: {
+        maxLength: 32
+      }
+    }
+  ]
 };

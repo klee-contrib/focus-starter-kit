@@ -8,7 +8,7 @@ import { component as Modal } from 'focus-components/application/popin';
 
 /**
  * Composant pour le menu gauche
- * 
+ *
  * @class DemoMenuLeft
  * @extends {Component} Composant React
  */
@@ -22,7 +22,7 @@ class DemoMenuLeft extends Component {
 
     state = {
         isQuickSearchModalOpen: false
-    }
+    };
 
     _getMenuItems() {
         return [
@@ -60,7 +60,11 @@ class DemoMenuLeft extends Component {
         // const { isQuickSearchModalOpen } = this.state;
         return (
             <div>
-                <Menu onPopinClose={this._onQuickSearchModalToggle} items={items} handleBrandClick={this._onHomeClick} />
+                <Menu
+                    onPopinClose={this._onQuickSearchModalToggle}
+                    items={items}
+                    handleBrandClick={this._onHomeClick}
+                />
                 {/* {isQuickSearchModalOpen &&
                     <div data-demo='quick-search-area'>
                         <Modal open type='from-menu'>

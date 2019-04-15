@@ -1,6 +1,8 @@
 export default {
     type: 'url',
-    validator: [{
-        type: 'url'
-    }]
+    validator: [
+        {
+            type: 'url'
+        }
+    ]
 };

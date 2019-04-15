@@ -9,12 +9,11 @@ export default () => {
         resources: traductionFiles,
         nsSeparator: ':::',
         interpolation: { escapeValue: false },
-        lng: 'fr-FR'///langOpts.i18nCulture
+        lng: 'fr-FR' ///langOpts.i18nCulture
     };
 
     // Plugin initialization.
     init(i18nConfig, () => {
         return console.info('   |--- Translation correctly initialized.');
     });
-
-}
+};

@@ -12,4 +12,4 @@ export default () => {
     } else {
         console.info('   |--- Keeping console up.');
     }
-}
+};

@@ -1,7 +1,6 @@
 /**
-* These metadatas are generated automatically.
-* @type {Object}
-*/
+ * These metadatas are generated automatically.
+ * @type {Object}
+ */
 
-export default {
-};
+export default {};

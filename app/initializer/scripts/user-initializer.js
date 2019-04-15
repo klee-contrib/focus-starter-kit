@@ -5,27 +5,22 @@ import configServices from '../../services/config';
 
 import { once } from 'lodash';
 
-
-const initialize = (appInitialisation) => {
+const initialize = appInitialisation => {
     console.info('|--- USER');
-    configServices.loadUser().then(
-        (data) => {
-            console.info('   |--- User loaded');
+    configServices.loadUser().then(data => {
+        console.info('   |--- User loaded');
 
-            UserStore.addProfileChangeListener(once(appInitialisation));
+        UserStore.addProfileChangeListener(once(appInitialisation));
 
-            dispatcher.handleServerAction({
-                data: {
-                    profile: data.profile,
-                    roles: data.roles,
-                    login: data.login
-                },
-                type: 'update'
-            });
-        }
-    );
+        dispatcher.handleServerAction({
+            data: {
+                profile: data.profile,
+                roles: data.roles,
+                login: data.login
+            },
+            type: 'update'
+        });
+    });
 };
 
-export {
-    initialize
-};
+export { initialize };

@@ -1,6 +1,6 @@
 import dispatchLogger from 'focus-devtools/logger/dispatch-logger';
 import dispatcher from 'focus-core/dispatcher';
-import CoreStore from 'focus-core/store/CoreStore'
+import CoreStore from 'focus-core/store/CoreStore';
 
 export default () => {
     console.info('|--- DEV TOOLS');
@@ -11,4 +11,4 @@ export default () => {
     } else {
         console.info('   |--- Not activating dev tools logger.');
     }
-}
+};

@@ -3,12 +3,12 @@ import fetch from 'focus-core/network/fetch';
 
 export default {
     loadConfig() {
-        console.log(`[CONFIG] call loadConfig method. `);
+        console.log('[CONFIG] call loadConfig method. ');
         return Promise.resolve({});
         // return configApiDriver.loadConfig();
     },
     loadUser() {
-        console.log(`[CONFIG] call loadUser method. `);
+        console.log('[CONFIG] call loadUser method. ');
         return Promise.resolve({
             profile: {},
             roles: [],
@@ -16,4 +16,4 @@ export default {
         });
         // return configApiDriver.loadUser();
     }
-}
+};

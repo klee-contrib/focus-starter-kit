@@ -6,5 +6,7 @@ export default () => {
 
     console.info('   |--- Add locale fr');
     moment.locale('fr');
-    console.info('   |--- Moment correctly initialized. Current locale:' + moment.locale());
-}
+    console.info(
+        '   |--- Moment correctly initialized. Current locale:' + moment.locale()
+    );
+};

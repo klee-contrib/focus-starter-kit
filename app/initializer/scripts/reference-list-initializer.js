@@ -6,13 +6,13 @@ function _applyAdditionalScopeProperties(scope) {
             scope.icon = 'all_inclusive';
             break;
         case 'movie':
-            scope.icon = 'movie'
+            scope.icon = 'movie';
             break;
         case 'person':
             scope.icon = 'person';
             break;
         default:
-            scope.icon = 'mood_bad'
+            scope.icon = 'mood_bad';
             break;
     }
 }
@@ -36,6 +36,4 @@ export default () => {
             });
         }
     });
-}
-
-
+};
